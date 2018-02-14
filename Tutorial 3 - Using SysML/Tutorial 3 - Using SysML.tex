@@ -1,0 +1,394 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\title{Tutorial 3 --- Using SysML}
+\date{December 2017}
+\author{Ken Pierce and Richard Payne}
+
+\begin{document}
+
+\section*{Overview}
+
+This second tutorial will show you how to:
+
+\begin{enumerate}[noitemsep]
+\item Add a new FMU in a SysML model
+\item Generate a new multi-model configuration
+\item Associate an FMU with a multi-model configuration
+\item Execute a co-simulation using the new multi-model configuration
+\end{enumerate}
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item INTO-CPS Application
+\item COE (Co-simulation Orchestration Engine) accessible to the Application
+\item Modelio v3.4.1
+\end{itemize}
+
+You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+
+
+\section{Opening a Project}
+\begin{instructions}
+\item Launch the \emph{INTO-CPS Application}. On first loading, it will look like the screenshot below. If you have opened a project previously, that project will be opened automatically.
+
+\begin{annotation}[width=0.85\linewidth,trim=0 150 0 0,clip]{figures/into_blankApp}
+%    \helpergrid
+    \end{annotation}
+
+\newpage
+\item To open a project, select \emph{File \menusep Open Project}.
+
+\begin{annotation}[width=0.85\linewidth,trim=0 260 0 0,clip]{figures/into_fileMenu}
+    \usquare{4.6cm}{0.3cm}{0.1}{Open Project}{0.184,0.6}
+%    \helpergrid
+    \end{annotation}
+
+\item Set the \emph{Project root path} to the location of \emph{Tutorials\pathsep{}tutorials\_3}. You can browse using the \emph{Folder} button.
+
+\begin{annotation}[width=0.85\linewidth,trim=0 125 0 125,clip]{figures/into_projectBrowser}
+    \usquare{1.2cm}{0.25cm}{0.8}{Browse...}{0.64,0.6}
+%    \helpergrid
+    \end{annotation}
+
+\item Click \emph{Open Project}.
+
+\begin{annotation}[width=0.3\linewidth,trim=0 0 0 0,clip]{figures/into_fileMenuPath}
+    \upoint{0.2}{Path to \emph{Tutorials\pathsep{}tutorials\_3}}{0.33,0.7}
+    \dsquare{1.2cm}{0.25cm}{0.5}{Open Project}{0.4,0.4}
+    %\helpergrid
+    \end{annotation}
+
+\newpage
+\item Once the project is opened, you will see that project browser on the left of the INTO-CPS Application window is now populated. The entries in the project browser correspond to folders and files in the \emph{Tutorials\pathsep{}tutorials\_3} folder. These are:
+
+    \begin{description}[noitemsep]
+        \item[FMUs] Compiled FMUs (with file extension .fmu) that are used in co-simulation.
+        \item[Models] Source models used to generate the FMUs. The icon of each entry shows which tool created the model. In this case Overture and 20-sim.
+        \item[Multi-models] Used to configure co-simulations, including which FMUs are used and other co-simulation settings.
+        \item[SysML] Architectural models that are used to create model and multi-model descriptions.
+    \end{description}
+
+    \begin{annotation}[height=0.64\linewidth,trim=0 0 250 0,clip]{figures/into_openedProject}
+        \lpoint{0.87}{Compiled FMUs}{0.06,0.87}
+        \lpoint{0.87}{}{0.06,0.835}
+        \lpoint{0.61}{20-sim models}{0.05,0.61}
+        \lpoint{0.61}{}{0.05,0.565}
+        \lpoint{0.53}{VDM model}{0.03,0.53}
+        \lpoint{0.445}{Multi-model configuration}{0.03,0.445}
+        \lpoint{0.36}{SysML model}{0.03,0.36}
+%        \helpergrid
+    \end{annotation}
+\end{instructions}
+
+\newpage
+
+\section{Edit Architecture}
+
+\begin{instructions}
+
+\item Launch \emph{Modelio}. On first loading, you may have to close the \emph{Welcome} screen (you can bring it back with \emph{Help \menusep Welcome} if you need)
+
+\begin{annotation}[width=1\linewidth,trim=0 400 0 0,clip]{figures/modelio_start}
+    \ucircle{0.18cm}{0.13}{Close \emph{Welcome} screen}{0.068,0.868}
+    \end{annotation}
+
+\item A workspace must be chosen, select \emph{File \menusep Switch Workspace}.
+
+\begin{annotation}[width=1\linewidth,trim=0 700 0 0,clip]{figures/modelio_workspace}
+    \usquare{3.9cm}{0.1cm}{0.25}{Switch Workspace}{0.135,0.44}
+%    \helpergrid
+    \end{annotation}
+\newpage
+
+\item Set the \emph{Workspace} to the location of \emph{Tutorials\pathsep{}tutorials\_3\pathsep{}SysML} and click \emph{Ok}.
+
+\begin{annotation}[width=0.5\linewidth,trim=0 0 0 0,clip]{figures/modelio_workspace_choice}
+    \rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_3\pathsep{}SysML}}{0.45,0.48}
+    \rsquare{1.5cm}{0.15cm}{0.05}{Ok}{0.68,0.07}
+%    \helpergrid
+    \end{annotation}
+
+\item Left-click on the \emph{LineFollowRobot} model once on the left to see details of the model. Double-click the \emph{LineFollowRobot} model to open the model.
+
+    \begin{annotation}[width=1\linewidth,trim=0 300 0 0,clip]{figures/modelio_select_model}
+        \upoint{0.2}{\emph{LineFollowRobot} model}{0.06,0.815}
+        \upoint{0.565}{Model Information}{0.565,0.815}
+%    \helpergrid%
+    \end{annotation}
+
+\newpage
+\item In the \emph{Diagrams} pane, expand the \emph{Diagrams} folder and double click the \emph{Architecture Diagram}. The diagram below will open. Notice there are two instances of the Sensor model.
+
+\begin{annotation}[width=\linewidth,trim=0 0 0 0,clip]{figures/ModelioDiagramsPaneNew}
+    \dpoint{0.7}{Diagrams pane}{0.43,0.23}
+    \dpoint{0.15}{Architecture diagram}{0.21,0.17}
+    \usquare{3.2cm}{3.4cm}{0.7}{Sensor block}{0.62,0.427}
+    \ucircle{0.18cm}{0.4}{Two instances}{0.59,0.59}
+    \end{annotation}
+
+\item Double click the \emph{Connections Diagram}
+
+    \begin{annotation}[width=\linewidth,trim=0 0 0 350,clip]{figures/ModelioDiagramsPaneNew2}
+    \dpoint{0.15}{Connections diagram}{0.22,0.29}
+    \end{annotation}
+
+\newpage
+\item To add a new Sensor, select \emph{Block Instance} from the palette menu and add the new instance to the 3DRobot -- simply click inside the 3DRobot, as indicated below.
+
+\begin{annotation}[width=0.7\linewidth,trim=0 500 0 0,clip]{figures/modelio_add_instance}
+    \rpoint{0.8}{Block Instance}{0.4,0.58}
+    \rpoint{0.3}{Place new instance here}{0.9,0.2}
+%    \helpergrid
+    \end{annotation}
+
+\item In the \emph{INTO-CPS} panel, change the name of the new instance to `sensor2' and set the type to be `linefollowrobot\_mm::Sensor'.
+
+\begin{annotation}[width=0.55\linewidth,trim=180 0 0 750,clip]{figures/modelio_instance_name_type}
+    \rpoint{0.6}{Change to \emph{sensor2}}{0.38,0.6}
+    \dpoint{0.5}{Set the type to \emph{linefollowrobot\_mm::Sensor}}{0.4,0.13}
+%     \helpergrid
+\end{annotation}
+
+\item The next step is to add ports to the sensor instance. Select \emph{Port} from the palette menu and add the new port to the sensor2.
+
+\begin{annotation}[width=0.7\linewidth,trim=0 500 0 0,clip]{figures/modelio_add_port}
+    \rpoint{0.6}{Port}{0.35,0.53}
+    \rpoint{0.3}{Place new port here}{0.7,0.24}
+%    \helpergrid
+    \end{annotation}
+\newpage
+
+
+\item Select the new port and in the \emph{INTO-CPS} panel change the name to `robot\_x' and type to be `Sensor::robot\_x'.
+
+\begin{annotation}[width=0.55\linewidth,trim=180 0 0 750,clip]{figures/modelio_port_name_type}
+    \rpoint{0.6}{Change to \emph{robot\_x}}{0.38,0.6}
+    \dpoint{0.7}{Set the type to \emph{Sensor::robot\_x}}{0.44,0.3}
+%    \helpergrid
+    \end{annotation}
+
+\item Repeat steps 14 and 15 to add four more ports:
+\begin{itemize}
+	\item Name: `robot\_y'; Type: `Sensor::robot\_y'.
+	\item Name: `robot\_z'; Type: `Sensor::robot\_z'.
+	\item Name: `robot\_theta'; Type: `Sensor::robot\_theta'.
+	\item Name: `lf\_1\_sensor\_reading'; Type: `Sensor::lf\_1\_sensor\_reading'.
+\end{itemize}
+The connections diagram should look like that below:
+
+\begin{annotation}[width=0.7\linewidth,trim=0 400 0 0,clip]{figures/modelio_port_complete}
+    \rsquare{2.8cm}{0.9cm}{0.34}{All ports added}{0.805,0.34}
+%    \helpergrid
+    \end{annotation}
+\newpage
+
+\item The next step is to add connections between the different models of the robot. Select \emph{Connector} from the palette menu and connect the \emph{robot\_x} port of the \emph{body} component to the \emph{robot\_x} port of the new \emph{sensor2} component
+
+\begin{annotation}[width=0.55\linewidth,trim=0 400 0 0,clip]{figures/modelio_add_connector}
+    \rpoint{0.7}{\emph{Connector}}{0.4,0.58}
+    \rpoint{0.6}{Port \emph{robot\_x} of instance b}{0.46,0.5}
+    \rpoint{0.4}{Port \emph{robot\_x} of instance sensor2}{0.72,0.38}
+%    \helpergrid
+    \end{annotation}
+
+
+\item Repeat step 17 to add five more connectors:
+\begin{itemize}
+	\item `body.robot\_y' to `sensor2.robot\_y'.
+	\item `body.robot\_z' to `sensor2.robot\_z'.
+	\item `body.robot\_theta' to `sensor2.robot\_theta'.
+	\item `sensor2.lf\_1\_sensor\_reading' to `controller.lfRightVal'.
+	\item `sensor2.lf\_1\_sensor\_reading' to `3D.animation.sensor.lf.right'.
+\end{itemize}
+The connections diagram should look like that below:
+
+\begin{annotation}[width=0.7\linewidth,trim=0 400 0 0,clip]{figures/modelio_connections_complete}
+    \rsquare{6.2cm}{6cm}{0.5}{All connectors added}{0.7,0.425}
+%    \helpergrid
+    \end{annotation}
+\newpage
+
+\item To export this new configuration, right click on the 3DRobot instance and select \emph{INTO-CPS \menusep Generate Configuration}. \emph{If nothing happens, closing and re-opening Modelio often helps.}
+
+    \begin{annotation}[width=0.7\linewidth,trim=290 350 50 400,clip]{figures/modelio_generate_config}
+    \rsquare{4cm}{0.25cm}{0.8}{\emph{Generate Configuration}}{0.648,0.8}
+    \end{annotation}
+
+\item Click \emph{Generate}. If this seems to be unresponsive, then click \emph{Cancel}, save the model, close and reopen \emph{Modelio} and try again.
+
+    \begin{annotation}[width=0.3\linewidth,trim=0 0 0 0,clip]{figures/modelio_generate}
+    \rsquare{1.9cm}{0.8cm}{0.15}{Click \emph{Generate}}{0.214,0.155}
+%    \helpergrid
+    \end{annotation}
+
+\item Click \emph{OK}.
+
+\begin{annotation}[width=0.22\linewidth,trim=0 0 0 0,clip]{figures/modelio_generate_complete}
+    \rsquare{2cm}{0.8cm}{0.16}{Click \emph{OK}}{0.58,0.16}
+%    \helpergrid
+    \end{annotation}
+
+\item Finally, save the SysML model.
+
+\begin{annotation}[width=0.5\linewidth,trim=0 760 500 0,clip]{figures/modelio_save_model}
+    \rsquare{6cm}{0.75cm}{0.55}{\emph{Save project}}{0.41,0.55}
+%    \helpergrid
+    \end{annotation}
+
+\end{instructions}
+
+\newpage
+\section{Configuring a Multi-model}
+
+\begin{instructions}
+
+\item Return to the \emph{INTO-CPS Application} and reload the view by selecting \emph{View \menusep Reload}.
+
+    \begin{annotation}[width=0.5\linewidth,trim=0 700 300 0,clip]{figures/into_reload}
+    \usquare{4.7cm}{0.2cm}{0.3}{Click \emph{Reload}}{0.485,0.57}
+    \end{annotation}
+
+\item In the SysML entry of the project browser, expand the \emph{LineFollowRobot} and then \emph{config} folders. There should be a \emph{3DRobot} icon (as in the Figure below). Right click on \emph{3DRobot}, select \emph{Create Multi-Model}. You can just accept the default name in the prompt that appears.
+
+    \begin{annotation}[width=0.5\linewidth,trim=0 300 300 300,clip]{figures/into_create_mm}
+    \rpoint{0.7}{Expand to locate \emph{3DRobot}}{0.4,0.6}
+    \rsquare{3cm}{0.5cm}{0.5}{Create Multi-model}{0.47,0.5}
+    \end{annotation}
+
+\item A new multi-model configuration has been created and is shown in the multi-model entry of the project browser. Double-click on the new multi-model to open it.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 400 0 250,clip]{figures/into_new_mm}
+    \usquare{3.3cm}{0.5cm}{0.2}{Double-click to open}{0.126,0.47}
+    \end{annotation}
+
+\newpage
+\item We need to associate FMUs with this multi-model and set its parameters. Expand the \emph{Configuration} section of the multi-model by clicking on the triangle.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 250,clip]{figures/INTOExpandConfig}
+        \dcircle{0.15cm}{0.8}{Expand \emph{Configuration}}{0.938,0.148}
+    \end{annotation}
+
+    \item Scroll down and click \emph{Edit}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 250,clip]{figures/INTOEditConfig}
+        \dsquare{1.1cm}{0.12cm}{0.8}{\emph{Edit} configuration}{0.332,0.44}
+    \end{annotation}
+
+\item In the \emph{FMUs} section, next to the \emph{Controller} element \emph{c}, click the \emph{File} button.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 600 0 100,clip]{figures/into_add_controller_fmu}
+    \upoint{0.2}{Controller element \emph{c}}{0.3,0.64}
+    \usquare{1.1cm}{0.25cm}{0.7}{Click \emph{File}}{0.822,0.438}
+    \end{annotation}
+
+\newpage
+\item A file browser window will open and show five FMUs (if the file browser does not show the FMUs, navigate to \emph{tutorials\_3\pathsep{}FMUs}). Select \emph{FMUController.fmu} and click \emph{Open}.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/FMUFindFile}
+        \upoint{0.37}{1. Locate and select \emph{FMUController.fmu}}{0.3,0.52}
+        \dsquare{1.5cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.788,0.0758}
+    \end{annotation}
+
+\item The LFRController has been added. Repeat this for the remaining elements:
+
+    \begin{itemize}[noitemsep]
+        \item \emph{b} : \emph{Body\_Block.fmu}
+        \item \emph{3D} : \emph{3DanimationFMU.fmu}
+        \item \emph{sensor1} : \emph{Sensor\_Block\_01.fmu}
+        \item \emph{sensor2} : \emph{Sensor\_Block\_02.fmu}
+    \end{itemize}
+
+    \begin{annotation}[width=0.54\linewidth,trim=150 0 0 0,clip]{figures/INTOFMUsDone}
+    \rsquare{7.7cm}{10.8cm}{0.58}{All FMUs added}{0.484,0.47}
+    \end{annotation}
+
+\newpage
+\item Next the sensor positions must be defined. Scroll down to the \emph{Initial values of parameters section}, and click \emph{\{sensor1\}.sensor1}. In the \emph{Parameters} section, enter the following values:
+
+    \begin{itemize}
+        \item \emph{lf\_position\_y} = 0.065
+        \item \emph{lf\_position\_x} = 0.01
+    \end{itemize}
+
+    \begin{annotation}[width=0.8\linewidth]{figures/INTOParams}
+        \dpoint{0.1}{\emph{lf\_position\_y}}{0.28,0.28}
+        \dpoint{0.5}{\emph{lf\_position\_x}}{0.42,0.15}
+    \end{annotation}
+
+%  \begin{annotation}[width=0.7\linewidth,trim=0 0 0 400,clip]{figures/into_set_params}
+%    \rpoint{0.7}{Parameters Section}{0.6,0.675}
+%    \rpoint{0.5}{Select \emph{\{sensor1\}.sensor1}}{0.6,0.6}
+%    \rsquare{7cm}{3cm}{0.2}{Set parameter values here}{0.6,0.275}
+%%    \helpergrid
+%    \end{annotation}
+
+\item Repeat the previous step for the second sensor -- \emph{\{sensor2\}.sensor2} with the following values:
+\begin{itemize}
+  \item \emph{lf\_position\_x} = -0.01
+  \item \emph{lf\_position\_y} = 0.065
+\end{itemize}
+
+\item \emph{Save} the \emph{Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 250,clip]{figures/INTOSaveConfig}
+        \dsquare{1.25cm}{0.12cm}{0.5}{\emph{Save} configuration}{0.338,0.18}
+    \end{annotation}
+
+\item The multi-model configuration is complete. Right-click on the multi-model configuration and select \emph{Create Co-simulation Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 120 0 130,clip]{figures/INTOCreateCoSim}
+        \dsquare{3.85cm}{0.12cm}{0.5}{\emph{Create Co-Simulation Configuration}}{0.293,0.52}
+    \end{annotation}
+
+\item Set the \emph{Step size} to 0.01. Don't forget to press \emph{Edit} then \emph{Save}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/INTOSetSimTime}
+        \usquare{1.25cm}{0.12cm}{0.3}{\emph{Edit} then \emph{Save}}{0.338,0.81}
+        \ucircle{0.15cm}{0.8}{Expand \emph{Configuration}}{0.943,0.885}
+        \dpoint{0.7}{Set \emph{Step size}}{0.64,0.06}
+    \end{annotation}
+
+\item Check \emph{lf\_1\_sensor\_reading} from \emph{\{sensor1\}.sensor1} and \emph{\{sensor2\}.sensor2} to see the sensor values appear in the \emph{Live\-stream Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 230 0 250,clip]{figures/INTOPlotSensor}
+    \end{annotation}
+
+\end{instructions}
+
+\section{Running a Co-simulation}
+
+\begin{instructions}
+
+\item Launch the COE if necessary (see \emph{Tutorial 1 --- First Co-simulation} for a reminder if needed).
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 270 0 120,clip]{figures/INTOLaunchCOE}
+        \usquare{1.25cm}{0.12cm}{0.8}{\emph{Launch} COE}{0.865,0.42}
+    \end{annotation}
+
+\item When the COE is running (see \emph{Tutorial 1} for more details if you need a reminder), click the \emph{Simulate} button. After a few seconds, a Java window called \emph{Animation Frame} will appear like the one below. It shows a plot of variables from the co-simulation. You can click the \emph{3D} button to see the 3D visualisation of the robot.
+
+    \begin{annotation}[width=0.5\linewidth,trim=0 0 0 0,clip]{figures/into_coe_3d_toggle}
+        \rcircle{0.32cm}{0.8}{3D Button}{0.52,0.88}
+    \end{annotation}
+
+\item  A 3D model of the line following robot will appear. This view may be changed by clicking and dragging the mouse (note this is currently quite sensitive, so don’t make quick movements). When the simulation has finished, this window will close. If everything went well, the robot should follow the line.
+
+    \begin{annotation}[width=0.5\linewidth,trim=0 300 0 0,clip]{figures/into_coe_3d_results}
+    \end{annotation}
+
+\end{instructions}
+
+\section{Additional Exercises}
+
+When this tutorial is complete, either move onto Tutorial 3, or try the following additional exercises:
+
+\begin{enumerate}
+  \item Experiment with different sensor positions. Repeat steps 13 and 14 to change the position of the left and right sensors relative the the robot body. How do the different values effect the simulation?
+  \item Experiment with different robot speeds. Repeat steps 13 and 14 to change the different speed values for the \emph{Controller}. How do the different values effect the simulation?
+\end{enumerate}
+
+\end{document} 

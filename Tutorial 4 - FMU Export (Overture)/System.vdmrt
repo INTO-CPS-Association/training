@@ -1,0 +1,21 @@
+system System
+
+instance variables
+
+-- Hardware interface variable required by FMU Import/Export
+public static hwi: HardwareInterface := new HardwareInterface();
+    
+public static controller: Controller := new Controller(
+  hwi.servoLeftVal, hwi.servoRightVal, hwi.lfRightVal, hwi.lfLeftVal);
+
+cpu : CPU := new CPU(<FP>, 1E6);
+
+operations
+
+public System : () ==> System
+System () == 
+(
+	cpu.deploy(controller);
+);
+
+end System

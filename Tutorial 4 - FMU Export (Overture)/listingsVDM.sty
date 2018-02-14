@@ -1,0 +1,56 @@
+\RequirePackage[final]{listings}
+\RequirePackage{xcolor}
+
+% keywords, strings etc.
+\lstdefinelanguage{VDM}{
+	morekeywords={\#act, \#active, \#fin, \#req, \#waiting, RESULT, abs, all,
+		always, and, async, atomic, be, be st, bool, by, card, cases, char,
+		class, comp, compose, conc, dcl, def, definitions, dinter, div, do, dom,
+		dunion, elems, else, elseif, end, error, errs, exists, exists1, exit,
+		ext, false, floor, for, for all, forall, from, functions, hd, if, in,
+		in set, inds, init, inmap, instance, instance variables, int, inter,
+		inv, inverse, iota, is, is not yet specified, is subclass of,
+		is subclass responsibility, isofbaseclass, isofclass, lambda, len, let,
+		map, measure, merge, mod, module, mu, munion, mutex, nat, nat1, new,
+		nil, not, not in set, of, operations, or, others, per, periodic, post,
+		power, pre, private, protected, psubset, public, rat, rd, real, rem,
+		responsibility, return, reverse, rng, samebaseclass, sameclass, self,
+		seq, seq1, set, skip, specified, st, start, startlist, state, static,
+		subclass, subset, sync, system, then, thread, threadid, tixe, tl, to,
+		token, traces, trap, true, types, undefined, union, values, variables,
+		while, with, wr, yet, imports, exports},
+	sensitive,
+	escapeinside={<@}{@>},
+	morecomment=[l]--,
+	morestring=[b]",
+	morestring=[b]',
+} [keywords,comments,strings]
+
+% colours
+\definecolor{vdmkw}{RGB}{127,0,85}
+\definecolor{vdmcom}{RGB}{63,127,95}
+
+% style
+\lstdefinestyle{styleVDM}{
+	language=VDM,
+	basicstyle=\ttfamily\footnotesize,
+	frame=trBL,
+	showstringspaces=false,
+	frameround=fttt,
+	keywordstyle=\color{vdmkw}\bfseries,
+	commentstyle=\color{vdmcom}\itshape,
+	%linewidth=0.8\textwidth,
+	xleftmargin=0.04\textwidth,%2mm,
+    xrightmargin=0.04\textwidth,
+	tabsize=2,
+    showstringspaces=false
+}
+
+% \lstnewenvironment{name}[number][default]{start code}{ending code}
+% an evnrionment
+\lstnewenvironment{vdm}[1][\ttfamily\footnotesize]{%
+	\lstset{style=styleVDM}%
+	\lstset{language=VDM}%
+    \lstset{basicstyle=#1}%
+}
+{}

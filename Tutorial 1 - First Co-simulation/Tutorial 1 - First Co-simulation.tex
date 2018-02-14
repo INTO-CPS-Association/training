@@ -1,0 +1,248 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\title{Tutorial 1 --- First Co-simulation}
+\date{December 2017}
+\author{Ken Pierce}
+
+\begin{document}
+
+\section*{Overview}
+
+This first INTO-CPS tutorial will show you how to:
+
+\begin{enumerate}[noitemsep]
+\item Open a project in the INTO-CPS App
+\item Run a co-simulation
+\item View a 3D plot (Windows only)
+\end{enumerate}
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item INTO-CPS Application
+\item COE (Co-simulation Orchestration Engine) accessible to the Application
+\end{itemize}
+
+You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+
+\section{Opening a Project}
+
+\begin{instructions}
+\item Launch the \emph{INTO-CPS Application}. On first loading, it will look like the screenshot below. If you have opened a project previously, that project will be opened automatically.
+
+\begin{annotation}[width=0.85\linewidth]{figures/blankApp}
+\end{annotation}
+
+\item To open a project, select \emph{File \menusep Open Project}.
+
+\begin{annotation}[width=0.85\linewidth,trim=0 260 0 0,clip]{figures/fileMenu}
+    \usquare{4.6cm}{0.3cm}{0.1}{Open Project}{0.184,0.6}
+\end{annotation}
+
+\item Find \emph{Tutorials\pathsep{}tutorials\_1}, select it and press \emph{Select Folder}.
+
+\begin{annotation}[width=0.85\linewidth]{figures/projectBrowser2}
+    \usquare{2.2cm}{0.25cm}{0.8}{Browse...}{0.75,0.075}
+\end{annotation}
+
+%\item Click \emph{Open}.
+
+%\begin{annotation}[width=0.85\linewidth,trim=0 125 0 125,clip]{figures/fileMenuPath}
+%    \upoint{0.2}{Path to \emph{Tutorials\pathsep{}tutorials\_1}}{0.33,0.63}
+%    \dsquare{1.2cm}{0.25cm}{0.5}{Open Project}{0.465,0.425}
+%\end{annotation}
+
+\item Once the project is opened, you will see that project browser on the left of the INTO-CPS Application window is now populated. The entries in the project browser correspond to folders and files in the \emph{Tutorials\pathsep{}tutorials\_1} folder.
+
+    The elements in the \emph{tutorial\_1} project are:
+
+    \begin{description}[noitemsep]
+        \item[FMUs] Compiled FMUs (with file extension .fmu) that are used in co-simulation.
+        \item[Models] Source models used to generate the FMUs. The icon of each entry shows which tool created the model. In this case Overture and 20-sim.
+        \item[Multi-models] Used to configure co-simulations, including which FMUs are used and other co-simulation settings.
+        \item[SysML] Architectural models that are used to create model and multi-model descriptions.
+    \end{description}
+
+    \begin{annotation}[height=0.64\linewidth,trim=0 0 250 0,clip]{figures/openedProject}
+        \lpoint{0.815}{Compiled FMUs}{0.05,0.815}
+        \lpoint{0.815}{}{0.05,0.77}
+        \lpoint{0.55}{20-sim model}{0.05,0.55}
+        \lpoint{0.51}{VDM model}{0.05,0.51}
+        \lpoint{0.42}{Multi-model configurations}{0.05,0.42}
+        \lpoint{0.42}{}{0.05,0.385}
+        \lpoint{0.241}{SysML models}{0.05,0.241}
+        \lpoint{0.241}{}{0.05,0.198}
+    \end{annotation}
+
+\end{instructions}
+
+\section{Running a Co-simulation}
+
+To run a co-simulation we must use one of the multi-model configurations. We'll start with the \emph{Non-3D} multi-model (since it works on all platforms).
+
+\begin{instructions}
+\item Click the + symbol next to \emph{Non-3D} multi-model to expand it.
+
+    \begin{annotation}[width=0.53\linewidth,trim=0 0 250 200,clip]{figures/openedProject}
+        \lcircle{0.15cm}{0.605}{\hspace{2.6em}Expand multi-model}{0.038,0.605}
+    \end{annotation}
+
+\newpage
+\item There is one co-simulation configuration in this multi-model called \emph{Experiment1}. Double-click this to open this configuration.
+
+    \begin{annotation}[width=0.53\linewidth,trim=0 0 250 200,clip]{figures/Experiment1}
+        \lsquare{2.5cm}{0.25cm}{0.535}{\hspace{2.3em}Double-click to open}{0.22,0.535}
+    \end{annotation}
+
+\item \label{step:launch} Once the \emph{Experiment1} co-simulation configuration is open, you will see the following screen. The COE (Co-simulation Orchestration Engine) is a separate tool from the INTO-CPS Application. This screen gives the status, which is offline. To launch it, press \emph{Launch}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/threetankScreen}
+        \usquare{1.35cm}{0.25cm}{0.2}{Launch}{0.36,0.58}
+        \dpoint{0.8}{\emph{Red status message}}{0.7,0.54}
+        \dpoint{0.3}{\emph{Simulation button disabled}}{0.35,0.46}
+    \end{annotation}
+
+%\item When you press \emph{Launch} a new \emph{COE Server Status} window will appear. It lists the version of the COE being used, and will report information during co-simulation.
+%
+%    \begin{annotation}[width=0.5\linewidth]{figures/coeStatus}
+%        \usquare{7cm}{2.4cm}{0.7}{\emph{Output console area}}{0.5,0.55}
+%        \dpoint{0.5}{\emph{COE version number}}{0.25,0.44}
+%    \end{annotation}
+
+\item Once the COE is online, the status message will become green and the \emph{Simulate} button will be enabled. Press \emph{Simulate} to run a co-simulation.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/threetankGreen}
+        \usquare{1.7cm}{0.25cm}{0.2}{Simulate!}{0.351,0.525}
+        \dpoint{0.8}{\emph{Green status}}{0.7,0.58}
+        \dpoint{0.2}{\emph{Simulation button enabled}}{0.35,0.49}
+    \end{annotation}
+
+    You can also see the status of the COE in the bottom left corner. Pressing here brings up the COE Console, which shows output from the COE and allows you to stop and launch the COE. Pressing the button again will hide the console.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 240,clip]{figures/threetankGreen2}
+        \usquare{2cm}{0.25cm}{0.2}{Show / hide COE Console}{0.082,0.07}
+        \dsquare{9.3cm}{4.7cm}{0.725}{COE Console}{0.628,0.54}
+    \end{annotation}
+
+\newpage
+\item When simulating, you may see a Java console windows appearing, status information will appear in the \emph{COE Console}, and a \emph{live plot} will show variables in the model across time.
+
+    \begin{annotation}[width=0.84\linewidth]{figures/threetankPlot}
+        \upoint{0.6}{\emph{Simulation progress}}{0.61,0.9}
+        \rpoint{0.55}{\emph{Water level}}{0.925,0.55}
+        \rpoint{0.35}{\emph{Valve state}}{0.925,0.35}
+        %\dsquare{7cm}{7cm}{0.6}{\emph{Live plot}}{0.62,0.35}
+    \end{annotation}
+
+    This multi-model is of a water tank system. The live plot shows the water level in one of the tanks that is constantly being filled, and the state of the valve (1 = open, 0 = closed) that allows water to flow out of the tank. You can see the water level rise and fall as the controller opens and closes the valve. The water tank was modelled in 20-sim and the controller modelled in VDM.
+
+    \bigskip
+    \bigskip
+    {\large\bfseries Congratulations!}
+
+    You have completed your first co-simulation with the INTO-CPS Application.
+
+\end{instructions}
+
+\newpage
+\section{Changing Co-simulation Parameters}
+
+\begin{instructions}
+\item We can change the length of the co-simulation, the parameters of the master algorithm, and the variables that are plotted using the \emph{Configuration} pane of the co-simulation configuration. Expand the pane by pressing the triangle.
+
+    \begin{annotation}[width=0.84\linewidth,trim=0 405 0 0,clip]{figures/configPaneCollapsed}
+        \rcircle{0.15cm}{0.34}{\emph{Expand}}{0.939,0.34}
+    \end{annotation}
+
+\item Press the \emph{Edit} button, which allows you to make changes, then press \emph{Basic Configuration}. Set the \emph{End time} to 40 (seconds).
+
+    \begin{annotation}[width=0.84\linewidth,trim=0 100 0 0,clip]{figures/configPaneEdit}
+        \usquare{1.1cm}{0.2cm}{0.1}{1. Edit}{0.33,0.69}
+        \usquare{8.2cm}{0.2cm}{0.4}{2. Basic Configuration}{0.617,0.625}
+        \upoint{0.8}{3. End time = 40}{0.6,0.49}
+    \end{annotation}
+
+\item Press \emph{Live Plotting}.
+
+    \begin{annotation}[width=0.84\linewidth,trim=0 350 0 0,clip]{figures/configPaneEdit2}
+        \usquare{8.2cm}{0.2cm}{0.4}{Live Plotting}{0.617,0.325}
+    \end{annotation}
+
+Scroll down to find \textbf{{tank1}.tank1} and check \emph{Tank1WaterLevel}.
+
+    \begin{annotation}[width=0.84\linewidth,trim=0 250 0 200,clip]{figures/configPaneEdit3}
+        \ucircle{0.15cm}{0.3}{Tank1WaterLevel}{0.487,0.486}
+    \end{annotation}
+
+\item Press the \emph{Save} button.
+
+    \begin{annotation}[width=0.84\linewidth,trim=0 0 0 370,clip]{figures/configPaneSave}
+        \usquare{1.3cm}{0.25cm}{0.335}{\emph{Save}}{0.335,0.91}
+    \end{annotation}
+
+\item Run the co-simulation again with the \emph{Simulate} button. You will see a new variable on the graph, and that the co-simulation runs for a further 10 (simulated) seconds than before.
+
+    \begin{annotation}[width=0.84\linewidth]{figures/threetankPlot2}
+        \upoint{0.645}{\emph{Tank1WaterLevel}}{0.835,0.755}
+        \dpoint{0.7}{\emph{Longer simulation}}{0.91,0.24}
+    \end{annotation}
+
+\end{instructions}
+
+\section{Viewing a 3D Plot (Windows Only)}
+
+The 20-sim tool is able to create 3D visualisations of simulations, which are linked to variables in a model. These can be included within an FMU generated by 20-sim, however \emph{this feature is currently only available on the Windows platform}.
+
+\begin{instructions}
+\item The \emph{3DAnimationFMU} is included in the multi-model configuration called \emph{3D}. Click the + symbol next to the \emph{3D} multi-model to expand it.
+
+    \begin{annotation}[width=0.53\linewidth,trim=0 0 250 200,clip]{figures/openedProject}
+        \lcircle{0.15cm}{0.678}{\hspace{2.6em}Expand multi-model}{0.037,0.678}
+    \end{annotation}
+
+\item There is one co-simulation configuration in this multi-model, also called \emph{Experiment1}. Double-click this to open this configuration.
+
+    \begin{annotation}[width=0.53\linewidth,trim=0 0 250 200,clip]{figures/Experiment13D}
+        \lsquare{2.5cm}{0.25cm}{0.735}{\hspace{2.3em}Double-click to open}{0.22,0.735}
+    \end{annotation}
+
+\newpage
+\item Click \emph{Simulate}. See Step~\ref{step:launch} if the \emph{Simulate} button is disabled or the COE is offline.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 140 0 110,clip]{figures/threetankGreen3D}
+        \usquare{1.7cm}{0.25cm}{0.5}{Simulate!}{0.348,0.498}
+    \end{annotation}
+
+\item  The \emph{3DAnimationFMU} launches as a Window called \emph{AnimationFrame}.
+
+    \begin{annotation}[scale=0.6]{figures/AnimationFrameIcon}
+    \end{annotation}
+
+    To see the 3D visualisation, you must press the button called \emph{3D}.
+
+    \begin{annotation}[width=0.5\linewidth]{figures/AnimationFrame}
+        \ucircle{0.3cm}{0.7}{Press \emph{3D}}{0.515,0.883}
+    \end{annotation}
+
+\newpage
+\item The \emph{AnimationFrame} window should now show you a 3D scene with water levels changing as seen on the live plot. The valve empties water on to a puddle on the floor.
+
+    \begin{annotation}[width=0.5\linewidth]{figures/AnimationFrameTanks}
+        \upoint{0.25}{\emph{tank1.Tank1WaterLevel}}{0.35,0.56}
+        \upoint{0.8}{\emph{tank2.level}}{0.55,0.56}
+        \dpoint{0.6}{\emph{controller.wt3\_valve}}{0.645,0.145}
+    \end{annotation}
+
+    \textbf{\emph{Warning:}} The \emph{3DAnimationFMU} will crash the COE if the \emph{AnimationFrame} does not have focus when the simulation ends. If this happens, simply relaunch the COE as covered in Step~\ref{step:launch}.
+
+%    \begin{annotation}[width=\linewidth]{figures/COECrash}
+%        \usquare{1.1cm}{0.2cm}{0.35}{2. Launch}{0.441,0.579}
+%        \ucircle{0.1cm}{0.92}{1. Close}{0.97,0.89}
+%    \end{annotation}
+
+\end{instructions}
+
+\end{document}

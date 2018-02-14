@@ -1,0 +1,354 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\title{Tutorial 7 --- SysML for Co-Simulation}
+\date{July 2017}
+\author{Etienne Brosse}
+
+\begin{document}
+
+\section*{Overview}
+
+This set of exercises will show you how to:
+
+\begin{enumerate}[noitemsep]
+\item Create a simple CPS Design
+\item Generate a Co-Simulation
+\item Export a FMI Model Description
+\item Import a FMI Model Description
+
+\end{enumerate}
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item Modelio v3.4.1
+\end{itemize}
+
+You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+
+\vspace{4mm}
+
+You may need to update the INTO-CPS extension for Modelio to utilise DSE components. The extension can be downloaded from \mbox{\url{http://forge.modelio.org/projects/intocps-modelio34/files}}. Version 1.2.05 or later is required for DSE modelling.
+
+\newpage
+
+\section{Opening a Project}
+
+\begin{instructions}
+
+\item Launch \emph{Modelio}. On first loading, you may have to close the \emph{Welcome} screen (you can bring it back with `Help \menusep Welcome' if you need)
+
+\begin{center}
+\begin{annotation}[width=1\linewidth,trim=0 400 0 0,clip]{figures/modelio_start}
+    \ucircle{0.18cm}{0.13}{Close \emph{Welcome} screen}{0.068,0.868}
+    \end{annotation}
+\end{center}
+
+\item A workspace must be chosen, select `File \menusep Switch Workspace’.
+
+\begin{center}
+\begin{annotation}[width=1\linewidth,trim=0 700 0 0,clip]{figures/modelio_workspace}
+    \usquare{3.9cm}{0.1cm}{0.25}{Switch Workspace}{0.135,0.44}
+%    \helpergrid
+    \end{annotation}
+\end{center}
+
+
+\newpage
+
+\item Set the \emph{Workspace} to the location of \emph{Tutorials\pathsep{}Tutorial\_8\pathsep{}SysML} and click \emph{Ok}.
+
+\begin{center}
+\begin{annotation}[width=0.5\linewidth,trim=0 0 0 0,clip]{figures/modelio_workspace_choice}
+    \upoint{0.15}{Path to \emph{Tutorials\pathsep{}Tutorial\_8\pathsep{}SysML}}{0.27,0.42}
+    \rsquare{1.5cm}{0.15cm}{0.1}{Ok}{0.75,0.06}
+%    \helpergrid
+    \end{annotation}
+\end{center}
+
+
+\item Left-click on the \emph{LineFollowRobot} model once on the left to see details of the model. Double-click the \emph{LineFollowRobot} model to open the model.
+
+\begin{center}
+\begin{annotation}[width=1\linewidth,trim=0 300 0 0,clip]{figures/modelio_select_model}
+        \upoint{0.2}{\emph{LineFollowRobot} model}{0.09,0.8}
+        \upoint{0.565}{Model Information}{0.565,0.7}
+%    \helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+ \newpage
+
+\section{Define an Architecture}
+\label{sec:obj_def}
+
+This section describes how to the design of the architecture of your system architecture.  CPS Architecture is mainly composed of an unique System Block and a set of CComponent.
+
+
+\begin{instructions}
+\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Architectural Structure Diagram'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_create_architecture_diagram}
+    \usquare{3.1cm}{0.06cm}{0.2}{Create an Architectural Structure Diagram}{0.8,0.6}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item From the \emph{Toolbox}, select \emph{System} and click on the empty diagram to create the System block. Double click on the created block and change its name to `$Robot$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_system_block}
+    \usquare{2cm}{0.1cm}{0.25}{Create a System Block}{0.13,0.48}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{start_ccomponent_instructions} From the \emph{Toolbox}, select \emph{CComponent} and add it to the diagram. Double click on the created block and change its name to `$Body$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_ccomponent}
+    \usquare{3.2cm}{0.1cm}{0.25}{Create CComponent Body Block}{0.15,0.46}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{composition_instructions}To associate the '$Body$' block with the Robot, select the \emph{Composition} relation from the \emph{Toolbox}, and click first on the `$Robot$' and then on the `$Body$' block.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_connect_body}
+    \usquare{3.2cm}{0.1cm}{0.25}{Create a Composition Relation}{0.18,0.12}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{end_ccomponent_instructions} From the \emph{Toolbox}, select \emph{Flow Port} and add it to the `$Body$' CComponent. Select the block that this creates and F2 to change its name to `$robot\_x$'. On the  \emph{INTO-CPS} property view , change \emph{Type} to `$PType::Real$', and \emph{Direction} to `$Out$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_flowport}
+    \usquare{1.8cm}{0.1cm}{0.25}{Create a Flow Port}{0.1,0.7}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Repeat \ref{end_ccomponent_instructions}  to create the following flow ports to the `$Body$' CComponent:
+\begin{itemize}
+	\item Name: `$robot\_y$', Type: `$PType::Real$', Direction:  `$Out$';
+	\item Name: `$robot\_z$', Type: `$PType::Real$', Direction:  `$Out$';
+	\item Name: `$robot\_theta$', Type: `$PType::Real$', Direction:  `$Out$';
+	\item Name: `$servo\_right\_input$', Type: `$PType::Real$', Direction:  `$In$';
+	\item Name: `$servo\_left\_input$', Type: `$PType::Real$', Direction:  `$In$';
+\end{itemize}
+
+\item Repeat from \ref{start_ccomponent_instructions}  to \ref{end_ccomponent_instructions} to create the following ccomponent and their corresponding ports:
+\begin{itemize}
+	\item Name: `$Sensor1$';
+	\begin{itemize}
+		\item Name: `$robot\_x$', Type: `$PType::Real$', Direction:  `$In$';
+		\item Name: `$robot\_y$', Type: `$PType::Real$', Direction:  `$In$';
+		\item Name: `$robot\_z$', Type: `$PType::Real$', Direction:  `$In$';
+		\item Name: `$robot\_theta$', Type: `$PType::Real$', Direction:  `$In$';
+		\item Name: `$lf\_1\_sensor\_reading$', Type: `$PType::Real$', Direction:  `$Out$';
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+	\item Name: `$Sensor2$';
+	\begin{itemize}
+	\item Name: `$robot\_x$', Type: `$PType::Real$', Direction:  `$In$';
+	\item Name: `$robot\_y$', Type: `$PType::Real$', Direction:  `$In$';
+	\item Name: `$robot\_z$', Type: `$PType::Real$', Direction:  `$In$';
+	\item Name: `$robot\_theta$', Type: `$PType::Real$', Direction:  `$In$';
+	\item Name: `$lf\_1\_sensor\_reading$', Type: `$PType::Real$', Direction:  `$Out$';
+\end{itemize}
+\end{itemize}
+
+
+\begin{itemize}
+	\item Name: `$Controller$';
+	\begin{itemize}
+	\item Name: `$ILeftVal$', Type: `$PType::Real$', Direction:  `$In$';
+	\item Name: `$IRightVal$', Type: `$PType::Real$', Direction:  `$In$';
+	\item Name: `$servo\_right\_out$', Type: `$PType::Real$', Direction:  `$Out$';
+	\item Name: `$servo\_left\_out$', Type: `$PType::Real$', Direction:  `$Out$';
+\end{itemize}
+\end{itemize}
+
+The model should now look like this:
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_architecture_complete}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+
+\end{instructions}
+
+
+\newpage
+
+\section{Design a Connection Diagram}
+
+This section will outline the steps necessary to create a Connection Diagram under Modelio.
+
+\begin{instructions}
+
+\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Connection Diagram'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_create_connection_diagram}
+    \usquare{3.2cm}{0.05cm}{0.3}{Create Connection Diagram}{0.79,0.56}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Select the Block Instance automatically created with the Connection Diagram. On the \emph{INTO-CPS} property view , change \emph{Name} to `$robot2Sensor$', and its \emph{Type} to `$Robot$'.
+
+\item \label{start-instanciation} From the \emph{Toolbox}, select \emph{BlockInstance} and click on the instance element  available on the created diagram to create the a block instance. Select the Block Instance  created and on the \emph{INTO-CPS} property view , change its \emph{Name} to `$controller$', and its \emph{Type} to `$Controller$'
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_controller_instance}
+    \usquare{1.5cm}{0.1cm}{0.25}{Create a Block Instance}{0.05,0.76}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Select `$controller$' block instance in the model outline and right click. Select `Modeller Module \menusep Update instance or part from an existing classifier'. Click \emph{Update} then \emph{OK}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_update_instance}
+    %\usquare{2cm}{0.1cm}{0.5}{Update Block Instance}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Check the created ports inside the model explorer.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/update-instance-result.png}
+    %\usquare{2cm}{0.1cm}{0.5}{Update Block Instance}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{end-instanciation}Drag and Drop the ports from the model explore inside the diagram to unmask them.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/dd-port-result.png}
+    %\usquare{2cm}{0.1cm}{0.5}{Update Block Instance}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Repeat from \ref{start-instanciation}  to \ref{end-instanciation} to create block instance of each CComponent.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/instanciation-result.png}
+    %\usquare{2cm}{0.1cm}{0.5}{Update Block Instance}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item From the \emph{Toolbox}, select \emph{Connector} and draw link from Output port to Input to design all connections.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/connection-result.png}
+    %\usquare{2cm}{0.1cm}{0.5}{Update Block Instance}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+\section{Generating Co-Simulation Configuraton}
+
+This section will outline the steps necessary to generate a Co-simulation configuration in Modelio and include the file to the INTO-CPS app.
+
+\begin{instructions}
+
+\item Find any `$CComponent$' block in the model outline and right click. Select `INTO-CPS \menusep Generate Model Description'. Click \emph{Export} then \emph{OK}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_gen_cosim}
+    %\usquare{2cm}{0.1cm}{0.5}{Export DSE Configuration}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+
+In the INTO-CPS app, this configuration file can be found in `SysML \menusep LineFollowerRobot \menusep config’. Right click the configuration file and select `Create Multi model’.
+
+
+\end{instructions}
+
+\section{Exporting Model Description}
+
+This section will outline the steps necessary to export a CComponent as a FMI Model Description.
+
+\begin{instructions}
+
+\item Select any CComponent block like the `$Controller$' block in the model outline and right click. Select `INTO-CPS \menusep Generate Model Description'. Click \emph{Export} then \emph{OK}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_export_modelDescription.png}
+    %\usquare{2cm}{0.1cm}{0.5}{Export Model Description}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Choose a file name destination.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_export_modelDescription_choose_filename.png}
+    %\usquare{2cm}{0.1cm}{0.5}{Export Model Description}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+
+\section{Importing Model Description}
+
+This section will outline the steps necessary to import an existing Model Description in Modelio.
+
+\begin{instructions}
+
+\item Right click in the Modelio model browser on any \textit{Package} element, then select `INTO-CPS \menusep Import Model Description'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/sysml-reverse.png}
+   % \usquare{2cm}{0.1cm}{0.5}{Import Model DEscription}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item  Select the desired target  file in your computer and click on \textit{Import}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/sysml-reverse-selection.png}
+   % \usquare{2cm}{0.1cm}{0.5}{Import Model DEscription}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+This import command creates an Architecture Structure Diagram describing the interface of an INTO-CPS \emph{CComponent} corresponding to the \texttt{model\allowbreak{}Des\-crip\-tion\allowbreak{}.xml} file imported.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/sysml-reverse-result.png}
+   % \usquare{2cm}{0.1cm}{0.5}{Import Model DEscription}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+\end{instructions}
+
+\end{document}

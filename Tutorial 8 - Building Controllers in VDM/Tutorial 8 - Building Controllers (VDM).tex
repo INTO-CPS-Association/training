@@ -1,0 +1,321 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{listingsVDM}
+\usepackage{lstlinebgrd}
+\usepackage{ifthen}
+
+\title{Tutorial 8 --- Building Controllers in VDM}
+\date{June 2017}
+\author{Ken Pierce}
+
+\begin{document}
+
+\section*{Overview}
+
+This fourth INTO-CPS tutorial will help you to:
+
+\begin{enumerate}[noitemsep]
+\item Generate a more complete controller in VDM using Overture
+\item Add behaviours to deal with realistic behaviours (noise and ambient light)
+\item Add modes for degraded behaviours after sensor failure
+\end{enumerate}
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item INTO-CPS Application
+\item COE (Co-simulation Orchestration Engine) accessible to the Application
+\item Overture including FMU plug-in
+\end{itemize}
+
+Tools can be downloaded through the Application (\emph{Window \menusep Show Download Manager}) or may have been provided on the USB drive at your training session. Please ask if you are unsure.
+
+\section{Make an Overture Project}
+
+We will begin by creating a project in Overture and importing a model description file as in Tutorial 4.
+
+\begin{instructions}
+\item Create a project in Overture called \emph{LFRControllerModal}. If you are unsure, follow Steps 1--6 of Tutorial 4. You can accept the default location (your Overture workspace) in Step 4, or make a folder in your \emph{tutorial\_5\pathsep{}Models} directory and place the project there.
+
+\item Import \emph{tutorial\_5\pathsep{}Models\pathsep{}Controller.modeldescription.xml} using the \emph{Overture FMU \menusep Import Model Description} context menu, as in Steps 7--9 of Tutorial 4.
+
+    You should see the following structure:
+
+    \begin{annotation}[width=0.25\linewidth,trim=0 300 535 0,clip]{figures/OvertureImportedClasses}
+        \rpoint{0.445}{Library of FMI definitions }{0.7,0.425}
+        \rpoint{0.37}{Access input and output ports}{0.97,0.37}
+        \rpoint{0.295}{Architecture of controller model}{0.7,0.315}
+        \rpoint{0.215}{Entry point for execution}{0.7,0.255}
+    \end{annotation}
+
+\end{instructions}
+
+\section{Adding Structure and a Skeleton Controller}
+
+To make a functional controller, we will we will add a \emph{Controller} class to contain the control logic. To provide structure to help with more complicated logic later, we will add classes to represent the \emph{sensors} and \emph{actuators} that manage the interface to the COE (and the physical simulation made in 20-sim). The \emph{Controller} class will use objects of these classes to read the environment and control the robot.
+
+\begin{instructions}
+\item Right-click on the \emph{LFRControllerModal} project and select \emph{New \menusep{} Empty VDM-RT File}. Call is \emph{Controller} and click \emph{Finish}.
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 300 0 0,clip]{figures/OvertureNewEmptyFile}
+        \upoint{0.075}{Right-click...}{0.1,0.572}
+        \upoint{0.4}{\emph{Empty VDM-RT File}}{0.52,0.2}
+    \end{annotation}
+
+\item Paste in the following listing and click \emph{Save}.
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em]
+    {Controller.vdmrt}
+
+    %\lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,
+    %    linebackgroundcolor={
+    %      \ifthenelse{
+    %        \value{lstnumber}=8  \OR
+    %        \value{lstnumber}=9  \OR
+    %        \value{lstnumber}=11 \OR
+    %        \value{lstnumber}=18
+    %      }{\color{black!10}}{}}]
+    %    {System.vdmrt}
+
+\newpage
+\item Repeat the above step to make a file called \emph{IRSensor} and populate it with the listing below. This class provides read access to two FMI ports, one for the sensor reading (\texttt{getReading}) and one to say if the sensor has failed (\texttt{hasFailed}).
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em]
+    {IRSensor.vdmrt}
+
+\item Next, create a file called \emph{Servo} with the listing below. This class provides write access to a port to move the wheels of the robot (\texttt{setSpeed}). The range is -1 to 1 for full forwards or backwards, so a pre-condition is included to protect the operation. Note that since one servo on the robot is flipped over, a reverse flag can be set in the constructor to that setting both servos to 1 makes the robot go forwards at full speed.
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em]
+    {Servo.vdmrt}
+
+\item You should notice in the \emph{VDM Explorer} that \texttt{Controller.vdmrt} has a small red cross next to its icon. This means that there is one or more errors in the definition. In this case, the \texttt{IO} standard library is missing, which can be seen by hovering the mouse pointer over the error in the class. Note that ``out of scope'' either means that the definition is private, or missing entirely.
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 220 0 250,clip]{figures/OvertureMissingIO}
+        \ucircle{0.15cm}{0.15}{Error on this line}{0.237,0.57}
+        \upoint{0.7}{\emph{Definition is missing (or private)}}{0.68,0.72}
+    \end{annotation}
+
+    Add the library by right-clicking the project and selecting \emph{New \menusep{} Add VDM Library}. Then check the \emph{IO} box and click \emph{Finish}. This will add \texttt{IO.vdmrt} to the \texttt{/lib} folder and the error should go away.
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 300 0 0,clip]{figures/OvertureAddVDMLibrary}
+        \ucircle{0.15cm}{0.15}{Error(s) in class}{0.035,0.525}
+        \upoint{0.4}{\emph{Add VDM Library}}{0.5,0.28}
+    \end{annotation}
+
+\item In order to complete this basic controller and make an FMU, we must update the \texttt{System} class to instantiate sensor and actuator objects, then instantiate a controller object with these. Add the following lines to \texttt{System.vdmrt}:
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,
+        linebackgroundcolor={
+          \ifthenelse{
+            \value{lstnumber}=8  \OR
+            \value{lstnumber}=9  \OR
+            \value{lstnumber}=10 \OR
+            \value{lstnumber}=11 \OR
+            \value{lstnumber}=12 \OR
+            \value{lstnumber}=13 \OR
+            \value{lstnumber}=14 \OR
+            \value{lstnumber}=15 \OR
+            \value{lstnumber}=16 \OR
+            \value{lstnumber}=23 \OR
+            \value{lstnumber}=24 \OR
+            \value{lstnumber}=25 \OR
+            \value{lstnumber}=26 \OR
+            \value{lstnumber}=27 \OR
+            \value{lstnumber}=29 \OR
+            \value{lstnumber}=30 \OR
+            \value{lstnumber}=31 \OR
+            \value{lstnumber}=32 \OR
+            \value{lstnumber}=33 \OR
+            \value{lstnumber}=34 \OR
+            \value{lstnumber}=35 \OR
+            \value{lstnumber}=36 \OR
+            \value{lstnumber}=37
+          }{\color{black!10}}{}}]
+    {System.vdmrt}
+
+\item Finally, uncomment line 8 of \texttt{World.vdmrt} to ensure that the controller logic will be started at the beginning of co-simulation:
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,
+        linebackgroundcolor={
+          \ifthenelse{
+            \value{lstnumber}=8
+          }{\color{black!10}}{}}]
+    {World.vdmrt}
+
+\item You can now test the project in INTO-CPS by exporting an FMU and pasting it into the \emph{tutorial\_5\pathsep{}FMUs} (follow Steps 16--19 of Tutorial 4). Then you can then open \emph{tutorial\_5} in the \emph{INTO-CPS Application} and co-simulate with the \emph{lfr-3d} or \emph{lfr-non3d} multi-models. You should see the output from the VDM controller in the COE output:
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 70 0 0,clip]{figures/INTOSensorReadings}
+        \usquare{14cm}{0.1cm}{0.5}{\emph{Lines printed via \texttt{IO} appear here}}{0.5,0.63}
+    \end{annotation}
+
+    As you can see from the live graph (and 3D visualisation), the left sensor is over black (low) and the right sensor is over white (high). The range is (0,255).
+
+\end{instructions}
+
+\newpage
+\section{A Basic Controller}
+
+We will now add some basic line following logic. A so-called ``bang-bang'' controller turns left if the line is to the left, and right if the line is to the right. This creates a characteristic zig-zag motion.
+
+\begin{instructions}
+
+\item The control logic in the \texttt{Controller} class is in the \texttt{Step} operation. This is called periodically. Add an \texttt{if} statement to the \texttt{Step} operation to turn the robot to the left if the left sensor is over black and the right sensor is over white. You can assume that a sensor reading over 150 (halfway) is white and below 150 is black. You can drive the robot left and forward using the following calls:
+
+    \bigskip
+    \begin{vdm}[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em]
+    leftServo.setSpeed(0);
+    rightServo.setSpeed(0.8)
+    \end{vdm}
+
+    Changing the values will make the robot turn more or less. If both values are the same, the robot will move forwards or backwards in a straight line. If both values are exactly opposite (e.g. -1 and 1), the robot will turn on the spot.
+
+\item Add an \texttt{else if} clause to this statement to turn right if the left sensor is over white and the right sensor is over black.
+
+\item Add an \texttt{else if} clause to go forwards if both sensors are over black.
+
+\item Re-generate your FMU and check that the robot follows the line. If not, you can add \texttt{print} statements to your if-statement to check what conditions are being triggered.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 150,clip]{figures/INTOFollowingLine}
+        \upoint{0.5}{Zig-zag behaviour demonstrating line following}{0.47,0.87}
+    \end{annotation}
+\end{instructions}
+
+
+\section{Dealing with Noisy Data}
+
+The sensor model contains some \emph{realistic} and \emph{faulty} behaviours, which can be turned on or off from the INTO-CPS Application in the multi-model configuration. The first realistic behaviour is sensor noise. This occurs when converting analogue readings to a digital values, and results in readings that bounce up and down.
+
+\begin{instructions}
+
+\item Edit the \emph{Initial values of parameters} for \emph{\{sensorFMU\}.sensor1} and \emph{\{sensorFMU\}.sensor2} and set the \emph{noise\_level} to \emph{4}, where the range is (0,8).
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/INTOParametersNoise}
+        \usquare{8.1cm}{0.1cm}{0.85}{\emph{Set noise\_level}}{0.62,0.23}
+        \dsquare{1.25cm}{0.12cm}{0.5}{Don't forget to \emph{Save} configuration}{0.348,0.07}
+    \end{annotation}
+
+\newpage
+\item Run the co-simulation and observe the curve of the sensor readings now shows a noisy signal.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/INTOSensorNoise}
+        \usquare{7cm}{1cm}{0.15}{\emph{Noisy readings}}{0.62,0.65}
+    \end{annotation}
+
+\item To cope with this noise we will add a filter that provides a floating average of the last five readings. Create a file called \texttt{FilteredIRSensor.vdmrt} and populate it from the listing below. This class is defined as a \emph{subclass} of \texttt{IRSensor} so it can be passed seamlessly to the \texttt{Controller} class. It encapsulates an \texttt{IRSensor} object, so it can intercept the readings and provide a filtered value:
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,        linebackgroundcolor={
+          \ifthenelse{
+            \value{lstnumber}=24
+          }{\color{black!10}}{}}]
+    {FilteredIRSensor.vdmrt}
+
+\item As defined above, the \texttt{getReading} operation simply passes on a value of 0. Extend this operation (at the highlighted line) to store \texttt{reading} in the \texttt{samples} sequence and to calculate the \emph{average} value of the sequence. The samples should store only the 5 newest values. \emph{Hint: the \texttt{\textbf{\^}} operator concatenates lists, \texttt{\textbf{hd}} yields the first item in a list, and \texttt{\textbf{tl}} yields the remainder of a list once the head is removed.}
+
+\item We have to modify the \texttt{System} class create \texttt{FilteredIRSensor} objects and pass them to the controller. Modify \texttt{System} as follows, then run your co-simulation again. You can check your filtered value with the information printed in the COE status window.
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,        linebackgroundcolor={
+          \ifthenelse{
+            \value{lstnumber}=4 \OR
+            \value{lstnumber}=5
+          }{\color{black!10}}{}}]
+    {SystemFilter.vdmrt}
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,        linebackgroundcolor={
+          \ifthenelse{
+            \value{lstnumber}=7  \OR
+            \value{lstnumber}=8  \OR
+            \value{lstnumber}=13 \OR
+            \value{lstnumber}=17 \OR
+            \value{lstnumber}=18
+          }{\color{black!10}}{}}]
+    {SystemFilter2.vdmrt}
+
+\end{instructions}
+
+\newpage
+\section{Dealing with Ambient Light}
+
+The second realistic behaviour is ambient light. The infrared sensor works by shining a beam of infrared light out and looking for a reflection, however the environment can contain a lot of infrared light, e.g. if it's a sunny day. This can make it difficult for the sensor to see black.
+
+\begin{instructions}
+\item  Edit the \emph{Initial values of parameters} for \emph{\{sensorFMU\}.sensor1} and \emph{\{sensorFMU\}.sensor2} and set the \emph{ambient\_light} to \emph{25} (W), where the range is (0,~40).
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 100 0 400,clip]{figures/INTOAmbientLightParameter}
+        \usquare{8.1cm}{0.1cm}{0.2}{\emph{Set noise\_level}}{0.62,0.355}
+    \end{annotation}
+
+\item Run the co-simulation and observe the increased black level.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 250 0 200,clip]{figures/INTOAmbientLightLevel}
+        \usquare{7cm}{1cm}{0.25}{\emph{Increased black level above halfway}}{0.62,0.245}
+    \end{annotation}
+
+\item This can be overcome by adding modal behaviour to the control. Since we know that the left sensor begins over black, we can add a \emph{calibration} mode that takes some readings to determine what value black is and uses this to determine the threshold. The controller can then switch to the existing logic in a \emph{following}. Because the filtering delays the response of the sensor, we should also \emph{wait} briefly before taking the calibration readings.
+
+\item Add the following type to the \texttt{Controller} class:
+
+    \bigskip
+    \begin{vdm}[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em]
+    types
+
+    Mode = <WAIT> | <CALIBRATE> | <FOLLOW>
+    \end{vdm}
+
+\item Add the following instance variables
+
+    \bigskip
+    \begin{vdm}[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em]
+    mode: Mode := <WAIT>;
+    samples: seq of real := [];
+    THRESHOLD: real := 150
+    \end{vdm}
+
+\item Modify the \texttt{Step} operation to include the modal behaviour described above. A simple way is to add a top-level \texttt{if} statement such as:
+
+    \bigskip
+    \begin{vdm}[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em]
+	if mode = <WAIT> then ...
+	elseif mode = <CALIBRATE> then ...
+	elseif mode = <FOLLOW> then ...
+    \end{vdm}
+
+    The \texttt{<WAIT>} should do nothing until the simulation time is at 0.5 seconds (the current simulation in seconds time is given \texttt{time/1e9}), then change \texttt{mode} to \texttt{<CALIBRATE>}. Calibrate mode should add five readings from the \texttt{leftSensor} to the \texttt{samples} list, compute \texttt{threshold} as the average, then change mode to \texttt{<FOLLOW>}. The follow mode should contain your existing logic, but use \texttt{threshold} to determine if a sensor is seeing black and white.
+
+\item Add some \texttt{IO`printf} statements to your controller to indicate when it changes mode, then run the co-simulation and convince yourself the controller is working.
+
+\end{instructions}
+
+\section{Dealing with Sensor Failure}
+
+The faulty behaviour in the sensor model is a complete failure, which will always produce a value of zero. It is possible to follow the line using a single sensor if this occurs. The parameter sets the time, in seconds, when the failure will occur (0 means never).
+
+\begin{instructions}
+\item  Edit the \emph{Initial values of parameters} for \emph{\{sensorFMU\}.sensor1} and set the \emph{lf\_fail\_time} to \emph{2} (s). You can set it later but you have to simulate longer until it triggers. Run the co-simulation to see how the robot behaves after the failure.
+
+\item Extend your controller to add a new mode called \texttt{<SINGLE\_FOLLOW>}. Your controller should switch to this mode if one of the sensors fails, then continue following the line using the remaining working sensor. If both sensors fail the robot should stop. The robot will need to move slower, which is a \emph{degraded behaviour}: where a service is still offered but with lower performance. \emph{Hint: you can follow the line with a single sensor by detecting the edge of the line -- a change from black to white, or vice versa. Also slow means ~0.3 power maximum}.
+
+\item Run the co-simulation again to check that the controller switches mode at the right time, and can now follow the line despite the failed sensor.
+
+\end{instructions}
+
+\section{Additional Exercises}
+
+The suggested layout for the controller logic is not necessarily easily maintainable for larger controllers. Try refactoring the controller to make it more maintainable. Suggestions include:
+
+\begin{itemize}
+\item Moving the logic for each mode, and for mode changes, to auxiliary functions.
+\item Make an object-oriented version using the \emph{State pattern}. Each mode is represented by an object that contains the logic. You can create an abstract mode class that provides access to the sensor and actuators, and empty \texttt{Enter}, \texttt{Step}, and \texttt{Exit} operations. Each mode is then defined as a subclass of this mode, overriding the operations as required. You can permit internal mode changes by allowing modes to return a new mode from their \texttt{Step} operation.
+\end{itemize}
+
+\end{document}

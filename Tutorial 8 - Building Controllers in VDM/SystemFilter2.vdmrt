@@ -1,0 +1,21 @@
+public System : () ==> System
+System () == 
+(
+	-- create sensor and actuator objects
+	leftSensor := new IRSensor(hwi.lfLeftVal, hwi.lfLeftFailFlag);
+	rightSensor := new IRSensor(hwi.lfRightVal, hwi.lfRightFailFlag);
+	leftFilter := new FilteredIRSensor(leftSensor);
+	rightFilter := new FilteredIRSensor(rightSensor);
+	leftServo := new Servo(hwi.servoLeftVal, false);
+	rightServo := new Servo(hwi.servoRightVal, true);
+	
+	-- create controller object
+	controller := new Controller(leftFilter, rightFilter, leftServo, rightServo);
+	
+	-- deploy objects
+	cpu.deploy(controller,  "Controller");
+	cpu.deploy(leftFilter,  "Left sensor");
+	cpu.deploy(rightFilter, "Right sensor");
+	cpu.deploy(leftServo,   "Left servo");
+	cpu.deploy(rightServo,  "Right servo");
+);

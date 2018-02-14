@@ -1,0 +1,577 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\title{Tutorial --- SysML for DSE}
+\date{June 2017}
+\author{Martin Mansfield and Carl Gamble}
+
+\begin{document}
+
+\section*{Overview}
+
+This tutorial will show you how to:
+
+\begin{enumerate}[noitemsep]
+\item Declare the objective functions that will be used to assess the system under test
+\item Define the parameters that will be varied during DSE along with their allowed values
+\item Define which objectives will be used for ranking along with the preference for higher or lower values
+\item Export the configuration for use during DSE
+\end{enumerate}
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item Modelio v3.4.1
+\end{itemize}
+
+You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+
+\vspace{4mm}
+
+You may need to update the INTO-CPS extension for Modelio to utilise DSE components. The extension can be downloaded from \mbox{\url{http://forge.modelio.org/projects/intocps-modelio34/files}}. Version 1.2.05 or later is required for DSE modelling.
+
+\newpage
+
+\section{Opening a Project}
+
+\begin{instructions}
+
+\item Launch \emph{Modelio}. On first loading, you may have to close the \emph{Welcome} screen (you can bring it back with `Help \menusep Welcome' if you need)
+
+\begin{center}
+\begin{annotation}[width=1\linewidth,trim=0 400 0 0,clip]{figures/modelio_start}
+    \ucircle{0.18cm}{0.13}{Close \emph{Welcome} screen}{0.068,0.868}
+    \end{annotation}
+\end{center}
+
+\item A workspace must be chosen, select `File \menusep Switch Workspace’.
+
+\begin{center}
+\begin{annotation}[width=1\linewidth,trim=0 700 0 0,clip]{figures/modelio_workspace}
+    \usquare{3.9cm}{0.1cm}{0.25}{Switch Workspace}{0.135,0.44}
+%    \helpergrid
+    \end{annotation}
+\end{center}
+
+
+\newpage
+
+\item Set the \emph{Workspace} to the location of \emph{Tutorials\pathsep{}Tutorial\_5\pathsep{}SysML} and click \emph{Ok}.
+
+\begin{center}
+\begin{annotation}[width=0.5\linewidth,trim=0 0 0 0,clip]{figures/modelio_workspace_choice}
+    \upoint{0.15}{Path to \emph{Tutorials\pathsep{}Tutorial\_5\pathsep{}SysML}}{0.27,0.42}
+    \rsquare{1.5cm}{0.15cm}{0.1}{Ok}{0.75,0.06}
+%    \helpergrid
+    \end{annotation}
+\end{center}
+
+
+\item Left-click on the \emph{LineFollowRobot} model once on the left to see details of the model. Double-click the \emph{LineFollowRobot} model to open the model.
+
+\begin{center}
+\begin{annotation}[width=1\linewidth,trim=0 300 0 0,clip]{figures/modelio_select_model}
+        \upoint{0.2}{\emph{LineFollowRobot} model}{0.09,0.8}
+        \upoint{0.565}{Model Information}{0.565,0.7}
+%    \helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+
+
+
+
+
+\newpage
+\section{Defining Objectives}
+\label{sec:obj_def}
+
+This section will describe the definition of objectives for use by DSE.  Objectives are characterising measures of performance that may be used to determine the relative benefits of competing designs.  Examples include, as we shall see, the time a robot takes to complete a circuit or the accuracy with which the robot is able to follow a path.
+
+When defining the objectives we first describe them in terms of their name, the script file that will be used to compute them and the ports that will provide the data they require.  Instances of these definitions are then created and the ports either filled with a static value or connected to data exchanged in the multi-model.
+
+\begin{instructions}
+\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Objective Definition Diagram'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_create_diagram}
+    \usquare{2.7cm}{0.1cm}{0.6}{Create Objective Definition Diagram}{0.6,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item From the \emph{Toolbox}, select \emph{DSE Analysis} and click on the empty diagram to create the DSE block.  Double click the block and rename it `$DSE\_Example$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_dse_analysis}
+    \usquare{2cm}{0.1cm}{0.25}{Create DSE Analysis Block}{0.12,0.67}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{start_script_instructions} From the \emph{Toolbox}, select \emph{External Script} and add it to the diagram. Double click the block that this creates and change its name to `$meanSpeed$'. On the left hand side of the editor window, select \emph{ExternalScript} to show INTO-CPS DSE properties. Change \{\}file to `$meanspeed.py$', and close the editor window.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_external_script}
+    \usquare{1.6cm}{0.1cm}{0.25}{Create External Script Block}{0.09,0.64}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item So that objective scripts can later be connected, select the \emph{Port} tool from the toolbox, and click on the External Script block to add a port to it. Click on the new port and change its name to `$1$' in the \emph{Element} editor. Repeat this to add two more ports to the block, named `$2$' and `$3$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_script_interface}
+    \usquare{1.5cm}{0.1cm}{0.15}{Create Port}{0.06,0.59}
+    \ucircle{0.18cm}{0.6}{Add Port to External Script}{0.577,0.61}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+
+\item \label{end_script_instructions}To associate the external script with the DSE, select the \emph{Composition} relation from the \emph{Toolbox}, and click first on the `$DSE\_Example block$', and then on the new `$meanSpeed$' block.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_connect_script}
+    \usquare{2cm}{0.1cm}{0.25}{Create Composition Relation}{0.1,0.55}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Repeat \ref{start_script_instructions} -- \ref{end_script_instructions} to associate the following scripts with the DSE:
+\begin{itemize}
+	\item Name: `$lapTime$', Script: `$lapTime.py$', Ports: `$1,2,3,4$';
+	\item Name: `$maxCrossTrackError$', Script: `$maxCrosstrackError.py$', Ports: `$1,2$';
+	\item Name: `$meanCrossTrackError$', Script: `$meanCrosstrackError.py$', Ports: `$1,2$';
+\end{itemize}
+
+The model should now look like this:
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_odd_complete}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item \label{start_values_instructions} Some objective ports are associated with named values instead of model parts. An example of this is Port `$1$' of `$meanSpeed$'. Right click on the port and select \emph{Add Stereotype}. Double click `ScriptParameter' nested under `INTO-CPS'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_script_st}
+    \usquare{2cm}{0.1cm}{0.25}{Add Stereotype}{0.68,0.57}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{end_values_instructions}Double click the port and select `INTO-CPS \menusep ScriptParameter'. Change \{\}value to `step-size' and close the editor window.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_script_param}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Updated Script Parameter Value}{0.525,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Repeat \ref{start_values_instructions} \& \ref{end_values_instructions} to assign the following script parameters:
+\begin{itemize}
+	\item Port `$1$' of `$lapTime$': Value `$time$';
+	\item Port `$4$' of `$lapTime$': Value `$studentMap$';
+\end{itemize}
+
+\end{instructions}
+
+
+
+
+
+
+\newpage
+\section{Connecting Objectives}
+
+\begin{instructions}
+
+\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Objective Connection Diagram'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_create_diagram}
+    \usquare{2.8cm}{0.1cm}{0.4}{Create Objective Connection Diagram}{0.61,0.62}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Find the `$DSE\_Example$' block in the model outline and drag it onto the empty diagram to add the DSE block created in Part \ref{sec:obj_def}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_analysis}
+    \dsquare{1.5cm}{0.1cm}{0.25}{Include DSE Analysis Block}{0.13,0.19}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item \label{add_obj} Find the `$meanSpeed$' block in the model outline and drag it onto the DSE example block now visible on the diagram. Double click the block that this creates and name the instance `$ms$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_obj}
+    \upoint{0.4}{Include Objective instance in DSE Analysis Block}{0.43,0.76}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Repeat \ref{add_obj} for `$lapTime$', `$maxCrossTrackError$', and `$meanCrossTrackError$', using the instance labels `$lt$', `$mecte$', and `$macte$' respectively.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_complete_obj_includes}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item To link Objectives to the multi-model, find the `$robot2Sensor$' instance in the model overview and drag it onto the diagram to include it in the DSE. \\ \textit{NB drag the block onto empty space, not onto the $DSE\_Example$ block}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_r2s}
+    \usquare{1.5cm}{0.1cm}{0.25}{robot2Sensor instance}{0.14,0.84}
+    \dpoint{0.7}{Include instance in the diagram}{0.83,0.55}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$body$' onto the `$robot2sensor$' instance just created.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_body}
+    \usquare{1.5cm}{0.1cm}{0.25}{body instance}{0.13,0.79}
+    \dpoint{0.45}{Include body instance within robot instance}{0.63,0.5}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Expand the instance of `$body$' (nested under `$robot2sensor$') in the model overview and drag the `$robot\_x$' port onto the body instance just created. Repeat this for the `$robot\_y$' port.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_xy}
+    \usquare{1.5cm}{0.1cm}{0.25}{robot\_x interface}{0.15,0.68}
+    \dpoint{0.5}{Include interface instance within robot body instance}{0.63,0.43}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{obj_link} Finally, select the \emph{Reference} tool from the \emph{Toolbox} and link port `$2$' from `$ms$' to port `$robot\_x$' from `$body$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_ocd_ref}
+    \usquare{1.5cm}{0.1cm}{0.25}{Create Reference}{0.05,0.71}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Repeat \ref{obj_link} to link:
+\begin{itemize}
+	\item `$ms > 3$' to `$body > robot\_y$';
+	\item `$lt > 2$' to `$body > robot\_x$';
+	\item `$lt > 3$' to `$body > robot\_y$';
+	\item `$mecte > 1$' to `$body > robot\_x$';
+	\item `$mecte > 2$' to `$body > robot\_y$';
+	\item `$macte > 1$' to `$body > robot\_x$';
+	\item `$macte > 2$' to `$body > robot\_y$';
+\end{itemize}
+
+The model should now look like this:
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_ocd_ref_complete}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+
+\newpage
+\section{Defining Parameters}
+
+This section will present how to define the parameters that will be varied during a DSE.  In the first part we define the parameters in terms of their name and a set of values that we wish to test. The second step here is to connect the defined parameters to the parameters of the FMUs in the multi-model that we actually want to vary.
+
+If we multiply the cardinality of the set of values for each parameter then we can find the size of the design space.  It is important to keep the design space size in mind since this, along with the time require to run each simulation, may be used to determine if a DSE will complete in a reasonable time.
+
+\begin{instructions}
+
+\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Parameter Definition Diagram'.
+
+\item Find the `$DSE\_Example$' block in the model outline and drag it onto the empty diagram to add the DSE block created in Part \ref{sec:obj_def}.
+
+\item \label{start_par_def} From the \emph{Toolbox}, select \emph{Parameter} and add it to the diagram. Rename the new Parameter block `$S1X$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_add_param}
+    \usquare{2cm}{0.1cm}{0.25}{Create Parameter}{0.09,0.615}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Double click the Parameter block and select `INTO-CPS \menusep Parameter'. Click next to \{\}values to add parameter values. Enter the value `$0.01$' and click `+' to submit the value. Repeat this to add the values `$0.03$' and `$0.05$', then click \emph{OK}. Click \emph{Close} to return to the diagram.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_param_values}
+    \usquare{1cm}{0.95cm}{0.25}{Parameter values}{0.295,0.655}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{end_par_def} To associate the parameter with the DSE, select the \emph{Composition} tool from the \emph{Toolbox}, click first on the `$DSE\_Example block$', and then on the new `$S1X$' block.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_connect_param}
+    \usquare{2cm}{0.1cm}{0.3}{Create Composition Relation}{0.1,0.59}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Repeat \ref{start_par_def} -- \ref{end_par_def} to associate the following parameters with the DSE:
+\begin{itemize}
+	\item Name: `$S1Y$', Values: `$0.01, 0.07, 0.13$';
+	\item Name: `$S2X$', Values: `$-0.01, -0.03, -0.05$';
+	\item Name: `$S2Y$', Values: `$0.01, 0.07, 0.13$';
+\end{itemize}
+
+The model should now look like this:
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_connect_param_complete}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+
+
+\newpage
+\section{Connecting Parameters}
+
+\begin{instructions}
+
+\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Parameter Connection Diagram'.
+
+\item Find the `$DSE\_Example$' block in the model outline and drag it onto the empty diagram to add the DSE block created in Part \ref{sec:obj_def}.
+
+\item \label{add_par} Find the `$S1X$' block in the model outline and drag it onto the DSE example block now visible on the diagram. Double click the block that this creates and name the instance `$s1x$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_param}
+    \upoint{0.45}{Include parameter instance within DSE Analysis block}{0.75,0.75}
+    \dsquare{1cm}{0.1cm}{0.2}{SX1 Parameter instance}{0.18,0.08}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Repeat \ref{add_par} for `$S1Y$', `$S2X$', and `$S2Y$', using the instance labels `$s1y$', `$s2x$', and `$s2y$' respectively.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_param_complete}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+
+\item To link Parameters to the multi-model, find the `$robot2Sensor$' instance in the model overview and drag it onto the diagram to include it in the DSE \\ \textit{(NB drag the block onto empty space, not onto the DSE\_Example block)}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_pcd_include_r2s}
+    \usquare{2cm}{0.1cm}{0.25}{robot2Sensor instance}{0.15,0.84}
+    \dpoint{0.55}{Include instance in the diagram}{0.81,0.45}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item \label{add_sensor} Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$sensor1$' onto the `$robot2sensor$' instance just created. This block should include the attributes `$lf\_position\_x$' and `$lf\_position\_y$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_sensor}
+    \usquare{1.5cm}{0.1cm}{0.05}{sensor1 instance}{0.14,0.73}
+    \upoint{0.73}{Include instance within robot2Sensor instance}{0.7,0.48}
+    \dpoint{0.5}{Sensor attributes}{0.65,0.36}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Repeat \ref{add_sensor} to include `$sensor2$' in the `$robot2sensor$' block.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_sensors}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{link_par} Finally, select the \emph{Reference} tool from the \emph{Toolbox} and link parameter `$s1x$' to attribute `$lf\_position\_x$' from `$sensor1$'.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_ref_param}
+    \usquare{1.5cm}{0.1cm}{0.25}{Create Reference}{0.07,0.69}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Repeat \ref{link_par} to link:
+\begin{itemize}
+	\item `$s1y$' to `$sensor1 > lf\_position\_y$';
+	\item `$s2x$' to `$sensor2 > lf\_position\_x$';
+	\item `$s2y$' to `$sensor2 > lf\_position\_y$';
+\end{itemize}
+
+The model should now look like this:
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_ref_param_complete}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+
+
+
+\newpage
+\section{Ranking Results}
+
+In DSE all the designs are essentially competing to be considered the best and in this section will present how to define the way in which competing are compared.  Here we are going to declare which of the objectives should be used to compare competing designs and whether there is a preference for lower or higher values for each of the objectives.
+
+\begin{instructions}
+
+\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Ranking Diagram'.
+
+\item Find the `$DSE\_Example$' block in the model outline and drag it onto the empty diagram to add the DSE block created in Part \ref{sec:obj_def}.
+
+\item \label{start_add_rank} Double click on the `$lapTime$' objective in the model outline. Click `ExternalScript' nested under `INTO-CPS'. Assign the value `$-$' to \{\}weight and close the editor window.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_obj_weight}
+    \dsquare{1.5cm}{0.1cm}{0.15}{Edit lapTime}{0.11,0.29}
+    \usquare{1.5cm}{0.1cm}{0.55}{Select ExternalScript}{0.48,0.75}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Expand the `$DSE\_Example$' block in the model outline and drag the nested instance `$lt$' onto the DSE example block now visible on the diagram.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_rank_include_obj}
+    \upoint{0.6}{Include instance within DSE Analysis block}{0.74,0.85}
+    \dsquare{1.5cm}{0.1cm}{0.25}{lt instance}{0.24,0.13}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item Select the Note tool from the toolbox and click on the `$lt$' block just created. Click on a clear space in the diagram to create the description block.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_add_note}
+    \usquare{2cm}{0.1cm}{0.25}{Create Note}{0.08,0.625}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+\item \label{end_add_rank} Double click the description block to edit the note text. Deselect the `HTML' option and paste the text \mbox{`$weight = -1.0$'}. Close the description window to update the diagram.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_note_text}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item Repeat \ref{start_add_rank} -- \ref{end_add_rank} to set the \{\}weight property of `$meanCrossTrackError$' and add the `$mecte$' objective instance with the description \mbox{`$weight = -1.0$'}.
+
+The model should now look like this:
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_ranking_complete}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+
+\end{instructions}
+
+\newpage
+
+\section{Exporting DSE Configuraton}
+
+This section will outline the steps necessary to generate a DSE configuration in Modelio and include the file to the INTO-CPS app.
+
+\begin{instructions}
+
+\item Find the `$DSE\_Example$' block in the model outline and right click. Select `INTO-CPS \menusep GenerateDSE'. Click \emph{Export} then \emph{OK}.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_gen_dse}
+    \usquare{2cm}{0.1cm}{0.5}{Export DSE Configuration}{0.71,0.63}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+
+In the INTO-CPS app, this configuration file can be found in `SysML \menusep LineFollowerRobot \menusep config’. Right click the configuration file and select `Create DSE Configuration’.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/app_moveDSEConfig}
+    \dsquare{2.3cm}{0.1cm}{0.25}{Create and Open DSE}{0.24,0.235}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\newpage
+
+The configuration will be moved to the DSE directory and opened. The DSE can now be viewed, edited, or started. This will be covered in Tutorial 6.
+
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/app_DSEConfigMoved}
+    %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\end{instructions}
+
+\end{document} 

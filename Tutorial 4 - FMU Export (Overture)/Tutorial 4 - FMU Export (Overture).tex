@@ -1,0 +1,372 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{listingsVDM}
+\usepackage{lstlinebgrd}
+\usepackage{ifthen}
+
+\title{Tutorial 4 --- FMU Export (Overture)}
+\date{October 2016}
+\author{Ken Pierce and Richard Payne}
+
+\begin{document}
+
+\section*{Overview}
+
+This third INTO-CPS tutorial will show you how to:
+
+\begin{enumerate}[noitemsep]
+\item Generate a new controller FMU in Overture
+    \begin{enumerate}[noitemsep]
+        \item Import a model description into Overture
+        \item Complete the skeleton model to produce a working controller
+        \item Export the controller FMU
+    \end{enumerate}
+\item Associate the new controller FMU with a multi-model configuration
+\item Execute a co-simulation using the new controller
+\end{enumerate}
+
+%Note that a version of this tutorial that includes extension of the SysML to include the new controller is available as \emph{Tutorial 3 --- Generating FMUs}.
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item INTO-CPS Application
+\item COE (Co-simulation Orchestration Engine) accessible to the Application
+\item Overture and the FMU plug-in extension
+\end{itemize}
+
+You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+
+\section{Creating a Project in Overture}
+
+The example in this tutorial is a small line-following robot with two infrared sensors. We will generate a controller FMU that reads these sensors and controls the wheels to follow the line. First we will create a project.
+
+\begin{instructions}
+\item Open \emph{Overture}. It will prompt you to select a location for its workspace. You may accept the default location by pressing \emph{OK}, or press \emph{Browse...} to select a different location. If you do not want to be prompted in future, check \emph{Use this as the default and do not ask again}.
+
+    \begin{annotation}[width=0.7\linewidth]{figures/OvertureWorkspace}
+        \usquare{1.7cm}{0.25cm}{0.5}{Accept location}{0.745,0.095}
+    \end{annotation}
+
+    \newpage
+    This is the \emph{Overture} window, which includes a project list, file editor and a console.
+
+    \begin{annotation}[width=\linewidth]{figures/OvertureBlank}
+        \usquare{3.3cm}{7.2cm}{0.08}{Project list}{0.115,0.57}
+        \usquare{7.5cm}{7.2cm}{0.4}{File editor}{0.49,0.57}
+        \dsquare{14.65cm}{2.8cm}{0.48}{Console and information}{0.5,0.127}
+    \end{annotation}
+
+\item First create a project that will hold the controller model. Select \emph{File \menusep New \menusep Project...}.
+
+    \begin{annotation}[width=\linewidth,trim=0 250 0 0,clip]{figures/OvertureNewProject}
+        \upoint{0.05}{\emph{File \menusep}}{0.016,0.92}
+        \upoint{0.14}{\emph{New \menusep}}{0.06,0.85}
+        \upoint{0.24}{\emph{Project...}}{0.38,0.85}
+    \end{annotation}
+
+\newpage
+\item In the \emph{New Project} window, select \emph{VDM-RT Project} and click \emph{Next \menusep} to go to the next step.
+
+    \begin{annotation}[width=0.6\linewidth]{figures/OvertureProjectWizard1}
+        \dsquare{1.7cm}{0.12cm}{0.48}{Continue to next step}{0.5,0.054}
+        \rpoint{0.63}{\emph{VDM-RT} project type}{0.3,0.63}
+    \end{annotation}
+
+\item The next screen asks for a name for the project. Call it \emph{LFRController}. We will place the project in the \emph{tutorial\_3\pathsep{}Models} folder, so uncheck \emph{Use default location} and click \emph{Browse...}
+
+    \begin{annotation}[width=0.6\linewidth]{figures/OvertureProjectWizard2}
+        \rpoint{0.75}{1. Type \emph{LFRController}}{0.35,0.75}
+        \rcircle{0.15cm}{0.7}{2. Uncheck \emph{Use default location}}{0.043,0.68}
+        \rsquare{1.7cm}{0.12cm}{0.63}{3. Click \emph{Browse...}}{0.878,0.63}
+    \end{annotation}
+
+\newpage
+\item Locate and select the folder \emph{tutorial\_3\pathsep{}Models\pathsep{}LFRController} and click \emph{OK}.
+
+    \begin{annotation}[width=0.55\linewidth]{figures/OvertureBrowseLFR}
+        \rpoint{0.47}{1. Locate and select \emph{LFRController}}{0.52,0.47}
+        \dsquare{1.3cm}{0.12cm}{0.63}{2. Click \emph{OK}}{0.718,0.065}
+    \end{annotation}
+
+\item Finally click \emph{Finish} to create the project.
+
+    \begin{annotation}[width=0.6\linewidth]{figures/OvertureProjectWizard3}
+        \dsquare{1.8cm}{0.12cm}{0.63}{2. Click \emph{Finish}}{0.695,0.057}
+    \end{annotation}
+
+    You should see the new project in the project list.
+
+    \begin{annotation}[width=\linewidth,trim=0 400 0 0,clip]{figures/OvertureBlankProject}
+        \upoint{0.63}{\emph{LFRController} project}{0.135,0.255}
+    \end{annotation}
+
+\end{instructions}
+
+\section{Importing a Model Description into Overture}
+
+Overture can import model description files to create a skeleton project with the correct input, output and parameter ports, as well as standard boilerplate elements needed in a VDM-RT model.
+
+\begin{instructions}
+
+\item To import a model description, right-click on the \emph{LFRController} project and select \emph{Overture FMU \menusep Import Model Description}.
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 25 0 0,clip]{figures/OvertureImportModelDescription}
+        \upoint{0.075}{Right-click...}{0.06,0.803}
+        \upoint{0.27}{\emph{Overture FMU \menusep}}{0.33,0.163}
+        \upoint{0.51}{\emph{Import Model Description}}{0.573,0.068}
+    \end{annotation}
+
+\item Locate the file \emph{tutorial\_3\pathsep{}VDM\pathsep{}Controller.modeldescription.xml} that is included in the project and click \emph{Open}.
+
+%\item Locate the \emph{Controller.modeldescription.xml} file that you exported from Modelio earlier and click \emph{Open}.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/OvertureFindModelDescription}
+        \upoint{0.37}{Locate and select \emph{Controller.modeldescription.xml}}{0.3,0.6}
+        \dsquare{1.5cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.788,0.082}
+    \end{annotation}
+
+\item Overture will parse the file and populated the project. You can see status messages from the import in the \emph{Console}. Expand the \emph{LFRController} project to see what was imported.
+
+    \begin{annotation}[width=0.99\linewidth]{figures/OvertureImportStatus}
+        \ucircle{0.15cm}{0.13}{Expand \emph{LFRController}}{0.018,0.797}
+        \dsquare{5cm}{1.6cm}{0.3}{Import status}{0.17,0.15}
+    \end{annotation}
+
+    You should see the following structure:
+
+    \begin{annotation}[width=0.25\linewidth,trim=0 300 535 0,clip]{figures/OvertureImportedClasses}
+        \rpoint{0.445}{Library of FMI definitions }{0.7,0.425}
+        \rpoint{0.37}{Access input and output ports}{0.97,0.37}
+        \rpoint{0.295}{Architecture of controller model}{0.7,0.315}
+        \rpoint{0.215}{Entry point for execution}{0.7,0.255}
+    \end{annotation}
+
+\end{instructions}
+
+\newpage
+\section{Adding a Controller Class}
+
+To make a functional controller, we will add a \emph{Controller} class and instantiate it as an object in the \emph{System} class, and set the \emph{World} to start the controller thread. A basic controller class is included in the \emph{tutorial\_3} project.
+
+\begin{instructions}
+\item Locate the file \emph{tutorial\_3\pathsep{}VDM\pathsep{}Controller.vdmrt} on on your file system and copy it.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/OvertureFindController}
+    \end{annotation}
+
+\item Right-click on right-click on the \emph{LFRController} project and select \emph{Paste}.
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 335 0 0,clip]{figures/OverturePasteController}
+        \upoint{0.075}{Right-click...}{0.06,0.503}
+        \upoint{0.27}{\emph{Paste}}{0.23,0.188}
+    \end{annotation}
+
+\item Double-click \emph{System.vdmrt} to open the \texttt{System} class.
+
+    \begin{annotation}[width=0.98\linewidth,trim=0 335 0 0,clip]{figures/OvertureSystemOpen}
+        \upoint{0.075}{Double click...}{0.1,0.17}
+    \end{annotation}
+
+\newpage
+\item \label{step:system} Add the highlighted lines to \emph{System.vdmrt}. This will define a \texttt{controller} object of the \texttt{Controller} class and instantiate it.
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,
+    linebackgroundcolor={
+      \ifthenelse{
+        \value{lstnumber}=8  \OR
+        \value{lstnumber}=9  \OR
+        \value{lstnumber}=11 \OR
+        \value{lstnumber}=18
+      }{\color{black!10}}{}}]
+    {System.vdmrt}
+
+\item \label{step:world} Double-click \emph{World.vdmrt} to open the \texttt{World} class. Uncomment the highlighted line to tell the controller thread to start at the beginning of co-simulation.
+
+    \bigskip
+    \lstinputlisting[style=styleVDM,basicstyle=\ttfamily\scriptsize,xleftmargin=0em,
+    linebackgroundcolor={
+      \ifthenelse{
+        \value{lstnumber}=8
+      }{\color{black!10}}{}}]
+    {World.vdmrt}
+
+\item Ensure that your model has no errors. If it does, a red cross will appear next to the file icon in the project browser. (You might have to refresh the project by right-clicking and selecting \emph{Refresh} to see these.)
+
+    \begin{annotation}[width=0.25\linewidth,trim=0 340 535 60,clip]{figures/OvertureErrors}
+        \rpoint{0.055}{Class with syntax or type error}{0.67,0.055}
+    \end{annotation}
+
+    Check that you have correctly replicated the listings from Steps 13 and 14. Look at the \emph{Problems} tab at the bottom for information, and double-click items to take you to the problem in the file editor.
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 0 0 400,clip]{figures/OvertureErrors}
+        \dsquare{4.5cm}{0.12cm}{0.3}{Double-click to go to the problem}{0.2,0.36}
+    \end{annotation}
+
+\end{instructions}
+
+\section{Exporting an FMU and Adding it to a Multi-model}
+
+Now that the controller model is complete, we can export an FMU and place it in the \emph{tutorial\_3} where the INTO-CPS Application can see it.
+
+\begin{instructions}
+\item \label{step:exp1} To export an FMU, right-click on the \emph{LFRController} project and select \emph{Overture FMU \menusep Export Tool Wrapper FMU}.
+
+    \begin{annotation}[width=0.99\linewidth]{figures/OvertureExportFMU}
+        \upoint{0.075}{Right-click...}{0.06,0.803}
+        \upoint{0.27}{\emph{Overture FMU \menusep}}{0.33,0.205}
+        \upoint{0.516}{\emph{Export Tool Wrapper FMU}}{0.5,0.205}
+    \end{annotation}
+
+\newpage
+\item Refresh the project so that the generated FMU appears. To do this, right-click on the project and select \emph{Refresh}.
+
+    \begin{annotation}[width=0.99\linewidth,trim=0 250 0 0,clip]{figures/OvertureNeedToRefresh}
+        \upoint{0.075}{Right-click...}{0.06,0.803}
+        \upoint{0.27}{\emph{Refresh}}{0.24,0.073}
+    \end{annotation}
+
+\item A new folder called \emph{generated} will appear. Expand this to see \emph{LFRController.fmu}. Select \emph{LFRController.fmu} and copy it using \emph{Ctrl+C} or right-clicking and selecting \emph{Copy}.
+
+    \begin{annotation}[width=0.25\linewidth,trim=0 340 535 60,clip]{figures/OvertureFMUMade}
+        \ucircle{0.15cm}{0.3}{Right-click...}{0.085,0.64}
+        \rsquare{2.5cm}{0.12cm}{0.45}{\emph{Copy}}{0.6,0.45}
+    \end{annotation}
+
+\item \label{step:exp2} Paste \emph{LFRController.fmu} into the \emph{tutorial\_3\pathsep{}FMUs} folder on your file system.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/OverturePasteFMU}
+    \end{annotation}
+
+\end{instructions}
+
+\newpage
+\section{Co-simulating with the New Controller}
+
+\begin{instructions}
+\item Launch the \emph{INTO-CPS Application} and select \emph{File \menusep Open Project}. Set the \emph{Project root path} to the location of \emph{Tutorials\pathsep{}tutorials\_4} and click \emph{Open}. You can browse using the \emph{Folder} button.
+
+    \begin{annotation}[width=0.35\linewidth,trim=0 0 0 0,clip]{figures/INTOOpenProject}
+    \upoint{0.45}{Path to \emph{Tutorials\pathsep{}tutorials\_4}}{0.33,0.7}
+    \dsquare{1.2cm}{0.25cm}{0.5}{Open project}{0.4,0.4}
+    %\helpergrid
+    \end{annotation}
+
+    You should see the newly export \emph{LFRController} FMU in the list.
+
+    \begin{annotation}[height=0.5\linewidth,trim=0 125 250 0,clip]{figures/INTOnewFMU}
+        \lpoint{0.62}{Newly created FMU}{0.06,0.62}
+    \end{annotation}
+
+\item In the SysML entry of the project browser, expand the \emph{LineFollowRobot} folder, then \emph{config} folders. Right-click on \emph{3DRobot} and select \emph{Create Multi-Model}.
+
+    \begin{annotation}[width=0.35\linewidth,trim=0 40 375 300,clip]{figures/into_create_mm}
+        \rpoint{0.7}{Expand to locate \emph{3DRobot}}{0.53,0.63}
+        \rsquare{2.7cm}{0.5cm}{0.5}{Create Multi-model}{0.68,0.5}
+    \end{annotation}
+
+\newpage
+\item We now need to associate FMUs to the multi-model as we did in \emph{Tutorial 2}. Scroll down to find the \emph{Configuration} panel and expand it by clicking the arrow.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 250,clip]{figures/INTOExpandConfig}
+        \dcircle{0.15cm}{0.8}{Expand \emph{Configuration}}{0.938,0.148}
+    \end{annotation}
+
+\item Scroll down and click \emph{Edit}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 260,clip]{figures/INTOEditConfig}
+        \dsquare{1.1cm}{0.12cm}{0.8}{\emph{Edit} configuration}{0.332,0.455}
+    \end{annotation}
+
+\item As in \emph{Tutorial 2}, in the FMUs section press \emph{File} next to the Controller element, \emph{c}. A file browser window will open and show five FMUs (if the file browser does not show the FMUs, navigate to \emph{tutorials\_4\pathsep{}FMUs}). Select \emph{FMUController.fmu} and click \emph{Open}.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/FMUFindFile}
+        \upoint{0.37}{1. Locate and select \emph{FMUController.fmu}}{0.3,0.52}
+        \dsquare{1.5cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.788,0.0758}
+    \end{annotation}
+
+\item Repeat this for the remaining elements:
+    \begin{itemize}
+        \item \emph{b} : \emph{Body\_Block.fmu}
+        \item \emph{3D} : \emph{3DanimationFMU.fmu}
+        \item \emph{sensor1} : \emph{Sensor\_Block\_01.fmu}
+    \item \emph{sensor2} : \emph{Sensor\_Block\_02.fmu}
+    \end{itemize}
+
+    The complete set of FMUs will look like this:
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/INTOFMUsDone}
+    \usquare{9cm}{12.7cm}{0.58}{FMUs added}{0.616,0.47}
+    \end{annotation}
+
+\newpage
+\item Scroll down to the \emph{Initial values of parameters section}, and click \emph{\{sensor1\}.sensor1}. In the \emph{Parameters} section, enter the following values:
+
+    \begin{itemize}
+        \item \emph{lf\_position\_y} = 0.065
+        \item \emph{lf\_position\_x} = 0.01
+    \end{itemize}
+
+    \begin{annotation}[width=0.8\linewidth]{figures/INTOParams}
+        \dpoint{0.1}{\emph{lf\_position\_y}}{0.28,0.28}
+        \dpoint{0.5}{\emph{lf\_position\_x}}{0.42,0.15}
+    \end{annotation}
+
+\item Repeat the previous step for the second sensor, \emph{\{sensor2\}.sensor2}, with the following values:
+
+    \begin{itemize}
+        \item \emph{lf\_position\_x} = -0.01
+        \item \emph{lf\_position\_y} = 0.065
+    \end{itemize}
+
+\item \emph{Save} the \emph{Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 250,clip]{figures/INTOSaveConfig}
+        \dsquare{1.25cm}{0.12cm}{0.5}{\emph{Save} configuration}{0.338,0.18}
+    \end{annotation}
+
+\item Right-click on the new multi-model configuration and select \emph{Create Co-simulation Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 120 0 130,clip]{figures/INTOCreateCoSim}
+        \dsquare{3.85cm}{0.12cm}{0.5}{\emph{Create Co-Simulation Configuration}}{0.293,0.52}
+    \end{annotation}
+
+\item Set the \emph{Step size} to 0.01. Don't forget to press \emph{Edit} then \emph{Save}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/INTOSetSimTime}
+        \usquare{1.25cm}{0.12cm}{0.3}{\emph{Edit} then \emph{Save}}{0.338,0.722}
+        \ucircle{0.15cm}{0.8}{Expand \emph{Configuration}}{0.94,0.795}
+        \dpoint{0.7}{Set \emph{Step size}}{0.64,0.08}
+    \end{annotation}
+
+\item Check \emph{lf\_1\_sensor\_reading} from \emph{\{sensor1\}.sensor1} and \emph{\{sensor2\}.sensor2} to see the sensor values appear in the \emph{Live\-stream Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 230 0 250,clip]{figures/INTOPlotSensor}
+    \end{annotation}
+
+\item Launch the COE if necessary (see \emph{Tutorial 1 --- First Co-simulation} for a reminder if needed).
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 270 0 120,clip]{figures/INTOLaunchCOE}
+        \usquare{1.25cm}{0.12cm}{0.8}{\emph{Launch} COE}{0.865,0.42}
+    \end{annotation}
+
+\item When the COE is running, click the \emph{Simulate} button. The \emph{Animation Frame} should appear. You can click the \emph{3D} button to see the 3D visualisation of the robot.
+
+    \begin{annotation}[width=0.55\linewidth,trim=0 0 0 0,clip]{figures/into_coe_3d_toggle}
+        \rcircle{0.32cm}{0.8}{3D Button}{0.52,0.88}
+    \end{annotation}
+
+\item If everything went well, the robot should follow the line as in \emph{Tutorial 2 --- Adding FMUs}.
+
+    \begin{annotation}[width=0.55\linewidth,trim=0 300 0 0,clip]{figures/into_coe_3d_results}
+    \end{annotation}
+
+    You can go back to \emph{Overture} and look at the logic in \texttt{Controller.vdmrt}, and try to make some changes. Just repeat \ref{step:exp1} to \ref{step:exp2} to regenerate and copy the FMU, then press \emph{Simulate}.
+
+\end{instructions}
+
+\end{document}

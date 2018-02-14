@@ -1,0 +1,26 @@
+class Servo
+
+instance variables
+
+-- access to ports from co-simulation
+port: RealPort;
+reversed: bool
+
+operations
+
+-- constructor for Servo
+public Servo: RealPort * bool ==> Servo
+Servo(p,r) == (
+	port := p;
+	reversed := r
+);
+
+public setSpeed: real ==> ()
+setSpeed(value) == (
+	if reversed 
+	then port.setValue(-value)
+	else port.setValue(value)
+)
+pre -1 <= value and value <= 1
+
+end Servo
