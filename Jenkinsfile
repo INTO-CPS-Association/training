@@ -23,6 +23,12 @@ node {
     }
 
 
+    stage ('Build Tutorials'){
+        dir('methods'){
+           sh "latexmk -pdf -bibtex -f INTO-CPS_Method_Guidelines.tex"
+        }
+    }
+
 		stage ('Publish Artifactory'){
 
 			if (env.BRANCH_NAME == 'development') {
