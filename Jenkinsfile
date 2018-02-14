@@ -11,7 +11,7 @@ node {
 		stage ('Build'){
 
 			dir('examples'){
-				sh "mklatex -pdf -bibtex -f INTO-CPS_Examples_Compendium.tex"
+				sh "latexmk -pdf -bibtex -f INTO-CPS_Examples_Compendium.tex"
 			}
 		}
 
