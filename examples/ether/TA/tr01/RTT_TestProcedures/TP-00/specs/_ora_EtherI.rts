@@ -1,0 +1,933 @@
+
+#include "rttExternDecl.h"
+
+
+@func void _ora_EtherI()
+{
+  {
+    {
+      int                 currentLocation;
+      int                 cycleCtr;
+      int                 triggered;
+/* Set initial location to 'Ether.initial' */
+      currentLocation = 21;
+      cycleCtr = 0;
+      while (@rttIsRunning) {
+	triggered = 0;
+/* Handle location 'Ether.initial' */
+	if ((currentLocation == 21) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_EtherI_t = (_timeTick + 0);
+/* New location is 'Ether.Idle' */
+	    currentLocation = 22;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0008 Cover basic control state Idle
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-BCS-0008");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.Idle' */
+	if ((currentLocation == 22) && (triggered == 0)) {
+	  if ((triggered == 0) && ((_timeTick - rttStatePre->sut_EtherI_t) >= 100)) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_outmsg11a = 0;
+	    rttStatePost->sut_outmsg11p = 0;
+	    rttStatePost->sut_outmsg12a = 0;
+	    rttStatePost->sut_outmsg12p = 0;
+	    rttStatePost->sut_outmsg13a = 0;
+	    rttStatePost->sut_outmsg13p = 0;
+	    rttStatePost->sut_outmsg21a = 0;
+	    rttStatePost->sut_outmsg21p = 0;
+	    rttStatePost->sut_outmsg22a = 0;
+	    rttStatePost->sut_outmsg22p = 0;
+	    rttStatePost->sut_outmsg23a = 0;
+	    rttStatePost->sut_outmsg23p = 0;
+/* New location is 'Ether.Init' */
+	    currentLocation = 24;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.Idle
+ *       -- [ ((_timeTick - IMR.SystemUnderTest.EtherI.t) >= 100) ] -->
+ *   Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0003 Cover transition Idle --> Init
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0009 Cover basic control state Init
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0003, TC-INTO-CPS-Demo-BCS-0009");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.Init' */
+	if ((currentLocation == 24) && (triggered == 0)) {
+	  if ((triggered == 0) && (rttStatePre->sut_inmsg1a == 17)) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_outmsg11a = rttStatePre->sut_inmsg1a;
+	    rttStatePost->sut_outmsg11p = rttStatePre->sut_inmsg1p;
+/* New location is 'Ether.UnicastToSelf1' */
+	    currentLocation = 37;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.Init
+ *       -- [ (IMR.SystemUnderTest.inmsg1a == 17) ] -->
+ *   Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0004 Cover transition Init --> UnicastToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0010 Cover basic control state UnicastToSelf1
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0004, TC-INTO-CPS-Demo-BCS-0010");
+	    triggered = 2;
+	  }
+	  if ((triggered == 0) && (rttStatePre->sut_inmsg1a != 17)) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.NotToSelf1' */
+	    currentLocation = 40;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.Init
+ *       -- [ (IMR.SystemUnderTest.inmsg1a != 17) ] -->
+ *   Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0005 Cover transition Init --> NotToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0011 Cover basic control state NotToSelf1
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0005, TC-INTO-CPS-Demo-BCS-0011");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.UnicastToSelf1' */
+	if ((currentLocation == 37) && (triggered == 0)) {
+	  if ((triggered == 0) && ((rttStatePre->sut_inmsg2a == 242) || (rttStatePre->sut_inmsg2a == 18))) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_outmsg12a = rttStatePre->sut_inmsg2a;
+	    rttStatePost->sut_outmsg12p = rttStatePre->sut_inmsg2p;
+/* New location is 'Ether.End2ToEnd1' */
+	    currentLocation = 42;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0006 Cover transition UnicastToSelf1 --> End2ToEnd1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0013 Cover basic control state End2ToEnd1
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0006, TC-INTO-CPS-Demo-BCS-0013");
+	    triggered = 2;
+	  }
+	  if ((triggered == 0) && ((rttStatePre->sut_inmsg2a != 242) && (rttStatePre->sut_inmsg2a != 18))) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.StartEnd2' */
+	    currentLocation = 41;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a != 242) && (IMR.SystemUnderTest.inmsg2a != 18)) ] -->
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0007 Cover transition UnicastToSelf1 --> StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0012 Cover basic control state StartEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0007, TC-INTO-CPS-Demo-BCS-0012");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.NotToSelf1' */
+	if ((currentLocation == 40) && (triggered == 0)) {
+	  if ((triggered == 0) && ((rttStatePre->sut_inmsg2a != 242) && (rttStatePre->sut_inmsg2a != 18))) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.StartEnd2' */
+	    currentLocation = 41;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a != 242) && (IMR.SystemUnderTest.inmsg2a != 18)) ] -->
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0008 Cover transition NotToSelf1 --> StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0012 Cover basic control state StartEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0008, TC-INTO-CPS-Demo-BCS-0012");
+	    triggered = 2;
+	  }
+	  if ((triggered == 0) && ((rttStatePre->sut_inmsg2a == 242) || (rttStatePre->sut_inmsg2a == 18))) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_outmsg11a = rttStatePre->sut_inmsg2a;
+	    rttStatePost->sut_outmsg11p = rttStatePre->sut_inmsg2p;
+/* New location is 'Ether.End2ToEnd1_2' */
+	    currentLocation = 45;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0009 Cover transition NotToSelf1 --> End2ToEnd1_2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0014 Cover basic control state End2ToEnd1_2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0009, TC-INTO-CPS-Demo-BCS-0014");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.StartEnd2' */
+	if ((currentLocation == 41) && (triggered == 0)) {
+	  if ((triggered == 0) && ((rttStatePre->sut_inmsg1a == 241) || (rttStatePre->sut_inmsg1a == 33))) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_outmsg21a = rttStatePre->sut_inmsg1a;
+	    rttStatePost->sut_outmsg21p = rttStatePre->sut_inmsg1p;
+/* New location is 'Ether.End1ToEnd2' */
+	    currentLocation = 48;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ *       -- [ ((IMR.SystemUnderTest.inmsg1a == 241) || (IMR.SystemUnderTest.inmsg1a == 33)) ] -->
+ *   Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0010 Cover transition StartEnd2 --> End1ToEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0015 Cover basic control state End1ToEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0010, TC-INTO-CPS-Demo-BCS-0015");
+	    triggered = 2;
+	  }
+	  if ((triggered == 0) && ((rttStatePre->sut_inmsg1a != 241) && (rttStatePre->sut_inmsg1a != 33))) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.End1NotToEnd2' */
+	    currentLocation = 51;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ *       -- [ ((IMR.SystemUnderTest.inmsg1a != 241) && (IMR.SystemUnderTest.inmsg1a != 33)) ] -->
+ *   Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0011 Cover transition StartEnd2 --> End1NotToEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0016 Cover basic control state End1NotToEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0011, TC-INTO-CPS-Demo-BCS-0016");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.End2ToEnd1' */
+	if ((currentLocation == 42) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.StartEnd2' */
+	    currentLocation = 41;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0013 Cover basic control state End2ToEnd1
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0012 Cover basic control state StartEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-BCS-0013, TC-INTO-CPS-Demo-BCS-0012");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.End2ToEnd1_2' */
+	if ((currentLocation == 45) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.StartEnd2' */
+	    currentLocation = 41;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0014 Cover basic control state End2ToEnd1_2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0012 Cover basic control state StartEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-BCS-0014, TC-INTO-CPS-Demo-BCS-0012");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.End1ToEnd2' */
+	if ((currentLocation == 48) && (triggered == 0)) {
+	  if ((triggered == 0) && (rttStatePre->sut_inmsg2a == 34)) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_outmsg22a = rttStatePre->sut_inmsg2a;
+	    rttStatePost->sut_outmsg22p = rttStatePre->sut_inmsg2p;
+/* New location is 'Ether.UnicastToSelf2' */
+	    currentLocation = 53;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1ToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a == 34) ] -->
+ *   Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0012 Cover transition End1ToEnd2 --> UnicastToSelf2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0018 Cover basic control state UnicastToSelf2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0012, TC-INTO-CPS-Demo-BCS-0018");
+	    triggered = 2;
+	  }
+	  if ((triggered == 0) && (rttStatePre->sut_inmsg2a != 34)) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.End' */
+	    currentLocation = 52;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1ToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a != 34) ] -->
+ *   Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0013 Cover transition End1ToEnd2 --> End
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0017 Cover basic control state End
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0013, TC-INTO-CPS-Demo-BCS-0017");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.End1NotToEnd2' */
+	if ((currentLocation == 51) && (triggered == 0)) {
+	  if ((triggered == 0) && (rttStatePre->sut_inmsg2a == 34)) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_outmsg21a = rttStatePre->sut_inmsg2a;
+	    rttStatePost->sut_outmsg21p = rttStatePre->sut_inmsg2p;
+/* New location is 'Ether.UnicastToSelf2_2' */
+	    currentLocation = 56;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1NotToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a == 34) ] -->
+ *   Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0014 Cover transition End1NotToEnd2 --> UnicastToSelf2_2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0019 Cover basic control state UnicastToSelf2_2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0014, TC-INTO-CPS-Demo-BCS-0019");
+	    triggered = 2;
+	  }
+	  if ((triggered == 0) && (rttStatePre->sut_inmsg2a != 34)) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.End' */
+	    currentLocation = 52;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1NotToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a != 34) ] -->
+ *   Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0015 Cover transition End1NotToEnd2 --> End
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0017 Cover basic control state End
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-TR-0015, TC-INTO-CPS-Demo-BCS-0017");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.End' */
+	if ((currentLocation == 52) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_EtherI_t = (_timeTick + 0);
+/* New location is 'Ether.Idle' */
+	    currentLocation = 22;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0017 Cover basic control state End
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0008 Cover basic control state Idle
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-BCS-0017, TC-INTO-CPS-Demo-BCS-0008");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.UnicastToSelf2' */
+	if ((currentLocation == 53) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.End' */
+	    currentLocation = 52;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0018 Cover basic control state UnicastToSelf2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0017 Cover basic control state End
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-BCS-0018, TC-INTO-CPS-Demo-BCS-0017");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'Ether.UnicastToSelf2_2' */
+	if ((currentLocation == 56) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+/* New location is 'Ether.End' */
+	    currentLocation = 52;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0019 Cover basic control state UnicastToSelf2_2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0017 Cover basic control state End
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+
+	    if (sut_EtherI_tags) {
+	      free(sut_EtherI_tags);
+	    }
+	    sut_EtherI_tags = strdup("TC-INTO-CPS-Demo-BCS-0019, TC-INTO-CPS-Demo-BCS-0017");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+	if (1) {
+	  @rttYield;
+	  cycleCtr = 0;
+	}
+	cycleCtr = (cycleCtr + 1);
+      }
+    }
+  }
+}
+
+
+/* This function is checking for
+ * unsatisfied checks at the end of a test procedure.
+ */
+@func void _ora_EtherI_finit()
+{
+
+}

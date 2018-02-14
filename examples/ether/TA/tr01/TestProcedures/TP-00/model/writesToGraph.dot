@@ -1,0 +1,12 @@
+digraph WRITES_TO_GRAPH {
+	n5 [label="SUT.End1I",color=blue,fontcolor=blue,fontname="Arial"];
+	n5 -> n19 [label="SUT.inmsg1a,\nSUT.inmsg1p",color=blue,fontcolor=blue,fontname="Arial"];
+	n59 [label="SUT.End2I",color=blue,fontcolor=blue,fontname="Arial"];
+	n59 -> n19 [label="SUT.inmsg2a,\nSUT.inmsg2p",color=blue,fontcolor=blue,fontname="Arial"];
+	n19 [label="SUT.EtherI",color=blue,fontcolor=blue,fontname="Arial"];
+	n19 -> n5 [label="SUT.outmsg11a,\nSUT.outmsg11p,\nSUT.outmsg12a,\nSUT.outmsg12p,\nSUT.outmsg13a,\nSUT.outmsg13p",color=blue,fontcolor=blue,fontname="Arial"];
+	n19 -> n59 [label="SUT.outmsg21a,\nSUT.outmsg21p,\nSUT.outmsg22a,\nSUT.outmsg22p,\nSUT.outmsg23a,\nSUT.outmsg23p",color=blue,fontcolor=blue,fontname="Arial"];
+	n75 [label="TE.tesimulator",color=blue,fontcolor=blue,fontname="Arial"];
+	n75 -> n5 [label="IMR.in1a,\nIMR.in1p",color=blue,fontcolor=blue,fontname="Arial"];
+	n75 -> n59 [label="IMR.in2a,\nIMR.in2p",color=blue,fontcolor=blue,fontname="Arial"];
+}

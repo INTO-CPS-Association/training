@@ -1,0 +1,207 @@
+%%% Add [final] option to the report class to switch between draft and final version of the report
+%%% Use [narrowmargin] to enable narrow margins - this may impair readability.
+\documentclass[narrowmargin,12pt,a4paper,final]{include/intocpsreport}   %Or intocpslargereport if chapters are required.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+%\usepackage{tikz-uml}
+\usepackage{multirow}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{amsmath}
+
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+\def\draftnote#1{\noindent\smallskip\framebox{\begin{minipage}{0.95\columnwidth}\color{red}#1\end{minipage}}\smallskip\par}
+\newenvironment{draftnoteenv}{\noindent\smallskip\begin{framed}\begin{minipage}{0.95\columnwidth}\color{red}}{\end{minipage}\end{framed}\smallskip\par}
+\newenvironment{assumption}{\noindent\smallskip\color{blue}\begin{framed}\begin{minipage}{0.95\columnwidth}}{\end{minipage}\end{framed}\smallskip\par}
+
+\def\SG{Smart Grid}
+
+\usepackage{listings}
+\lstdefinestyle{cstyle}{basicstyle=\scriptsize\ttfamily,
+			frame=trbl,
+			showstringspaces=false,
+			captionpos=b,
+			frameround=tttt,
+			aboveskip=5mm,
+			belowskip=5mm,
+			breaklines=true,
+			tabsize=4,
+			framexleftmargin=0mm,
+			framexrightmargin=0mm}
+\lstnewenvironment{config}{\lstset{style=cstyle}\lstset{language=sh}}{}
+
+% for Celsius symbol
+\usepackage{textcomp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New Command for text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% shortcut for typewriter
+\newcommand{\T}[1]{\texttt{#1}} % \T is defined in
+% shortcut for bold text
+\newcommand{\B}[1]{\textbf{#1}}
+\newcommand{\I}[1]{\textit{#1}}
+\newcommand{\BI}[1]{\textit{\textbf{#1}}}
+\newcommand{\TN}[1]{\textnormal{#1}}
+\newcommand{\TTR}[1]{\textrm{#1}}
+\newcommand{\mi}{\;|\;}
+\newcommand{\ee}{&\quad::=\quad&}
+
+\newcommand{\mrm}[1]{\mathrm{#1}} %Roman Font
+\newcommand{\mbf}[1]{\mathbf{#1}} %Boldface Font
+\newcommand{\msf}[1]{\mathsf{#1}} %Sans Serif Font
+\newcommand{\mtt}[1]{\mathtt{#1}} %Typewriter Font
+\newcommand{\miit}[1]{\mathit{#1}} %Italic Font
+\newcommand{\mcl}[1]{\mathcal{#1}} %Calligraphic Front
+\newcommand{\mnm}[1]{\mathnormal{#1}} %Normal Font
+
+\reportnumber{D3.6}
+\reporttitle{INTO-CPS Examples Compendium}
+\shortreporttitle{INTO-CPS Examples Compendium}  %To use if report title is too long for header
+
+%%% Set document release class as appropriate
+%%% e.g. Public, Restricted, Programme Participant
+\reportstatus{Public}
+
+
+%%% If document is a deliverable, this flag should be commented out
+%%% e.g. %\technotetrue
+%%% If report is a technical report, leave uncommented
+%%% e.g. \technotetrue
+%\technotetrue % Comment out as appropriate
+
+\submissiondate{\monthyeardate\today}
+\contributors{
+Richard Payne, UNEW\\
+Carl Gamble, UNEW\\
+Ken Pierce, UNEW\\
+John Fitzgerald, UNEW\\
+Martin Mansfield, UNEW\\
+Simon Foster, UY\\
+Kangfeng Ye, UY\\
+Casper Thule, AU\\
+Rene Nilsson, AU\\
+Kenneth Lausdahl, AU\\
+Florian Lapschies, VSI\\
+Frederik Foldager, AI\\}
+
+\editors{
+Richard Payne, UNEW\\
+Martin Mansfield, UNEW}
+
+\reviewers{
+Peter Gorm Larsen, AU\\
+Etienne Brosse, ST\\
+Adrian Pop, LIU}
+
+%% Version details
+% #1: version
+% #2: date
+% #3: author
+% #4: description
+\addversion{0.1}{15-05-2017}{Richard Payne}{Draft structure of deliverable and initial reframing based on D3.5}
+\addversion{0.2}{27-10-2017}{Martin Mansfield}{Added Autonomous Vehicle and Mass Spring Damper pilots}
+\addversion{0.3}{01-11-2017}{Martin Mansfield}{Version for internal review}
+\addversion{1.0}{14-12-2017}{Martin Mansfield}{Review comments addressed}
+
+\begin{document}
+\maketitle
+
+%%%% Document abstract page %%%%
+\section*{Abstract}
+\label{sec:abstract}
+
+This deliverable is intended for users of the INTO-CPS technologies and contains a collection of example and pilot study model descriptions demonstrating the INTO-CPS technology. Each study has a description of the example, the models available for the study and examples of the analyses available with the INTO-CPS Tool Chain. The examples demonstrate the INTO-CPS tools developed during the INTO-CPS project. This compendium is a living document that has grown with the tool chain throughout the project. This document is a snapshot of the compendium at the end of the project, building on previous versions (in M12~\cite{INTOCPSD3.4} and M24~\cite{INTOCPSD3.5}). Development of these examples will continue past the end of the project as part of the INTO-CPS Association, and the latest version can always be found at \url{https://github.com/INTO-CPS-Association/training/releases}.
+
+\newpage
+
+%%%% Document table of contents page %%%%
+\tableofcontents
+\newpage
+
+\input{introduction.tex}
+\clearpage
+\input{singletank/singletank.tex}
+\clearpage
+\input{threetank/threetank.tex}
+\clearpage
+\input{fcu/fcu.tex}
+\clearpage
+\input{linefollower/linefollowrobot.tex}
+\clearpage
+\input{turnindicator/turnindicator.tex}
+\clearpage
+\input{uavsingle/uavsingle.tex}
+\clearpage
+\input{ether/ether.tex}
+\clearpage
+\input{uavswarm/uavswarm.tex}
+\clearpage
+\input{vehicle/vehicle.tex}
+\clearpage
+\input{massSpringDamper/massspringdamper.tex}
+\clearpage
+
+%%%% Bibliography %%%%
+\newpage
+\bibliographystyle{alpha}
+\bibliography{../methods/intocps,../methods/intocpsdev}
+\label{ch:bib} %label to refer to
+
+%\newpage
+%\appendix
+%\section{List of Acronyms}\label{sec:acronyms}
+%
+%\begin{longtable}{ll}
+%20-sim	& Software package for modelling and simulation of dynamic systems\\
+%AI & Agro Intelligence\\
+%ASD & Architecture Structure Diagram\\
+%AU      & Aarhus University\\
+%BDD & Block Definition Diagram\\
+%CD & Connections Diagram\\
+%CLE     & ClearSy\\
+%CLP	&Controllab Products B.V. \\
+%COE & Co-simulation Orchestration Engine \\
+%COMPASS &Comprehensive Modelling for Advanced Systems of Systems\\
+%CPS     & Cyber-Physical Systems\\
+%CT	&Continuous-Time\\
+%DE      &Discrete Event\\
+%DESTECS	&Design Support and Tooling for Embedded Control Software\\
+%DSE	&Design Space Exploration\\
+%FCU & Fan Coil Unit\\
+%FMI     &Functional Mockup Interface\\
+%FMI-Co  &Functional Mockup Interface -- for Co-simulation\\
+%FMI-ME  &Functional Mockup Interface -- Model Exchange\\
+%FMU     &Functional Mockup Unit\\
+%HiL	&Hardware-in-the-Loop\\
+%HVAC    &Heating, Ventilation, and Air Conditioning\\
+%HW      &Hardware\\
+%IBD& Internal Block Diagram\\
+%IFG	&Industry Follow Group\\
+%MBD     &Model Based Design\\
+%MiL 	&Model-in-the-Loop\\
+%PROV-N  &The Provenance Notation\\
+%RTT-MBT & RT-Tester Model-Based Test Case Generator\\
+%SiL	& Software-in-the Loop\\
+%SoS     &System of Systems\\
+%ST      &Softeam\\
+%STD & State Machine Diagram\\
+%SUT     &System Under Test\\
+%SysML	&Systems Modelling Language\\
+%TA      &Test Automation\\
+%TWT & TWT GmbH Science \& Innovation\\
+%UCD & Use Case Diagram\\
+%UNEW	&University of Newcastle upon Tyne\\
+%UTRC    & United Technology Research Center\\
+%UY      & University of York\\
+%VDM-RT    &Vienna Development Method for Real Time\\
+%VSI     & Verified Systems International\\
+%\end{longtable}
+
+\end{document}

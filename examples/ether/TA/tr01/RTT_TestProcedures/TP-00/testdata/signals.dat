@@ -1,0 +1,99 @@
+signalspec {
+	"te__tesimulator_l" 0.000000 10.000000,
+	"te__tesimulator_t" 0.000000 900.000000,
+	"in1a" 0.000000 241.000000,
+	"in1p" 0.000000 9.000000,
+	"in2a" 0.000000 242.000000,
+	"in2p" 0.000000 9.000000
+}
+
+timestep 0 {
+	"te__tesimulator_l" 0.000000,
+	"te__tesimulator_t" 0.000000,
+	"in1a" 0.000000,
+	"in1p" 0.000000,
+	"in2a" 0.000000,
+	"in2p" 0.000000
+}
+
+timestep 0 {
+	"te__tesimulator_l" 1.000000
+}
+
+timestep 100 {
+	"te__tesimulator_l" 2.000000,
+	"te__tesimulator_t" 100.000000,
+	"in1a" 241.000000,
+	"in1p" 1.000000
+}
+
+timestep 200 {
+	"te__tesimulator_l" 3.000000,
+	"te__tesimulator_t" 200.000000,
+	"in1a" 0.000000,
+	"in1p" 0.000000,
+	"in2a" 242.000000,
+	"in2p" 2.000000
+}
+
+timestep 300 {
+	"te__tesimulator_l" 4.000000,
+	"te__tesimulator_t" 300.000000,
+	"in1a" 241.000000,
+	"in1p" 3.000000,
+	"in2p" 3.000000
+}
+
+timestep 400 {
+	"te__tesimulator_l" 5.000000,
+	"te__tesimulator_t" 400.000000,
+	"in1a" 17.000000,
+	"in1p" 4.000000,
+	"in2a" 0.000000,
+	"in2p" 0.000000
+}
+
+timestep 500 {
+	"te__tesimulator_l" 6.000000,
+	"te__tesimulator_t" 500.000000,
+	"in1p" 5.000000,
+	"in2a" 242.000000,
+	"in2p" 5.000000
+}
+
+timestep 600 {
+	"te__tesimulator_l" 7.000000,
+	"te__tesimulator_t" 600.000000,
+	"in1a" 0.000000,
+	"in1p" 0.000000,
+	"in2a" 34.000000,
+	"in2p" 6.000000
+}
+
+timestep 700 {
+	"te__tesimulator_l" 8.000000,
+	"te__tesimulator_t" 700.000000,
+	"in1a" 33.000000,
+	"in1p" 7.000000,
+	"in2p" 7.000000
+}
+
+timestep 800 {
+	"te__tesimulator_l" 9.000000,
+	"te__tesimulator_t" 800.000000,
+	"in1p" 8.000000,
+	"in2a" 0.000000,
+	"in2p" 0.000000
+}
+
+timestep 900 {
+	"te__tesimulator_l" 10.000000,
+	"te__tesimulator_t" 900.000000,
+	"in1p" 9.000000,
+	"in2a" 18.000000,
+	"in2p" 9.000000
+}
+
+timestep 3999 {
+}
+

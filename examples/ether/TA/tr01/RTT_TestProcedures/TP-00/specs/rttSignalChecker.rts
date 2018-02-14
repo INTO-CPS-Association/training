@@ -1,0 +1,708 @@
+    /** @file
+    //////////////////////////////////////////////////////////////////////
+    //
+    // Verified Systems International GmbH
+    //
+    // http://www.verified.de/
+    //
+    // Tel.  : +49 421 57204 0
+    // Fax   : +49 421 57204 22
+    // e-mail: info@verified.de
+    //
+    //--------------------------------------------------------------------
+    //
+    // (C) Copyright Verified Systems International GmbH
+    //     $Date: $
+    //
+    //--------------------------------------------------------------------
+    //
+    // Product: RTT-MBT signal checker for RTTL projects
+    //
+    //--------------------------------------------------------------------
+    //
+    // File Identification:
+    //
+    // $RCSfile:$
+    //
+    // $Header:$
+    //
+    // $Revision:$
+    //
+    // First edition by: Uwe Schulze
+    // Last update by    $Author:$
+    //
+    //--------------------------------------------------------------------
+    //
+    // Description:
+    // This checker function is part of the project templates for RTT-MBT
+    // projects. It is an implementation of a checker state machine for a
+    // single SUT2TE signal. The generated checker abstract machines use
+    // this function for each of the signals that they are checking, to
+    // calculate the verdict of the respective signal.
+    //
+    // This is version 1.3 of this checker function. It is compliant with
+    // RTT-MBT versions 9.0-1.4.0 or later.
+    //
+    //--------------------------------------------------------------------*/
+
+#include "rttExternDecl.h"
+#include "rttSignalChecker.h"
+
+#include <math.h>
+
+#define _RTT_MBT_DEBUG_
+#ifndef DBL_MAX
+#define DBL_MAX 1.79769313486231470e+308
+#endif
+
+typedef enum rttmbt_checker_state_t
+{
+  rttmbt_init_checker = 0,
+  rttmbt_indication_ok = 1,
+  rttmbt_new_expected = 2,
+  rttmbt_new_observed = 3,
+  rttmbt_error_detected = 4
+} rttmbt_checker_state_t;
+
+static void         rttmbt_assign(void *lhs, void *rhs, rttmbt_signal_types_t type);
+static int          rttmbt_equals(void *lhs, void *rhs, rttmbt_signal_types_t type);
+static int          rttmbt_valueAcceptable(void *observed, void *expected, double admissibleError,
+					   rttmbt_signal_types_t type, double *deviation_ptr);
+static void         logStateChange(const char *signalname, const char *from, const char *to, int target_state,
+				   void *value, rttmbt_signal_types_t type);
+static void         logNewExpectedValueWarning(const char *signalName, int current_state, void *expected,
+					       void *expected_old, rttmbt_signal_types_t type);
+static void         logVerdict(void *observed, void *expected, double admissibleError, rttmbt_signal_types_t type,
+			       const char *signalName, const char *tags_ptr, const char *reason);
+
+    /**
+     * This function implements the checker state machine for a single SUT2TE signal of a checker AM.
+     * Checker AMs are generated for each component of the SUT that contains a defined behaviour
+     * (normally a state machine). When the checker AMs reach a stable state, this checker function
+     * is called for each SUT2TE signal that the respective model component writes to.
+     * 
+     * Note: signals can have different typed of values. To make the checker function generic,
+     *       pointers are used for all signal values and type casts are performed according to
+     *       the type information given by the parameter 'type'.
+     * 
+     * @param current_state         The current state of the checker. This is a pointer
+     *                              to an integer that contains the rttmbt_checker_state_t
+     *                              value for the checker state for the respective signal.
+     * @param counter               This is a pointer to the integer holding the current
+     *                              timeout counter. If the counter is less then 0, the
+     *                              timeout is violated. The counter is decreased once per
+     *                              checker function call by the value of the global
+     *                              variable _timeTickDiff.
+     * @param expected              A pointer to the variable with the current expected value.
+     *                              The expected value is changed by the checker AM.
+     * @param expected_old          A pointer to the last known expected value. This value
+     *                              is written by the checker function and is used to detect
+     *                              new expected values.
+     * @param observed              A pointer to the variable with the current observed value.
+     *                              The observed value is changed by the checker AM.
+     * @param observed_old          A pointer to the last known observed value. This value
+     *                              is written by the checker function and is used to detect
+     *                              new observed values.
+     * @param admissibleError       The admissible deviation for the signal value as specified
+     *                              in the signal map. Note: the admissible error is always
+     *                              given as a double value, independent of the actual value
+     *                              type of the signal.
+     * @param latencyTimeout        The latency value as given in the signal map. The timeout
+     *                              counter is set to this value whenever a new expected value
+     *                              is detected.
+     * @param earlyChangeTimeout    The value for early SUT indications. The timeout counter
+     *                              is set to this value whenever the checker function is not
+     *                              expecting a SUT indication change and a new obverved value
+     *                              is detected.
+     * @param type                  The type information for observed, observed_old, expected
+     *                              and expected old.
+     * @param signalName            The name of the signal as a character pointer.
+     *                              This information is used for logging.
+     * @param tags                  The currently tested test case tags. If this parameter is
+     *                              NULL, no tag information is logged during the checks.
+     */
+@func void check_sut2te_indication(int *current_state, int *counter,
+					    void *expected, void *expected_old,
+					    void *observed, void *observed_old,
+					    double admissibleError,
+					    int latencyTimeout, int earlyChangeTimeout,
+					    rttmbt_signal_types_t type, const char *signalName, const char *tags)
+{
+
+  /* check all pointers for not being NULL */
+  /* Note: tags is allowed to be NULL. */
+  if (signalName == NULL) {
+    @rttCheck(signalName != NULL, "NULL-pointer argument in signal checker function call");
+    return;
+  }
+  if ((current_state == NULL) ||
+      (counter == NULL) ||
+      (expected == NULL) || (expected_old == NULL) || (observed == NULL) || (observed_old == NULL)) {
+    @rttCheck((current_state != NULL) && (counter != NULL) && (expected != NULL) && (expected_old != NULL)
+		       && (observed != NULL)
+		       && (observed_old != NULL), "NULL-pointer argument in signal checker function call for signal %s",
+		       signalName);
+    return;
+  }
+
+  /* decrease counter before entering the state machine loop */
+  if (counter >= 0) {
+    *counter = (*counter - _timeTickDiff);
+  }
+
+  int                 checker_state_stable = 0;
+  while (!checker_state_stable) {
+    switch (*current_state) {
+    case rttmbt_init_checker:
+      /* start in state rttmbt_new_expected to check first expected value */
+      rttmbt_assign(expected_old, expected, type);
+      *counter = latencyTimeout;
+      *current_state = rttmbt_new_expected;
+      logStateChange(signalName, "[init checker]", "[new expected value]", rttmbt_new_expected, expected, type);
+      break;
+    case rttmbt_indication_ok:
+      /* check for guards on transition to other checker states */
+      if (!rttmbt_equals(expected_old, expected, type)) {
+	/* new expected value */
+	rttmbt_assign(expected_old, expected, type);
+	*counter = latencyTimeout;
+	*current_state = rttmbt_new_expected;
+	logStateChange(signalName, "[indication ok]", "[new expected value]", rttmbt_new_expected, expected, type);
+      }
+      else if (!rttmbt_valueAcceptable(observed, expected, admissibleError, type, NULL) &&
+	       (rttmbt_equals(expected_old, expected, type))) {
+	/* new observed value */
+	rttmbt_assign(observed_old, observed, type);
+	*counter = earlyChangeTimeout;
+	*current_state = rttmbt_new_observed;
+	logStateChange(signalName, "[indication ok]", "[new observed value]", rttmbt_new_observed, observed, type);
+      }
+      else {
+	/* no transition possible: checker_state_stable */
+	checker_state_stable = 1;
+      }
+      break;
+    case rttmbt_new_expected:
+      /* check for guards on transition to other checker states */
+      if (*counter < 0) {
+	/* if latency timeout is elapsed: log failure and switch to rttmbt_error_detected */
+	logVerdict(observed, expected, admissibleError, type, signalName, tags,
+		   "latency elapsed for expected SUT output change.");
+	*current_state = rttmbt_error_detected;
+	logStateChange(signalName, "[new expected value]", "[error detected]", rttmbt_error_detected, NULL, type);
+	rttmbt_assign(observed_old, observed, type);
+      }
+      else if (!rttmbt_equals(expected_old, expected, type)) {
+	/* if a new expected value occurs and the old one has not been checked PASS or FAIL: */
+	/* issue a warning, store new expected value and reset latency timer */
+	logNewExpectedValueWarning(signalName, *current_state, expected, expected_old, type);
+	rttmbt_assign(expected_old, expected, type);
+	*counter = latencyTimeout;
+      }
+      else if (rttmbt_valueAcceptable(observed, expected, admissibleError, type, NULL)) {
+	/* If expected value is monitored: switch to rttmbt_indication_ok */
+	logVerdict(observed, expected, admissibleError, type, signalName, tags, NULL);
+	*current_state = rttmbt_indication_ok;
+	logStateChange(signalName, "[new expected value]", "[indication ok]", rttmbt_indication_ok, NULL, type);
+      }
+      else {
+	/* no transition possible: checker_state_stable */
+	checker_state_stable = 1;
+      }
+      break;
+    case rttmbt_new_observed:
+      /* check for guards on transition to other checker states */
+      if (*counter < 0) {
+	/* timeout for early changes elapsed: log failure and switch to error state */
+	logVerdict(observed_old, expected, admissibleError, type, signalName, tags,
+		   "timeout for early change elapsed for this SUT output change. This is a violation of the signal stability.");
+	*current_state = rttmbt_error_detected;
+	logStateChange(signalName, "[new observed value]", "[error detected]", rttmbt_error_detected, NULL, type);
+      }
+      else if (!rttmbt_equals(expected_old, expected, type)) {
+	/* new expected value: set latency timeout and switch to new expected state */
+	rttmbt_assign(expected_old, expected, type);
+	*counter = latencyTimeout;
+	*current_state = rttmbt_new_expected;
+	logStateChange(signalName, "[new observed value]", "[new expected value]", rttmbt_new_expected, expected, type);
+      }
+      else {
+	/* no transition possible: checker_state_stable */
+	checker_state_stable = 1;
+      }
+      break;
+    case rttmbt_error_detected:
+      /* check for guards on transition to other checker states */
+      if (!rttmbt_equals(expected_old, expected, type)) {
+	/* new expected value */
+	rttmbt_assign(expected_old, expected, type);
+	*counter = latencyTimeout;
+	*current_state = rttmbt_new_expected;
+	logStateChange(signalName, "[error detected]", "[new expected value]", rttmbt_new_expected, expected, type);
+      }
+      else if ((!rttmbt_valueAcceptable(observed, expected, admissibleError, type, NULL)) &&
+	       (!rttmbt_valueAcceptable(observed, observed_old, admissibleError, type, NULL)) &&
+	       (rttmbt_equals(expected_old, expected, type))) {
+	/* new observed value */
+	rttmbt_assign(observed_old, observed, type);
+	*counter = earlyChangeTimeout;
+	*current_state = rttmbt_new_observed;
+	logStateChange(signalName, "[error detected]", "[new observed value]", rttmbt_new_observed, observed, type);
+      }
+      else {
+	/* no transition possible: checker_state_stable */
+	checker_state_stable = 1;
+      }
+      break;
+    default:
+      break;
+    }
+  }
+}
+
+    /**
+     * This function is used to check the signal values at the end of a test procedure
+     * 
+     * @param current_state         The current state of the checker. This is a pointer
+     *                              to an integer that contains the rttmbt_checker_state_t
+     *                              value for the checker state for the respective signal.
+     * @param expected              A pointer to the variable with the current expected value.
+     *                              The expected value is changed by the checker AM.
+     * @param observed              A pointer to the variable with the current observed value.
+     *                              The observed value is changed by the checker AM.
+     * @param observed_old          A pointer to the last known observed value. This value
+     *                              is written by the checker function and is used to detect
+     *                              new observed values.
+     * @param admissibleError       The admissible deviation for the signal value as specified
+     *                              in the signal map. Note: the admissible error is always
+     *                              given as a double value, independent of the actual value
+     *                              type of the signal.
+     * @param type                  The type information for observed, observed_old, expected
+     *                              and expected old.
+     * @param signalName            The name of the signal as a character pointer.
+     *                              This information is used for logging.
+     * @param tags                  The currently tested test case tags. If this parameter is
+     *                              NULL, no tag information is logged during the checks.
+     */
+@func void check_sut2te_indication_finit(int *current_state, void *expected,
+						  void *observed, void *observed_old,
+						  double admissibleError,
+						  rttmbt_signal_types_t type, const char *signalName, const char *tags)
+{
+  /* if the last value differs from the expected, this has to be treated as a failure. */
+  if ((!rttmbt_valueAcceptable(observed, expected, admissibleError, type, NULL)) &&
+      (*current_state != rttmbt_error_detected)) {
+    logVerdict(observed, expected, admissibleError, type, signalName, tags,
+	       "last observed value for this signal in the test execution log deviates from expected value.");
+  }
+  else if (*current_state == rttmbt_new_observed) {
+    /* if an early change has been detected and this is the last time stamp, the stability condition has been violated. */
+    logVerdict(observed_old, expected, admissibleError, type, signalName, tags,
+	       "end of test procedure reached while waiting for expected signal to match an early value change. This is a violation of the signal stability.");
+  }
+}
+
+static void rttmbt_assign(void *lhs, void *rhs, rttmbt_signal_types_t type)
+{
+  switch (type) {
+  case rttmbt_bool:
+    *((int *) lhs) = *((int *) rhs);
+    break;
+  case rttmbt_short:
+  case rttmbt_signed_short:
+    *((signed short *) lhs) = *((signed short *) rhs);
+    break;
+  case rttmbt_unsigned_short:
+    *((unsigned short *) lhs) = *((unsigned short *) rhs);
+    break;
+  case rttmbt_int:
+  case rttmbt_signed_int:
+    *((signed int *) lhs) = *((signed int *) rhs);
+    break;
+  case rttmbt_unsigned_int:
+    *((unsigned int *) lhs) = *((unsigned int *) rhs);
+    break;
+  case rttmbt_char:
+  case rttmbt_signed_char:
+    *((signed char *) lhs) = *((signed char *) rhs);
+    break;
+  case rttmbt_unsigned_char:
+    *((unsigned char *) lhs) = *((unsigned char *) rhs);
+    break;
+  case rttmbt_long:
+  case rttmbt_signed_long:
+    *((signed long *) lhs) = *((signed long *) rhs);
+    break;
+  case rttmbt_unsigned_long:
+    *((unsigned long *) lhs) = *((unsigned long *) rhs);
+    break;
+  case rttmbt_float:
+    *((float *) lhs) = *((float *) rhs);
+    break;
+  case rttmbt_double:
+    *((double *) lhs) = *((double *) rhs);
+    break;
+  default:
+    break;
+  }
+}
+
+static int rttmbt_equals(void *lhs, void *rhs, rttmbt_signal_types_t type)
+{
+  switch (type) {
+  case rttmbt_bool:
+    return *((int *) lhs) == *((int *) rhs);
+    break;
+  case rttmbt_short:
+  case rttmbt_signed_short:
+    return *((signed short *) lhs) == *((signed short *) rhs);
+    break;
+  case rttmbt_unsigned_short:
+    return *((unsigned short *) lhs) == *((unsigned short *) rhs);
+    break;
+  case rttmbt_int:
+  case rttmbt_signed_int:
+    return *((signed int *) lhs) == *((signed int *) rhs);
+    break;
+  case rttmbt_unsigned_int:
+    return *((unsigned int *) lhs) == *((unsigned int *) rhs);
+    break;
+  case rttmbt_char:
+  case rttmbt_signed_char:
+    return *((signed char *) lhs) == *((signed char *) rhs);
+    break;
+  case rttmbt_unsigned_char:
+    return *((unsigned char *) lhs) == *((unsigned char *) rhs);
+    break;
+  case rttmbt_long:
+  case rttmbt_signed_long:
+    return *((signed long *) lhs) == *((signed long *) rhs);
+    break;
+  case rttmbt_unsigned_long:
+    return *((unsigned long *) lhs) == *((unsigned long *) rhs);
+    break;
+  case rttmbt_float:
+    return *((float *) lhs) == *((float *) rhs);
+    break;
+  case rttmbt_double:
+    return *((double *) lhs) == *((double *) rhs);
+    break;
+  default:
+    return 0;
+    break;
+  }
+  return 0;
+}
+
+static int rttmbt_valueAcceptable(void *observed, void *expected, double admissibleError, rttmbt_signal_types_t type,
+				  double *deviation_ptr)
+{
+  double              deviation;
+  int                 observed_bool, expected_bool;
+  signed short        observed_short, expected_short;
+  unsigned short      observed_ushort, expected_ushort;
+  signed int          observed_int, expected_int;
+  unsigned int        observed_uint, expected_uint;
+  signed char         observed_char, expected_char;
+  unsigned char       observed_uchar, expected_uchar;
+  signed long         observed_long, expected_long;
+  unsigned long       observed_ulong, expected_ulong;
+  float               observed_float, expected_float;
+  double              observed_double, expected_double;
+  switch (type) {
+  case rttmbt_bool:
+    observed_bool = *((int *) observed);
+    expected_bool = *((int *) expected);
+    deviation =
+      (double) ((observed_bool > expected_bool) ? (observed_bool - expected_bool) : (expected_bool - observed_bool));
+    break;
+  case rttmbt_short:
+  case rttmbt_signed_short:
+    observed_short = *((signed short *) observed);
+    expected_short = *((signed short *) expected);
+    deviation =
+      (double) ((observed_short >
+		 expected_short) ? (observed_short - expected_short) : (expected_short - observed_short));
+    break;
+  case rttmbt_unsigned_short:
+    observed_ushort = *((unsigned short *) observed);
+    expected_ushort = *((unsigned short *) expected);
+    deviation =
+      (double) ((observed_ushort >
+		 expected_ushort) ? (observed_ushort - expected_ushort) : (expected_ushort - observed_ushort));
+    break;
+  case rttmbt_int:
+  case rttmbt_signed_int:
+    observed_int = *((signed int *) observed);
+    expected_int = *((signed int *) expected);
+    deviation =
+      (double) ((observed_int > expected_int) ? (observed_int - expected_int) : (expected_int - observed_int));
+    break;
+  case rttmbt_unsigned_int:
+    observed_uint = *((unsigned int *) observed);
+    expected_uint = *((unsigned int *) expected);
+    deviation =
+      (double) ((observed_uint > expected_uint) ? (observed_uint - expected_uint) : (expected_uint - observed_uint));
+    break;
+  case rttmbt_char:
+  case rttmbt_signed_char:
+    observed_char = *((signed char *) observed);
+    expected_char = *((signed char *) expected);
+    deviation =
+      (double) ((observed_char > expected_char) ? (observed_char - expected_char) : (expected_char - observed_char));
+    break;
+  case rttmbt_unsigned_char:
+    observed_uchar = *((unsigned char *) observed);
+    expected_uchar = *((unsigned char *) expected);
+    deviation =
+      (double) ((observed_uchar >
+		 expected_uchar) ? (observed_uchar - expected_uchar) : (expected_uchar - observed_uchar));
+    break;
+  case rttmbt_long:
+  case rttmbt_signed_long:
+    observed_long = *((signed long *) observed);
+    expected_long = *((signed long *) expected);
+    deviation =
+      (double) ((observed_long > expected_long) ? (observed_long - expected_long) : (expected_long - observed_long));
+    break;
+  case rttmbt_unsigned_long:
+    observed_ulong = *((unsigned long *) observed);
+    expected_ulong = *((unsigned long *) expected);
+    deviation =
+      (double) ((observed_ulong >
+		 expected_ulong) ? (observed_ulong - expected_ulong) : (expected_ulong - observed_ulong));
+    break;
+  case rttmbt_float:
+    observed_float = *((float *) observed);
+    expected_float = *((float *) expected);
+    deviation =
+      (double) ((observed_float >
+		 expected_float) ? (observed_float - expected_float) : (expected_float - observed_float));
+    break;
+  case rttmbt_double:
+    observed_double = *((double *) observed);
+    expected_double = *((double *) expected);
+    deviation =
+      (observed_double > expected_double) ? (observed_double - expected_double) : (expected_double - observed_double);
+    break;
+  default:
+    deviation = DBL_MAX;
+    break;
+  }
+  if (deviation_ptr != NULL) {
+    *deviation_ptr = deviation;
+  }
+  return deviation <= admissibleError;
+}
+
+
+@func static void logStateChange(const char *signalname, const char *from, const char *to,
+					  int target_state, void *value, rttmbt_signal_types_t type)
+{
+#ifdef _RTT_MBT_DEBUG_
+
+  /* create string representation of the value */
+  char                valueString[256];
+  if (value != NULL) {
+    switch (type) {
+    case rttmbt_bool:
+      snprintf(valueString, 256, "%s", (*((int *) value)) ? "true" : "false");
+      break;
+    case rttmbt_short:
+    case rttmbt_signed_short:
+      snprintf(valueString, 256, "%d", *((signed short *) value));
+      break;
+    case rttmbt_unsigned_short:
+      snprintf(valueString, 256, "%u", *((unsigned short *) value));
+      break;
+    case rttmbt_int:
+    case rttmbt_signed_int:
+      snprintf(valueString, 256, "%d", *((signed int *) value));
+      break;
+    case rttmbt_unsigned_int:
+      snprintf(valueString, 256, "%u", *((unsigned int *) value));
+      break;
+    case rttmbt_char:
+    case rttmbt_signed_char:
+      snprintf(valueString, 256, "%d", *((signed char *) value));
+      break;
+    case rttmbt_unsigned_char:
+      snprintf(valueString, 256, "%u", *((unsigned char *) value));
+      break;
+    case rttmbt_long:
+    case rttmbt_signed_long:
+      snprintf(valueString, 256, "%ld", *((signed long *) value));
+      break;
+    case rttmbt_unsigned_long:
+      snprintf(valueString, 256, "%lu", *((unsigned long *) value));
+      break;
+    case rttmbt_float:
+      snprintf(valueString, 256, "%.17g", *((float *) value));
+      break;
+    case rttmbt_double:
+      snprintf(valueString, 256, "%.17g", *((double *) value));
+      break;
+    default:
+      snprintf(valueString, 256, "[error: unknown value type]");
+      break;
+    }
+  }
+  else {
+    snprintf(valueString, 256, "(null)");
+  }
+
+  switch (target_state) {
+  case rttmbt_new_expected:
+    @printf("checker[%s]: state change: %s -> %s (value: %s)", signalname, from, to, valueString);
+    break;
+  case rttmbt_new_observed:
+    @printf("checker[%s]: state change: %s -> %s (value: %s)", signalname, from, to, valueString);
+    break;
+  default:
+    @printf("checker[%s]: state change: %s -> %s", signalname, from, to);
+    break;
+  }
+#endif
+}
+
+@func static void logNewExpectedValueWarning(const char *signalName, int current_state,
+						      void *expected, void *expected_old, rttmbt_signal_types_t type)
+{
+  char                value1[256], value2[256];
+
+  switch (type) {
+  case rttmbt_bool:
+    snprintf(value1, 256, "%s", (*((int *) expected)) ? "true" : "false");
+    snprintf(value2, 256, "%s", (*((int *) expected_old)) ? "true" : "false");
+    break;
+  case rttmbt_short:
+  case rttmbt_signed_short:
+    snprintf(value1, 256, "%d", *((signed short *) expected));
+    snprintf(value2, 256, "%d", *((signed short *) expected_old));
+    break;
+  case rttmbt_unsigned_short:
+    snprintf(value1, 256, "%u", *((unsigned short *) expected));
+    snprintf(value2, 256, "%u", *((unsigned short *) expected_old));
+    break;
+  case rttmbt_int:
+  case rttmbt_signed_int:
+    snprintf(value1, 256, "%d", *((signed int *) expected));
+    snprintf(value2, 256, "%d", *((signed int *) expected_old));
+    break;
+  case rttmbt_unsigned_int:
+    snprintf(value1, 256, "%u", *((unsigned int *) expected));
+    snprintf(value2, 256, "%u", *((unsigned int *) expected_old));
+    break;
+  case rttmbt_char:
+  case rttmbt_signed_char:
+    snprintf(value1, 256, "%d", *((signed char *) expected));
+    snprintf(value2, 256, "%d", *((signed char *) expected_old));
+    break;
+  case rttmbt_unsigned_char:
+    snprintf(value1, 256, "%u", *((unsigned char *) expected));
+    snprintf(value2, 256, "%u", *((unsigned char *) expected_old));
+    break;
+  case rttmbt_long:
+  case rttmbt_signed_long:
+    snprintf(value1, 256, "%ld", *((signed long *) expected));
+    snprintf(value2, 256, "%ld", *((signed long *) expected_old));
+    break;
+  case rttmbt_unsigned_long:
+    snprintf(value1, 256, "%lu", *((unsigned long *) expected));
+    snprintf(value2, 256, "%lu", *((unsigned long *) expected_old));
+    break;
+  case rttmbt_float:
+    snprintf(value1, 256, "%.17g", *((float *) expected));
+    snprintf(value2, 256, "%.17g", *((float *) expected_old));
+    break;
+  case rttmbt_double:
+    snprintf(value1, 256, "%.17g", *((double *) expected));
+    snprintf(value2, 256, "%.17g", *((double *) expected_old));
+    break;
+  default:
+    snprintf(value1, 256, "[error: unknown value type]");
+    snprintf(value2, 256, "[error: unknown value type]");
+    break;
+  }
+
+  @rttCheck(current_state != rttmbt_new_expected,
+		     "A new expected value %s for signal %s did occur while still checking the last expected value %s",
+		     value1, signalName, value2);
+}
+
+@func static void logVerdict(void *observed, void *expected, double admissibleError,
+				      rttmbt_signal_types_t type, const char *signalName, const char *tags_ptr,
+				      const char *reason)
+{
+
+  const char         *tags = tags_ptr;
+  if (!tags) {
+    tags = (char *) " ";
+  }
+
+  double              deviation;
+
+  char                observedValue[256], expectedValue[256];
+  switch (type) {
+  case rttmbt_bool:
+    snprintf(observedValue, 256, "%s", (*((int *) observed)) ? "true" : "false");
+    snprintf(expectedValue, 256, "%s", (*((int *) expected)) ? "true" : "false");
+    break;
+  case rttmbt_short:
+  case rttmbt_signed_short:
+    snprintf(observedValue, 256, "%d", *((signed short *) observed));
+    snprintf(expectedValue, 256, "%d", *((signed short *) expected));
+    break;
+  case rttmbt_unsigned_short:
+    snprintf(observedValue, 256, "%u", *((unsigned short *) observed));
+    snprintf(expectedValue, 256, "%u", *((unsigned short *) expected));
+    break;
+  case rttmbt_int:
+  case rttmbt_signed_int:
+    snprintf(observedValue, 256, "%d", *((signed int *) observed));
+    snprintf(expectedValue, 256, "%d", *((signed int *) expected));
+    break;
+  case rttmbt_unsigned_int:
+    snprintf(observedValue, 256, "%u", *((unsigned int *) observed));
+    snprintf(expectedValue, 256, "%u", *((unsigned int *) expected));
+    break;
+  case rttmbt_char:
+  case rttmbt_signed_char:
+    snprintf(observedValue, 256, "%d", *((signed char *) observed));
+    snprintf(expectedValue, 256, "%d", *((signed char *) expected));
+    break;
+  case rttmbt_unsigned_char:
+    snprintf(observedValue, 256, "%u", *((unsigned char *) observed));
+    snprintf(expectedValue, 256, "%u", *((unsigned char *) expected));
+    break;
+  case rttmbt_long:
+  case rttmbt_signed_long:
+    snprintf(observedValue, 256, "%ld", *((signed long *) observed));
+    snprintf(expectedValue, 256, "%ld", *((signed long *) expected));
+    break;
+  case rttmbt_unsigned_long:
+    snprintf(observedValue, 256, "%lu", *((unsigned long *) observed));
+    snprintf(expectedValue, 256, "%lu", *((unsigned long *) expected));
+    break;
+  case rttmbt_float:
+    snprintf(observedValue, 256, "%.17g", *((float *) observed));
+    snprintf(expectedValue, 256, "%.17g", *((float *) expected));
+    break;
+  case rttmbt_double:
+    snprintf(observedValue, 256, "%.17g", *((double *) observed));
+    snprintf(expectedValue, 256, "%.17g", *((double *) expected));
+    break;
+  default:
+    snprintf(observedValue, 256, "[error: unknown value type]");
+    snprintf(expectedValue, 256, "[error: unknown value type]");
+    break;
+  }
+
+  @rttAssert(rttmbt_valueAcceptable(observed, expected, admissibleError, type, &deviation), "%s", tags);
+  @printf("Checked signal: %s", signalName);
+  @printf("observed value: %s, expected value: %s, admissible error: %.17g, deviation: %.17g",
+		   observedValue, expectedValue, admissibleError, deviation);
+  if (reason) {
+    @printf("Failure description: %s", reason);
+  }
+}

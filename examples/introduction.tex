@@ -1,0 +1,68 @@
+% !TeX root = D3.5_Examples_Compendium_2.tex
+% !TeX spellcheck = en_GB
+
+\section{Introduction}\label{sec:intro}
+
+This deliverable provides an overview of different public example multi-models that stakeholders who are interested in experimenting with the INTO-CPS technology can use as a starting point. The examples have been developed using the different simulation technologies in INTO-CPS: 20-sim\footnote{\url{http://www.20sim.com}}; Overture/VDM-RT\footnote{\url{http://overturetool.org}}; OpenModelica\footnote{\url{https://openmodelica.org}}; SysML\footnote{Using the Modelio tool: \url{https://www.modeliosoft.com}}; and RT-Tester\footnote{\url{https://www.verified.de/products/rt-tester/}}). The examples are  comprised of multi-models using the INTO-CPS SysML profile and collections of Continuous Time (CT) and Discrete Event (DE) models elicited from the simulation models. Examples of their use is also given, demonstrating features and analyses made available by the INTO-CPS tool chain. 
+
+This deliverable is structured in different sections, each of which provides a brief introduction to each example model. Each example illustrates different aspects of the INTO-CPS tool chain, as summarised here:
+
+\begin{itemize}
+  \item Section~\ref{sec:singletank} presents a Single-tank Water Tank model. The simplest example in the compendium, this is a two-model multi-model, using 20-sim and VDM-RT FMUs.  The example has a SysML architecture, can be co-simulated, and has support for Design Space Exploration (DSE).
+  \item Section~\ref{sec:threetank} presents a Three-tank Water Tank model. This study aims to demonstrate the division of CT elements across different FMUs. The study comprises 20-sim and VDM-RT FMUs and demonstrates DSE and Test Automation technologies. 
+  \item Section~\ref{sec:fcu} presents a Fan Coil Unit (FCU). Originally presented as a baseline OpenModelica model. This model demonstrates the options for multi-modelling and dividing models into separate FMUs to allow for architecting to be carried out in the SysML architectural model. The example demonstrates the use of co-simulation and DSE.
+  \item Section~\ref{sec:linefollwerrobot} presents a Line-following Robot. This study has four possible co-simulation multi-models -- two using replication offered by 20-sim FMUs (one using 3D visualisation and one without) and another two configurations which are not using FMU replication. The study provides several DSE experiments.
+  \item Section~\ref{sec:turn} presents a Turn Indicator example.
+  In this study, the behaviour of a car's turn indicator is modelled using parallel state-charts.
+  This model is then used to automatically derive tests and to perform model checking.
+  \item Section~\ref{sec:uavsingle} presents a single-UAV model, which models the physical dynamics as well as the discrete controller of an Unmanned Aerial Vehicle (UAV). The model contributes a high-fidelity physical model, enabling the multi-model to be used to compare alternative control algorithms.
+  \item Section~\ref{sec:ether} presents an Ether communication model. This pilot provides an initial demonstration of a model for network communications. This pilot is VDM-RT only, with a simple SysML architecture. Co-simulation takes the form of the demonstration of messages passing through the ether. The intention is that this pilot will be used in the future by others using network communications. 
+  \item Section~\ref{sec:uavswarm} presents a swarm of communicating simplified UAVs. This pilot is a first version of a swarm of UAVs which receive direction from a central controller. The pilot uses FMUs from 20-sim and VDM-RT taking advantage of FMU replication offered by both notations. Co-Simulation and 3D visualisation are supported.
+ % \item Section~\ref{sec:smartgrid} presents a smart grid multi-model. This study is a preliminary study presenting only the architecture and constituent models in 20-sim and VDM-RT. FMUs have not yet been produced, therefore co-simulation has yet to be demonstrated.
+  \item Section~\ref{sec:bicycle} presents an autonomous vehicle model. In this study, a multi-model demonstrates a vehicle traversing a path of defined waypoints. The multi-model comprises two FMUs; The dynamics of the vehicle are modelled by a 20-sim FMU, and the vehicle control is determind by a VDM-RT FMU. The example has a SysML architecture, can be co-simulated, and has support for DSE.
+  \item Section~\ref{sec:massspringdamper} presents a mass spring damper model. The pilot uses models of masses and springs to demonstrate the utility of so-simulation stablization using both 20-sim and OpenModelica FMUs.
+ 
+  
+\end{itemize}
+
+In order to guide you in what models to consider inspecting, we have created Table~\ref{tab:into_examples} illustrating the different characteristics of the different publicly available multi-models. 
+
+\begin{table}[ht]
+\begin{centering}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}\hline
+  &\multicolumn{11}{c|}{INTO-CPS Technology} \\
+\cline{2-12}
+Multi-model
+%&\begin{sideways}Single DE Model\end{sideways}
+%&\begin{sideways}Single CT Model\end{sideways}
+%&\begin{sideways}`Holistic' SysML model\ \end{sideways} 
+&\begin{sideways}Multi-DE model\end{sideways}
+&\begin{sideways}Multi-CT model\end{sideways}
+&\begin{sideways}20-Sim (for FMU)\end{sideways}
+&\begin{sideways}OpenModelica (for FMU)\end{sideways}
+&\begin{sideways}VDM-RT (for FMU)\end{sideways}
+&\begin{sideways}INTO-CPS SysML\end{sideways}  
+&\begin{sideways}Co-simulation engine(COE)\end{sideways}
+%&\begin{sideways}\textcolor{gray}{SysML requirements}\end{sideways}
+%&\begin{sideways}Traceability links identified\end{sideways}
+&\begin{sideways}DSE support included\end{sideways}
+&\begin{sideways}{Test Automation support}\end{sideways}
+&\begin{sideways}{Model checking}\end{sideways}
+&\begin{sideways}{Code Generation}\end{sideways} \\
+\hline
+Single-tank Water Tank	& & &x&x&x&x&x&x& & &x\\ \hline
+Three-tank Water Tank	& &x&x& &x&x&x&x&x& &x\\ \hline
+Fan Coil Unit (FCU)		& &x&x&x&x&x&x&x&x&x&x\\ \hline
+Line-following Robot		& &x&x&x&x&x&x&x&x&x&x\\ \hline
+Turn Indicator			& & & & & & & & &x&x&\\ \hline
+Single UAV			& &x&x& &x&x&x& & & &\\ \hline
+Ether				&x& & & &x& &x& &x&x& \\ \hline
+UAV Swarm			&x&x&x& &x&x&x& &x&x&\\ \hline
+%Smart Grid			&x&x&x& &x&x& & & & &\\ \hline
+Bicycle			& & &x& &x&x&x&x& & &\\ \hline
+Mass Spring Damper			& & &x&x& & &x& & & &\\ \hline
+\end{tabular}
+\caption{Overview of INTO-CPS technologies used for pilot studies}
+\label{tab:into_examples}
+\end{centering}
+\end{table}

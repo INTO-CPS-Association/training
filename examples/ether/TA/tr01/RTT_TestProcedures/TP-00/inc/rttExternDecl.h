@@ -1,0 +1,81 @@
+#ifndef _XXX_RTTEXTERN_DECL_H_XXX_
+#define _XXX_RTTEXTERN_DECL_H_XXX_
+
+extern unsigned long long _timeTick;
+extern unsigned long long _timeResolution;
+extern int _timeTickDiff;
+extern int rttHaveDiscreteTrans;
+
+extern void stimulator();
+
+extern char* sut_End1I_tags;
+extern void _ora_End1I();
+extern void _ora_End1I_finit();
+extern char* sut_End2I_tags;
+extern void _ora_End2I();
+extern void _ora_End2I_finit();
+extern char* sut_EtherI_tags;
+extern void _ora_EtherI();
+extern void _ora_EtherI_finit();
+extern int out11a_rtt_Ctr;
+extern signed int out11a_rtt_Epd;
+extern signed int out11a_rtt_EpdOld;
+extern signed int out11a_rtt_ExeOld;
+extern int out11a_rtt_CheckerState;
+extern int out11p_rtt_Ctr;
+extern signed int out11p_rtt_Epd;
+extern signed int out11p_rtt_EpdOld;
+extern signed int out11p_rtt_ExeOld;
+extern int out11p_rtt_CheckerState;
+extern int out12a_rtt_Ctr;
+extern signed int out12a_rtt_Epd;
+extern signed int out12a_rtt_EpdOld;
+extern signed int out12a_rtt_ExeOld;
+extern int out12a_rtt_CheckerState;
+extern int out12p_rtt_Ctr;
+extern signed int out12p_rtt_Epd;
+extern signed int out12p_rtt_EpdOld;
+extern signed int out12p_rtt_ExeOld;
+extern int out12p_rtt_CheckerState;
+extern int out13a_rtt_Ctr;
+extern signed int out13a_rtt_Epd;
+extern signed int out13a_rtt_EpdOld;
+extern signed int out13a_rtt_ExeOld;
+extern int out13a_rtt_CheckerState;
+extern int out13p_rtt_Ctr;
+extern signed int out13p_rtt_Epd;
+extern signed int out13p_rtt_EpdOld;
+extern signed int out13p_rtt_ExeOld;
+extern int out13p_rtt_CheckerState;
+extern int out21a_rtt_Ctr;
+extern signed int out21a_rtt_Epd;
+extern signed int out21a_rtt_EpdOld;
+extern signed int out21a_rtt_ExeOld;
+extern int out21a_rtt_CheckerState;
+extern int out21p_rtt_Ctr;
+extern signed int out21p_rtt_Epd;
+extern signed int out21p_rtt_EpdOld;
+extern signed int out21p_rtt_ExeOld;
+extern int out21p_rtt_CheckerState;
+extern int out22a_rtt_Ctr;
+extern signed int out22a_rtt_Epd;
+extern signed int out22a_rtt_EpdOld;
+extern signed int out22a_rtt_ExeOld;
+extern int out22a_rtt_CheckerState;
+extern int out22p_rtt_Ctr;
+extern signed int out22p_rtt_Epd;
+extern signed int out22p_rtt_EpdOld;
+extern signed int out22p_rtt_ExeOld;
+extern int out22p_rtt_CheckerState;
+extern int out23a_rtt_Ctr;
+extern signed int out23a_rtt_Epd;
+extern signed int out23a_rtt_EpdOld;
+extern signed int out23a_rtt_ExeOld;
+extern int out23a_rtt_CheckerState;
+extern int out23p_rtt_Ctr;
+extern signed int out23p_rtt_Epd;
+extern signed int out23p_rtt_EpdOld;
+extern signed int out23p_rtt_ExeOld;
+extern int out23p_rtt_CheckerState;
+
+#endif

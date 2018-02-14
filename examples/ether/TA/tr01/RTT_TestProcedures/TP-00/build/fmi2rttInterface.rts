@@ -1,0 +1,166 @@
+#line 1 "C:/INTO-CPS/INTO_CPS_Pilot_Studies/case-study_ether/Test-Data-Generation/Ether_Indirect_Test_Model_v0.41/specs/fmi2rttInterface.rts"
+/* FMI Interface Specification 'fmi2rttInterface.rts' */
+
+#include "fmi2Functions.h"
+#include "fmi2rttInterface.h"
+
+@func void fmi2rttInterface(fmi2Interface_t *fmi2if, rttInterface_t *rttif, rttModelVars_t *rttmv)
+{
+    // Copy input variables to rttInterface_t.
+    if (rttif->in1a != (signed int)fmi2if->var_fmi2Integer[0]) {
+        rttif->in1a = (signed int)fmi2if->var_fmi2Integer[0];
+        @printf("[INP] IMR.in1a = %d", rttif->in1a);
+    }
+    if (rttif->in1p != (signed int)fmi2if->var_fmi2Integer[1]) {
+        rttif->in1p = (signed int)fmi2if->var_fmi2Integer[1];
+        @printf("[INP] IMR.in1p = %d", rttif->in1p);
+    }
+    if (rttif->in2a != (signed int)fmi2if->var_fmi2Integer[2]) {
+        rttif->in2a = (signed int)fmi2if->var_fmi2Integer[2];
+        @printf("[INP] IMR.in2a = %d", rttif->in2a);
+    }
+    if (rttif->in2p != (signed int)fmi2if->var_fmi2Integer[3]) {
+        rttif->in2p = (signed int)fmi2if->var_fmi2Integer[3];
+        @printf("[INP] IMR.in2p = %d", rttif->in2p);
+    }
+
+    // Copy parameter variables to rttInterface_t.
+    // No variables of causality parameter are configured.
+
+    // Copy calculatedParameter variables to rttInterface_t.
+    // No variables of causality calculatedParameter are configured.
+
+    // Copy independent variables to rttInterface_t.
+    // No variables of causality independent are configured.
+
+}
+
+@func void rtt2fmiInterface(fmi2Interface_t *fmi2if, rttInterface_t *rttif, rttModelVars_t *rttmv)
+{
+    // Copy output variables to fmi2Interface_t.
+    if(fmi2if->var_fmi2Integer[4] != (fmi2Integer)rttif->out11a) {
+        fmi2if->var_fmi2Integer[4] = (fmi2Integer)rttif->out11a;
+        @printf("[OUT] IMR.out11a = %d", rttif->out11a);
+    }
+    if(fmi2if->var_fmi2Integer[5] != (fmi2Integer)rttif->out11p) {
+        fmi2if->var_fmi2Integer[5] = (fmi2Integer)rttif->out11p;
+        @printf("[OUT] IMR.out11p = %d", rttif->out11p);
+    }
+    if(fmi2if->var_fmi2Integer[6] != (fmi2Integer)rttif->out12a) {
+        fmi2if->var_fmi2Integer[6] = (fmi2Integer)rttif->out12a;
+        @printf("[OUT] IMR.out12a = %d", rttif->out12a);
+    }
+    if(fmi2if->var_fmi2Integer[7] != (fmi2Integer)rttif->out12p) {
+        fmi2if->var_fmi2Integer[7] = (fmi2Integer)rttif->out12p;
+        @printf("[OUT] IMR.out12p = %d", rttif->out12p);
+    }
+    if(fmi2if->var_fmi2Integer[8] != (fmi2Integer)rttif->out13a) {
+        fmi2if->var_fmi2Integer[8] = (fmi2Integer)rttif->out13a;
+        @printf("[OUT] IMR.out13a = %d", rttif->out13a);
+    }
+    if(fmi2if->var_fmi2Integer[9] != (fmi2Integer)rttif->out13p) {
+        fmi2if->var_fmi2Integer[9] = (fmi2Integer)rttif->out13p;
+        @printf("[OUT] IMR.out13p = %d", rttif->out13p);
+    }
+    if(fmi2if->var_fmi2Integer[10] != (fmi2Integer)rttif->out21a) {
+        fmi2if->var_fmi2Integer[10] = (fmi2Integer)rttif->out21a;
+        @printf("[OUT] IMR.out21a = %d", rttif->out21a);
+    }
+    if(fmi2if->var_fmi2Integer[11] != (fmi2Integer)rttif->out21p) {
+        fmi2if->var_fmi2Integer[11] = (fmi2Integer)rttif->out21p;
+        @printf("[OUT] IMR.out21p = %d", rttif->out21p);
+    }
+    if(fmi2if->var_fmi2Integer[12] != (fmi2Integer)rttif->out22a) {
+        fmi2if->var_fmi2Integer[12] = (fmi2Integer)rttif->out22a;
+        @printf("[OUT] IMR.out22a = %d", rttif->out22a);
+    }
+    if(fmi2if->var_fmi2Integer[13] != (fmi2Integer)rttif->out22p) {
+        fmi2if->var_fmi2Integer[13] = (fmi2Integer)rttif->out22p;
+        @printf("[OUT] IMR.out22p = %d", rttif->out22p);
+    }
+    if(fmi2if->var_fmi2Integer[14] != (fmi2Integer)rttif->out23a) {
+        fmi2if->var_fmi2Integer[14] = (fmi2Integer)rttif->out23a;
+        @printf("[OUT] IMR.out23a = %d", rttif->out23a);
+    }
+    if(fmi2if->var_fmi2Integer[15] != (fmi2Integer)rttif->out23p) {
+        fmi2if->var_fmi2Integer[15] = (fmi2Integer)rttif->out23p;
+        @printf("[OUT] IMR.out23p = %d", rttif->out23p);
+    }
+
+    // Copy local variables to fmi2Interface_t.
+    if(fmi2if->var_fmi2Integer[16] != (fmi2Integer)rttmv->sut_inmsg1a) {
+        fmi2if->var_fmi2Integer[16] = (fmi2Integer)rttmv->sut_inmsg1a;
+        @printf("[LOC] IMR.SystemUnderTest.inmsg1a = %d", rttmv->sut_inmsg1a);
+    }
+    if(fmi2if->var_fmi2Integer[17] != (fmi2Integer)rttmv->sut_inmsg1p) {
+        fmi2if->var_fmi2Integer[17] = (fmi2Integer)rttmv->sut_inmsg1p;
+        @printf("[LOC] IMR.SystemUnderTest.inmsg1p = %d", rttmv->sut_inmsg1p);
+    }
+    if(fmi2if->var_fmi2Integer[18] != (fmi2Integer)rttmv->sut_inmsg2a) {
+        fmi2if->var_fmi2Integer[18] = (fmi2Integer)rttmv->sut_inmsg2a;
+        @printf("[LOC] IMR.SystemUnderTest.inmsg2a = %d", rttmv->sut_inmsg2a);
+    }
+    if(fmi2if->var_fmi2Integer[19] != (fmi2Integer)rttmv->sut_inmsg2p) {
+        fmi2if->var_fmi2Integer[19] = (fmi2Integer)rttmv->sut_inmsg2p;
+        @printf("[LOC] IMR.SystemUnderTest.inmsg2p = %d", rttmv->sut_inmsg2p);
+    }
+    if(fmi2if->var_fmi2Integer[20] != (fmi2Integer)rttmv->sut_outmsg11a) {
+        fmi2if->var_fmi2Integer[20] = (fmi2Integer)rttmv->sut_outmsg11a;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg11a = %d", rttmv->sut_outmsg11a);
+    }
+    if(fmi2if->var_fmi2Integer[21] != (fmi2Integer)rttmv->sut_outmsg11p) {
+        fmi2if->var_fmi2Integer[21] = (fmi2Integer)rttmv->sut_outmsg11p;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg11p = %d", rttmv->sut_outmsg11p);
+    }
+    if(fmi2if->var_fmi2Integer[22] != (fmi2Integer)rttmv->sut_outmsg12a) {
+        fmi2if->var_fmi2Integer[22] = (fmi2Integer)rttmv->sut_outmsg12a;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg12a = %d", rttmv->sut_outmsg12a);
+    }
+    if(fmi2if->var_fmi2Integer[23] != (fmi2Integer)rttmv->sut_outmsg12p) {
+        fmi2if->var_fmi2Integer[23] = (fmi2Integer)rttmv->sut_outmsg12p;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg12p = %d", rttmv->sut_outmsg12p);
+    }
+    if(fmi2if->var_fmi2Integer[24] != (fmi2Integer)rttmv->sut_outmsg13a) {
+        fmi2if->var_fmi2Integer[24] = (fmi2Integer)rttmv->sut_outmsg13a;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg13a = %d", rttmv->sut_outmsg13a);
+    }
+    if(fmi2if->var_fmi2Integer[25] != (fmi2Integer)rttmv->sut_outmsg13p) {
+        fmi2if->var_fmi2Integer[25] = (fmi2Integer)rttmv->sut_outmsg13p;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg13p = %d", rttmv->sut_outmsg13p);
+    }
+    if(fmi2if->var_fmi2Integer[26] != (fmi2Integer)rttmv->sut_outmsg21a) {
+        fmi2if->var_fmi2Integer[26] = (fmi2Integer)rttmv->sut_outmsg21a;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg21a = %d", rttmv->sut_outmsg21a);
+    }
+    if(fmi2if->var_fmi2Integer[27] != (fmi2Integer)rttmv->sut_outmsg21p) {
+        fmi2if->var_fmi2Integer[27] = (fmi2Integer)rttmv->sut_outmsg21p;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg21p = %d", rttmv->sut_outmsg21p);
+    }
+    if(fmi2if->var_fmi2Integer[28] != (fmi2Integer)rttmv->sut_outmsg22a) {
+        fmi2if->var_fmi2Integer[28] = (fmi2Integer)rttmv->sut_outmsg22a;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg22a = %d", rttmv->sut_outmsg22a);
+    }
+    if(fmi2if->var_fmi2Integer[29] != (fmi2Integer)rttmv->sut_outmsg22p) {
+        fmi2if->var_fmi2Integer[29] = (fmi2Integer)rttmv->sut_outmsg22p;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg22p = %d", rttmv->sut_outmsg22p);
+    }
+    if(fmi2if->var_fmi2Integer[30] != (fmi2Integer)rttmv->sut_outmsg23a) {
+        fmi2if->var_fmi2Integer[30] = (fmi2Integer)rttmv->sut_outmsg23a;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg23a = %d", rttmv->sut_outmsg23a);
+    }
+    if(fmi2if->var_fmi2Integer[31] != (fmi2Integer)rttmv->sut_outmsg23p) {
+        fmi2if->var_fmi2Integer[31] = (fmi2Integer)rttmv->sut_outmsg23p;
+        @printf("[LOC] IMR.SystemUnderTest.outmsg23p = %d", rttmv->sut_outmsg23p);
+    }
+    if(fmi2if->var_fmi2Integer[32] != (fmi2Integer)rttmv->sut_EtherI_processing) {
+        fmi2if->var_fmi2Integer[32] = (fmi2Integer)rttmv->sut_EtherI_processing;
+        @printf("[LOC] IMR.SystemUnderTest.EtherI.processing = %d", rttmv->sut_EtherI_processing);
+    }
+    if(fmi2if->var_fmi2Integer[33] != (fmi2Integer)rttmv->te__tesimulator_l) {
+        fmi2if->var_fmi2Integer[33] = (fmi2Integer)rttmv->te__tesimulator_l;
+        @printf("[LOC] IMR.TestEnvironment.tesimulator.l = %d", rttmv->te__tesimulator_l);
+    }
+
+}
+
+// end of fmi2rttInterface.rts

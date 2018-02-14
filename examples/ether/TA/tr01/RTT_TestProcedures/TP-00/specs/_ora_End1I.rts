@@ -1,0 +1,250 @@
+
+#include "rttExternDecl.h"
+
+
+@func void _ora_End1I()
+{
+  {
+    double              _rtt_Old_out11a;
+    double              _rtt_Old_out11p;
+    double              _rtt_Old_out12a;
+    double              _rtt_Old_out12p;
+    double              _rtt_Old_out13a;
+    double              _rtt_Old_out13p;
+    {
+      int                 currentLocation;
+      int                 cycleCtr;
+      int                 triggered;
+/* Set initial location to 'End.initial' */
+      currentLocation = 7;
+      cycleCtr = 0;
+      out11a_rtt_Epd = 0;
+      out11p_rtt_Epd = 0;
+      out12a_rtt_Epd = 0;
+      out12p_rtt_Epd = 0;
+      out13a_rtt_Epd = 0;
+      out13p_rtt_Epd = 0;
+      while (@rttIsRunning) {
+	triggered = 0;
+	if (rttIOPre->out11a != _rtt_Old_out11a) {
+	  _rtt_Old_out11a = rttIOPre->out11a;
+	  @logSig["%.17g"] ("out11a", (double) rttIOPre->out11a);
+	}
+	if (rttIOPre->out11p != _rtt_Old_out11p) {
+	  _rtt_Old_out11p = rttIOPre->out11p;
+	  @logSig["%.17g"] ("out11p", (double) rttIOPre->out11p);
+	}
+	if (rttIOPre->out12a != _rtt_Old_out12a) {
+	  _rtt_Old_out12a = rttIOPre->out12a;
+	  @logSig["%.17g"] ("out12a", (double) rttIOPre->out12a);
+	}
+	if (rttIOPre->out12p != _rtt_Old_out12p) {
+	  _rtt_Old_out12p = rttIOPre->out12p;
+	  @logSig["%.17g"] ("out12p", (double) rttIOPre->out12p);
+	}
+	if (rttIOPre->out13a != _rtt_Old_out13a) {
+	  _rtt_Old_out13a = rttIOPre->out13a;
+	  @logSig["%.17g"] ("out13a", (double) rttIOPre->out13a);
+	}
+	if (rttIOPre->out13p != _rtt_Old_out13p) {
+	  _rtt_Old_out13p = rttIOPre->out13p;
+	  @logSig["%.17g"] ("out13p", (double) rttIOPre->out13p);
+	}
+/* Handle location 'End.initial' */
+	if ((currentLocation == 7) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_End1I_t = (_timeTick + 0);
+/* New location is 'End.Idle' */
+	    currentLocation = 8;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0002 Cover basic control state Idle
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End1I
+ *            reaches basic control state IMR.SystemUnderTest.End1I.End.Idle
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+
+	    if (sut_End1I_tags) {
+	      free(sut_End1I_tags);
+	    }
+	    sut_End1I_tags = strdup("TC-INTO-CPS-Demo-BCS-0002");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'End.Idle' */
+	if ((currentLocation == 8) && (triggered == 0)) {
+	  if ((triggered == 0) && ((_timeTick - rttStatePre->sut_End1I_t) >= 100)) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_inmsg1a = rttIOPre->in1a;
+	    rttStatePost->sut_inmsg1p = rttIOPre->in1p;
+	    out11a_rtt_Epd = rttStatePre->sut_outmsg11a;
+	    out11p_rtt_Epd = rttStatePre->sut_outmsg11p;
+	    out12a_rtt_Epd = rttStatePre->sut_outmsg12a;
+	    out12p_rtt_Epd = rttStatePre->sut_outmsg12p;
+	    out13a_rtt_Epd = rttStatePre->sut_outmsg13a;
+	    out13p_rtt_Epd = rttStatePre->sut_outmsg13p;
+/* New location is 'End.Processing' */
+	    currentLocation = 10;
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.End1I
+ *   End.Idle
+ *       -- [ ((_timeTick - IMR.SystemUnderTest.End1I.t) >= 100) ] -->
+ *   End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0001 Cover transition Idle --> Processing
+ * @condition Component IMR.SystemUnderTest.End1I
+ *            resides in control state IMR.SystemUnderTest.End1I.End.Idle
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0003 Cover basic control state Processing
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End1I
+ *            reaches basic control state IMR.SystemUnderTest.End1I.End.Processing
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+
+	    if (sut_End1I_tags) {
+	      free(sut_End1I_tags);
+	    }
+	    sut_End1I_tags = strdup("TC-INTO-CPS-Demo-TR-0001, TC-INTO-CPS-Demo-BCS-0003");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Handle location 'End.Processing' */
+	if ((currentLocation == 10) && (triggered == 0)) {
+	  if (triggered == 0) {
+	    rttHaveDiscreteTrans = 1;
+	    rttStatePost->sut_End1I_t = (_timeTick + 0);
+/* New location is 'End.Idle' */
+	    currentLocation = 8;
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0003 Cover basic control state Processing
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End1I
+ *            reaches basic control state IMR.SystemUnderTest.End1I.End.Processing
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0002 Cover basic control state Idle
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End1I
+ *            reaches basic control state IMR.SystemUnderTest.End1I.End.Idle
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+
+	    if (sut_End1I_tags) {
+	      free(sut_End1I_tags);
+	    }
+	    sut_End1I_tags = strdup("TC-INTO-CPS-Demo-BCS-0003, TC-INTO-CPS-Demo-BCS-0002");
+	    triggered = 2;
+	  }
+	  triggered = (triggered + 1);
+	}
+/* Perform checks only when system is stable (rttHaveDiscreteTrans == 0) */
+	if (rttHaveDiscreteTrans == 0) {
+/* Call checker for signal IMR.out11a */
+	  check_sut2te_indication((&out11a_rtt_CheckerState), (&out11a_rtt_Ctr), (&out11a_rtt_Epd),
+				  (&out11a_rtt_EpdOld), (&rttIOPre->out11a), (&out11a_rtt_ExeOld), 0, 100, 100,
+				  rttmbt_int, "out11a", sut_End1I_tags);
+/* Call checker for signal IMR.out11p */
+	  check_sut2te_indication((&out11p_rtt_CheckerState), (&out11p_rtt_Ctr), (&out11p_rtt_Epd),
+				  (&out11p_rtt_EpdOld), (&rttIOPre->out11p), (&out11p_rtt_ExeOld), 0, 100, 100,
+				  rttmbt_int, "out11p", sut_End1I_tags);
+/* Call checker for signal IMR.out12a */
+	  check_sut2te_indication((&out12a_rtt_CheckerState), (&out12a_rtt_Ctr), (&out12a_rtt_Epd),
+				  (&out12a_rtt_EpdOld), (&rttIOPre->out12a), (&out12a_rtt_ExeOld), 0, 100, 100,
+				  rttmbt_int, "out12a", sut_End1I_tags);
+/* Call checker for signal IMR.out12p */
+	  check_sut2te_indication((&out12p_rtt_CheckerState), (&out12p_rtt_Ctr), (&out12p_rtt_Epd),
+				  (&out12p_rtt_EpdOld), (&rttIOPre->out12p), (&out12p_rtt_ExeOld), 0, 100, 100,
+				  rttmbt_int, "out12p", sut_End1I_tags);
+/* Call checker for signal IMR.out13a */
+	  check_sut2te_indication((&out13a_rtt_CheckerState), (&out13a_rtt_Ctr), (&out13a_rtt_Epd),
+				  (&out13a_rtt_EpdOld), (&rttIOPre->out13a), (&out13a_rtt_ExeOld), 0, 100, 100,
+				  rttmbt_int, "out13a", sut_End1I_tags);
+/* Call checker for signal IMR.out13p */
+	  check_sut2te_indication((&out13p_rtt_CheckerState), (&out13p_rtt_Ctr), (&out13p_rtt_Epd),
+				  (&out13p_rtt_EpdOld), (&rttIOPre->out13p), (&out13p_rtt_ExeOld), 0, 100, 100,
+				  rttmbt_int, "out13p", sut_End1I_tags);
+	}
+	if (1) {
+	  @rttYield;
+	  cycleCtr = 0;
+	}
+	cycleCtr = (cycleCtr + 1);
+      }
+    }
+  }
+}
+
+
+/* This function is checking for
+ * unsatisfied checks at the end of a test procedure.
+ */
+@func void _ora_End1I_finit()
+{
+
+  check_sut2te_indication_finit((&out11a_rtt_CheckerState), (&out11a_rtt_Epd), (&rttIOPre->out11a),
+				(&out11a_rtt_ExeOld), 0, rttmbt_int, "out11a", sut_End1I_tags);
+
+  check_sut2te_indication_finit((&out11p_rtt_CheckerState), (&out11p_rtt_Epd), (&rttIOPre->out11p),
+				(&out11p_rtt_ExeOld), 0, rttmbt_int, "out11p", sut_End1I_tags);
+
+  check_sut2te_indication_finit((&out12a_rtt_CheckerState), (&out12a_rtt_Epd), (&rttIOPre->out12a),
+				(&out12a_rtt_ExeOld), 0, rttmbt_int, "out12a", sut_End1I_tags);
+
+  check_sut2te_indication_finit((&out12p_rtt_CheckerState), (&out12p_rtt_Epd), (&rttIOPre->out12p),
+				(&out12p_rtt_ExeOld), 0, rttmbt_int, "out12p", sut_End1I_tags);
+
+  check_sut2te_indication_finit((&out13a_rtt_CheckerState), (&out13a_rtt_Epd), (&rttIOPre->out13a),
+				(&out13a_rtt_ExeOld), 0, rttmbt_int, "out13a", sut_End1I_tags);
+
+  check_sut2te_indication_finit((&out13p_rtt_CheckerState), (&out13p_rtt_Epd), (&rttIOPre->out13p),
+				(&out13p_rtt_ExeOld), 0, rttmbt_int, "out13p", sut_End1I_tags);
+
+}

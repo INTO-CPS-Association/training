@@ -1,0 +1,2580 @@
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End1I.End.initial
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0001 Cover basic control state initial
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End1I
+ *            reaches basic control state IMR.SystemUnderTest.End1I.End.initial
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0002 Cover basic control state Idle
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End1I
+ *            reaches basic control state IMR.SystemUnderTest.End1I.End.Idle
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0003 Cover basic control state Processing
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End1I
+ *            reaches basic control state IMR.SystemUnderTest.End1I.End.Processing
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End2I.End.initial
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0004 Cover basic control state initial
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End2I
+ *            reaches basic control state IMR.SystemUnderTest.End2I.End.initial
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End2I
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0005 Cover basic control state Idle
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End2I
+ *            reaches basic control state IMR.SystemUnderTest.End2I.End.Idle
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End2I
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0006 Cover basic control state Processing
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.End2I
+ *            reaches basic control state IMR.SystemUnderTest.End2I.End.Processing
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End2I
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.initial
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0007 Cover basic control state initial
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.initial
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0008 Cover basic control state Idle
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0009 Cover basic control state Init
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0010 Cover basic control state UnicastToSelf1
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0011 Cover basic control state NotToSelf1
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0012 Cover basic control state StartEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0013 Cover basic control state End2ToEnd1
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0014 Cover basic control state End2ToEnd1_2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0015 Cover basic control state End1ToEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0016 Cover basic control state End1NotToEnd2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0017 Cover basic control state End
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.End
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0018 Cover basic control state UnicastToSelf2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state coverage
+ * Cover basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCS-0019 Cover basic control state UnicastToSelf2_2
+ * @condition TRUE
+ * @event     Component IMR.SystemUnderTest.EtherI
+ *            reaches basic control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * @expected  The actions associated with the transition entering
+ *            this control state, and the control state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0001 Cover BCS pair Idle,Idle
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0002 Cover BCS pair Idle,Init
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0003 Cover BCS pair Idle,UnicastToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0004 Cover BCS pair Idle,NotToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0005 Cover BCS pair Idle,StartEnd2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0006 Cover BCS pair Idle,End2ToEnd1
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0007 Cover BCS pair Idle,End2ToEnd1_2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0008 Cover BCS pair Idle,End1ToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0009 Cover BCS pair Idle,End1NotToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0010 Cover BCS pair Idle,End
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0011 Cover BCS pair Idle,UnicastToSelf2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0012 Cover BCS pair Idle,UnicastToSelf2_2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0013 Cover BCS pair Processing,Idle
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0014 Cover BCS pair Processing,Init
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0015 Cover BCS pair Processing,UnicastToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0016 Cover BCS pair Processing,NotToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0017 Cover BCS pair Processing,StartEnd2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0018 Cover BCS pair Processing,End2ToEnd1
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0019 Cover BCS pair Processing,End2ToEnd1_2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0020 Cover BCS pair Processing,End1ToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0021 Cover BCS pair Processing,End1NotToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0022 Cover BCS pair Processing,End
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0023 Cover BCS pair Processing,UnicastToSelf2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End1I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0024 Cover BCS pair Processing,UnicastToSelf2_2
+ * @condition Components a. IMR.SystemUnderTest.End1I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0025 Cover BCS pair Idle,Idle
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0026 Cover BCS pair Idle,Init
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0027 Cover BCS pair Idle,UnicastToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0028 Cover BCS pair Idle,NotToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0029 Cover BCS pair Idle,StartEnd2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0030 Cover BCS pair Idle,End2ToEnd1
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0031 Cover BCS pair Idle,End2ToEnd1_2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0032 Cover BCS pair Idle,End1ToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0033 Cover BCS pair Idle,End1NotToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0034 Cover BCS pair Idle,End
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0035 Cover BCS pair Idle,UnicastToSelf2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Idle
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0036 Cover BCS pair Idle,UnicastToSelf2_2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0037 Cover BCS pair Processing,Idle
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0038 Cover BCS pair Processing,Init
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0039 Cover BCS pair Processing,UnicastToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0040 Cover BCS pair Processing,NotToSelf1
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0041 Cover BCS pair Processing,StartEnd2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0042 Cover BCS pair Processing,End2ToEnd1
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0043 Cover BCS pair Processing,End2ToEnd1_2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0044 Cover BCS pair Processing,End1ToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0045 Cover BCS pair Processing,End1NotToEnd2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0046 Cover BCS pair Processing,End
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0047 Cover BCS pair Processing,UnicastToSelf2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.End2I.End.Processing
+ *      2. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0048 Cover BCS pair Processing,UnicastToSelf2_2
+ * @condition Components a. IMR.SystemUnderTest.End2I
+ *                   and b. IMR.SystemUnderTest.EtherI
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Idle
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0049 Cover BCS pair Idle,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Idle
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0050 Cover BCS pair Idle,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Idle
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0051 Cover BCS pair Idle,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Idle
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0052 Cover BCS pair Idle,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Init
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0053 Cover BCS pair Init,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Init
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0054 Cover BCS pair Init,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Init
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0055 Cover BCS pair Init,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.Init
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0056 Cover BCS pair Init,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0057 Cover BCS pair UnicastToSelf1,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0058 Cover BCS pair UnicastToSelf1,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0059 Cover BCS pair UnicastToSelf1,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0060 Cover BCS pair UnicastToSelf1,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0061 Cover BCS pair NotToSelf1,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0062 Cover BCS pair NotToSelf1,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0063 Cover BCS pair NotToSelf1,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0064 Cover BCS pair NotToSelf1,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0065 Cover BCS pair StartEnd2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0066 Cover BCS pair StartEnd2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0067 Cover BCS pair StartEnd2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0068 Cover BCS pair StartEnd2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0069 Cover BCS pair End2ToEnd1,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0070 Cover BCS pair End2ToEnd1,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0071 Cover BCS pair End2ToEnd1,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0072 Cover BCS pair End2ToEnd1,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0073 Cover BCS pair End2ToEnd1_2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0074 Cover BCS pair End2ToEnd1_2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0075 Cover BCS pair End2ToEnd1_2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End2ToEnd1_2
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0076 Cover BCS pair End2ToEnd1_2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0077 Cover BCS pair End1ToEnd2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0078 Cover BCS pair End1ToEnd2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0079 Cover BCS pair End1ToEnd2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0080 Cover BCS pair End1ToEnd2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0081 Cover BCS pair End1NotToEnd2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0082 Cover BCS pair End1NotToEnd2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0083 Cover BCS pair End1NotToEnd2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0084 Cover BCS pair End1NotToEnd2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0085 Cover BCS pair End,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0086 Cover BCS pair End,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0087 Cover BCS pair End,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.End
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0088 Cover BCS pair End,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0089 Cover BCS pair UnicastToSelf2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0090 Cover BCS pair UnicastToSelf2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0091 Cover BCS pair UnicastToSelf2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0092 Cover BCS pair UnicastToSelf2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ *      2. IMR.SystemUnderTest.End1I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0093 Cover BCS pair UnicastToSelf2_2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ *      2. IMR.SystemUnderTest.End1I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0094 Cover BCS pair UnicastToSelf2_2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End1I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ *      2. IMR.SystemUnderTest.End2I.End.Idle
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0095 Cover BCS pair UnicastToSelf2_2,Idle
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: basic control state pairs coverage
+ * Cover pair of basic control states
+ *      1. IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf2_2
+ *      2. IMR.SystemUnderTest.End2I.End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-BCSPAIRS-0096 Cover BCS pair UnicastToSelf2_2,Processing
+ * @condition Components a. IMR.SystemUnderTest.EtherI
+ *                   and b. IMR.SystemUnderTest.End2I
+ *            reside simultaneously in basic control states 1. and 2. specified above
+ * @event     - none -
+ * @expected  The actions associated with the transitions entering
+ *            these control states, and the control states' entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with components a. and b. specified above
+ */
+/** @rttPrint
+ * Model coverage goal: user-defined test generation goal
+ * Generate computation satisfying formula
+ * Finally ([(_timeTick >= 2000)])
+ * 
+ * @tag       TC-INTO-CPS-Demo-GOAL-0001 User-defined test generation goal (GOAL)
+ * @condition true
+ * @event     SUT performs computation satisfying LTL formula specified above
+ * @expected  The actions associated with the computation are
+ *            performed as specified in the model./** @rttPrint
+ * Model coverage goal: user-defined test generation goal
+ * Generate computation satisfying formula
+ * Finally ([(_timeTick >= 200)])
+ * 
+ * @tag       TC-INTO-CPS-Demo-GOAL-0002 User-defined test generation goal (GOAL)
+ * @condition true
+ * @event     SUT performs computation satisfying LTL formula specified above
+ * @expected  The actions associated with the computation are
+ *            performed as specified in the model./** @rttPrint
+ * Model coverage goal: user-defined test generation goal
+ * Generate computation satisfying formula
+ * Finally ([(_timeTick >= 1500)])
+ * 
+ * @tag       TC-INTO-CPS-Demo-GOAL-0003 User-defined test generation goal (GOAL)
+ * @condition true
+ * @event     SUT performs computation satisfying LTL formula specified above
+ * @expected  The actions associated with the computation are
+ *            performed as specified in the model./** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0001 MC/DC coverage of transition UnicastToSelf1 --> End2ToEnd1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 == 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && (IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0002 MC/DC coverage of transition UnicastToSelf1 --> End2ToEnd1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 == 18)) && (IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0003 MC/DC stability condition of  UnicastToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && (IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a != 242) && (IMR.SystemUnderTest.inmsg2a != 18)) ] -->
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0004 MC/DC coverage of transition UnicastToSelf1 --> StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && ((IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18))) && ((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0005 MC/DC stability condition of  UnicastToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 == 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && (IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0006 MC/DC stability condition of  UnicastToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 == 18)) && (IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a != 242) && (IMR.SystemUnderTest.inmsg2a != 18)) ] -->
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0007 MC/DC coverage of transition NotToSelf1 --> StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && (IMR.SystemUnderTest.EtherI.Ether.NotToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0008 MC/DC stability condition of  NotToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 == 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && (IMR.SystemUnderTest.EtherI.Ether.NotToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0009 MC/DC stability condition of  NotToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 == 18)) && (IMR.SystemUnderTest.EtherI.Ether.NotToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0010 MC/DC coverage of transition NotToSelf1 --> End2ToEnd1_2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 == 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && ((IMR.SystemUnderTest.EtherI.Ether.NotToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))) && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0011 MC/DC coverage of transition NotToSelf1 --> End2ToEnd1_2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 == 18)) && ((IMR.SystemUnderTest.EtherI.Ether.NotToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))) && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0012 MC/DC stability condition of  NotToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg2a@0 != 242) && (IMR.SystemUnderTest.inmsg2a@0 != 18)) && (IMR.SystemUnderTest.EtherI.Ether.NotToSelf1@0 && ((IMR.SystemUnderTest.inmsg2a@0 == 242) || (IMR.SystemUnderTest.inmsg2a@0 == 18))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ *       -- [ ((IMR.SystemUnderTest.inmsg1a == 241) || (IMR.SystemUnderTest.inmsg1a == 33)) ] -->
+ *   Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0013 MC/DC coverage of transition StartEnd2 --> End1ToEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg1a@0 == 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33)) && (IMR.SystemUnderTest.EtherI.Ether.StartEnd2@0 && ((IMR.SystemUnderTest.inmsg1a@0 == 241) || (IMR.SystemUnderTest.inmsg1a@0 == 33))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ *       -- [ ((IMR.SystemUnderTest.inmsg1a == 241) || (IMR.SystemUnderTest.inmsg1a == 33)) ] -->
+ *   Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0014 MC/DC coverage of transition StartEnd2 --> End1ToEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 == 33)) && (IMR.SystemUnderTest.EtherI.Ether.StartEnd2@0 && ((IMR.SystemUnderTest.inmsg1a@0 == 241) || (IMR.SystemUnderTest.inmsg1a@0 == 33))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0015 MC/DC stability condition of  StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33)) && (IMR.SystemUnderTest.EtherI.Ether.StartEnd2@0 && ((IMR.SystemUnderTest.inmsg1a@0 == 241) || (IMR.SystemUnderTest.inmsg1a@0 == 33))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC coverage of transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ *       -- [ ((IMR.SystemUnderTest.inmsg1a != 241) && (IMR.SystemUnderTest.inmsg1a != 33)) ] -->
+ *   Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0016 MC/DC coverage of transition StartEnd2 --> End1NotToEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     The following MC/DC Trigger condition for specified transition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33)) && ((IMR.SystemUnderTest.EtherI.Ether.StartEnd2@0 && ((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33))) && ((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33))))
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0017 MC/DC stability condition of  StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg1a@0 == 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33)) && (IMR.SystemUnderTest.EtherI.Ether.StartEnd2@0 && ((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal: MC/DC coverage
+ * MC/DC stability condition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-MCDC-0018 MC/DC stability condition of  StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     The following MC/DC stability condition becomes true:
+ *            (((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 == 33)) && (IMR.SystemUnderTest.EtherI.Ether.StartEnd2@0 && ((IMR.SystemUnderTest.inmsg1a@0 != 241) && (IMR.SystemUnderTest.inmsg1a@0 != 33))))
+ * @expected  The state machine remains stable
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.End1I
+ *   End.Idle
+ *       -- [ ((_timeTick - IMR.SystemUnderTest.End1I.t) >= 100) ] -->
+ *   End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0001 Cover transition Idle --> Processing
+ * @condition Component IMR.SystemUnderTest.End1I
+ *            resides in control state IMR.SystemUnderTest.End1I.End.Idle
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End1I
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.End2I
+ *   End.Idle
+ *       -- [ ((_timeTick - IMR.SystemUnderTest.End2I.t) >= 100) ] -->
+ *   End.Processing
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0002 Cover transition Idle --> Processing
+ * @condition Component IMR.SystemUnderTest.End2I
+ *            resides in control state IMR.SystemUnderTest.End2I.End.Idle
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.End2I
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.Idle
+ *       -- [ ((_timeTick - IMR.SystemUnderTest.EtherI.t) >= 100) ] -->
+ *   Ether.Init
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0003 Cover transition Idle --> Init
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.Idle
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.Init
+ *       -- [ (IMR.SystemUnderTest.inmsg1a == 17) ] -->
+ *   Ether.UnicastToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0004 Cover transition Init --> UnicastToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.Init
+ *       -- [ (IMR.SystemUnderTest.inmsg1a != 17) ] -->
+ *   Ether.NotToSelf1
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0005 Cover transition Init --> NotToSelf1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.Init
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0006 Cover transition UnicastToSelf1 --> End2ToEnd1
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.UnicastToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a != 242) && (IMR.SystemUnderTest.inmsg2a != 18)) ] -->
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0007 Cover transition UnicastToSelf1 --> StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.UnicastToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a != 242) && (IMR.SystemUnderTest.inmsg2a != 18)) ] -->
+ *   Ether.StartEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0008 Cover transition NotToSelf1 --> StartEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.NotToSelf1
+ *       -- [ ((IMR.SystemUnderTest.inmsg2a == 242) || (IMR.SystemUnderTest.inmsg2a == 18)) ] -->
+ *   Ether.End2ToEnd1_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0009 Cover transition NotToSelf1 --> End2ToEnd1_2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.NotToSelf1
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ *       -- [ ((IMR.SystemUnderTest.inmsg1a == 241) || (IMR.SystemUnderTest.inmsg1a == 33)) ] -->
+ *   Ether.End1ToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0010 Cover transition StartEnd2 --> End1ToEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.StartEnd2
+ *       -- [ ((IMR.SystemUnderTest.inmsg1a != 241) && (IMR.SystemUnderTest.inmsg1a != 33)) ] -->
+ *   Ether.End1NotToEnd2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0011 Cover transition StartEnd2 --> End1NotToEnd2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.StartEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1ToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a == 34) ] -->
+ *   Ether.UnicastToSelf2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0012 Cover transition End1ToEnd2 --> UnicastToSelf2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1ToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a != 34) ] -->
+ *   Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0013 Cover transition End1ToEnd2 --> End
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1ToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1NotToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a == 34) ] -->
+ *   Ether.UnicastToSelf2_2
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0014 Cover transition End1NotToEnd2 --> UnicastToSelf2_2
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */
+/** @rttPrint
+ * Model coverage goal : transition coverage
+ * Cover transition of component IMR.SystemUnderTest.EtherI
+ *   Ether.End1NotToEnd2
+ *       -- [ (IMR.SystemUnderTest.inmsg2a != 34) ] -->
+ *   Ether.End
+ * 
+ * @tag       TC-INTO-CPS-Demo-TR-0015 Cover transition End1NotToEnd2 --> End
+ * @condition Component IMR.SystemUnderTest.EtherI
+ *            resides in control state IMR.SystemUnderTest.EtherI.Ether.End1NotToEnd2
+ * @event     Trigger condition for specified transition becomes true
+ * @expected  The actions associated with the transition specified above,
+ *            and the target state's entry actions are
+ *            performed as specified in the model.
+ * 
+ * @note These checks are performed by the test oracles associated
+ *       with component IMR.SystemUnderTest.EtherI
+ */

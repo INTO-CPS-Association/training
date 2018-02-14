@@ -1,0 +1,168 @@
+
+
+@func void stimulator()
+{
+
+#ifndef DISABLE_STIMULATION
+
+  rttStatePost->te__tesimulator_l = 0;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 0);
+  rttStatePost->te__tesimulator_t = 0;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 0);
+  rttIOPost->in1a = 0;
+  @logSig["%.17g"] ("in1a", (double) 0);
+  rttIOPost->in1p = 0;
+  @logSig["%.17g"] ("in1p", (double) 0);
+  rttIOPost->in2a = 0;
+  @logSig["%.17g"] ("in2a", (double) 0);
+  rttIOPost->in2p = 0;
+  @logSig["%.17g"] ("in2p", (double) 0);
+
+  rttStatePost->te__tesimulator_l = 1;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 1);
+  rttStatePost->te__tesimulator_t = 0;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 0);
+  rttIOPost->in1a = 0;
+  @logSig["%.17g"] ("in1a", (double) 0);
+  rttIOPost->in1p = 0;
+  @logSig["%.17g"] ("in1p", (double) 0);
+  rttIOPost->in2a = 0;
+  @logSig["%.17g"] ("in2a", (double) 0);
+  rttIOPost->in2p = 0;
+  @logSig["%.17g"] ("in2p", (double) 0);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 100
+
+  rttStatePost->te__tesimulator_l = 2;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 2);
+  rttStatePost->te__tesimulator_t = 100;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 100);
+  rttIOPost->in1a = 241;
+  @logSig["%.17g"] ("in1a", (double) 241);
+  rttIOPost->in1p = 1;
+  @logSig["%.17g"] ("in1p", (double) 1);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 200
+
+  rttStatePost->te__tesimulator_l = 3;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 3);
+  rttStatePost->te__tesimulator_t = 200;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 200);
+  rttIOPost->in1a = 0;
+  @logSig["%.17g"] ("in1a", (double) 0);
+  rttIOPost->in1p = 0;
+  @logSig["%.17g"] ("in1p", (double) 0);
+  rttIOPost->in2a = 242;
+  @logSig["%.17g"] ("in2a", (double) 242);
+  rttIOPost->in2p = 2;
+  @logSig["%.17g"] ("in2p", (double) 2);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 300
+
+  rttStatePost->te__tesimulator_l = 4;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 4);
+  rttStatePost->te__tesimulator_t = 300;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 300);
+  rttIOPost->in1a = 241;
+  @logSig["%.17g"] ("in1a", (double) 241);
+  rttIOPost->in1p = 3;
+  @logSig["%.17g"] ("in1p", (double) 3);
+  rttIOPost->in2p = 3;
+  @logSig["%.17g"] ("in2p", (double) 3);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 400
+
+  rttStatePost->te__tesimulator_l = 5;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 5);
+  rttStatePost->te__tesimulator_t = 400;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 400);
+  rttIOPost->in1a = 17;
+  @logSig["%.17g"] ("in1a", (double) 17);
+  rttIOPost->in1p = 4;
+  @logSig["%.17g"] ("in1p", (double) 4);
+  rttIOPost->in2a = 0;
+  @logSig["%.17g"] ("in2a", (double) 0);
+  rttIOPost->in2p = 0;
+  @logSig["%.17g"] ("in2p", (double) 0);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 500
+
+  rttStatePost->te__tesimulator_l = 6;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 6);
+  rttStatePost->te__tesimulator_t = 500;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 500);
+  rttIOPost->in1p = 5;
+  @logSig["%.17g"] ("in1p", (double) 5);
+  rttIOPost->in2a = 242;
+  @logSig["%.17g"] ("in2a", (double) 242);
+  rttIOPost->in2p = 5;
+  @logSig["%.17g"] ("in2p", (double) 5);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 600
+
+  rttStatePost->te__tesimulator_l = 7;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 7);
+  rttStatePost->te__tesimulator_t = 600;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 600);
+  rttIOPost->in1a = 0;
+  @logSig["%.17g"] ("in1a", (double) 0);
+  rttIOPost->in1p = 0;
+  @logSig["%.17g"] ("in1p", (double) 0);
+  rttIOPost->in2a = 34;
+  @logSig["%.17g"] ("in2a", (double) 34);
+  rttIOPost->in2p = 6;
+  @logSig["%.17g"] ("in2p", (double) 6);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 700
+
+  rttStatePost->te__tesimulator_l = 8;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 8);
+  rttStatePost->te__tesimulator_t = 700;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 700);
+  rttIOPost->in1a = 33;
+  @logSig["%.17g"] ("in1a", (double) 33);
+  rttIOPost->in1p = 7;
+  @logSig["%.17g"] ("in1p", (double) 7);
+  rttIOPost->in2p = 7;
+  @logSig["%.17g"] ("in2p", (double) 7);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 800
+
+  rttStatePost->te__tesimulator_l = 9;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 9);
+  rttStatePost->te__tesimulator_t = 800;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 800);
+  rttIOPost->in1p = 8;
+  @logSig["%.17g"] ("in1p", (double) 8);
+  rttIOPost->in2a = 0;
+  @logSig["%.17g"] ("in2a", (double) 0);
+  rttIOPost->in2p = 0;
+  @logSig["%.17g"] ("in2p", (double) 0);
+
+  @rttWaitSilent(100 _ms);
+// APPROXIMATE TEST TIME STAMP: 900
+
+  rttStatePost->te__tesimulator_l = 10;
+  @logSig["%.17g"] ("te__tesimulator_l", (double) 10);
+  rttStatePost->te__tesimulator_t = 900;
+  @logSig["%.17g"] ("te__tesimulator_t", (double) 900);
+  rttIOPost->in1p = 9;
+  @logSig["%.17g"] ("in1p", (double) 9);
+  rttIOPost->in2a = 18;
+  @logSig["%.17g"] ("in2a", (double) 18);
+  rttIOPost->in2p = 9;
+  @logSig["%.17g"] ("in2p", (double) 9);
+
+  @rttWaitSilent(5000 _ms);
+  @rttStopTest;
+
+#endif
+}

@@ -1,0 +1,139 @@
+
+
+
+rttModelVars_t     *rttStatePre;
+rttModelVars_t     *rttStatePost;
+
+
+rttInterface_t     *rttIOPre;
+rttInterface_t     *rttIOPost;
+
+#ifndef AM_TIMETICK_PREFIX
+#define AM_TIMETICK_PREFIX am_timetick
+
+#ifndef AM_TIMETICK_INIT
+@func void am_timetick_INIT()
+{
+  rttIOPre = (rttInterface_t *) calloc(1, sizeof(rttInterface_t));
+  rttIOPost = (rttInterface_t *) calloc(1, sizeof(rttInterface_t));
+  rttStatePre = (rttModelVars_t *) calloc(1, sizeof(rttModelVars_t));
+  rttStatePost = (rttModelVars_t *) calloc(1, sizeof(rttModelVars_t));
+}
+#endif
+
+#ifndef AM_TIMETICK_FINIT
+@func void am_timetick_FINIT()
+{
+}
+#endif
+
+#ifndef AM_TIMETICK_PROCESS
+@func void am_timetick_PROCESS()
+{
+  int                 _timeTickOld = @t;
+// log values of all SUT2TE variables at this time
+  @logSig["%.17g"] (out11a, (double) rttIOPost->out11a);
+  @logSig["%.17g"] (out11p, (double) rttIOPost->out11p);
+  @logSig["%.17g"] (out12a, (double) rttIOPost->out12a);
+  @logSig["%.17g"] (out12p, (double) rttIOPost->out12p);
+  @logSig["%.17g"] (out13a, (double) rttIOPost->out13a);
+  @logSig["%.17g"] (out13p, (double) rttIOPost->out13p);
+  @logSig["%.17g"] (out21a, (double) rttIOPost->out21a);
+  @logSig["%.17g"] (out21p, (double) rttIOPost->out21p);
+  @logSig["%.17g"] (out22a, (double) rttIOPost->out22a);
+  @logSig["%.17g"] (out22p, (double) rttIOPost->out22p);
+  @logSig["%.17g"] (out23a, (double) rttIOPost->out23a);
+  @logSig["%.17g"] (out23p, (double) rttIOPost->out23p);
+  while (@rttIsRunning) {
+    // Reset flag indicating whether a discrete transition took place in the last cycle
+    rttHaveDiscreteTrans = 0;
+    // Copy post state to actual pre-state
+    memcpy(rttIOPre, rttIOPost, sizeof(rttInterface_t));
+    memcpy(rttStatePre, rttStatePost, sizeof(rttModelVars_t));
+    _timeTick = @t;
+    _timeTickDiff = _timeTick - _timeTickOld;
+    _timeTickOld = _timeTick;
+    @rttYield;
+  }
+}
+#endif
+#endif
+
+#define _AM_TIMETICK_FUN(basename, phase) basename ## _ ## phase
+#define AM_TIMETICK_FUN(basename, phase) _AM_TIMETICK_FUN(basename, phase)
+#ifndef AM_TIMETICK_INIT
+#define AM_TIMETICK_INIT AM_TIMETICK_FUN(AM_TIMETICK_PREFIX, INIT)
+void                AM_TIMETICK_INIT();
+#endif
+#ifndef AM_TIMETICK_FINIT
+#define AM_TIMETICK_FINIT AM_TIMETICK_FUN(AM_TIMETICK_PREFIX, FINIT)
+void                AM_TIMETICK_FINIT();
+#endif
+#ifndef AM_TIMETICK_PROCESS
+#define AM_TIMETICK_PROCESS AM_TIMETICK_FUN(AM_TIMETICK_PREFIX, PROCESS)
+void                AM_TIMETICK_PROCESS();
+#endif
+
+@abstract machine am_timetick()
+{
+@INIT:{
+    AM_TIMETICK_INIT();
+  }
+@FINIT:{
+    AM_TIMETICK_FINIT();
+  }
+@PROCESS:{
+    AM_TIMETICK_PROCESS();
+  }
+}
+
+#undef AM_TIMETICK_FUN
+#undef _AM_TIMETICK_FUN
+
+// Declare abstract machine stimulating the target
+@abstract machine am_stimulator()
+{
+@INIT:{
+  }
+@FINIT:{
+  }
+@PROCESS:{
+    stimulator();
+  }
+}
+
+@abstract machine am__ora_End1I()
+{
+@INIT:{
+  }
+@FINIT:{
+    _ora_End1I_finit();
+  }
+@PROCESS:{
+    _ora_End1I();
+  }
+}
+
+@abstract machine am__ora_End2I()
+{
+@INIT:{
+  }
+@FINIT:{
+    _ora_End2I_finit();
+  }
+@PROCESS:{
+    _ora_End2I();
+  }
+}
+
+@abstract machine am__ora_EtherI()
+{
+@INIT:{
+  }
+@FINIT:{
+    _ora_EtherI_finit();
+  }
+@PROCESS:{
+    _ora_EtherI();
+  }
+}

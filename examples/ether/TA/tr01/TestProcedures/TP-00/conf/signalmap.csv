@@ -1,0 +1,17 @@
+Abstract Signal;Lower Bound;Upper Bound;SUT writes to TE;TE writes to SUT;Concrete Signal Identifier (only filled in if TE may READ this signal);Switch variable;Switch value;Concrete Signal Identifier (only filled in if TE may WRITE to this signal);Switch variable;Switch value;Admissible Error;Latency
+in1a;-2147483648;2147483647;0;1;in1a;;0;in1a;;0;0;100;
+in1p;-2147483648;2147483647;0;1;in1p;;0;in1p;;0;0;100;
+in2a;-2147483648;2147483647;0;1;in2a;;0;in2a;;0;0;100;
+in2p;-2147483648;2147483647;0;1;in2p;;0;in2p;;0;0;100;
+out11a;-2147483648;2147483647;1;0;out11a;;0;out11a;;0;0;100;
+out11p;-2147483648;2147483647;1;0;out11p;;0;out11p;;0;0;100;
+out12a;-2147483648;2147483647;1;0;out12a;;0;out12a;;0;0;100;
+out12p;-2147483648;2147483647;1;0;out12p;;0;out12p;;0;0;100;
+out13a;-2147483648;2147483647;1;0;out13a;;0;out13a;;0;0;100;
+out13p;-2147483648;2147483647;1;0;out13p;;0;out13p;;0;0;100;
+out21a;-2147483648;2147483647;1;0;out21a;;0;out21a;;0;0;100;
+out21p;-2147483648;2147483647;1;0;out21p;;0;out21p;;0;0;100;
+out22a;-2147483648;2147483647;1;0;out22a;;0;out22a;;0;0;100;
+out22p;-2147483648;2147483647;1;0;out22p;;0;out22p;;0;0;100;
+out23a;-2147483648;2147483647;1;0;out23a;;0;out23a;;0;0;100;
+out23p;-2147483648;2147483647;1;0;out23p;;0;out23p;;0;0;100;

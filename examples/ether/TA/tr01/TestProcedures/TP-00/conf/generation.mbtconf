@@ -1,0 +1,63 @@
+{
+    "goals": [
+        {
+            "_comment_": "Name: IMR.SystemUnderTest.End1I",
+            "named-element": "_3fDPFiAjEeec7taTNgCsuQ",
+            "ordered": false,
+            "test-case-class": "BCS"
+        },
+        {
+            "_comment_": "Name: IMR.SystemUnderTest.End1I",
+            "named-element": "_3fDPFiAjEeec7taTNgCsuQ",
+            "ordered": false,
+            "test-case-class": "TR"
+        },
+        {
+            "_comment_": "Name: IMR.SystemUnderTest.End2I",
+            "named-element": "_3fDPGCAjEeec7taTNgCsuQ",
+            "ordered": false,
+            "test-case-class": "BCS"
+        },
+        {
+            "_comment_": "Name: IMR.SystemUnderTest.End2I",
+            "named-element": "_3fDPGCAjEeec7taTNgCsuQ",
+            "ordered": false,
+            "test-case-class": "TR"
+        },
+        {
+            "_comment_": "Name: IMR.SystemUnderTest.EtherI",
+            "named-element": "_3fDPFyAjEeec7taTNgCsuQ",
+            "ordered": false,
+            "test-case-class": "BCS"
+        },
+        {
+            "_comment_": "Name: IMR.SystemUnderTest.EtherI",
+            "named-element": "_3fDPFyAjEeec7taTNgCsuQ",
+            "ordered": false,
+            "test-case-class": "TR"
+        },
+        {
+            "ltl-formula": "Finally ([_timeTick >= 1500])",
+            "ordered": false
+        }
+    ],
+    "model-config": [
+
+    ],
+    "solver-config": {
+        "abstract-interpretation": false,
+        "backtracking": false,
+        "cover-all-goals": true,
+        "ignore-test-oracles": false,
+        "max-simulation-steps": 0,
+        "max-solver-steps": 100,
+        "maximise-coverage": false,
+        "min-change-duration": 10,
+        "model-checking": false,
+        "robustness-percentage": 0,
+        "robustness-testing": false,
+        "sanity-checks": false,
+        "simultaneous-changes": 1,
+        "verbosity-level": 1
+    }
+}

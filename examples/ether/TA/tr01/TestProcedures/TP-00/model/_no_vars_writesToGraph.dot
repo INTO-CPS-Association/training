@@ -1,0 +1,12 @@
+digraph WRITES_TO_GRAPH_NO_VARS {
+	n5 [label="SUT.End1I",color=blue,fontcolor=blue,fontname="Arial"];
+	n5 -> n19 [color=blue,fontcolor=blue,fontname="Arial"];
+	n59 [label="SUT.End2I",color=blue,fontcolor=blue,fontname="Arial"];
+	n59 -> n19 [color=blue,fontcolor=blue,fontname="Arial"];
+	n19 [label="SUT.EtherI",color=blue,fontcolor=blue,fontname="Arial"];
+	n19 -> n5 [color=blue,fontcolor=blue,fontname="Arial"];
+	n19 -> n59 [color=blue,fontcolor=blue,fontname="Arial"];
+	n75 [label="TE.tesimulator",color=blue,fontcolor=blue,fontname="Arial"];
+	n75 -> n5 [color=blue,fontcolor=blue,fontname="Arial"];
+	n75 -> n59 [color=blue,fontcolor=blue,fontname="Arial"];
+}
