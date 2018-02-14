@@ -2,4 +2,6 @@
 
 set -e
 
-find . -name "Tutorial*.tex" -maxdepth 2 -execdir sh -c 'latexmk `basename $1`' {} \;
+
+
+find . -name "Tutorial*.tex" -maxdepth 2 -execdir bash -c 'latexmk -pdf -bibtex -f "$0"' {} \;
