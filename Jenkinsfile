@@ -17,7 +17,7 @@ node {
 
 
     stage ('Build Tutorials'){
-				dir('tutorials){
+				dir('tutorials'){
 					sh "sh build_tutorials.sh"
 				}
     }
