@@ -17,8 +17,9 @@ node {
 
 
     stage ('Build Tutorials'){
-
-        sh "find . -name Tutorial*.tex -d 3 -execdir sh -c 'latexmk -pdf -bibtex -f `basename \$1`' {} \\;"
+				dir('tutorials){
+					sh "sh build_tutorials.sh"
+				}
     }
 
 
