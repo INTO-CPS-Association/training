@@ -1,0 +1,134 @@
+\chapter{Getting Started with INTO-CPS}
+\label{sec:workflows}
+
+This chapter should help you become familiar with the possibilities for collaborative, model-based design offered by the INTO-CPS tool chain. It does this by explaining the types of activities that can be undertaken with support of one or more of the INTO-CPS technologies, and hopefully putting some of the concepts from the previous chapter in context.
+
+Performing one or more of these activities in order, possibly with iterations, forms a ``workflow'' for using the INTO-CPS technologies. There are many potential workflows, which depend on the users background and intended use for the tools. A key aspect of most workflows is to produce a multi-model, therefore this chapter includes some guidance.
+%This chapter concludes by identifying some common workflows to help users understand how to approach the tool chain given their background and intentions.
+
+\section{Activities Enabled by INTO-CPS}
+
+% KGP: tweak?
+
+The following activities are all enabled by one or more of the INTO-CPS technologies. They are grouped into broad categories and include both existing, embedded systems activities and activities enabled by INTO-CPS, since INTO-CPS extends traditional embedded systems design capabilities towards CPS design. The choice of granularity for defining these activities naturally affects the size of such a list. The level chosen is instructive for describing workflows, but one that does not make the described workflows overly long.  %For example, those under the \textbf{Design} will often be supported by \textbf{Modelling} activities, but not necessarily.
+
+In the following descriptions (and corresponding summary in Table~\ref{tab:activities}), we identify the tools that support the activities, where applicable, using the following icons:
+
+\begin{itemize}[noitemsep]
+\item[\INTOCPS] The INTO-CPS Application, COE and its extensions.
+\item[\Modelio] Modelio.
+\item[\Overture] The Overture tool.
+%\item[\Crescendo] The Crescendo tool.
+\item[\RTTester] RT-Tester.
+\item[\OpenModelica] OpenModelica.
+\item[\TwentySim] 20-sim.
+\end{itemize}
+
+Descriptions of these tools can be found in the concepts base at the beginning of this document in Section~\ref{sec:concepts:language}. Those activities in \emph{italics} can be recorded by the traceability features of INTO-CPS, which is described in Chapter~\ref{sec:trace}.
+
+\newpage
+\paragraph{Requirements and Traceability}
+
+Writing \emph{Design Notes} (\INTOCPS) includes documentation about what has been done during a design, why a decision was made and so on. \emph{Requirements} (\Modelio) includes requirements gathering and analysis. \emph{Validation} (\INTOCPS) is any form of validation of a design or implementation against its required behaviour.
+
+\paragraph{Architectural Modelling}
+
+INTO-CPS primarily supports architectural modelling in SysML. \emph{Holistic Architectural Modelling} (\Modelio) and \emph{Design Architectural Modelling} (\Modelio) are described in Section~\ref{sec:sysml}. The former focuses on a domain-specific view, whereas the latter targets multi-modelling using a special SysML profile. The \emph{Export Model Descriptions} (\Modelio) activity indicated passing component descriptions from the Design Architectural Model to other modelling tools.
+
+\paragraph{Modelling}
+
+The \emph{Import Model Description} (\Overture~\TwentySim~\OpenModelica) activity means taking a component interface description from the Design Architectural Model into another modelling tool. \emph{Cyber Modelling} (\Overture) means capturing a ``cyber'' component of the system, e.g. using a formalism/tool such as VDM/Overture. \emph{Physical Modelling} (\TwentySim~\OpenModelica) means capturing the ``physical'' component of the system, e.g. in 20-sim  or OpenModelica. Collectively, these can be referred to as \emph{Simulation Modelling} (\Overture~\TwentySim~\OpenModelica) to distinguish from other forms, such as \emph{Architectural Modelling} (\Modelio). \emph{Co-modelling} (\Crescendo) means producing a system model with one DE and one CT part, e.g.\ in Crescendo. \emph{Multi-modelling} (\INTOCPS) means producing a system model with multiple DE or CT parts with several tools.
+
+\paragraph{Design}
+
+\emph{Supervisory Control Design} means designing some control logic that deals with high-level such as modal behaviour or error detection and recovery. \emph{Low Level Control Design} means designing control loops that control physical processes, e.g.\ PID control. \emph{Software Design} is the activity of designing any form of software (whether or not modelling is used). \emph{Hardware Design} means designing physical components (whether or not modelling is used).
+
+\paragraph{Analysis}
+
+In INTO-CPS, the RT-Tester tool enables the activities of \emph{Model Checking} (\RTTester), \emph{Creating Tests} (\RTTester) and creating a \emph{Test Oracle} (\RTTester) FMU. The \emph{Create a Configuration} (\INTOCPS) activity means preparing a multi-model for co-simulation. The \emph{Define Design Space Exploration Configurations} (\INTOCPS) activity means preparing a multi-model for multiple simulations. \emph{Export FMU} (\Overture~\TwentySim~\OpenModelica)  means to generate an FMU from a model of a component. \emph{Co-simulation} (\Crescendo~\INTOCPS) means simulating a co-model, e.g.\ using Crescendo baseline technology or the COE.
+
+\paragraph{Prototyping}
+
+\emph{Manual Code Writing} means creating code for some cyber component by hand. \emph{Generate Code} (\Overture~\TwentySim~\OpenModelica) means to automatically create code from a model of a cyber component. \emph{Hardware-in-the-Loop (HiL) Simulation} (\INTOCPS) and \emph{Software-in-the-Loop (HiL) Simulation} (\INTOCPS) mean simulating a multi-model with one or more of the models replaced by real code or hardware.
+
+% The above activities are summarised in Table~\ref{tab:activities}. Terms in \emph{italics} correspond to INTO-CPS activities that produce traceable artifacts, as described in the traceability ontology in Deliverable D3.1b~\cite{INTOCPSD3.2b}.%\fbox{Are they there?}.
+
+\begin{table}[p]
+\centering
+\caption{\protect{}Activities in existing embedded systems design workflows or enhanced INTO-CPS workflows.}\label{tab:activities}
+
+% Entries in italics correspond to traceable artifacts in INTO-CPS (see Chapter~\ref{sec:trace})}
+
+\begin{tabular}{ll}\hline
+\multicolumn{2}{l}{\textbf{Requirements Engineering}} \\
+{Stakeholder Documents} & \Modelio \\
+Requirement Definition & \Modelio \\
+Validation & \INTOCPS \\ \hline
+\multicolumn{2}{l}{\textbf{Architectural Modelling}} \\
+Holistic Architectural Modelling & \Modelio \\
+Design Architectural Modelling & \Modelio \\
+{Export Model Descriptions} & \Modelio \\ \hline
+\multicolumn{2}{l}{\textbf{Modelling}} \\
+{Import a Model Description} & \Overture~\TwentySim~\OpenModelica \\
+Physical Modelling ({Simulation Modelling}) & \TwentySim~\OpenModelica \\
+Cyber Modelling ({Simulation Modelling}) & \Overture \\
+{Co-modelling} & \Crescendo \\
+{Multi-modelling} & \INTOCPS \\ \hline
+\multicolumn{2}{l}{\textbf{Design}} \\
+Supervisory Controller Design & \\
+Low Level Controller Design & \\
+Software Design & \\
+Hardware Design & \\ \hline
+\multicolumn{2}{l}{\textbf{Analysis}} \\
+{Create Tests} & \RTTester \\
+{Model Checking} & \RTTester \\
+{Create Test Oracle} & \RTTester \\
+{Create a Configuration} & \INTOCPS \\
+{Define Design Space Exploration Configurations} & \INTOCPS \\
+{Export FMU} & \Overture~\TwentySim~\OpenModelica \\
+Co-simulation  & \Crescendo~\INTOCPS \\ \hline
+\multicolumn{2}{l}{\textbf{Prototyping}} \\
+{Generate Code} & \Overture~\TwentySim~\OpenModelica \\
+Hardware-in-the-Loop (HiL) Simulation & \INTOCPS \\
+Software-in-the-Loop (SiL) Simulation & \INTOCPS \\
+Manual Code Writing  & \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Configuring Multi-Models}
+
+As discussed in Chapter~\ref{sec:concepts}, a multi-model  is a collection of FMUs with a configuration file that: defines instances of those FMUs, specifies connections between the inputs/outputs of the FMU instances, defines values for design parameters of the FMU instances, and defines other simulation settings such as a start, end time, and Master algorithm settings. As seen above, creating a multi-model is a key part of using the INTO-CPS tool chain as it is a pre-requisite for many of the analysis techniques that INTO-CPS can perform.
+
+The INTO-CPS Application supports a project, a view of a folder containing source models, generated FMUs, and configuration files for co-simulation (multi-models) as well as configuration files for other analyses (design space exploration, model checking, test automation). Multi-model configurations can be created in three ways:
+
+\begin{enumerate}[noitemsep]
+  \item Created manually using the GUI of the INTO-CPS Application; or
+  \item Generated from a SysML model created in Modelio; or
+  \item Created manually by editing JSON configuration files
+\end{enumerate}
+
+All three approaches produce the same configuration file, so the choice of which to use depends on the engineer's background. Those comfortable with SysML may find it best to follow the SysML route, but this is not required. So those unfamiliar with SysML can use the Application directly.
+These two approaches are covered in the second and third tutorials in Part~\ref{part:tutorials}. Manually editing the JSON configuration is an advanced topic that is not covered in the tutorials, but since JSON is human-readable, not complicated with some experimentation.
+
+\section{First Steps for Users}
+
+In this final section of this chapter, and of Part~\ref{part:intro}, we consider a how different types of users might approach the INTO-CPS technologies. As described in Section~\ref{sec:intro}, all new users are recommended to:
+
+\begin{itemize}[noitemsep]
+  \item Follow the first tutorial (see Part~\ref{part:tutorials}) to experience the INTO-CPS Application.
+  \item Import one or two examples from the Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6}) into the INTO-CPS Application and interact with them.
+  \item Return to Part~\ref{part:advanced} document as and when you require guidance on a particular area.
+\end{itemize}
+
+After initial familiarisation, the following list provides hints on next steps for different types of users, and where to find further information. As a reminder, tutorials are found in Part~\ref{part:tutorials}\footnote{Updated tutorials supporting newer versions of the tool can be found at \url{https://github.com/INTO-CPS-Association/training/releases}}.
+
+\begin{description}[noitemsep]
+  \item[Students] Bachelor and Masters students wishing to build multi-models should follow the first few tutorials on adding exporting and adding FMUs. The SysML tutorial can be skipped if desired. Further guidance on exporting FMUs from different tools can be found in the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}.
+  \item[Individual Engineers] Engineers should follow the first few tutorials on adding and exporting FMUs. The SysML tutorial is also recommended. Further guidance on exporting FMUs from different tools can be found in the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}
+  \item[Engineering Teams] Teams requiring traceability must read Chapter~\ref{sec:trace} first (and Chapter~\ref{sec:reqeng} is also recommended), as traceability must be considered from the outset. The SysML tutorial is mandatory, because traceability links begin with requirements and architectural models in Modelio.
+  \item[Those with Legacy Models] A primary goal is to generate an FMU from the tool for your existing models. These can be incorporated into multi-models as described in the second tutorial.
+  \item[Those wishing to run Design Space Exploration] It is necessary to build a multi-model first in order to run a DSE, so the first tutorials should be followed. The SysML tutorial is optional, though useful as the SysML profile includes extensions to help configure DSE analyses. The later tutorials cover DSE, with further guidance in the user manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, and Deliverable D5.3e~\cite{INTOCPSD5.3e} (for more technical details).
+  \item[Those interested in model checking] The User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, provides useful insight, with in-depth information found in Deliverable D5.3c~\cite{INTOCPSD5.3c}.
+  \item[Those interested in formal semantics and analysis] The collection of D2.3deliverables~\cite{INTOCPSD2.3a,INTOCPSD2.3b,INTOCPSD2.3c,INTOCPSD2.3d} provides in-depth information on these aspects of the tool chain, including mechanisation efforts in Isabelle.
+\end{description} 

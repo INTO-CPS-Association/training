@@ -1,0 +1,195 @@
+%%% Add [final] option to the report class to switch between draft and final version of the report
+%%% Use [narrowmargin] to enable narrow margins - this may impair readability.
+\documentclass[narrowmargin,final,12pt,a4paper]{include/intocpslargereport}   %Or intocpslargereport if chapters are required.
+
+\usepackage[compact]{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+%\usepackage{tikz-uml}
+\usepackage{framed}
+%\usepackage{subcaption}
+\usepackage{xspace}
+\usepackage{titlesec}
+\titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{\baselineskip}
+\usepackage{subfigure}
+\usepackage{listingsVDM}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{pdfpages}
+\usepackage{tocbibind}
+
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+%\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+%\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+%\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+%\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+%\titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+%
+%\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+%\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+%\titlespacing*{\subsection} {0pt}{2ex plus 0.5ex minus .1ex}{0.75ex plus .1ex}
+%\titlespacing*{\subsubsection}{0pt}{1.75ex plus 0.5ex minus .1ex}{0.75ex plus .1ex}
+%\titlespacing*{\paragraph} {0pt}{2ex plus 0.5ex minus .1ex}{0.1em}
+%\titlespacing*{\subparagraph} {\parindent}{1.75ex plus 0.5ex minus .1ex}{0.5em}
+
+\newcommand{\Overture}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/Overture}}}
+\newcommand{\TwentySim}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/20sim}}}
+\newcommand{\OpenModelica}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=1.6ex]{figures/OpenModelica}}}
+\newcommand{\Modelio}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/Modelio}}}
+\newcommand{\Crescendo}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/Crescendo}}}
+\newcommand{\INTOCPS}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/INTO}}}
+\newcommand{\RTTester}{\raisebox{-0.2ex}[0pt][0pt]{\includegraphics[height=2ex]{figures/RTTester}}}
+
+\def\draftnote#1{\noindent\smallskip\framebox{\begin{minipage}{0.95\columnwidth}#1\end{minipage}}\smallskip\par}
+\newenvironment{draftnoteenv}{\noindent\smallskip\begin{framed}\begin{minipage}{0.95\columnwidth}\color{red}}{\end{minipage}\end{framed}\smallskip\par}
+\newenvironment{assumption}{\noindent\smallskip\color{blue}\begin{framed}\begin{minipage}{0.95\columnwidth}}{\end{minipage}\end{framed}\smallskip\par}
+
+\reportnumber{D3.3a}
+\reporttitle{INTO-CPS Method Guidelines}
+\shortreporttitle{INTO-CPS Method Guidelines}  %To use if report title is too long for header
+
+%%% Set document release class as appropriate
+%%% e.g. Public, Restricted, Programme Participant
+\reportstatus{Public}
+
+\def\into{INTO-CPS}
+\def\SG{Smart Grid}
+\def\term#1{\textbf{\emph{#1}}}
+
+%%% If document is a deliverable, this flag should be commented out
+%%% e.g. %\technotetrue
+%%% If report is a technical report, leave uncommented
+%%% e.g. \technotetrue
+%\technotetrue % Comment out as appropriate
+
+\submissiondate{\monthyeardate\today}
+\contributors{
+John Fitzgerald, UNEW\\
+Carl Gamble, UNEW\\
+Martin Mansfield, UNEW\\
+Richard Payne, UNEW\\
+Ken Pierce, UNEW
+}
+\editors{
+ Ken Pierce, UNEW
+}
+
+\reviewers{
+Christian K\"onig, TWT\\
+Etienne Brosse, ST\\
+Frederik Foldager, AI
+}
+
+%% Version details
+% #1: version
+% #2: date
+% #3: author
+% #4: description
+\addversion{0.1}{14-02-2017}{Ken Pierce}{Initial document structure}
+\addversion{0.2}{24-10-2017}{Ken Pierce}{Revised document structure}
+\addversion{0.3}{26-10-2017}{Ken Pierce}{First draft of materials}
+\addversion{0.4}{31-10-2017}{Ken Pierce}{Added SysML chapter}
+\addversion{0.5}{01-11-2017}{Ken Pierce}{Draft for comment}
+\addversion{1.0}{07-12-2017}{Ken Pierce}{First revisions based on comments}
+\addversion{1.1}{12-12-2017}{Ken Pierce}{Further updates based on comments}
+\addversion{1.2}{14-12-2017}{Ken Pierce}{Revised SysML chapter}
+
+\begin{document}
+\maketitle
+
+
+%%%% Document abstract page %%%%
+\section*{Abstract}
+\label{sec:abstract}
+
+This document is the final methods guidance document for the INTO-CPS technologies. It is aimed at end users of the technologies, and complements the User Manual, Deliverable D4.3a~\cite{INTOCPSD4.3a}, by helping to describe the why to complement the how. This document presents: a concepts base, which describes the terminology used within INTO-CPS; information on getting started with the technologies, and the variety of workflows they support; a description of the traceability features of the tool chain, and why these must be considered at the beginning of development to realise them fully; guidelines on incorporating requirements engineering in a cyber-physical systems (CPS) context; a description of the INTO-SysML profile and its use; guidance on discrete-event first (DE-first) modelling as a way to begin multi-modelling; guidance on modelling networks in multi-models; and guidelines for the use of design space exploration (DSE) features of the INTO-CPS tool chain.
+
+\newpage
+
+%%%% Document table of contents page %%%%
+\tableofcontents
+\newpage
+
+\part{Introductory Material}
+\label{part:intro}
+
+\include{sections/introduction}
+\include{sections/concepts}
+\include{sections/workflows}
+
+\part{Advanced Topics}
+\label{part:advanced}
+
+\include{sections/traceability}
+\include{sections/reqeng}
+\include{sections/sysml}
+\include{sections/defirst}
+\include{sections/networks}
+\include{sections/dse}
+%\include{sections/summary}
+
+%%%% Bibliography %%%%
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{intocps,intocpsdev}
+\label{ch:bib} %label to refer to
+
+\part{Tutorials}
+\label{part:tutorials}
+
+\section*{Latest Versions}
+
+These tutorials are a snapshot at the end of the project, but will become out-of-date as the technology continues to evolve as part of the INTO-CPS Association. The latest versions can be found at the link below along with the source projects referred to in the tutorials.
+
+\url{https://github.com/INTO-CPS-Association/training/releases}
+
+\newpage
+\label{tut:1}
+\addcontentsline{toc}{chapter}{Tutorial 1 --- First Co-simulation}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 1 - First Co-simulation/Tutorial 1 - First Co-simulation"}
+
+\phantomsection
+\label{tut:1}
+\addcontentsline{toc}{chapter}{Tutorial 2 --- Adding FMUs}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 2 - Adding FMUs/Tutorial 2 - Adding FMUs"}
+
+\phantomsection
+\label{tut:1}
+\addcontentsline{toc}{chapter}{Tutorial 3 --- Using SysML}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 3 - Using SysML/Tutorial 3 - Using SysML"}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Tutorial 4 --- FMU Export (Overture)}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 4 - FMU Export (Overture)/Tutorial 4 - FMU Export (Overture)"}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Tutorial 5 --- SysML for DSE}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 5 - SysML for DSE/Tutorial 5 - SysML for DSE"}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Tutorial 6 --- DSE Edit and Launch}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 6 - Editing And Running DSE in App/Tutorial 6 - DSE Edit and Launch"}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Tutorial 7 --- SysML for Co-simulation}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 7 - SysML for Co-simulation/Tutorial 7 - SysML for Co-Simulation"}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Tutorial 8 --- Building Controllers in VDM}
+\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},clip,trim=0mm 30mm 0mm 22mm]{"../tutorials/Tutorial 8 - Building Controllers in VDM/Tutorial 8 - Building Controllers (VDM)"}
+
+
+\part{Appendices}
+\appendix
+
+\newpage
+\input{sections/glossary.tex}
+
+%\newpage
+%\input{sections/ether}
+
+\end{document}

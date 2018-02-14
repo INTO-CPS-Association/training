@@ -1,0 +1,95 @@
+class Ether
+
+types
+
+public Id = seq of char
+
+instance variables
+
+-- thread period
+private period: nat := 1E9;
+
+-- access shared variables
+incoming: map Id to StringPort;
+outboxes: map Id to seq of seq of char;
+outgoing: map Id to StringPort;
+connects: set of (Id * Id);
+inv forall mk_(i,o) in set connects & 
+  (i in set dom incoming and 
+   o in set dom outgoing);
+
+operations
+
+-- constructor for Ether
+public Ether: nat1 * map Id to StringPort * map Id to StringPort * 
+              set of (Id * Id) ==> Ether
+Ether(p,ins,outs,c) == (
+	period := frequency_to_period(p);
+	incoming := ins;
+	outgoing := outs;
+	connects := c;
+	outboxes := {id |-> [] | id in set dom outs}
+)
+pre forall mk_(i,o) in set c & 
+  (i in set dom ins and 
+   o in set dom outs);
+
+-- constructor for Ether (100Hz)
+public Ether: map Id to StringPort * map Id to StringPort * 
+              set of (Id * Id) ==> Ether
+Ether(ins,outs,c) == 
+	Ether(100,ins,outs,c)
+pre forall mk_(i,o) in set c & 
+  (i in set dom ins and 
+   o in set dom outs);
+
+operations
+
+-- send counter out and increase counter
+private Step: () ==>()
+Step() == cycles(2) 
+(
+  
+  -- gather inputs in outboxes
+	for all mk_(i,o) in set connects do (
+		let x = incoming(i).getValue() in (
+			  outboxes(o) := outboxes(o) ^ [x];
+		)		
+	);
+	
+	-- flush outboxes
+	for all i in set dom outboxes do (
+	  if len outboxes(i) > 1 then (
+			outgoing(i).setValue(
+        seq_of_seq_of_char2seq_of_char(outboxes(i))
+      );
+			
+			-- debug			
+			IO`printf("ETHER.FMU: Passed %s to %s at %s\n", 
+        [outgoing(i).getValue(), i, time/1e9]);	
+			
+			outboxes(i) := []
+		) 
+	);
+);		
+
+private seq_of_seq_of_char2seq_of_char: seq of seq of char ==> 
+                                        seq of char
+seq_of_seq_of_char2seq_of_char(ss) == (
+	dcl outstr: seq of char := "[";
+	for all i in set inds ss do 
+    if len ss(i) > 0 then outstr := outstr ^ ss(i) ^ [','];
+	outstr(len outstr) := ']';
+	return outstr 
+);
+
+-- run as a periodic thread
+thread periodic(period, 0 ,0, 0)(Step);
+
+functions 
+
+-- convert frequency to period in nanoseconds
+private frequency_to_period: real -> nat
+frequency_to_period(f) == floor 1E9/f
+
+end Ether

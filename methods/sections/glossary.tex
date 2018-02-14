@@ -1,0 +1,160 @@
+\chapter{Glossary}
+\label{sec:glossary}
+\label{app:concepts}
+\begin{description}
+
+\item[20-sim] The 20-sim tool can represent continuous time models in a number of ways. The core concept is that of connected \emph{blocks}.
+
+\item[Abstraction] Models may be abstract ``in the sense that aspects of the product not relevant to the analysis in hand are not included''~\cite{Fitzgerald&98b}. CPS models may reasonably contain multiple levels of abstraction, for representing views of individual constituent systems and for the view of the CPS level.  Adapted from~\cite{Holt&14}.
+
+\item[Architecture] The term architecture has many different definitions, and range in scope depending upon the scale of the product being `architected'. In the \into\ project, we use the simple definition from~\cite{COMPASSD22.6}:  ``an architecture defines the major elements of a system, identifies the relationships and interactions between the elements and takes into account process. An architecture involves both a definition of structure and behaviour. Importantly, architectures are not static but must evolve over time to reflect the change in a system as it evolves to meet changes to its requirements.''
+
+\item[Architecture Diagram] In the \into\ project, a diagram refers to the symbolic representation of information contained in a model.
+
+\item[Architectural Framework] ``A defined set of viewpoints and an ontology'' and ``is used to structure an architecture from the point of view of a specific industry, stakeholder role set, or organisation.~\cite{Holt&14}.~\cite{Holt&14}.
+
+\item[Architecture Structure Diagram (ASD)] The \into\ SysML profile ASDs specialise SysML block definition diagrams to support the specification of a system architecture described in terms of a system's components.
+
+\item[Architecture View] ``work product expressing the architecture of a system from the perspective of specific system concerns''~\cite{COMPASSD22.6}.
+
+\item[Bond graph]  Bond graphs offer a domain-independent description of a physical system's dynamics, realised as a directed graph. The vertices of these graphs are idealised descriptions of physical phenomena, with their edges (\emph{bonds}) describing energy exchange between vertices.
+
+\item[Co-model] ``The term \emph{co-model} is used to denote a model comprising a DE model, a CT model and a contract''~\cite{Broenink&12b}. A related term \term{multi-model} is a model comprising any combination of constituent DE and CT models.
+
+\item[Code generation] Transformation of a model into generated code suitable for compilation into one or more target languages (e.g. C or Java).
+
+\item[Collaborative simulation (co-simulation)] The simultaneous, collaborative, execution of models and allowing information to be shared between them. The models may be CT-only, DE-only or a combination of both.
+
+\item[Co-simulation Configuration] The configuration that the COE needs to initialise a co-simulation. It contains paths to all FMUs, their inter connection, parameters and step size configuration. When this is combined with a start and end time, a co-simulation can be performed.
+
+\item[Co-simulation Orchestration Engine (COE)] The Co-simulation Orchestration Engine  combines existing co-simulation solutions (FMUs) and scales them to the CPS level, allowing CPS co-models to be evaluated through co-simulation. The COE will also allow real software and physical elements to participate in co-simulation alongside models, enabling both Hardware-in-the-Loop (HiL) and Software-in-the-Loop (SiL) simulation.
+%\fbox{Check the COE And HiL/SiL technologies.}
+
+\item[Component] The constituent elements of a system.
+
+\item[Connections Diagram (CD)] The \into\ SysML profile CDs specialise SysML internal block diagrams to convey the internal configuration of the system's components and the way they are connected.
+
+\item[Constituent Model] A constituent model comprising a multi-model.
+
+\item[Continuous Time (CT) model] A model with state that can be changed and observed \emph{continuously}~\cite{Amerongen10}, and are described using either explicit continuous functions of time  either implicitly as a solution of differential equations.
+
+\item[Context] In requirements engineering, a \term{context} is the point of view of some system component or domain, or interested stakeholder.
+
+\item[Cyber Physical System (CPS)] Cyber-Physical Systems ``refer to ICT systems (sensing, actuating, computing, communication, etc.) embedded in physical objects, interconnected (including through the Internet) and providing citizens and businesses with a wide range of innovative applications and services''~\cite{Thompson13, Deka&15}.
+
+\item[Discrete Event (DE) model] A model with state that can be changed and observed only at fixed, \emph{discrete}, time intervals~\cite{Amerongen10}.
+
+\item[Denotational Semantics] Where an operational semantics defines how a program is executed, a denotational approach defines a language in terms of denotations, in the form of abstract mathematical objects, which represent the semantic function that maps over the inputs and outputs of a program~\cite{Scott&71}.
+
+\item[Design Alternatives] Where two or more models represent different possible solutions to the same problem. Each choice involves making a selection from alternatives on the basis of criteria that are important to the developer, such as cost or performance. The alternative selected at each point constrains the range of design alternatives that may be viable next steps forward from the current position.
+
+\item[Design Architecture]  The design architectural model of the system is effectively a multi-model. The INTO-CPS SysML profile~\cite{INTOCPSD2.1a} is designed to enable the specification of CPS design architectures, which emphasises a decomposition of a system into \term{subsystems}, where each subsystem is modelled separately in isolation using a special notation and tool designed for the domain of the subsystem.
+
+\item[Design Parameter] A \emph{design parameter} is a property of a model that can be used to affect the model's behaviour, but that remains constant during a given simulation~\cite{Broenink&12b}.
+
+\item[Design Space] ``The \emph{design space} is the set of possible solutions for a given design problem''~\cite{Broenink&12b}.
+
+\item[Design-Space Exploration (DSE)] ``an activity undertaken by one or more engineers in which they build and evaluate co-models in order to reach a design from a set of requirements''~\cite{Broenink&12b}.
+
+\item[Effort and Flow] The energy exchanged in 20-sim is the product of \emph{effort} and \emph{flow}, which map to different concepts in different domains, for example voltage and current in the electrical domain.
+
+\item[Environment] A system's~\emph{environment} is everything outside of the system. The behaviour exhibited by the environment is beyond the direct control of the developer~\cite{Broenink&12b}.
+
+\item[Evolution] This refers to the ability of a system to benefit from a varying number of alternative system components and relations, as well as its ability to gain from the adjustments of the individual components' capabilities over time (Adjusted from SoS~\cite{Nielsen&13}).
+
+\item[Foundations Developer] An individual who uses the developed foundations and associated tool support (see Section~\ref{sec:concepts:formal}) to reason about the development of tools.
+
+\item[Functional Mockup Interface (FMI)] The Functional Mock-up Interface (FMI) is a tool independent standard to support both model exchange and co-simulation of dynamic models using a combination of XML-files and compiled C-code~\cite{FMIStandard2.0}.
+
+\item[Functional Mockup Unit (FMU)] Component that implements FMI is a Functional Mockup Unit (FMU)~\cite{FMIStandard2.0}.
+
+\item[Hardware-in-the-Loop (HiL) Testing] In \term{HiL} there is (target) hardware involved, thus the FMU representing the hardware in a co-simulation is mainly a wrapper that interacts (timed) with this hardware; it is perceivable that realisation heavily depends on hardware interfaces and timing properties.
+
+\item[Holistic Architecture] The aim of a holistic architecture is to identify the main units of functionality of the system reflecting the \emph{terminology and structure of the domain of application}. It describes a conceptual model that highlights the main units of the system architecture and the way these units are connected with each other, taking a holistic view of the overall system.
+
+\item[Hybrid-CSP] This is a continuous version of CSP defined originally by He Jifeng~\cite{Jifeng94}. It will be used as a basis to inform the design of INTO-CSP.
+
+\item[Hybrid Model] A model which contains both DE and CT elements.
+
+\item[Interface] ``Defines the boundary across which two entities meet and communicate with each other''~\cite{Holt&14}. Interfaces may describe both digital and physical interactions: digital interfaces  contain descriptions of operations and attributes that are \emph{provided} and \emph{required} by components. Physical interfaces describe the flow of physical matter (for example fluid and electrical power) between components.
+
+\item[INTO-CPS Application] The INTO-CPS Application is a front-end to the INTO-CPS tool chain. The application allows the specification of the co-simulation configuration to be orchestrated by the COE, and the co-simulation execution itself. The application also provides access to features of the tool chain without an existing user interface (such as design space exploration and model checking).
+
+\item[INTO-CPS tool chain] The INTO-CPS tool chain is a collection of software tools, based centrally around FMI-compatible co-simulation, that supports the collaborative development of CPSs.
+
+\item[INTO-CSP] A version of CSP, which will be used to provide a model for the SysML-FMI profile, FMI, VDM-RT and Modelica semantics. It is a front end for a UTP theory of reactive concurrent continuous systems customised for the needs of INTO-CPS.
+
+\item[Master Algorithm] A Master Algorithm (MA) controls the data exchange between FMUs and the synchronisation of all simulation solvers~\cite{FMIStandard2.0}.
+
+\item[Model] A potentially partial and abstract description of a system, limited to those components and properties of the system that are pertinent to the current goal~\cite{Holt&14}. ``A model is a simplified description of a system, just complex enough to describe or study the phenomena that are relevant for our problem context''~\cite{Amerongen10}. A model ``may contain representations of the system, environment and stimuli''~\cite{Fitzgerald&14c}
+
+\item[Model Checking (MC)] An analysis technique that exhaustively checks whether the model of the system meets its specification~\cite{Clarke&99}, which is typically expressed in some temporal logic such as \term{Linear Time Logic (LTL)}~\cite{Pnueli77} or \term{Computation Tree Logic (CTL)}~\cite{Clarke&81}.
+
+\item[Model Description] The model description file is an XML file that supplies a description of all properties of a model (for example input/output variables)~\cite{FMIStandard2.0}.
+
+\item[Model-in-the-Loop (MiL) Testing]  in \term{MiL} the test object of the test execution is a (design) model, represented by one or more FMUs. This is similar to the SiL (if e.g., the SUT is generated from the design model), but MiL can also imply that running the SUT-FMU has a representation on model level; e.g., a playback functionality in the modelling tool could some day be used to visualise a test run.
+
+\item[Modelling] ``The activity of creating models''~\cite{Fitzgerald&14c}. See also \textbf{co-modelling} and \textbf{multi-modelling}.
+
+\item[Modelica] Modelica is an ``object-oriented language for modelling of large, complex, and heterogeneous physical systems''~\cite{Fritzson&98}. Modelica models are described by \term{schematics}, also called \term{object diagrams}, which consist of connected components. Components are connected by ports and are defined by sub components or a textual description in the Modelica language.
+
+\item[Multi-model] ``A model comprising \emph{multiple} constituent DE and CT models''.
+
+\item[Non-functional Property] Non-functional properties (NFPs) pertain to characteristics other than functional correctness. For example, reliability, availability, safety and performance of specific functions or services are NFPs that are quantifiable. Other NFPs may be more difficult to measure~\cite{Payne&10}.
+
+\item[Objective] Criteria or constraints that are important to the developer, such as cost or performance
+
+\item[Port] 20-sim blocks may have input and output \emph{ports} that allow data to be passed between them. In SysML, blocks own ports --- the points of interaction between blocks.
+
+\item[Proof] The process of showing how the validity of one statement is derived from others by applying justified rules of inference~\cite{Bicarregui&94}.
+
+\item[Provenance] ``Provenance is information about entities, activities, and people involved in producing a piece of data or thing, which can be used to form assessments about its quality, reliability or trustworthiness.''~\cite{Moreau&13}.
+
+\item[Refinement] Refinement is a verification and formal development technique pioneered by~\cite{Back&98} and~\cite{Morgan90a}. It is based on a behaviour preserving relation that allows the transformation of an abstract specification into more and more concrete models, potentially leading to an implementation.
+
+\item[Requirement] A requirement is a statement of need and may impose restrictions, define system capabilities or identify qualities of a system and should indicate some value or use for the different stockholders of a CPS.
+
+\item[Requirements Engineering (RE)] The process of the specification and documentation of requirements placed upon a CPS.
+
+\item[Semantics] Describes the meaning of a (grammatically correct) language~\cite{Nielson&92}.
+
+\item[Software-in-the-Loop (SiL) Testing] In \term{SiL} testing the object of the test execution is an FMU that contains a software implementation of (parts of) the system. It can be compiled and run on the same machine that the COE runs on and has no (defined) interaction other than the FMU-interface.
+
+\item[SoS-ACRE] System of Systems Approach to Context-based Requirements Engineering~\cite{Holt&15}, an approach adapted from standard systems engineering, tailored for systems of systems (SoSs).
+
+\item[Structural Operational Semantics (SOS)] Describes how the individual steps of a program are executed on an abstract machine~\cite{Plotkin81}. An SOS definition is akin to an interpreter in that it provides the meaning of the language in terms of relations between beginning and end states. The relations are defined on a per-construct basis. Accompanying the relations are a collection of semantic rules which describe how the end states are achieved.
+
+\item[SysML] The systems modelling language (SysML)~\cite{SysML12} extends a subset of the Unified Modelling language (UML) to support modelling of heterogeneous systems.
+
+\item[System] ``A combination of interacting elements organized to achieve one or more stated purposes''~\cite{INCOSEseh15}.
+
+\item[System boundary] The \emph{system boundary} is the common frontier between the system and its environment. System boundary definition is application-specific~\cite{Broenink&12b}.
+
+\item[System of Systems (SoS)] ``A System of Systems (SoS) is a collection of constituent systems that pool their resources and capabilities together to create a new, more complex system which offers more functionality and performance than simply the sum of the constituent systems''~\cite{Holt&14}. CPSs may exhibit the characteristics of SoSs.
+
+\item[System Under Test] ``The system currently being tested for correct behaviour. An alias for system of interest, from the point of view of the tester. The same concept can be extended from systems engineering to SoS engineering, changing the focus from a single system of interest to an SoS under test.\\
+The system of systems currently being tested for correct behaviour''~\cite{Holt&14}.
+
+\item[Test Automation] Test Automation (TA) is defined as the machine assisted automation of system tests. In \into\ we concentrate on various forms of \emph{model-based testing}, centering on testing system models against their requirements.
+
+\item[Test Case] A finite structure of input and expected output~\cite{Utting&06}.
+
+\item[Test model] Specifies the expected behaviour of a system under test. Note that a test model can be different from a design model. It might only describe a part of a system under test that is to be tested and it can describe the system on a different level of abstraction~\cite{Coleman&13b}.
+
+\item[Test procedures] Detailed instructions for the set-up and execution of a set of test cases, and instructions for the evaluation of results of executing the test cases~\cite{DO178B, Coleman&13b}.
+
+\item[Test suite] A collection of test procedures.
+
+\item[Tool Chain User] An individual who uses the \into\ Tool Chain and its various analysis features.
+
+\item[Traceability] The association of one model element (e.g. requirements, design artefacts, activities, software code or hardware) to another. \term{Requirements traceability} ``refers to the ability to describe and follow the life of a requirement, in both a forwards and backwards direction''~\cite{Gotel&94}.
+
+\item[Unifying Theories of Programming (UTP)]  The Unifying Theories of Programming (UTP)~ \cite{Hoare&98} is a technique to for describing language semantics in a unified framework. A theory of a language is composed of an \term{alphabet}, a \term{signature} and a collection of \term{healthiness conditions}.
+
+\item[Variable] A \emph{variable} is feature of a model that may change during a given simulation~\cite{Broenink&12b}.
+
+\item[VDM-RT] VDM-RT is based upon the \term{object-oriented} paradigm where a model is comprised of one or more \term{objects}. An object is an instance of a \term{class} where a class gives a definition of zero or more \term{instance variables} and \term{operations} an object will contain. Instance variables define the identifiers and types of the data stored within an object, while operations define the behaviours of the object.
+
+\item[Workflow] A sequence of \textbf{activities} performed to aid in modelling. A workflow has a defined purpose, and may cover a subset of the CPS engineering development lifecycle.
+
+\end{description} 

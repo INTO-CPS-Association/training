@@ -1,0 +1,60 @@
+\chapter{Introduction}
+\label{sec:intro}
+
+The INTO-CPS tool chain brings together a variety of technologies to allow engineers to undertake collaborative, model-based based design of Cyber-Physical Systems (CPSs). Each technology has its own culture, abstractions, and approaches to problem solving that inform how they are used. Many of these things are tacit and tend to be discovered only after trying to combine them. The guidance in this document aims to help the reader overcome these challenges, and to understand how best to use these technologies.
+
+This document complements the tools User Manual (Deliverable D4.3a~\cite{INTOCPSD4.3a}) ---which gives detail on how to use the features of the tool chain--- by providing information on when and why you might use these features. The guidance in this document has been distilled from experience gained in a series of pilot studies and applications of INTO-CPS technologies to real industrial case studies. These pilot studies now appear as examples that can be opened directly from the INTO-CPS Application, supported by descriptions in the Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6}). Industrial applications can be read about in the Case Studies report (Deliverable D1.3a~\cite{INTOCPSD1.3a}).
+
+
+\section{How to Use This Document}
+\label{sec:intro:howto}
+
+Since this document is aimed at both new and experienced users of the INTO-CPS technologies, it has been divided into two parts. Part I, Chapters~\ref{sec:intro}--\ref{sec:workflows}, covers introductory material including this introduction, the terminology used in INTO-CPS, and the various activities that INTO-CPS enables. Part II, Chapters~\ref{sec:trace}--\ref{sec:dse}, covers more advanced topics that require a basic familiarity with the INTO-CPS technologies.
+
+While the chapters in the Part II are ordered primarily based on a start-to-end ``work flow'' of system development with INTO-CPS, it is not necessary to read the advanced chapters in order. While experienced users may read any chapter on which they require further guidance, new users are recommended to:
+
+\begin{itemize}[noitemsep]
+  \item Read the introductory material in Part I.
+  \item Follow the first tutorial to experience using the INTO-CPS Application.
+  \item Import one or two examples from the Examples Compendium (Deliverable D3.6~\cite{INTOCPSD3.6}) into the INTO-CPS Application and interact with them.
+  \item As you start your own multi-modelling, return to this document as and when you require guidance on a particular area.
+\end{itemize}
+
+\section{Overview of Sections}
+\label{sec:intro:overview}
+
+\begin{description}[noitemsep]
+  \item[Chapter~\ref{sec:concepts}: Concepts and Terminology] This chapter is an introduction to the concepts and terminology used in INTO-CPS. It explains many terms from the various baseline technologies, as well as other model-based design terminology. In parts this involved reconciling terms used differently in different areas, and finding common, agreed-upon terms for similar concepts. These concepts are applicable for all documents produced by INTO-CPS (this document, user manuals, deliverables, and publications).
+
+  \item[Chapter~\ref{sec:workflows}: Getting Started with INTO-CPS] This chapter suggests how to get started with the INTO-CPS tool chain, trying out core features by following tutorials, which puts the other range of activities in context. It also describes the full range of activities that the INTO-CPS tool chain enables.
+
+  \item[Chapter~\ref{sec:trace}: Traceability and Provenance] This chapter explains how to approach the INTO-CPS tool chain in order to make used of the machine-assisted traceability features included in the INTO-CPS Application and baseline tools. It also describes the set of included queries that can be run over traceability data sets, and how further queries can be written.
+
+  \item[Chapter~\ref{sec:reqeng}: Requirements Engineering] This chapter focuses on a key initial activity for CPS design, specifically requirements engineering (RE) in a CPS context, and the specification and documentation of requirements placed upon a CPS. This section describes an approach called SoS-ACRE in the context of INTO-CPS, and includes descriptions of how this approach can be realised using tools identified as useful by the industrial partners (specifically SysML and Excel). By following these guidelines, engineers can bridge the gap between natural language requirements and multi-models.
+
+  \item[Chapter~\ref{sec:sysml}: SysML and Multi-modelling] This chapter describes the various roles of SysML in INTO-CPS. SysML can be used for architectural modelling of CPSs, while INTO-CPS provides additional SysML profiles that can be used to describe the architecture of multi-models and provide machine-assisted configuration of co-simulations and other analyses. This section provides a description of these profiles, how standard SysML can be used within INTO-CPS, and the relationship between these two uses.
+
+  \item[Chapter~\ref{sec:initial}: Initial Multi-modelling] This chapter  looks at producing an initial multi-model through the creation of abstract, discrete-event FMUs. These simplified FMUs can then be replaced by higher-fidelity versions in more appropriate tools such as 20-sim. This is referred to as a ``DE-first'' approach~\cite{Fitzgerald&13b}.
+
+  \item[Chapter~\ref{sec:networks}: Modelling Networks in Multi-models] This chapter describes how to also model realistic communications between controllers in an FMI setting. This chapter describes one approach: introducing an FMU that represents an abstract communication mechanism, the \emph{ether}. Guidance on the consequences of adopting such an approach is included, as well as extensions to cover quality-of-service modelling.
+
+  \item[Chapter~\ref{sec:dse}: Design Space Exploration] This chapter gives guidance on DSE, including the types of search algorithms that can be used to explore a design space, and how the SysML profile extensions help in the design of experiments.
+\end{description}
+
+
+\section*{Differences from Previous Versions}
+\label{sec:intro:dif}
+
+This document builds on previous versions Deliverables D3.1a~\cite{INTOCPSD31a} and D3.2a~\cite{INTOCPSD3.2a}). Some material is retained and updated, while other material is entirely new. The following list gives an overview of new and updated material for each section:
+
+\begin{description}[noitemsep]
+  \item[Concepts and Terminology] appeared in the previous version. The concepts base has been stable in the final year of the project.
+  \item[Getting Started with INTO-CPS] has been heavily revised from previous ``workflows'' section in response to end user interactions and feedback.
+  \item[Traceability and Provenance] is entirely new.
+  \item[Requirements Engineering] appeared in the previous version.
+  \item[SysML and Multi-modelling] has been updated significantly to present a comprehensive overview of SysML in the INTO-CPS context, using new and revised material.
+  \item[Initial Multi-modelling] appeared in the previous version.
+  \item[Modelling Networks in Multi-models] appeared previously.
+  \item[Design Space Exploration] has been revised to include experience on cloud-supported DSE.
+\end{description}
+
