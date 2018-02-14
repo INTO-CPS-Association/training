@@ -19,7 +19,7 @@ node {
     stage ('Build Tutorials'){
 
       dir('examples'){
-        sh "find . -name Tutorial*.tex -d 2 -execdir sh -c 'latexmk -pdf -bibtex -f `basename \$1`' \\;"
+        sh "find . -name Tutorial*.tex -d 2 -execdir sh -c 'latexmk -pdf -bibtex -f `basename \$1`' {} \\;"
       }
     }
 
