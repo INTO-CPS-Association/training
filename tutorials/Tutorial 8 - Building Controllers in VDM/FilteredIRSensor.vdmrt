@@ -19,10 +19,10 @@ FilteredIRSensor(s) == (
 
 public getReading: () ==> real
 getReading() == (
-  dcl reading: real := port.getValue()
+  dcl reading: real := sensor.getReading();
   dcl average: real := 0;
-  
-  IO`printf("Average: %s of %s", [average, samples]);
+
+  IO`printf("Average: %s of %s\n", [average, samples]);
 	return average
 );
 
