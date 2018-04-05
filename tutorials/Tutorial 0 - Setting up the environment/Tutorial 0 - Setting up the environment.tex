@@ -1,0 +1,121 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\title{Tutorial 0 --- Setting up the environment}
+\date{March 2018}
+\author{Hugo D. Macedo}
+
+\def\intocpsVer{3.4.6}
+\begin{document}
+
+\section*{Overview}
+
+This INTO-CPS tutorial will show you how to:
+
+\begin{enumerate}[noitemsep]
+\item Download and install the INTO-CPS tool
+\item Install the COE (Co-simulation Orchestration Engine)
+\item Uninstall the tool (Optional) 
+\end{enumerate}
+
+\section*{Requirements}
+
+Although this tutorial is self-contained and depends only on a standard
+installation of a Linux, Windows, or macOS system, you need to ensure some
+dependencies are installed in your system in order to be able to fully use the
+INTO-CPS Application. Namely: 
+
+\begin{itemize}[noitemsep]
+\item Java Virtual Machine (Version 1.8)
+\item Git
+\end{itemize}
+
+
+\section{Download and install the INTO-CPS tool}
+
+
+\begin{instructions} 
+
+\item The INTO-CPS Application can be downloaded from
+	\url{https://into-cps-association.github.io/download/}. Unzip the
+	contents in a directory and inside it you will find the into-cps-app-\intocpsVer\
+	executable you need to launch in the next step. 
+	
+	\begin{annotation}[width=0.85\linewidth]{figures/downloadPage}
+        	\usquare{1.6cm}{0.25cm}{0.15}{Select version}{0.48,0.665}
+	%	\helpergrid
+	\end{annotation}
+
+\end{instructions}
+
+\newpage 
+
+\section{Install the COE (Co-simulation Orchestration Engine)}
+
+\begin{instructions}
+\item Launch the \emph{INTO-CPS Application}. On first loading, it will look like the screenshot below. If you have opened a project previously, that project will be opened automatically.
+
+\begin{annotation}[width=0.85\linewidth]{figures/blankApp}
+\end{annotation}
+
+\item To install a tool, select \emph{Window \menusep Show Download Manager}.
+
+\begin{annotation}[width=0.85\linewidth,trim=0 260 0 0,clip]{figures/showDownloadManager}
+    \usquare{3.8cm}{0.3cm}{0.6}{Show Download Manager}{0.28,0.5}
+\end{annotation}
+
+\newpage
+\item A new window with release options appear. Press the latest release (the one on the top).
+
+\begin{annotation}[width=0.85\linewidth,trim=0 160 0 0,clip]{figures/releasesWindow}
+    \usquare{10.7cm}{1.6cm}{0.7}{Latest release}{0.48,0.4}
+\end{annotation}
+
+
+\item Once the release is opened, you will see the various tools that can be installed using the INTO-CPS Application. To install the COE please find the ``Co-simulation Orchestration Engine - Co-simulation Orchestration Engine'' entry and press the down arrow and confirm. 
+
+\begin{annotation}[width=0.85\linewidth]{figures/coeInRelease}
+    \usquare{0.54cm}{0.3cm}{0.6}{Download COE}{0.565,0.065}
+\end{annotation}
+
+\newpage
+\item  When the COE is downloaded the progress bar stalls on 100\% as shown in the figure. You should now click on the Close button.    
+
+\begin{annotation}[width=0.85\linewidth]{figures/fullDownload}
+    \usquare{0.9cm}{0.3cm}{0.1}{Close window}{0.033,0.03}
+\end{annotation}
+
+
+    \bigskip
+    \bigskip
+    {\large\bfseries Congratulations!}
+
+    You have installed the INTO-CPS Application and the COE. Your system is ready for the next tutorial.
+
+\end{instructions}
+
+\newpage
+\section{Uninstall tool (Optional) [In case of emergency]}
+
+To completely remove the tool from your system you must remove the folder
+created when unzipping the tool during the installation process and the
+following folders: 
+
+\begin{instructions}
+\item Remove the \verb'into-cps-projects' folder which contain all the projects and downloaded tools. The following are the shell commands you should run depending on your operating system:  
+	\begin{itemize}
+		\item Linux: \verb'rm -rf ~/into-cps-projects/'
+		\item Windows: \verb'rm -Recurse -Force $HOME\Documents\into-cps-projects'	
+		\item macOS: \verb'rm -rf ~/into-cps-projects/'
+	\end{itemize}
+
+\item Remove the configurations folder. The following are the shell commands you should run depending on your operating system:  
+
+	\begin{itemize}
+		\item Linux: \verb'rm -rf ~/.config/INTO-CPS\ APP/'
+		\item Windows: \verb'rm -Recurse $HOME\AppData\Roaming\INTO-CPS APP'
+		\item macOS: \verb' rm -rf ~/Library/Application Support/INTO-CPS APP/'
+	\end{itemize}
+\end{instructions}
+
+\end{document}
