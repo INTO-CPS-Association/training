@@ -35,10 +35,12 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 \begin{itemize}[noitemsep]
 \item INTO-CPS Application
 \item COE (Co-simulation Orchestration Engine) accessible to the Application
-\item Overture and the FMU plug-in extension
+\item Overture tool 
+\item Overture FMU Import/Exporter (No need for the CLI version)
 \end{itemize}
 
-You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+If you are following the tutorials for the first time at this point you need to install the Overture and the FMU through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+
 
 \section{Creating a Project in Overture}
 
@@ -106,6 +108,40 @@ The example in this tutorial is a small line-following robot with two infrared s
 
 \end{instructions}
 
+
+\section{Installing the Overture FMU plug-in}
+
+\begin{instructions}
+\item Select \emph{Help \menusep Install New Software...}
+
+\begin{annotation}[width=0.85\linewidth]{figures/OvertureInstallNewSoftware}
+        \dsquare{3.1cm}{0.1cm}{0.63}{Click \emph{Install New Software\ldots}}{0.365,0.7}	
+\end{annotation}
+
+\item Select \emph{Add} and then \emph{Archive}\ldots.
+
+\begin{annotation}[width=0.85\linewidth,trim=0 260 0 0,clip]{figures/OvertureInstallNewSoftwareAdd}
+        \dsquare{2cm}{0.1cm}{0.63}{Click \emph{Add \ldots}}{0.93,0.625}		
+\end{annotation}
+
+\newpage
+
+\item Open the \verb'overture-fmu.p2' file inside your \emph{into-cps-projects} install downloads directory 
+\begin{annotation}[width=0.6\linewidth]{figures/OvertureInstallNewSoftwareAddArchiveP2}
+\end{annotation}
+
+\item Select the plugin and click Next to continue the installation. When finished Overture restarts and you are ready to go to the next step. 
+
+\begin{annotation}[width=0.8\linewidth]{figures/OvertureInstallNewSoftwareIntegration}
+	\usquare{0.4cm}{0.3cm}{0.3}{Check \emph{Overture FMI Integration}}{0.045,0.746}  
+	\dsquare{1.6cm}{0.3cm}{0.6}{\emph{Next}}{0.7,0.03}    
+	
+\end{annotation}
+
+\end{instructions}
+\newpage
+
+
 \section{Importing a Model Description into Overture}
 
 Overture can import model description files to create a skeleton project with the correct input, output and parameter ports, as well as standard boilerplate elements needed in a VDM-RT model.
@@ -120,7 +156,7 @@ Overture can import model description files to create a skeleton project with th
         \upoint{0.51}{\emph{Import Model Description}}{0.573,0.068}
     \end{annotation}
 
-\item Locate the file \emph{tutorial\_3\pathsep{}VDM\pathsep{}Controller.modeldescription.xml} that is included in the project and click \emph{Open}.
+\item Locate the file \emph{tutorial\_4\pathsep{}VDM\pathsep{}Controller.modeldescription.xml} that is included in the project and click \emph{Open}.
 
 %\item Locate the \emph{Controller.modeldescription.xml} file that you exported from Modelio earlier and click \emph{Open}.
 
@@ -153,7 +189,7 @@ Overture can import model description files to create a skeleton project with th
 To make a functional controller, we will add a \emph{Controller} class and instantiate it as an object in the \emph{System} class, and set the \emph{World} to start the controller thread. A basic controller class is included in the \emph{tutorial\_3} project.
 
 \begin{instructions}
-\item Locate the file \emph{tutorial\_3\pathsep{}VDM\pathsep{}Controller.vdmrt} on on your file system and copy it.
+\item Locate the file \emph{tutorial\_4\pathsep{}VDM\pathsep{}Controller.vdmrt} on on your file system and copy it.
 
     \begin{annotation}[width=0.8\linewidth]{figures/OvertureFindController}
     \end{annotation}
@@ -237,7 +273,7 @@ Now that the controller model is complete, we can export an FMU and place it in 
         \rsquare{2.5cm}{0.12cm}{0.45}{\emph{Copy}}{0.6,0.45}
     \end{annotation}
 
-\item \label{step:exp2} Paste \emph{LFRController.fmu} into the \emph{tutorial\_3\pathsep{}FMUs} folder on your file system.
+\item \label{step:exp2} Paste \emph{LFRController.fmu} into the \emph{tutorial\_4\pathsep{}FMUs} folder on your file system.
 
     \begin{annotation}[width=0.8\linewidth]{figures/OverturePasteFMU}
     \end{annotation}
@@ -250,9 +286,8 @@ Now that the controller model is complete, we can export an FMU and place it in 
 \begin{instructions}
 \item Launch the \emph{INTO-CPS Application} and select \emph{File \menusep Open Project}. Set the \emph{Project root path} to the location of \emph{Tutorials\pathsep{}tutorials\_4} and click \emph{Open}. You can browse using the \emph{Folder} button.
 
-    \begin{annotation}[width=0.35\linewidth,trim=0 0 0 0,clip]{figures/INTOOpenProject}
+    \begin{annotation}[width=0.35\linewidth,trim=0 0 0 0,clip]{figures/projectBrowser4}
     \upoint{0.45}{Path to \emph{Tutorials\pathsep{}tutorials\_4}}{0.33,0.7}
-    \dsquare{1.2cm}{0.25cm}{0.5}{Open project}{0.4,0.4}
     %\helpergrid
     \end{annotation}
 
@@ -343,7 +378,7 @@ Now that the controller model is complete, we can export an FMU and place it in 
         \dpoint{0.7}{Set \emph{Step size}}{0.64,0.08}
     \end{annotation}
 
-\item Check \emph{lf\_1\_sensor\_reading} from \emph{\{sensor1\}.sensor1} and \emph{\{sensor2\}.sensor2} to see the sensor values appear in the \emph{Live\-stream Configuration}.
+\item Check \emph{lf\_1\_sensor\_reading} from \emph{\{sensor1\}.sensor1} and \emph{\{sensor2\}.sensor2} to see the sensor values appear in the \emph{Live Plotting}.
 
     \begin{annotation}[width=0.85\linewidth,trim=0 230 0 250,clip]{figures/INTOPlotSensor}
     \end{annotation}
