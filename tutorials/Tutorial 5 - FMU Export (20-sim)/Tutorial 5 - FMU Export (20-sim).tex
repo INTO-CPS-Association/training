@@ -1,0 +1,369 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\title{Tutorial 5 --- FMU Export (20-sim)}
+\date{March 2018}
+\author{Hugo D. Macedo}
+
+\def\intocpsVer{3.4.6}
+\begin{document}
+
+\section*{Overview}
+
+This INTO-CPS tutorial will show you how to:
+
+\begin{enumerate}[noitemsep]
+\item Generate a new physical model simulator FMU in 20-sim
+    \begin{enumerate}[noitemsep]
+        \item Import a model description into 20-sim
+        \item Complete the skeleton model to produce a working simulator
+        \item Export the simulator FMU
+    \end{enumerate}
+\item Associate the new simulator FMU with a multi-model configuration
+\item Execute a co-simulation using the new simulator
+\end{enumerate}
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item INTO-CPS Application
+\item COE (Co-simulation Orchestration Engine) accessible to the Application
+\item 20-sim - Modeling and simulation tool 
+\end{itemize}
+
+\section{Download and install the 20-sim tool}
+
+
+\begin{instructions} 
+
+\item Launch the \emph{INTO-CPS Application}. Download the 20-sim modeling tool from the  \emph{Window \menusep Show Download Manager}. If after the download click \emph{Yes}. If the window does not appear please find the installer inside the \emph{into-cps-projects\pathsep install\_downloads} folder.
+
+\begin{annotation}[width=0.85\linewidth]{figures/Run20simInstaller}
+        \dsquare{1.6cm}{0.1cm}{0.63}{Click \emph{Yes\ldots}}{0.785,0.175}	
+\end{annotation}
+
+\newpage
+
+\item Follow the installation wizard until the following license activation screen appears and click \emph{Activation}.
+
+\begin{annotation}[width=0.85\linewidth]{figures/Activation1}
+        \dsquare{2.2cm}{0.1cm}{0.63}{Click \emph{Activation\ldots}}{0.87,0.125}	
+\end{annotation}
+
+\newpage 
+
+\item The following options will appear, click \emph{Next} to continue. 
+
+\begin{annotation}[width=0.85\linewidth]{figures/Activation2}
+        \dsquare{2.1cm}{0.1cm}{0.63}{Click \emph{Next\ldots}}{0.72,0.065}	
+\end{annotation}
+
+\item Select \emph{I received a license Key by email} and click \emph{Next} to continue. 
+
+\begin{annotation}[width=0.85\linewidth]{figures/Activation3}
+        \dsquare{2.1cm}{0.1cm}{0.63}{Click \emph{Next\ldots}}{0.72,0.065}	
+\end{annotation}
+
+\newpage 
+
+\item Please fill in the license key you were given (Available in the blackboard system).
+	
+\begin{annotation}[width=0.85\linewidth]{figures/Activation4}
+        \dpoint{0.63}{Paste \emph{here\ldots}}{0.5,0.78}	
+\end{annotation}
+
+After clicking \emph{Finish} you may need to allow an online connection. 
+\end{instructions}
+
+\section{Loading a Model in 20-sim}
+
+\begin{instructions}
+
+\item Launch the \emph{20-sim} tool. You should see the following editor window.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simWelcome}
+    \end{annotation}
+
+
+\item Select \emph{File \menusep Open}.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simNewOpen}
+       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+    \end{annotation}
+
+
+
+\item Navigate to the location of \emph{tutorial\_5\pathsep{}Models\pathsep{}20-sim\_Body} and \emph{Open} the \emph{R2G2P\_Body\_Only} model. 
+
+    \begin{annotation}[width=0.8\linewidth]{figures/BodyBlockModel}
+       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+    \end{annotation}
+
+\item You should see 
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simModelTop}
+       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+    \end{annotation}
+
+
+\item Now 
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simModelBody}
+       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+    \end{annotation}
+
+\item
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simWheel1}
+       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+    \end{annotation}
+
+\item
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simWheel2}
+       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+    \end{annotation}
+
+
+\item
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simWheel3}
+       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+    \end{annotation}
+
+\end{instructions}
+
+\newpage
+
+\section{Installing Microsoft Build Tools (Windows Only)} The 20-sim is able to export new FMUs however \emph{this feature depends on Microsoft Build Tools available for Windows platform only}.
+
+
+\begin{instructions}
+
+\item \emph{The Microsoft Build Tools 2015} can be downloaded from: \\ \url{https://www.visualstudio.com/vs/older-downloads}. Navigate to the link and click download. 
+
+    \begin{annotation}[width=0.8\linewidth]{figures/BuildTools2015Web}
+        \dsquare{1.5cm}{0.2cm}{0.63}{Click \emph{Download}}{0.88,0.83}	    
+    \end{annotation}
+
+
+\item You may need to login or create an account first. After downloading the installer select the custom install.
+
+   \begin{annotation}[width=0.3\linewidth]{figures/BuildTools2015Install}
+        \usquare{0.2cm}{0.1cm}{0.4}{1. Click \emph{Custom}}{0.1,0.63}	    
+        \dsquare{0.85cm}{0.05cm}{0.63}{2. Click \emph{Next}}{0.84,0.06}	    
+	
+	   
+    \end{annotation}
+\newpage
+
+\item Confirm the Windows 8.1 SDK is selected and proceed with the installation by clicking Next. 
+
+   \begin{annotation}[width=0.2\linewidth]{figures/BuildTools2015InstallSDK}
+        \upoint{0.01}{1. Check selection}{0.14,0.76}
+        \rsquare{0.85cm}{0.05cm}{0.2}{2. Click \emph{Next}}{0.84,0.06}	    	
+   \end{annotation}
+\end{instructions}
+
+
+\section{Exporting an FMU and Adding it to a Multi-model}
+
+
+
+\begin{instructions}
+
+\item Reload the 20-sim model again. Click Simulate.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/20-simModelTop}
+	   \usquare{0.6cm}{0.1mm}{0.37}{Click on \emph{Simulate}}{0.5,0.91}
+    \end{annotation}
+
+\newpage
+
+\item The Simulator Window appears. Navigate to \emph{Tools\menusep Real Time Toolbox\menusep C-Code Generation} and click.
+
+   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGen}
+        \dsquare{3.1cm}{0.06cm}{0.63}{Click \emph{C-Code Generation}}{0.743,0.71}	    	   
+    \end{annotation}
+
+\item Select \emph{FMU 2.0 export\ldots} from the \emph{Target List} and click on Submodel.
+
+   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenFMI20}
+        \upoint{0.63}{1. Click on \emph{FMU 2.0 export\ldots}}{0.2,0.57}	    	   
+        \dsquare{1.2cm}{1cm}{0.63}{2. Click on \emph{Submodel}}{0.59,0.26}	    	   
+	   
+   \end{annotation}
+
+\item A model chooser appears. Select the \emph{Body\_block} in the Model Hierarchy. 
+
+   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenModel}
+	\upoint{0.63}{1. Select \emph{Body\_ Block}}{0.24,0.59}	    	   
+        \dsquare{2cm}{0.6cm}{0.63}{2. Click \emph{OK}}{0.9,0.14}	
+   \end{annotation}
+
+\item Click OK. 
+
+   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenExport}
+   \end{annotation}
+
+\newpage
+
+\item The following script should appear.
+
+   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenScript}
+   \end{annotation}
+
+\item When the script is finished you should see the following.
+
+   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenScriptOK}
+   \end{annotation}
+
+\item Navigate to the chosen folder and copy the \emph{Body\_Block.fmu}.
+
+   \begin{annotation}[width=0.8\linewidth]{figures/GetGenFMU}
+   \end{annotation}
+
+\item Paste the \emph{Body\_Block.fmu} into the FMUs folder inside tutorial 5..
+
+   \begin{annotation}[width=0.8\linewidth]{figures/PasteGenFMU}
+   \end{annotation}
+
+
+\end{instructions}
+
+
+
+
+\section{Co-simulating with the New Simulator}
+
+\begin{instructions}
+\item Launch the \emph{INTO-CPS Application} and select \emph{File \menusep Open Project}. Set the \emph{Project root path} to the location of \emph{Tutorials\pathsep{}tutorials\_5} and click \emph{Open}. You can browse using the \emph{Folder} button.
+
+    \begin{annotation}[width=0.35\linewidth,trim=0 0 0 0,clip]{figures/projectBrowser4}
+    \upoint{0.45}{Path to \emph{Tutorials\pathsep{}tutorials\_5}}{0.33,0.7}
+    %\helpergrid
+    \end{annotation}
+
+    You should see the newly export \emph{Body\_Block} FMU in the list.
+
+    \begin{annotation}[height=0.5\linewidth,trim=0 125 250 0,clip]{figures/INTOnewFMU}
+        \lpoint{0.69}{Newly created FMU}{0.06,0.69}
+    \end{annotation}
+
+\item In the SysML entry of the project browser, expand the \emph{LineFollowRobot} folder, then \emph{config} folders. Right-click on \emph{3DRobot} and select \emph{Create Multi-Model}.
+
+    \begin{annotation}[width=0.35\linewidth,trim=0 40 375 300,clip]{figures/into_create_mm}
+        \rpoint{0.7}{Expand to locate \emph{3DRobot}}{0.53,0.63}
+        \rsquare{2.7cm}{0.5cm}{0.5}{Create Multi-model}{0.68,0.5}
+    \end{annotation}
+
+\newpage
+\item We now need to associate FMUs to the multi-model as we did in \emph{Tutorial 2}. Scroll down to find the \emph{Configuration} panel and expand it by clicking the arrow.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 250,clip]{figures/INTOExpandConfig}
+        \dcircle{0.15cm}{0.8}{Expand \emph{Configuration}}{0.938,0.148}
+    \end{annotation}
+
+\item Scroll down and click \emph{Edit}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 260,clip]{figures/INTOEditConfig}
+        \dsquare{1.1cm}{0.12cm}{0.8}{\emph{Edit} configuration}{0.332,0.455}
+    \end{annotation}
+
+\item As in \emph{Tutorial 2}, in the FMUs section press \emph{File} next to the Body\_ Block element, \emph{b}. A file browser window will open and show five FMUs (if the file browser does not show the FMUs, navigate to \emph{tutorials\_5\pathsep{}FMUs}). Select \emph{Body\_Block.fmu} and click \emph{Open}.
+
+    \begin{annotation}[width=0.8\linewidth]{figures/FMUFindFile}
+        \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+        \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+    \end{annotation}
+
+\item Repeat this for the remaining elements:
+    \begin{itemize}
+        \item \emph{c} : \emph{LFRController.fmu}
+        \item \emph{3D} : \emph{3DanimationFMU.fmu}
+        \item \emph{sensor1} : \emph{Sensor\_Block\_01.fmu}
+    \item \emph{sensor2} : \emph{Sensor\_Block\_02.fmu}
+    \end{itemize}
+
+    The complete set of FMUs will look like this:
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/INTOFMUsDone}
+    \usquare{9cm}{12.7cm}{0.58}{FMUs added}{0.616,0.47}
+    \end{annotation}
+
+\newpage
+\item Scroll down to the \emph{Initial values of parameters section}, and click \emph{\{sensor1\}.sensor1}. In the \emph{Parameters} section, enter the following values:
+
+    \begin{itemize}
+        \item \emph{lf\_position\_y} = 0.065
+        \item \emph{lf\_position\_x} = 0.01
+    \end{itemize}
+
+    \begin{annotation}[width=0.8\linewidth]{figures/INTOParams}
+        \dpoint{0.1}{\emph{lf\_position\_y}}{0.28,0.28}
+        \dpoint{0.5}{\emph{lf\_position\_x}}{0.42,0.15}
+    \end{annotation}
+
+\item Repeat the previous step for the second sensor, \emph{\{sensor2\}.sensor2}, with the following values:
+
+    \begin{itemize}
+        \item \emph{lf\_position\_x} = -0.01
+        \item \emph{lf\_position\_y} = 0.065
+    \end{itemize}
+
+\item \emph{Save} the \emph{Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 250,clip]{figures/INTOSaveConfig}
+        \dsquare{1.25cm}{0.12cm}{0.5}{\emph{Save} configuration}{0.338,0.18}
+    \end{annotation}
+
+\item Right-click on the new multi-model configuration and select \emph{Create Co-simulation Configuration}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 120 0 130,clip]{figures/INTOCreateCoSim}
+        \dsquare{3.85cm}{0.12cm}{0.5}{\emph{Create Co-Simulation Configuration}}{0.293,0.52}
+    \end{annotation}
+
+\item Set the \emph{Step size} to 0.01. Don't forget to press \emph{Edit} then \emph{Save}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/INTOSetSimTime}
+        \usquare{1.25cm}{0.12cm}{0.3}{\emph{Edit} then \emph{Save}}{0.338,0.722}
+        \ucircle{0.15cm}{0.8}{Expand \emph{Configuration}}{0.94,0.795}
+        \dpoint{0.7}{Set \emph{Step size}}{0.64,0.08}
+    \end{annotation}
+
+\item Check \emph{lf\_1\_sensor\_reading} from \emph{\{sensor1\}.sensor1} and \emph{\{sensor2\}.sensor2} to see the sensor values appear in the \emph{Live Plotting}.
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 230 0 250,clip]{figures/INTOPlotSensor}
+    \end{annotation}
+
+\item Launch the COE if necessary (see \emph{Tutorial 1 --- First Co-simulation} for a reminder if needed).
+
+    \begin{annotation}[width=0.85\linewidth,trim=0 270 0 120,clip]{figures/INTOLaunchCOE}
+        \usquare{1.25cm}{0.12cm}{0.8}{\emph{Launch} COE}{0.865,0.42}
+    \end{annotation}
+
+\item When the COE is running, click the \emph{Simulate} button. The \emph{Animation Frame} should appear. You can click the \emph{3D} button to see the 3D visualisation of the robot.
+
+    \begin{annotation}[width=0.55\linewidth,trim=0 0 0 0,clip]{figures/into_coe_3d_toggle}
+        \rcircle{0.32cm}{0.8}{3D Button}{0.52,0.88}
+    \end{annotation}
+
+\item If everything went well, the robot should follow the line as in \emph{Tutorial 2 --- Adding FMUs}. Although with a slight difference\ldots
+
+    \begin{annotation}[width=0.55\linewidth,trim=0 300 0 0,clip]{figures/into_coe_3d_results}
+    \end{annotation}
+
+    Can you spot what is the problem? You can go back to \emph{20-sim} and look at the physical model, and try to make some changes to obtain the correct behaviour. Just repeat \ref{step:exp1} to \ref{step:exp2} to regenerate and copy the FMU, then press \emph{Simulate}.
+
+\end{instructions}
+
+
+\end{document}
