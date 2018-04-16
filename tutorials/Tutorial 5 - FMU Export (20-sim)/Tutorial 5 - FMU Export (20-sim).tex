@@ -33,113 +33,158 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 \item 20-sim - Modeling and simulation tool 
 \end{itemize}
 
-\section{Download and install the 20-sim tool}
-
+\section{Download and install the 20-sim tool (Windows only)}
 
 \begin{instructions} 
 
 \item Launch the \emph{INTO-CPS Application}. Download the 20-sim modeling tool from the  \emph{Window \menusep Show Download Manager}. If after the download click \emph{Yes}. If the window does not appear please find the installer inside the \emph{into-cps-projects\pathsep install\_downloads} folder.
 
 \begin{annotation}[width=0.85\linewidth]{figures/Run20simInstaller}
-        \dsquare{1.6cm}{0.1cm}{0.63}{Click \emph{Yes\ldots}}{0.785,0.175}	
+        \dsquare{1.6cm}{0.1cm}{0.75}{Click \emph{Yes\ldots}}{0.785,0.175}	
 \end{annotation}
 
 \newpage
 
 \item Follow the installation wizard until the following license activation screen appears and click \emph{Activation}.
 
-\begin{annotation}[width=0.85\linewidth]{figures/Activation1}
-        \dsquare{2.2cm}{0.1cm}{0.63}{Click \emph{Activation\ldots}}{0.87,0.125}	
+\begin{annotation}[width=0.5\linewidth]{figures/Activation1}
+        \rsquare{1.3cm}{0.1cm}{0.1}{Click \emph{Activation\ldots}}{0.87,0.125}	
 \end{annotation}
-
-\newpage 
+ 
 
 \item The following options will appear, click \emph{Next} to continue. 
 
-\begin{annotation}[width=0.85\linewidth]{figures/Activation2}
-        \dsquare{2.1cm}{0.1cm}{0.63}{Click \emph{Next\ldots}}{0.72,0.065}	
+\begin{annotation}[width=0.5\linewidth]{figures/Activation2}
+        \rsquare{1.3cm}{0.1cm}{0.1}{Click \emph{Next\ldots}}{0.72,0.065}	
 \end{annotation}
 
 \item Select \emph{I received a license Key by email} and click \emph{Next} to continue. 
 
-\begin{annotation}[width=0.85\linewidth]{figures/Activation3}
-        \dsquare{2.1cm}{0.1cm}{0.63}{Click \emph{Next\ldots}}{0.72,0.065}	
+\begin{annotation}[width=0.5\linewidth]{figures/Activation3}
+        \rsquare{1.3cm}{0.1cm}{0.1}{Click \emph{Next\ldots}}{0.72,0.065}	
 \end{annotation}
 
 \newpage 
-
-\item Please fill in the license key you were given (Available in the blackboard system).
+\item Please fill in the license key you were given (Available in the blackboard system) and click \emph{Finish}.
 	
-\begin{annotation}[width=0.85\linewidth]{figures/Activation4}
-        \dpoint{0.63}{Paste \emph{here\ldots}}{0.5,0.78}	
+\begin{annotation}[width=0.5\linewidth]{figures/Activation4}
+        \rpoint{0.63}{Paste \emph{here\ldots}}{0.5,0.78}	
 \end{annotation}
 
-After clicking \emph{Finish} you may need to allow an online connection. 
+\item You will be asked go online. Click on \emph{Active Now} to finish activation. 
+	
+\begin{annotation}[width=0.5\linewidth]{figures/WebActivation}
+\end{annotation}
+
 \end{instructions}
+
+\section{Download and install the 20-sim tool (Linux and macOS only)}
+
+It is possible to run 20-sim on Linux and macOS systems after installing Wine.
+\begin{itemize}
+	\item For the macOS there is a disk image file (.dmg) ready to install. Please ask
+us. 
+	\item For Linux 
+		\begin{enumerate} 
+			\item Install the Wine package for your Linux distribution or follow the instructions for your Linux distribution from \url{https://wiki.winehq.org/Download}
+    			\item Use the winetricks tool to install a few Microsoft DLLs to fix the license activation and some drawing issues:
+        			\begin{itemize}
+					\item winetricks msxml4
+					\item winetricks wininet
+					\item winetricks gdiplus 
+				\end{itemize}
+			\item Now download 20-sim from \url{http://www.20sim.com/downloads/files/20-sim-4.6.5.8490-intocps-win32.exe} and install it using: \verb'wine 20sim.exe'
+		\end{enumerate}
+
+This should result in a working 20-sim version on Linux. Tested here with various Debian and Ubuntu versions and Wine version 1.5 up to Wine version 3.0.
+\end{itemize}
+
+\newpage 
 
 \section{Loading a Model in 20-sim}
 
 \begin{instructions}
 
-\item Launch the \emph{20-sim} tool. You should see the following editor window.
+\item \label{step:exp3} Launch the \emph{20-sim} tool. You should see the following 20-sim window.
 
-    \begin{annotation}[width=0.8\linewidth]{figures/20-simWelcome}
+    \begin{annotation}[width=0.85\linewidth]{figures/20-simWelcome}
     \end{annotation}
 
 
-\item Select \emph{File \menusep Open}.
+\item Open the 20-sim physical model of the line follower robot by selecting \emph{File \menusep Open}.
 
-    \begin{annotation}[width=0.8\linewidth]{figures/20-simNewOpen}
+     \begin{annotation}[width=0.8\linewidth, trim={0 12cm 0 0},clip]{figures/20-simNewOpen}
        % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
        % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
     \end{annotation}
 
 
 
-\item Navigate to the location of \emph{tutorial\_5\pathsep{}Models\pathsep{}20-sim\_Body} and \emph{Open} the \emph{R2G2P\_Body\_Only} model. 
+\item \label{step:exp4} Navigate to the location of \emph{tutorial\_5\pathsep{}Models\pathsep{}20-sim\_Body} and \emph{Open} the \emph{R2G2P\_Body\_Only} model. 
 
-    \begin{annotation}[width=0.8\linewidth]{figures/BodyBlockModel}
+    \begin{annotation}[width=0.4\linewidth]{figures/BodyBlockModel}
        % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
        % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
     \end{annotation}
 
-\item You should see 
+\newpage
+
+\item You should see the block diagram for the model. The diagram is composed of two blocks: The \emph{Environment} and the \emph{Body\_Block}. Click on the Body\_Block to visualize its contents.  
 
     \begin{annotation}[width=0.8\linewidth]{figures/20-simModelTop}
-       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
-       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+       \rsquare{1.05cm}{0.6cm}{0.2}{Click \emph{Body\_Block}}{0.73,0.57}
     \end{annotation}
 
 
-\item Now 
+\item At this step you can explore the model further by clicking on blocks or
+	by clicking on the Model view. To continue our tutorial open the
+	\emph{wheel\_right} submodel.
 
     \begin{annotation}[width=0.8\linewidth]{figures/20-simModelBody}
        % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
-       % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+       \dsquare{0.16cm}{0.8cm}{0.5}{Click the wheel\_right}{0.642,0.546}
+       \dpoint{0.5}{}{0.1,0.575}
     \end{annotation}
 
-\item
+\item The \emph{wheel\_right} models the physical behaviour of the line
+	following robot wheel. You can explore the model but we will focus on
+	the \emph{rotation\_to\_translation} element. This element is a
+	transformer which as it implied by its name transforms the rotation of
+	the wheel into the translation of the line following robot body
+	structure.  
 
     \begin{annotation}[width=0.8\linewidth]{figures/20-simWheel1}
        % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
        % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
     \end{annotation}
 
-\item
+\item After double clicking the transformer you should find its contents to be empty.
 
-    \begin{annotation}[width=0.8\linewidth]{figures/20-simWheel2}
+    \begin{annotation}[width=0.7\linewidth]{figures/20-simWheel2}
        % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
        % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
     \end{annotation}
 
+\newpage
 
-\item
+\item Fill in the \emph{rotation\_to\_translation} with the content shown on the figure, and save afterwards.
 
     \begin{annotation}[width=0.8\linewidth]{figures/20-simWheel3}
-       % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
+       \upoint{0.1}{1. Fill in }{0.6,0.8}
+       \dsquare{0.5cm}{0.12cm}{0.63}{2. Click \emph{Save}}{0.12,0.92}
+	    
     \end{annotation}
 
 \end{instructions}
+
+Congratulations! You edited your first 20-sim physical simulator.
+
+In the next
+sections one need either a Windows system or an emulated Windows platform to be
+able to export an FMU for the physical model of the Line Following Robot. The
+simulator FMU can be provided to you and you can continue in Section
+\ref{sec:cosim}. Nevertheless, it is interesting if you can follow the next
+steps by joining one of your colleagues. 
 
 \newpage
 
@@ -148,39 +193,39 @@ After clicking \emph{Finish} you may need to allow an online connection.
 
 \begin{instructions}
 
-\item \emph{The Microsoft Build Tools 2015} can be downloaded from: \\ \url{https://www.visualstudio.com/vs/older-downloads}. Navigate to the link and click download. 
+\item \emph{The Microsoft Build Tools 2015} can be downloaded from: \\ \url{https://www.visualstudio.com/vs/older-downloads}\\ Scroll down to find the Microsoft Build Tools, and click download. 
 
-    \begin{annotation}[width=0.8\linewidth]{figures/BuildTools2015Web}
-        \dsquare{1.5cm}{0.2cm}{0.63}{Click \emph{Download}}{0.88,0.83}	    
+    \begin{annotation}[width=0.8\linewidth,trim=0 15cm 0 0,clip ]{figures/BuildTools2015Web}
+        \usquare{2.1cm}{0.1cm}{0.2}{1. Find \emph{Microsoft Build Tools}}{0.14,0.58}	    	    
+        \dsquare{1.5cm}{0.2cm}{0.63}{2. Click \emph{Download}}{0.88,0.55}	    
     \end{annotation}
 
 
-\item You may need to login or create an account first. After downloading the installer select the custom install.
+\item You may need to login or create an account with Microsoft first. After executing the installer the following screen appears. Select the custom install and click next to continue.
 
    \begin{annotation}[width=0.3\linewidth]{figures/BuildTools2015Install}
-        \usquare{0.2cm}{0.1cm}{0.4}{1. Click \emph{Custom}}{0.1,0.63}	    
-        \dsquare{0.85cm}{0.05cm}{0.63}{2. Click \emph{Next}}{0.84,0.06}	    
-	
-	   
+        \lpoint{0.6}{1. Click \emph{Custom}}{0.089,0.61}	    
+        \rsquare{0.85cm}{0.01cm}{0.1}{2. Click \emph{Next}}{0.84,0.06}	     
     \end{annotation}
 \newpage
 
 \item Confirm the Windows 8.1 SDK is selected and proceed with the installation by clicking Next. 
 
-   \begin{annotation}[width=0.2\linewidth]{figures/BuildTools2015InstallSDK}
+   \begin{annotation}[width=0.3\linewidth]{figures/BuildTools2015InstallSDK}
         \upoint{0.01}{1. Check selection}{0.14,0.76}
-        \rsquare{0.85cm}{0.05cm}{0.2}{2. Click \emph{Next}}{0.84,0.06}	    	
+        \rsquare{0.85cm}{0.05cm}{0.1}{2. Click \emph{Next}}{0.84,0.06}	    	
    \end{annotation}
+
+   After finishing the install your Windows system is ready to generate an FMU from within the 20-sim tool. 
 \end{instructions}
 
+\newpage
 
 \section{Exporting an FMU and Adding it to a Multi-model}
 
-
-
 \begin{instructions}
 
-\item Reload the 20-sim model again. Click Simulate.
+\item \label{step:exp1} Reload the 20-sim model again by repeating \ref{step:exp3} to \ref{step:exp4} and click \emph{Simulate} to open the Simulator Window.
 
     \begin{annotation}[width=0.8\linewidth]{figures/20-simModelTop}
 	   \usquare{0.6cm}{0.1mm}{0.37}{Click on \emph{Simulate}}{0.5,0.91}
@@ -188,40 +233,43 @@ After clicking \emph{Finish} you may need to allow an online connection.
 
 \newpage
 
-\item The Simulator Window appears. Navigate to \emph{Tools\menusep Real Time Toolbox\menusep C-Code Generation} and click.
+\item After the \emph{Simulator Window} appears, navigate to \emph{Tools\menusep Real Time Toolbox\menusep C-Code Generation} and click \emph{C-Code Generation}.
 
    \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGen}
         \dsquare{3.1cm}{0.06cm}{0.63}{Click \emph{C-Code Generation}}{0.743,0.71}	    	   
     \end{annotation}
 
-\item Select \emph{FMU 2.0 export\ldots} from the \emph{Target List} and click on Submodel.
+\item Select \emph{FMU 2.0 export for 20-sim submodel} from the \emph{Target List} and click on the \emph{Submodel} icon.
 
-   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenFMI20}
-        \upoint{0.63}{1. Click on \emph{FMU 2.0 export\ldots}}{0.2,0.57}	    	   
-        \dsquare{1.2cm}{1cm}{0.63}{2. Click on \emph{Submodel}}{0.59,0.26}	    	   
+   \begin{annotation}[width=0.5\linewidth]{figures/20-simCCodeGenFMI20}
+        \upoint{0.01}{1. Click on \emph{FMU 2.0 export\ldots}}{0.2,0.57}	    	   
+        \dsquare{1.2cm}{1cm}{0.8}{2. Click on the \emph{Submodel} icon}{0.59,0.26}	    	   
 	   
-   \end{annotation}
-
-\item A model chooser appears. Select the \emph{Body\_block} in the Model Hierarchy. 
-
-   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenModel}
-	\upoint{0.63}{1. Select \emph{Body\_ Block}}{0.24,0.59}	    	   
-        \dsquare{2cm}{0.6cm}{0.63}{2. Click \emph{OK}}{0.9,0.14}	
-   \end{annotation}
-
-\item Click OK. 
-
-   \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenExport}
    \end{annotation}
 
 \newpage
 
-\item The following script should appear.
+\item A model chooser appears. Select the \emph{Body\_block} in the Model Hierarchy. 
+
+   \begin{annotation}[width=0.5\linewidth]{figures/20-simCCodeGenModel}
+	\upoint{0.63}{1. Select \emph{Body\_ Block}}{0.24,0.59}	    	   
+        \dsquare{2cm}{0.6cm}{0.63}{2. Click \emph{OK}}{0.9,0.14}	
+   \end{annotation}
+
+\item You may change the location for the FMU output by changing the \emph{Output Directory} or leave it to its default location and click \emph{OK} to generate the FMU. 
+
+   \begin{annotation}[width=0.5\linewidth]{figures/20-simCCodeGenExport}
+        \dsquare{1.3cm}{0.4cm}{0.63}{Click \emph{OK}}{0.89,0.185}	
+   \end{annotation}
+
+\newpage
+
+\item The following shell should pop up and the script to be run may take a while to complete\ldots
 
    \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenScript}
    \end{annotation}
 
-\item When the script is finished you should see the following.
+\item When the script is finished and the FMU generation succeeded you should see the following message.
 
    \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenScriptOK}
    \end{annotation}
@@ -231,18 +279,19 @@ After clicking \emph{Finish} you may need to allow an online connection.
    \begin{annotation}[width=0.8\linewidth]{figures/GetGenFMU}
    \end{annotation}
 
-\item Paste the \emph{Body\_Block.fmu} into the FMUs folder inside tutorial 5..
+\item \label{step:exp2}  Paste the \emph{Body\_Block.fmu} into the FMUs folder inside tutorial 5..
 
    \begin{annotation}[width=0.8\linewidth]{figures/PasteGenFMU}
    \end{annotation}
 
-
+Congratulations! You are now ready to use the generated FMU in a co-simulation. 
 \end{instructions}
 
 
-
+\newpage
 
 \section{Co-simulating with the New Simulator}
+\label{sec:cosim}
 
 \begin{instructions}
 \item Launch the \emph{INTO-CPS Application} and select \emph{File \menusep Open Project}. Set the \emph{Project root path} to the location of \emph{Tutorials\pathsep{}tutorials\_5} and click \emph{Open}. You can browse using the \emph{Folder} button.
@@ -356,12 +405,12 @@ After clicking \emph{Finish} you may need to allow an online connection.
         \rcircle{0.32cm}{0.8}{3D Button}{0.52,0.88}
     \end{annotation}
 
-\item If everything went well, the robot should follow the line as in \emph{Tutorial 2 --- Adding FMUs}. Although with a slight difference\ldots
+\item If everything went well, the robot should follow the line as in \emph{Tutorial 2 --- Adding FMUs}. Although with a slight \emph{difference}\ldots
 
     \begin{annotation}[width=0.55\linewidth,trim=0 300 0 0,clip]{figures/into_coe_3d_results}
     \end{annotation}
 
-    Can you spot what is the problem? You can go back to \emph{20-sim} and look at the physical model, and try to make some changes to obtain the correct behaviour. Just repeat \ref{step:exp1} to \ref{step:exp2} to regenerate and copy the FMU, then press \emph{Simulate}.
+    Can you spot the \emph{difference}? You can go back to \emph{20-sim} and explore\footnote{Ask for a hint in case you feel lost\ldots} the physical model. Try to make some changes to obtain the correct behaviour. Just repeat \ref{step:exp1} to \ref{step:exp2} to regenerate and copy the FMU, then press \emph{Simulate}.
 
 \end{instructions}
 
