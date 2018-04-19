@@ -135,7 +135,7 @@ When defining the objectives we first describe them in terms of their name, the 
 \end{center}
 
 
-\item \label{end_script_instructions}To associate the external script with the DSE, select the \emph{Composition} relation from the \emph{Toolbox}, and click first on the `$DSE\_Example block$', and then on the new `$meanSpeed$' block.
+\item \label{end_script_instructions}To associate the external script with the DSE, select the \emph{Composition} relation from the \emph{Toolbox}, and click first on the `$DSE\_Example$' block, and then on the new `$meanSpeed$' block.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_connect_script}
@@ -311,7 +311,7 @@ The model should now look like this:
 
 This section will present how to define the parameters that will be varied during a DSE.  In the first part we define the parameters in terms of their name and a set of values that we wish to test. The second step here is to connect the defined parameters to the parameters of the FMUs in the multi-model that we actually want to vary.
 
-If we multiply the cardinality of the set of values for each parameter then we can find the size of the design space.  It is important to keep the design space size in mind since this, along with the time require to run each simulation, may be used to determine if a DSE will complete in a reasonable time.
+If we multiply the cardinality of the set of values for each parameter then we can find the size of the design space.  It is important to keep the design space size in mind since this, along with the time required to run each simulation, may be used to determine if a DSE will complete in a reasonable time.
 
 \begin{instructions}
 
@@ -401,7 +401,7 @@ The model should now look like this:
 \end{center}
 
 
-\item To link Parameters to the multi-model, find the `$robot2Sensor$' instance in the model overview and drag it onto the diagram to include it in the DSE \\ \textit{(NB drag the block onto empty space, not onto the DSE\_Example block)}.
+\item To link Parameters to the multi-model, find the `$robot2Sensor$' instance in the model overview and drag it onto the diagram to include it in the DSE. \\ \textit{(NB drag the block onto empty space, not onto the DSE\_Example block)}.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_pcd_include_r2s}
@@ -413,7 +413,7 @@ The model should now look like this:
 
 \newpage
 
-\item \label{add_sensor} Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$sensor1$' onto the `$robot2sensor$' instance just created. This block should include the attributes `$lf\_position\_x$' and `$lf\_position\_y$'.
+\item \label{add_sensor} Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$sensor1$' onto the `$robot2sensor$' instance just created. This block should include the attributes `$lf\_position\_x$' and `$lf\_position\_y$'. \\ \textit{(NB depending on the model version, $sensor1$  may be labelled $sensor1FMU$)}.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_include_sensor}
@@ -468,7 +468,7 @@ The model should now look like this:
 \newpage
 \section{Ranking Results}
 
-In DSE all the designs are essentially competing to be considered the best and in this section will present how to define the way in which competing are compared.  Here we are going to declare which of the objectives should be used to compare competing designs and whether there is a preference for lower or higher values for each of the objectives.
+In DSE all the designs are essentially competing to be considered the best and in this section will present how to define the way in which competing designs are compared.  Here we are going to declare which of the objectives should be used to compare competing designs and whether there is a preference for lower or higher values for each of the objectives.
 
 \begin{instructions}
 
@@ -511,7 +511,7 @@ In DSE all the designs are essentially competing to be considered the best and i
 
 \newpage
 
-\item \label{end_add_rank} Double click the description block to edit the note text. Deselect the `HTML' option and paste the text \mbox{`$weight = -1.0$'}. Close the description window to update the diagram.
+\item \label{end_add_rank} Double click the description block to edit the note text. Uncheck the `HTML' option and paste the text \mbox{`$weight = -1.0$'}. Close the description window to update the diagram.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_note_text}
@@ -552,7 +552,7 @@ This section will outline the steps necessary to generate a DSE configuration in
 \end{center}
 
 
-In the INTO-CPS app, this configuration file can be found in `SysML \menusep LineFollowerRobot \menusep config’. Right click the configuration file and select `Create DSE Configuration’.
+In the INTO-CPS app, this configuration file can be found in `SysML \menusep LineFollowerRobot \menusep config'. Right click the configuration file and select `Create DSE Configuration'.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/app_moveDSEConfig}
@@ -574,4 +574,4 @@ The configuration will be moved to the DSE directory and opened. The DSE can now
 
 \end{instructions}
 
-\end{document} 
+\end{document}
