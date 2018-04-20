@@ -115,13 +115,23 @@ When defining the objectives we first describe them in terms of their name, the 
     \end{annotation}
 \end{center}
 
-\item \label{start_script_instructions} From the \emph{Toolbox}, select \emph{External Script} and add it to the diagram. Double click the block that this creates and change its name to `$meanSpeed$'. On the left hand side of the editor window, select \emph{ExternalScript} to show INTO-CPS DSE properties. Change \{\}file to `$meanspeed.py$', and close the editor window.
+\item \label{start_script_instructions} From the \emph{Toolbox}, select \emph{External Script} and add it to the diagram. Double click the block that this creates and change its name to `$meanSpeed$'. Do not close the editor window.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_external_script}
     \usquare{1.6cm}{0.1cm}{0.25}{Create External Script Block}{0.09,0.64}
     %\helpergrid
     \end{annotation}
+\end{center}
+
+\item On the left hand side of the editor window, select `INTO-CPS \menusep ExternalScript' to show INTO-CPS DSE properties. Change \{\}file to `$meanspeed.py$', and close the editor window.
+
+\begin{center}
+	\begin{annotation}[width=0.7\linewidth]{figures/modelio_script_file}
+		\usquare{1.8cm}{0.1cm}{0.1}{Select ExternalScript Property}{0.13,0.35}
+		\usquare{1.8cm}{0.1cm}{0.6}{Assign Script File Name}{0.55,0.47}		
+		%\helpergrid
+	\end{annotation}
 \end{center}
 
 \item So that objective scripts can later be connected, select the \emph{Port} tool from the toolbox, and click on the External Script block to add a port to it. Click on the new port and change its name to `$1$' in the \emph{Element} editor. Repeat this to add two more ports to the block, named `$2$' and `$3$'.
