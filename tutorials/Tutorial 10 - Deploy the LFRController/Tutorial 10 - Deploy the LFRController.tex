@@ -1,0 +1,182 @@
+\documentclass[11pt,a4paper]{../tutorial}
+\usepackage[hidelinks]{hyperref}
+
+\title{Tutorial 10 --- Deploying the LFRController}
+\date{March 2018}
+\author{Hugo D. Macedo}
+
+\def\intocpsVer{3.4.6}
+\begin{document}
+
+\section*{Overview}
+
+This INTO-CPS tutorial will show you how to:
+
+\begin{enumerate}[noitemsep]
+
+\item Export the \emph{LFRController} VDM project as an FMU
+\item Prepare an ARDUINO Sketch with the FMU code 
+\item Compile and upload the Sketch into the robot (Linux/macOS only)
+\end{enumerate}
+
+The instructions in this tutorial were adapted from \url{https://github.com/INTO-CPS-Association/example-line\_follower_robot/tree/arduinoMegaDeploy/deployment}. The current hardware version of the robot only works in case the compile and upload steps are run in a Linux or a macOS installation. 
+
+\section*{Requirements}
+
+This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
+
+\begin{itemize}[noitemsep]
+\item Overture FMU Import/Exporter CLI
+\end{itemize}
+
+In addition, the following software must be installed without recurring to the Download Manager: 
+
+\begin{itemize}[noitemsep]
+\item ARDUINO IDE (1.8.5) 
+\item avr-gcc (GCC) $\geq$ 6.3.0
+\item avr-g++ (GCC) $\geq$ 6.3.0   
+\end{itemize}
+
+In terms of hardware one needs a printed version of line map and the robot:
+
+\begin{annotation}[width=0.85\linewidth,trim={20cm 20cm 20cm 20cm},clip]{figures/robotUnplugged}
+\end{annotation}
+
+\newpage
+\section{Download and install the dependencies}
+
+
+\begin{instructions} 
+
+\item Install the Overture FMU Import/Exporter CLI using the INTO-CPS
+	application \emph{Download Manager}. Please make sure you download the
+	\textbf{CLI} version. After the download you will find a new .jar file it in your \texttt{into-cps-projects/install\_downloads}. 
+	
+	\begin{annotation}[width=0.85\linewidth]{figures/downloadedcli}
+        	\upoint{0.15}{New jar}{0.33,0.35}
+	%	\helpergrid
+	\end{annotation}
+
+	\newpage
+\item Download the ARDUINO IDE version 1.8.5 from:\\
+	\url{https://www.arduino.cc/en/Main/Software}.  Choose the zip file
+	version and extract the folder into your
+	\texttt{into-cps-projects/install} folder. (Choose the respective files in the case of Linux or macOS installations)
+
+	\begin{annotation}[width=0.85\linewidth, trim= {0 6cm 0 0},clip]{figures/ArduinoIDE}
+        \upoint{0.15}{Download the Zip File\ldots}{0.7,0.51}
+		%\helpergrid
+	\end{annotation}
+
+
+\item The current C/C++ compiler version shipped in the ARDUINO IDE is prior to the required 6.3. So one needs to install an updated version. You can find one from:\\
+	\url{http://blog.zakkemble.co.uk/avr-gcc-builds/}. 
+	
+	Download and install into your  \texttt{into-cps-projects/install} folder. (Choose the respective files in the case of Linux or macOS installations)
+
+
+	\begin{annotation}[width=0.85\linewidth, trim= {0 6cm 0 0},clip]{figures/GCCDownload}
+        \upoint{0.15}{Download the Zip File\ldots}{0.15,0.73}
+		%\helpergrid
+	\end{annotation}
+
+\newpage
+\item At this point your \texttt{into-cps-projects/install} folder should contain the two folders corresponding to the ARDUINO IDE and the updated version of the compiler. And you are ready for the next step. 
+
+	\begin{annotation}[width=0.85\linewidth]{figures/ArduinoInInstall}
+        	\upoint{0.15}{ARDUINO IDE}{0.23,0.5}
+		\upoint{0.8}{Compiler}{0.4,0.54}
+		%\helpergrid
+	\end{annotation}
+\newpage
+\end{instructions}
+
+
+
+\section{Export the LFRController VDM project as an FMU}
+
+\begin{instructions} 
+
+\item Open a Command Prompt. Change directory into  \emph{Deploy\pathsep linux} or (\emph{Deploy\pathsep win64)}   inside the \emph{tutorial 10}. It is important you run the command below in this folder or copy the \emph{lf.fmu} file  into it.
+	\begin{verbatim}
+	java -jar path_to_install_downloads/overture-fmu-cli.jar 
+	     -export source 
+	     -name lf 
+	     -output . 
+	     -root ../../Models/LFRController
+	\end{verbatim}
+
+	\begin{annotation}[width=0.85\linewidth]{figures/downloadedcli}
+        	\upoint{0.15}{New jar}{0.35,0.365}
+	%	\helpergrid
+	\end{annotation}
+
+\end{instructions}
+
+\newpage
+
+\section{Compile the FMU and upload to Arduino (Linux/macOS Only)}
+
+\begin{instructions} 
+
+\item Connect robot to USB and find port (for example you may find /dev/ttyACM0 after running \verb'ls /dev/' ). 
+
+	
+	\begin{annotation}[width=0.85\linewidth,trim={10cm 0 10cm 10cm},clip]{figures/robotPlugged}
+	\end{annotation}
+
+\item In a terminal change to the \emph{tutorial\_10/Deploy/linux} folder and set the following variables used in the deploy.sh script according to your choices:
+	\begin{itemize}
+		\item port - to the result of the previous step
+		\item avrbin - to into\_cps\_project/install/avr-gcc-7.3.0-x64-linux/bin 
+		\item avr - to into\_cps\_project/install/arduino-1.8.5/hardware/arduino/avr/ 
+	\end{itemize}
+
+
+\item Run the \emph{deploy.sh} script with  lf.fmu as a parameter. You should see the following message in case everything works as expected. 
+
+	\begin{annotation}[width=0.85\linewidth]{figures/avrdudeOK}
+	\end{annotation}
+
+\newpage
+
+\item Unplug the USB cable, place the robot in the line, turn the motor switch on!
+	
+	\begin{annotation}[width=0.85\linewidth,trim={10cm 0 10cm 10cm},clip]{figures/robotOver}
+		        	\upoint{0.15}{Motor On/Off}{0.5,0.5}
+	%	\helpergrid
+	\end{annotation}
+\end{instructions}
+
+
+\section{Compile the FMU and upload to Arduino (Windows Only)}
+
+\textbf{ATTENTION!! ALTHOUGH COMPILATION SUCCEEDS\ldots \\ The resulting AURobot.hex does not upload/work properly!}
+
+\begin{instructions} 
+\item Connect robot to USB and find port (for example you may find COM3 by typing \verb'mode') in a Command Prompt or check if the ARDUINO IDE detects the port automatically 
+
+\item Set the variables used in the script accordingly
+	\begin{itemize}
+		\item port - to the result of the previous step
+		\item avrbin - to into\_cps\_project/install/avr-gcc-7.3.0-x64-linux/bin 
+		\item avr - to into\_cps\_project/install/arduino-1.8.5/hardware/arduino/avr/ 
+	\end{itemize}
+
+\item Run the \emph{deploy.sh} script with the port as a parameter. 
+
+\end{instructions}
+
+\section{Additional Exercises}
+
+\begin{instructions} 
+
+\item Browse the different components descriptions you can find inside the \emph{platform} folder in the repository:\\
+\url{https://github.com/INTO-CPS-Association/example-line\_follower\_robot/tree/arduinoMegaDeploy/deployment}
+\item Workout the inner workings of the hardware platform
+\item Find the mapping between the VDM controller and the contents of the main.cpp file 
+
+\item Find the STL file for the sensor mount:\url{https://github.com/INTO-CPS-Association/example-line_follower_robot/blob/arduinoMegaDeploy/deployment/platform/LF_sensor_holder.stl} How could you use it in future iterations/improvements of the robot? 
+\end{instructions}
+
+\end{document}
