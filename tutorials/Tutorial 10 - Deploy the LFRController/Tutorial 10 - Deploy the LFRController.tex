@@ -16,10 +16,10 @@ This INTO-CPS tutorial will show you how to:
 
 \item Export the \emph{LFRController} VDM project as an FMU
 \item Prepare an ARDUINO Sketch with the FMU code 
-\item Compile and upload the Sketch into the robot (Linux/macOS only)
+\item Compile and upload the Sketch into the robot 
 \end{enumerate}
 
-The instructions in this tutorial were adapted from \url{https://github.com/INTO-CPS-Association/example-line\_follower_robot/tree/arduinoMegaDeploy/deployment}. The current hardware version of the robot only works in case the compile and upload steps are run in a Linux or a macOS installation. 
+The instructions in this tutorial were adapted from \url{https://github.com/INTO-CPS-Association/example-line\_follower_robot/tree/arduinoMegaDeploy/deployment}. 
 
 \section*{Requirements}
 
@@ -163,15 +163,18 @@ Run the \emph{deploy.sh} script with  lf.fmu as a parameter.
 
 \section{Compile the FMU and upload to Arduino (Windows Only)}
 
-\textbf{ATTENTION!! ALTHOUGH COMPILATION SUCCEEDS\ldots \\ The resulting AURobot.hex does not upload/work properly!}
 
 \begin{instructions} 
 \item Connect robot to USB and find port (for example you may find COM3 by typing \verb'mode') in a Command Prompt or check if the ARDUINO IDE detects the port automatically 
 
-\item Set the variables used in the script accordingly
+\item Set the following variables used in the \emph{deploy.sh} script adapting the path to your own choices:
+	\begin{itemize}
+		\item gcc\_path - to into\_cps\_project/install/avr-gcc-7.3.0-x64-linux/bin 
+		\item avr - to into\_cps\_project/install/arduino-1.8.5/hardware/arduino/avr/ 
+		\item avrdudeconfig - to into\_cps\_project/install/arduino-1.8.5/hardware/tools/avr/etc/avrdude.conf
+	\end{itemize}
 
-
-\item Run the \emph{deploy.sh} script with the port as a parameter. 
+\item Fill in the missing details in \emph{deploy.sh} script and run with the port as a parameter. 
 
 \end{instructions}
 
