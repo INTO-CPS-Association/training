@@ -171,6 +171,7 @@
 % SOFTENG   : Software engineering
 % SOS       : System of systems
 % STATSEM   : References to static semantics definition and analysis (MV MSc)
+% STANDARD  : References regarding standards
 % STCVDM    : STC's VDM dialect
 % STD       : Standards
 % STRUCT    : Structuring principles
@@ -209,6 +210,19 @@
 
 
 @preamble{ " \newcommand{\noop}[1]{} " } % a do-nothing command that serves a purpose
+
+% G COSIM
+@inproceedings{ZeydaOFC17,
+  author = {Frank Zeyda and Julien Ouy and Simon Foster and Ana Cavalcanti},
+  title = {Formalising Cosimulation Models},
+  booktitle = {Software Engineering and Formal Methods - {SEFM} 2017 Collocated Workshops: DataMod, FAACS, MSE, CoSim-CPS, and FOCLASA, Trento, Italy, September 4-5, 2017, Revised Selected Papers},
+  pages     = {453--468},
+  editor = {Antonio Cerone and Marco Roveri},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10729},
+  publisher = {Springer},
+  year      = {2018},
+}
 
 
 %G IPTESINT
@@ -419,6 +433,18 @@ COMMENT = "BIB PGL"}
   YEAR          = "1991",
   COMMENT       = "ADN"}
 
+%G
+@INPROCEEDINGS{AbdolHamid&11,
+  AUTHOR        = "Abdol-Hamid, K. S. and Ghaffari, F. and Parlette, E. B.",
+  TITLE         = "Overview of Ares-I CFD Ascent Aerodynamic Data Development and Analysis based on USM3D",
+  BOOKTITLE     = "49th AIAA Aerospace Sciences Meeting",
+  ORGANIZATION  = "AIAA",
+  YEAR          = "2011",
+  MONTH         = "January",
+  NOTE          = "AIAA Paper 2011-15",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G MPCINT
 @INPROCEEDINGS{Abel&12,
   KEY           = "Abel\&12",
@@ -612,6 +638,16 @@ COMMENT       = "ADN"}
   year={2000},
   publisher={Springer London}
 }
+
+%G
+@TECHREPORT{ACARE17,
+  AUTHOR        = "ACARE (Advisory Council for Aviation Research and Innovation in Europe)",
+  TITLE         = "Strategic Research \& Innovation Agenda (2017 Update)",
+  INSTITUTION   = "ACARE",
+  YEAR          = "2017",
+  SIZE          = "100",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G CPS
 @TechReport{Acatech11,
@@ -1551,6 +1587,15 @@ author = "Veronica Adetola and Darryl DeHaan and Martin Guay"
   ANNOTE        = "",
   COMMENT       = "NA. L\aa{}nt fra DTB OBL."}
 
+@article{Akhtar&18,
+  author    = {Naveed Akhtar and Ajmal Mian},
+  title     = {Threat of Adversarial Attacks on Deep Learning in Computer Vision: A Survey},
+  journal   = {CoRR},
+  volume    = {abs/1801.00553},
+  year      = {2018},
+  url       = {https://arxiv.org/abs/1801.00553}
+}
+
 %G DRONE MPC
 @ARTICLE{Alexis&11,
   KEY           = "Alexis\&11",
@@ -2066,6 +2111,19 @@ COMMENT              = "BIB PGL"}
   NUMBER        = "12.110",
   ANNOTE        = "",
   COMMENT       = ""}
+
+%G FORMAL
+@Misc{AlloyAnalyzer,
+  key =          "AlloyAnalyzer",
+  title =        "{The Alloy Analyzer Modelling website}",
+  year =         "2018",
+  month =        "",
+  howpublished = "\url{http://alloy.mit.edu/alloy/}",
+  size =         "",
+  note =         "",
+  annote =       "",
+  comment =      "",
+}
 
 %G TOOL VDM
 @INPROCEEDINGS{Almeida&97,
@@ -2642,6 +2700,18 @@ COMMENT              = "BIB PGL"}
   volume    = {1790},
   pages     = {6--19},
   year      = {2000},
+}
+
+@article{Alur&06,
+  author    = {Rajeev Alur and
+               Thao Dang and
+               Franjo Ivancic},
+  title     = {Predicate abstraction for reachability analysis of hybrid systems},
+  journal   = {{ACM} Trans. Embedded Comput. Syst.},
+  volume    = {5},
+  number    = {1},
+  pages     = {152--199},
+  year      = {2006}
 }
 
 %G HYBRID
@@ -3498,6 +3568,29 @@ Vehicle Co-Simulator Setup",
   MONTH         = "April",
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
+
+%G COSIM
+@Article{Andersson&17,
+author="Andersson, H{\aa}kan
+and Nordin, Peter
+and Borrvall, Thomas
+and Simonsson, Kjell
+and Hilding, Daniel
+and Schill, Mikael
+and Krus, Petter
+and Leidermark, Daniel",
+title="A co-simulation method for system-level simulation of fluid--structure couplings in hydraulic percussion units",
+journal="Engineering with Computers",
+year="2017",
+month="Apr",
+day="01",
+volume="33",
+number="2",
+pages="317--333",
+issn="1435-5663",
+doi="10.1007/s00366-016-0476-8",
+url="https://doi.org/10.1007/s00366-016-0476-8"
+}
 
 @INPROCEEDINGS{Bernhard&17,
   KEY           = "Bernhard\&17",
@@ -4540,6 +4633,14 @@ Knowledge Engineering",
   YEAR          = "2015",
   COMMENT       = ""}
 
+%G
+@MISC{ECSEL18,
+  TITLE         = "Electronic Components \& Systems Strategic Research Agenda",
+  YEAR          = "2018",
+  HOWPUBLISHED  = "AENEAS, ARTEMIS, and EPoSS",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G VDM ML PROTO VDM88
 @INPROCEEDINGS{Arthan88,
   KEY           = "Arthan 88",
@@ -4807,6 +4908,15 @@ doi={10.1109/SYSCON.2011.5929033}}
   SIZE          = "7",
   COMMENT       = "RNI"}
 
+%G
+@MISC{ATAG10,
+  TITLE         = "The right flightpath to reduce aviation emissions",
+  AUTHOR       = "Air Transportation Action Group (ATAG)",
+  YEAR          = "2010",
+  MONTH         = "November",
+  HOWPUBLISHED  = "UNFCCC Climate Talks",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G SAFE
 @TECHREPORT{Atchison&99,
@@ -5344,6 +5454,15 @@ doi={10.1109/LISAT.2013.6578215},
 %%%%%%%%%%
 %%%%%%%%%% B B B B B B B B B B B B B B B B B B B B B B B B B
 %%%%%%%%%%
+
+@TECHREPORT{baalbergen&2016,
+  Key		= "baalbergen\&2016",
+  title		= "Collaborative Engineering Technologies Enabling Multi-Partner Thermal Analysis In Early Design Stages Of Aircraft",
+  author	= "Baalbergen, Erik H and Lammen, Willem F and de Wit, Albert J and Maas, Robert and Moghadasi, SM and Kos, J and Chiacchio, F",
+  year		="2016",
+  publisher	="National Aerospace Laboratory NLR"
+}
+
 
 %G
 @INPROCEEDINGS{Bab&11,
@@ -7609,6 +7728,20 @@ COMMENT         = "ADN"}
   ANNOTE        = "",
   COMMENT       = ""}
 
+  @article{BEKARA2014532,
+  title = "Security Issues and Challenges for the IoT-based Smart Grid",
+  journal = "Procedia Computer Science",
+  volume = "34",
+  pages = "532 - 537",
+  year = "2014",
+  note = "The 9th International Conference on Future Networks and Communications (FNC'14)/The 11th International Conference on Mobile Systems and Pervasive Computing (MobiSPC'14)/Affiliated Workshops",
+  issn = "1877-0509",
+  doi = "https://doi.org/10.1016/j.procs.2014.07.064",
+  url = "http://www.sciencedirect.com/science/article/pii/S1877050914009193",
+  author = "Chakib Bekara",
+  keywords = "Internet of Things, Smart Grid, Security, Cyber Physical Systems, Advanced Metering Infrastructure"
+}
+
 %G IPTES
 @TECHREPORT{IPTESCEA21,
   KEY           = "Baudin91",
@@ -8363,6 +8496,25 @@ COMMENT         = "ADN"}
   COMMENT       = "BIB. DP. I have read the first part of it and I find it
                    very interesting (PGL)."}
 
+@inproceedings{Brauer&18,
+  author    = {J{\"{o}}rg Brauer and Uwe Schulze},
+  title     = {Model-Based Testing for Avionics Systems},
+  booktitle = {Formal Methods - 22nd International Symposium, {FM} 2018, Held as
+  Part of the Federated Logic Conference, FloC 2018, Oxford, UK, July
+  15-17, 2018, Proceedings},
+  pages     = {657--661},
+  year      = {2018},
+  editor    = {Klaus Havelund and Jan Peleska and Bill Roscoe and Erik P. de Vink},
+  title     = {Formal Methods - 22nd International Symposium, {FM} 2018, Held as
+  Part of the Federated Logic Conference, FloC 2018, Oxford, UK, July
+  15-17, 2018, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10951},
+  publisher = {Springer}
+}
+
+
+
 %G TOOL COMPASSPUB
 @INPROCEEDINGS{Bauer&12,
   KEY           = "Bauer\&12",
@@ -8946,7 +9098,7 @@ COMMENT         = "ADN"}
   AUTHOR        = "Jens Bennedsen and Peter Gorm Larsen",
   TITLE         = "An Innovative Summer School V2.0",
   BOOKTITLE     = "Proceedings of the 6th International CDIO Conference",
-  ADDRESS       = "Ecole Polytechnique, Montreal",
+  ADDRESS       = "École Polytechnique, Montréal",
   YEAR          = "2010",
   MONTH         = "June",
   ANNOTE        = "",
@@ -9165,6 +9317,16 @@ COMMENT         = "ADN"}
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
+@article{Berger&18,
+	title = "Intelligent co-simulation: neural network vs. proper orthogonal decomposition applied to a 2D diffusive problem ",
+	journal = "Journal of Building Performance Simulation",
+	doi = "10.1080/19401493.2017.1414879",
+	url = "doi.org/10.1080/19401493.2017.1414879",
+	year = "2018",
+	author = "Julien Berger and Walter Mazuroski and Ricardo C.L.F. Oliveria and Nathan Mendes",
+	COMMENT = "BIB AI"
+}
+
 %G METPROJ
 @INPROCEEDINGS{Bergland78,
   KEY           = "Bergland78",
@@ -9363,6 +9525,39 @@ COMMENT         = "ADN"}
   SIZE          = "9",
   ANNOTE        = "",
   COMMENT       = "BIB. PGL"}
+
+%G PVS
+@InProceedings{Bernardeschi&08,
+author="Bernardeschi, Cinzia
+and Masci, Paolo
+and Pfeifer, Holger",
+editor="Harrison, Michael D.
+and Sujan, Mark-Alexander",
+title="Early Prototyping of Wireless Sensor Network Algorithms in PVS ",
+booktitle="Computer Safety, Reliability, and Security",
+year="2008",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="346--359",
+isbn="978-3-540-87698-4"
+}
+
+%G
+@inproceedings{Bernardeschi&09,
+ author = {Bernardeschi, Cinzia and Masci, Paolo and Pfeifer, Holger},
+ title = {Analysis of Wireless Sensor Network Protocols in Dynamic Scenarios},
+ booktitle = {Proceedings of the 11th International Symposium on Stabilization, Safety, and Security of Distributed Systems},
+ series = {SSS '09},
+ year = {2009},
+ isbn = {978-3-642-05117-3},
+ location = {Lyon, France},
+ pages = {105--119},
+ numpages = {15},
+ doi = {10.1007/978-3-642-05118-0_8},
+ acmid = {1693574},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+}
 
 %G IDERSINT
 @INPROCEEDINGS{Bernstein87,
@@ -10098,6 +10293,26 @@ url="http://dx.doi.org/10.1007/s00165-016-0405-z"
   ANNOTE        = "",
   COMMENT       = "BIB. I have a copy but I have not yet read it (PGL)."}
 
+%G TEST
+@MISC{Binder11,
+  AUTHOR        = "Robert Binder",
+  TITLE         = "2011 Model-based Testing User Survey: Results and Analysis",
+  YEAR          = "2011",
+  HOWPUBLISHED  = "white paper from System Verification Associates",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G TEST
+@article{Binder&15,
+  author    = {Robert V. Binder and Bruno Legeard and Anne Kramer},
+  title     = {Model-based testing: where does it stand?},
+  journal   = {Commun. {ACM}},
+  volume    = {58},
+  number    = {2},
+  pages     = {52--56},
+  year      = {2015}
+}
+
 %USEGAT
 @TECHREPORT{USEGATASF11,
   KEY           = "Biondi\&96",
@@ -10172,6 +10387,17 @@ url="http://dx.doi.org/10.1007/s00165-016-0405-z"
   MONTH         = "February",
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
+
+%G
+@INBOOK{Biswas&07,
+  AUTHOR        = "Biswas, R. and Aftosmis, M. J. and Kiris, C. and Shen, B. W.",
+  EDITOR        = "Bader",
+  TITLE         = "Petascale Computing: Architectures and Algorithms",
+  CHAPTER       = "Petascale Computing: Impact on Future NASA Missions",
+  PUBLISHER     = "Chapman and Hall / CRC Press",
+  YEAR          = "2007",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G SAFE
 @INPROCEEDINGS{Bitsch02,
@@ -13359,6 +13585,20 @@ year = {2004}
   ANNOTE        = "",
   COMMENT       = "I have read it 4/11-93 (PGL)"}
 
+%G C++
+@MISC{BoostHash,
+  KEY           = "BoostHash",
+  AUTHOR        = "{Boost C++ Library}",
+  TITLE         = "{Function boost::hash\_combine}",
+  NOTE          = "{https://www.boost.org/doc/libs/1\_35\_0/doc/html/boost/hash\_combine\_id241013.html}"}
+
+  %G C++
+@MISC{BoostMul,
+  KEY           = "BoostMul",
+  AUTHOR        = "{Boost C++ Library}",
+  TITLE         = "{Boost Multiprecision Documentation}",
+  NOTE          = "{https://www.boost.org/doc/libs/1\_62\_0/libs/multiprecision/doc/html/index.html}"}
+
 %G VDM PROTO
 @ARTICLE{Borba&97,
   KEY           = "Borba\&97",
@@ -14583,6 +14823,16 @@ doi={10.1109/IROS.2007.4399042}}
   NOTE          = "(In Danish)",
   ANNOTE        = "",
   COMMENT       = "LIB. DP"}
+
+%G
+@inproceedings{Braberman&15,
+author = {Braberman, V and D'Ippolito, N and Kramer, J and Sykes, D and Uchitel, S},
+doi = {10.1145/2804337.2804339},
+pages = {9--16},
+title = {MORPH: A reference architecture for configuration and behaviour self-adaptation},
+url = {http://dx.doi.org/10.1145/2804337.2804339},
+year = {2015}
+}
 
 %G IDERSINT
 @MISC{Brackett90,
@@ -16302,6 +16552,17 @@ month={March},}
   ANNOTE        = "",
   COMMENT       = "I have a copy PGL"}
 
+@article{Budalakoti&09,
+	title = "Anomaly detection and diagnosis algorithms for discrete symbol sequences with applications to airline safety",
+	journal = "IEEE Transactions on Systems, Man, and Cybernetics, Part C ",
+	volume = "39",
+	number = "1",
+	pages = "101 - 113",
+	year = "2009",
+	author = "Suratna Budalakoti and Ashok N. Srivastava and Matthew E. Otey",
+	COMMENT = "BIB AI"
+}
+
 %G UNDEF
 @BOOK{Buchanan&85,
   KEY           = "Buchanan\&85",
@@ -16375,6 +16636,16 @@ month={March},}
   COMMENT       = "I'm not sure it is a proceeding (etn). Bibentry
                    from UPM as article (abmn)"}
 
+@inproceedings{buffoni&13,
+  KEY 			= "buffoni&13",
+  title			= "Requirement verification and dependency tracing during simulation in modelica",
+  author		= "Buffoni-Rogovchenko, Lena and Fritzson, Peter and Nyberg, Mattias and Garro, Alfredo and Tundis, Andrea",
+  booktitle		= "Modelling and Simulation (EUROSIM), 2013 8th EUROSIM Congress on",
+  pages			= "561--566",
+  year			= "2013",
+  organization	= "IEEE"
+}				   
+				   
 %G IPTESINT
 @INPROCEEDINGS{Buhr90a,
   KEY           = "Buhr90",
@@ -17437,7 +17708,7 @@ EDITOR      = {M. Bernardo and V. Cortellessa and A. Pierantonio},
   SERIES        = "Advanced Textbooks in Control and Signal Processing",
   SIZE          = "405",
   COMMENT       = "RNI"}
-
+  
 %G SOS
 @BOOK{Camarinha&15,
   KEY           = {Camarinha-Matos\&15},
@@ -17616,6 +17887,16 @@ EDITOR      = {M. Bernardo and V. Cortellessa and A. Pierantonio},
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G CPS
+@article{Camus&18,
+author = {Benjamin Camus and Thomas Paris and Julien Vaubourg and Yannick Presse and Christine Bourjot and Laurent Ciarletta and Vincent Chevrier},
+title ={Co-simulation of cyber-physical systems using a DEVS wrapping strategy in the MECSYCO middleware},
+journal = {SIMULATION},
+year = {2018},
+doi = {10.1177/0037549717749014},
+URL = {https://doi.org/10.1177/0037549717749014}
+}
+
 %SOS
 @BOOK{Canavan03,
   KEY           = "Canavan03",
@@ -17757,6 +18038,19 @@ COMMENT = "BIB PGL"}
   ANNOTE        = "",
   COMMENT       = "LIB. AMP"}
 
+  
+%G POLY OBJECT
+@ARTICLE{Cao&18,
+  KEY           = "Cao\&18",
+  AUTHOR        = "G. Cao, A. Iosifidis, K. Chen and M. Gabbouj",
+  TITLE         = "{Generalized Multi-view Embedding for Visual Recognition and Cross-modal Retrieval}",
+  JOURNAL       = "IEEE Transactions on Cybernetics",
+  YEAR          = "2018",
+  VOLUME        = "D.O.I.: 10.1109/TCYB.2017.2742705",
+  PAGES         = "1-14",
+  COMMENT       = "BIB AI"
+}
+  
 %G CONCUR
 @INPROCEEDINGS{Caprani&78,
   KEY           = "Caprani\&78",
@@ -17892,6 +18186,18 @@ COMMENT = "BIB PGL"}
   SIZE          = "3",
   ANNOTE        = "",
   COMMENT       = "BIB. DP"}
+
+%G CFD
+@article{Carlberg&13,
+title = "The GNAT method for nonlinear model reduction: Effective implementation and application to computational fluid dynamics and turbulent flows",
+journal = "Journal of Computational Physics",
+volume = "242",
+pages = "623 - 647",
+year = "2013",
+issn = "0021-9991",
+doi = "https://doi.org/10.1016/j.jcp.2013.02.028",
+url = "http://www.sciencedirect.com/science/article/pii/S0021999113001472",
+author = "Kevin Carlberg and Charbel Farhat and Julien Cortial and David Amsallem"}
 
 %G SOS
 @ARTICLE{Carlock&01,
@@ -18669,6 +18975,16 @@ COMMENT = "BIB PGL"}
   ANNOTE        = "",
   COMMENT       = "LIB. DP"}
 
+%C++
+@MISC{Catch,
+  KEY           = "Catch",
+  AUTHOR        = "{Catch Org}",
+  TITLE         = "{Catch2, C++ Unit Testing framework}",
+  NOTE          = "https://github.com/catchorg/Catch2",
+  YEAR          = "2018",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G VDM TOOL CONCUR
 @INPROCEEDINGS{Cattel91,
   KEY           = "Cattel91",
@@ -19075,7 +19391,7 @@ booktitle = "Theoretical Aspects of Computing - ICTAC 2015",
   YEAR = "2013"
   }
 
-
+  
 @TECHREPORT{CERTAINTY8.2,
   KEY = "CERTAINTY8.2",
   AUTHOR = "CERTAINTY",
@@ -19145,7 +19461,7 @@ keywords={C++ language;embedded systems;multiprocessing systems;performance eval
 doi={10.1109/DASC.2011.64},
 month={Dec},}
 
-%G OVERTURE
+%G 
 @BOOK{Chacon09,
   key = 	 {Chacon09},
   author = 	 {Scott Chacon},
@@ -19730,7 +20046,7 @@ url="https://doi.org/10.1007/978-3-319-62217-0_17"
                    og implementering af en sikkerhedsmodel der skal give
                    databeskyttelse i et operativsystem.
                    NA. Copied. OBL."}
-
+				
 %G MPCINT
 @INPROCEEDINGS{Cheraghpour&11,
 	ADDRESS = {Isranbul, Turkey},
@@ -21340,6 +21656,28 @@ month={Sept},}
   publisher = "Springer",
 }
 
+@article{Clarke&03a,
+  author    = {Edmund M. Clarke and
+               Ansgar Fehnker and
+               Zhi Han and
+               Bruce H. Krogh and
+               Jo{\"{e}}l Ouaknine and
+               Olaf Stursberg and
+               Michael Theobald},
+  title     = {Abstraction and Counterexample-Guided Refinement in Model Checking
+               of Hybrid Systems},
+  journal   = {Int. J. Found. Comput. Sci.},
+  volume    = {14},
+  number    = {4},
+  pages     = {583--604},
+  year      = {2003},
+  url       = {https://doi.org/10.1142/S012905410300190X},
+  doi       = {10.1142/S012905410300190X},
+  timestamp = {Tue, 06 Jun 2017 22:22:49 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/ijfcs/ClarkeFHKOST03},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
 %G CONCUR TEMPORAL CEDERINT IPTESINT
 @INPROCEEDINGS{Clarke&89,
   KEY           = "Clarke\&89",
@@ -22092,7 +22430,7 @@ month={Sept},}
                    NOT placed within the normal article archieve for
                    IFAD.)"}
 
-%G MPCINT
+%G MPCINT		
 @INPROCEEDINGS{Cole&04,
   KEY       = "Cole\&04",
   TITLE     = {{Development of a Test Track for the Evaluation of GPS Receiver Dynamic Performance}},
@@ -22103,7 +22441,7 @@ month={Sept},}
   PUBLISHER = {American Society of Agricultural and Biological Engineers},
   YEAR      = {2004}
 }
-
+				
 %G FORTAIN CONFIRM PGLPHDINT
 @INPROCEEDINGS{Coleman90,
   KEY           = "Coleman90",
@@ -22273,7 +22611,7 @@ ISSN={1530-1591},
 month={March},}
 
 %G SOS
-@phdthesis{Collins18, 
+@phdthesis{Collins18,
 author={Collins,Bernard F},
 year={2018},
 title={Improving System of Systems Progress: Dynamically Modeling, Predicting and Affecting Rate of Convergence},
@@ -23430,6 +23768,37 @@ Washington, DC 9}",
   number = {4}
 }
 
+@article{Giacobazzi&00,
+  author    = {Roberto Giacobazzi and
+               Francesco Ranzato and
+               Francesca Scozzari},
+  title     = {Making abstract interpretations complete},
+  journal   = {J. {ACM}},
+  volume    = {47},
+  number    = {2},
+  pages     = {361--416},
+  year      = {2000},
+  url       = {http://doi.acm.org/10.1145/333979.333989},
+  doi       = {10.1145/333979.333989},
+  timestamp = {Thu, 20 Nov 2003 12:28:09 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/jacm/GiacobazziRS00},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{Mover&13,
+  author    = {Sergio Mover and
+               Alessandro Cimatti and
+               Ashish Tiwari and
+               Stefano Tonetta},
+  title     = {Time-aware relational abstractions for hybrid systems},
+  booktitle = {Proceedings of the International Conference on Embedded Software,
+               {EMSOFT} 2013, Montreal, QC, Canada, September 29 - Oct. 4, 2013},
+  pages     = {14:1--14:10},
+  year      = {2013},
+  publisher = {{IEEE}}
+}
+
+
 %G COMPASSPUB OVERTURE
 @INPROCEEDINGS{Couto&13a,
   KEY           = "Couto\&13",
@@ -23545,6 +23914,22 @@ key = {Couto&15},
   MONTH         = "July",
   ANNOTE        = ""}
 
+ %G
+@InProceedings{Couto&15e,
+  key =          "Couto\&15",
+  author =       "Lu{\'i}s Diogo Couto and Peter W. V.
+                 Tran-J\o{}rgensen and Gareth T. C. Edwards",
+  editor =       "",
+  title =        "{Combining Harvesting Operations Optimisation using
+                 Strategy-based Simulation}",
+  booktitle =    "Proceedings of the 6th International Conference on
+                 Simulation and Modeling Methodologies, Technologies and
+                 Applications (SIMULTECH)",
+  year =         "2016",
+  month =        jul,
+  annote =       "",
+}
+
 %G VDM TOOL
 @PHDTHESIS{Couto15b,
   KEY           = "Couto15",
@@ -23556,7 +23941,7 @@ key = {Couto&15},
   MONTH         = "September",
   SIZE          = "183",
   ISBN           = "978-87-7507-360-3",
-  DOI           = "10.7146/aul.118.106",
+  DOI           = "10.7146/aul.118.106", 
   COMMENT       = "Available at \url{http://ebooks.au.dk/index.php/aul/catalog/book/118}"}
 
 %G
@@ -23568,10 +23953,10 @@ key = {Couto&15},
 month = {April},
 }
 
-%G OVERTURE TEMPOPUB VDM
+%G OVERTURE TEMPOPUB VDM 
 @INPROCEEDINGS{Couto&16b,
   KEY           = "Couto\&16",
-  AUTHOR        = "Luis Diogo Couto and Kenneth Lausdahl and Nico Plat and
+  AUTHOR        = "Luis Diogo Couto and Kenneth Lausdahl and Nico Plat and 
                    Peter Gorm Larsen and Ken Pierce",
   EDITOR        = "Peter Gorm Larsen and Nico Plat and Nick Battle",
   TITLE         = "{Decoupling validation UIs using Publish-Subscribe
@@ -23586,14 +23971,32 @@ month = {April},
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G
+@InCollection{Couto&16c,
+  key =          "Couto\&16",
+  author =       "Luis Diogo Couto and Peter W. V.
+                 Tran-J{\o}rgensen and Gareth T. C. Edwards",
+  title =        "{Model-Based Development of a Multi-algorithm Harvest
+                 Planning System}",
+  booktitle =    "Simulation and Modeling Methodologies, Technologies
+                 and Applications: International Conference, SIMULTECH
+                 2016 Lisbon, Portugal, July 29-31, 2016, Revised
+                 Selected Papers",
+  year =         "2018",
+  publisher =    "Springer International Publishing",
+  ISBN =         "978-3-319-69832-8",
+  doi =          "10.1007/978-3-319-69832-8_2",
+  URL =          "https://doi.org/10.1007/978-3-319-69832-8_2",
+}
+
 %G INTOCPSPUB VDM CPS
 @INPROCEEDINGS{Couto&17,
   KEY           = "Couto\&17",
-  AUTHOR        = "Luis Diogo Couto and Stylianos Basagianis and Alie El-Din
-                   Mady and El Hassan Ridouane and Peter Gorm Larsen and
+  AUTHOR        = "Luis Diogo Couto and Stylianos Basagianis and Alie El-Din 
+                   Mady and El Hassan Ridouane and Peter Gorm Larsen and 
                    Miran Hasanagic",
   EDITOR        = "",
-  TITLE         = "{Injecting Formal Verification in FMI-based Co-Simulation
+  TITLE         = "{Injecting Formal Verification in FMI-based Co-Simulation 
                     of Cyber-Physical Systems}",
   BOOKTITLE     = "The 1st Workshop on Formal Co-Simulation of Cyber-Physical Systems (CoSim-CPS)",
   ORGANIZATION  = "",
@@ -23622,6 +24025,22 @@ month = {April},
   PAGES         = "31--43",
   NOTE          = "",
   ANNOTE        = "",
+  COMMENT       = ""}
+
+%G OVERTURE VDM
+@INPROCEEDINGS{Couto&18,
+  KEY           = "Couto\&18",
+  AUTHOR        = "Luis Diogo Couto and Peter W. V. Tran-J\o{}rgensen and
+                        Peter Gorm Larsen",
+  EDITOR        = "",
+  TITLE         = "{Enabling Continuous Integration in a Formal Methods Setting}",
+  BOOKTITLE     = "Submitted for publication",
+  ORGANIZATION  = "",
+  PUBLISHER     = "",
+  ADDRESS       = "",
+  YEAR          = "2018",
+  MONTH         = "",
+  PAGES         = "",
   COMMENT       = ""}
 
 %G
@@ -24497,7 +24916,7 @@ month = {April},
   MONTH         = "April",
   ANNOTE        = "",
   COMMENT       = ""}
-
+	
 %G SOS
 @ARTICLE{Dahmann&08b,
   KEY           = "Dahmann\&08b",
@@ -24512,7 +24931,7 @@ month = {April},
   SIZE          = "6",
   ANNOTE        = "",
   COMMENT       = ""}
-
+				
 %G SOS
 @INPROCEEDINGS{Dahmann&10,
   KEY           = "Dahmann\&10",
@@ -24706,7 +25125,7 @@ COMMENT = "BIB PGL"}
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {formal methods, models, systems of systems},
-} 
+}
 
 @INCOLLECTION{Dams&99,
   year={1999},
@@ -25037,6 +25456,144 @@ COMMENT = "BIB PGL"}
   MONTH         = "September",
   PAGES         = "70-78",
   COMMENT       = "ARG"}
+
+@article{Lee&12a,
+  author    = {Wonchan Lee and
+               Yungbum Jung and
+               Bow{-}Yaw Wang and
+               Kwangkeun Yi},
+  title     = {Predicate Generation for Learning-Based Quantifier-Free Loop Invariant Inference},
+  journal   = {Logical Methods in Computer Science},
+  volume    = {8},
+  number    = {3},
+  year      = {2012}
+}
+
+
+
+@inproceedings{Vizel&17,
+  author    = {Yakir Vizel and
+               Arie Gurfinkel and
+               Sharon Shoham and
+               Sharad Malik},
+  title     = {{IC3} - Flipping the {E} in {ICE}},
+  booktitle = {Verification, Model Checking, and Abstract Interpretation - 18th International
+               Conference, {VMCAI} 2017, Paris, France, January 15-17, 2017, Proceedings},
+  pages     = {521--538},
+  year      = {2017},
+  editor    = {Ahmed Bouajjani and
+               David Monniaux},
+  title     = {Verification, Model Checking, and Abstract Interpretation - 18th International
+               Conference, {VMCAI} 2017, Paris, France, January 15-17, 2017, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10145},
+  publisher = {Springer}
+}
+
+
+
+@inproceedings{Fedyukovich&18,
+  author    = {Grigory Fedyukovich and
+               Rastislav Bod{\'{\i}}k},
+  title     = {Accelerating Syntax-Guided Invariant Synthesis},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems
+               - 24th International Conference, {TACAS} 2018, Held as Part of the
+               European Joint Conferences on Theory and Practice of Software, {ETAPS}
+               2018, Thessaloniki, Greece, April 14-20, 2018, Proceedings, Part {I}},
+  pages     = {251--269},
+  year      = {2018},
+  editor    = {Dirk Beyer and
+               Marieke Huisman},
+  title     = {Tools and Algorithms for the Construction and Analysis of Systems
+               - 24th International Conference, {TACAS} 2018, Held as Part of the
+               European Joint Conferences on Theory and Practice of Software, {ETAPS}
+               2018, Thessaloniki, Greece, April 14-20, 2018, Proceedings, Part {I}},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10805},
+  publisher = {Springer}
+}
+@inproceedings{Garg&14,
+  author    = {Pranav Garg and
+               Christof L{\"{o}}ding and
+               P. Madhusudan and
+               Daniel Neider},
+  title     = {{ICE:} {A} Robust Framework for Learning Invariants},
+  booktitle = {Computer Aided Verification - 26th International Conference, {CAV}
+               2014, Held as Part of the Vienna Summer of Logic, {VSL} 2014, Vienna,
+               Austria, July 18-22, 2014. Proceedings},
+  pages     = {69--87},
+  year      = {2014},
+  editor    = {Armin Biere and
+               Roderick Bloem},
+  title     = {Computer Aided Verification - 26th International Conference, {CAV}
+               2014, Held as Part of the Vienna Summer of Logic, {VSL} 2014, Vienna,
+               Austria, July 18-22, 2014. Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {8559},
+  publisher = {Springer}
+}
+
+
+
+@inproceedings{Garg&13,
+  author    = {Pranav Garg and
+               Christof L{\"{o}}ding and
+               P. Madhusudan and
+               Daniel Neider},
+  title     = {Learning Universally Quantified Invariants of Linear Data Structures},
+  booktitle = {Computer Aided Verification - 25th International Conference, {CAV}
+               2013, Saint Petersburg, Russia, July 13-19, 2013. Proceedings},
+  pages     = {813--829},
+  year      = {2013},
+  editor    = {Natasha Sharygina and
+               Helmut Veith},
+  title     = {Computer Aided Verification - 25th International Conference, {CAV}
+               2013, Saint Petersburg, Russia, July 13-19, 2013. Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {8044},
+  publisher = {Springer}
+}
+
+@inproceedings{Heo&17,
+  author    = {Kihong Heo and Hakjoo Oh and Kwangkeun Yi},
+  title     = {Machine-learning-guided selectively unsound static analysis},
+  booktitle = {Proceedings of the 39th International Conference on Software Engineering,
+               {ICSE} 2017, Buenos Aires, Argentina, May 20-28, 2017},
+  pages     = {519--529},
+  year      = {2017},
+  editor    = {Sebasti{\'{a}}n Uchitel and
+               Alessandro Orso and
+               Martin P. Robillard},
+  title     = {Proceedings of the 39th International Conference on Software Engineering,
+               {ICSE} 2017, Buenos Aires, Argentina, May 20-28, 2017},
+  publisher = {{IEEE} / {ACM}}
+}
+
+@inproceedings{Jung&11,
+  author    = {Yungbum Jung and
+               Wonchan Lee and
+               Bow{-}Yaw Wang and
+               Kwangkeun Yi},
+  title     = {Predicate Generation for Learning-Based Quantifier-Free Loop Invariant
+               Inference},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems
+               - 17th International Conference, {TACAS} 2011, Held as Part of the
+               Joint European Conferences on Theory and Practice of Software, {ETAPS}
+               2011, Saarbr{\"{u}}cken, Germany, March 26-April 3, 2011. Proceedings},
+  pages     = {205--219},
+  year      = {2011},
+  editor    = {Parosh Aziz Abdulla and
+               K. Rustan M. Leino},
+  title     = {Tools and Algorithms for the Construction and Analysis of Systems
+               - 17th International Conference, {TACAS} 2011, Held as Part of the
+               Joint European Conferences on Theory and Practice of Software, {ETAPS}
+               2011, Saarbr{\"{u}}cken, Germany, March 26-April 3, 2011. Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {6605},
+  publisher = {Springer}
+}
+
+
 
 %G DESTECSINT
 @TECHREPORT{Davis&99,
@@ -25526,7 +26083,7 @@ COMMENT = "BIB PGL"}
   MONTH         = "January",
   COMMENT       = ""}
 
-
+				
 %G METPROJ SA SD CONFIRM IPTESINT
 @BOOK{DeMarco78,
   KEY           = "DeMarco78",
@@ -25790,13 +26347,13 @@ COMMENT = "BIB PGL"}
   KEY           = "Deploy12",
 Author = {Deploy Project},
 Title = {Deploy Methods: Final Report},
-Editor = {Butler M. and Edmunds A. and Rezazadeh A.},
+Editor = {Butler M. and Edmunds A. and Rezazadeh A.}, 
 NUMBER        = "D6.6",
   INSTITUTION   = "EC  project 214158 Deploy",
   YEAR          = "2012",
   MONTH         = "April",
   URL           = "http://www.deploy-project.eu/pdf/D44.pdf"}
-
+  
 %G IPTESINT
 @ARTICLE{DeRemer&76,
   KEY           = "DeRemer\&76",
@@ -25850,7 +26407,7 @@ NUMBER        = "D6.6",
   MONTH         = {January},
   YEAR          = {2012},
   COMMENT       = "BIB PGL"}
-
+  
 %G CPS
 @INPROCEEDINGS{Derler&13,
   KEY           = "Derler\&13",
@@ -25925,7 +26482,7 @@ NUMBER        = "D6.6",
   YEAR          = "2009",
   URL  			= "https://etd.ohiolink.edu/rws_etd/document/get/wright1369680833/inline",
   }
-
+  
 @Book{Desfray94,
 title = {Object engineering : the fourth dimension / Philippe Desfray},
 author = {Desfray, Philippe},
@@ -26183,7 +26740,7 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
   SIZE          = "10",
   ANNOTE        = "",
   COMMENT       = "BIB. I have a hardcopy but I have not read it yet (PGL)."}
-  
+
 @inproceedings{diaz07initial,
   title={Initial Population for Genetic Algorithms: A Metric Approach.},
   author={Diaz-Gomez, Pedro A and Hougen, Dean F},
@@ -26651,6 +27208,17 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
+%G C++
+@TECHREPORT{Dionne&18,
+  KEY           = "Dionne\&18",
+  AUTHOR        = "Louis Dionne and Richard Smith and Nina Ranns and Daveed Vandevoorde",
+  TITLE         = "{More constexpr containers}",
+  ADDRESS       = "https://isocpp.org/blog/category/standardization",
+  NUMBER        = "P0784R3",
+  YEAR          = "2018",
+  INSTITUTION   = "ISO C++ Committee",
+}
+
 %G IDERS
 @TECHREPORT{IDERSPOLIMI11,
   KEY           = "DiNitto\&94",
@@ -26764,7 +27332,7 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
 %G VDM TOOL OVERTURE
 @INPROCEEDINGS{Diswal&16,
   KEY           = "Diswal\&16",
-  AUTHOR        = "Steffen Pham Diswal and Peter W.V. Tran-J{\o}rgensen and
+  AUTHOR        = "Steffen Pham Diswal and Peter W.V. Tran-J{\o}rgensen and 
                    Peter Gorm Larsen",
   TITLE         = "{Automated Generation of C\# and .NET Code Contracts
                     from VDM-SL Models}",
@@ -27014,7 +27582,7 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
   MONTH         = {oct.},
   PAGES         = {1244 -1249},
   COMMENT       = "BIB PGL"}
-
+				
 %G SAFE
 @TECHREPORT{DotAF00,
   KEY           = "DotAF00",
@@ -27383,6 +27951,18 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
   KEYWORDS      = "MISC",
   COMMENT       = "ADN"}
 
+%G
+@ARTICLE{Dowell&01,
+  AUTHOR        = "E.H. Dowell and K.C. Hall",
+  TITLE         = "Modeling of fluid-structure interaction",
+  JOURNAL       = "Annu. Rev. Fluid Mech. ",
+  YEAR          = "2001",
+  VOLUME        = "33",
+  NUMBER        = "1",
+  PAGES         = "445--490",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G METPROJ
 @ARTICLE{Dowson87,
   KEY           = "Dowson87",
@@ -27414,6 +27994,14 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
   Title = {Compositional Semantics and Analysis of Hierarchical Block Diagrams},
   Year = {2016}}
 
+@article{Dreossi&17,
+  author    = {Tommaso Dreossi and Alexandre Donze and Sanjit A. Seshia},
+  title     = {Compositional Falsification of Cyber-Physical Systems with machine Learning Components},
+  journal   = {CoRR},
+  volume    = {abs/1703.00978},
+  year      = {2017},
+  url       = {https://arxiv.org/abs/1703.00978}
+}
 
 %G METPROJ
 @ARTICLE{Dromey88,
@@ -27567,6 +28155,21 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
   YEAR        = {2003}
 }
 
+%G SOS
+@INPROCEEDINGS{Drusinksy&05,
+  KEY           = "Drusinksy\&05",
+  AUTHOR        = "Drusinksy, D. and Man-Tak Shing",
+  EDITOR        = "",
+  TITLE         = "Creation and evaluation of formal specifications for system-of-systems development",
+  BOOKTITLE     = "Systems, Man and Cybernetics, 2005 IEEE International Conference on",
+  ORGANIZATION  = "IEEE",
+  YEAR          = "2005",
+  MONTH         = "Oct.",
+  PAGES         = "1864-1869 Vol. 2",
+  SIZE          = "7",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G STD USEGAT
 @TECHREPORT{DSISOIEC9126,
   KEY           = "DS/ISO/IEC 9126",
@@ -27678,6 +28281,16 @@ catalogue-url = { http://trove.nla.gov.au/work/31484193 }
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
+%G
+@Article{Duflot&06,
+author={M. Duflot and M. Kwiatkowska and G. Norman and D. Parker},
+title={A Formal Analysis of {Bluetooth} Device Discovery},
+journal={Int. Journal on Software Tools for Technology Transfer},
+year={2006},
+
+volume={8},
+number={6},
+pages={621--632}}
 
 %G SOS
 @INPROCEEDINGS{Duncan&11,
@@ -32365,9 +32978,9 @@ pages="154--169",
 isbn="978-3-642-41533-3",
 doi="10.1007/978-3-642-41533-3_10",
 url="http://dx.doi.org/10.1007/978-3-642-41533-3_10"
-}
-
-
+}  
+  
+  
 %G agile
 @INPROCEEDINGS{Eleftherakis&03,
   KEY           = "Eleftherakis\&03",
@@ -32655,6 +33268,16 @@ doi={10.1109/MSCPES.2013.6623315}}
   NUMBER        = "PB -- 301",
   ANNOTE        = "",
   COMMENT       = "LIB. DP"}
+ 
+ %G COSIM
+@inproceedings{Enge-Rosenblatt&11,
+address = {Dresden, Germany},
+author = {Enge-Rosenblatt, Olaf and Clau{\ss}, Christoph and Schneider, Andr{\'{e}} and Schneider, Peter},
+booktitle = {8th International Modelica Conference},
+publisher = {Link{\"{o}}ping University Electronic Press; Link{\"{o}}pings universitet},
+title = {{Functional Digital Mock-up and the Functional Mock-up Interface-Two Complementary Approaches for a Comprehensive Investigation of Heterogeneous Systems}},
+year = {2011}
+}
 
 %G IDERSINT
 @INPROCEEDINGS{Engelfriet90:IntroductionNLC,
@@ -34034,16 +34657,16 @@ Doi = {10.4204/EPTCS.245.1},
   COMMENT       = "BIB PGL"}
 
 %G SOS
-@INPROCEEDINGS{Fendali&17, 
-author={M. H. Fendali and D. Meslati and I. Borne}, 
-booktitle={2017 IEEE International Systems Engineering Symposium (ISSE)}, 
-title={Understanding evolution in systems of systems}, 
-year={2017}, 
-volume={}, 
-number={}, 
-pages={1-6}, 
-doi={10.1109/SysEng.2017.8088283}, 
-ISSN={}, 
+@INPROCEEDINGS{Fendali&17,
+author={M. H. Fendali and D. Meslati and I. Borne},
+booktitle={2017 IEEE International Systems Engineering Symposium (ISSE)},
+title={Understanding evolution in systems of systems},
+year={2017},
+volume={},
+number={},
+pages={1-6},
+doi={10.1109/SysEng.2017.8088283},
+ISSN={},
 month={Oct}}
 
 %G MPCINT
@@ -35624,7 +36247,7 @@ techniques",
   PAGES         = "28",
   YEAR          = "2006"}
 
-%G VDM
+%G VDM OVERTURE
 @INPROCEEDINGS{Fitzgerald&07,
   KEY           = "Fitzgerald\&07",
   AUTHOR        = "J. S. Fitzgerald and P. G. Larsen",
@@ -35637,7 +36260,7 @@ techniques",
   NOTE          = "Also Technical Report CS-TR-999, School of Computing
                    Science, Newcastle University"}
 
-%G VDM VDM++
+%G VDM VDM++ OVERTURE
 @TECHREPORT{Fitzgerald&07b,
   KEY           = "Fitzgerald\&07",
   AUTHOR        = "John Fitzgerald and Peter Gorm Larsen and Simon Tjell and
@@ -35663,7 +36286,7 @@ techniques",
   YEAR          = "2007",
   COMMENT       = "I have the source (JSF)"}
 
-%G VDM VDM++
+%G VDM VDM++ OVERTURE
 @TECHREPORT{Fitzgerald&07d,
   KEY           = "Fitzgerald\&07d",
   AUTHOR        = "J. S. Fitzgerald and P. G. Larsen and S. Tjell and M. Verhoef",
@@ -35678,7 +36301,7 @@ techniques",
                     2007, Dallas, Texas, IEEE}",
   COMMENT       = "I have the source (JSF)"}
 
-%G VDM FORMAL
+%G VDM FORMAL OVERTURE
 @INPROCEEDINGS{Fitzgerald&07e,
   KEY           = "Fitzgerald\&07",
   AUTHOR        = "J. S. Fitzgerald and P. G. Larsen",
@@ -35717,7 +36340,7 @@ techniques",
   doi		= {10.1145/1361213.1361214},
 }
 
-%G VDM VDM++
+%G VDM VDM++ OVERTURE
 @INPROCEEDINGS{Fitzgerald&07h,
   KEY           = "Fitzgerald\&07h",
   AUTHOR        = "J. S. Fitzgerald and P. G. Larsen and S. Tjell and M. Verhoef",
@@ -35771,7 +36394,7 @@ techniques",
   NUMBER        = "{CS-TR-1099}",
   SIZE          = "71"}
 
-%G VDM APPLY
+%G VDM APPLY OVERTURE
 @ARTICLE{Fitzgerald&08c,
   KEY           = "Fitzgerald\&08",
   AUTHOR        = {J. S. Fitzgerald and P. G. Larsen and M. Verhoef},
@@ -35783,7 +36406,7 @@ techniques",
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
-%G VDM
+%G VDM OVERTURE
 @INPROCEEDINGS{Fitzgerald&08d,
   KEY           = "Fitzgerald\&08d",
   AUTHOR        = "J.S. Fitzgerald and J.W. Bryans and D. Greathead and C.B. Jones and R. Payne",
@@ -35818,7 +36441,7 @@ techniques",
 }
 
 
-%G VDM TUTOR FORMAL
+%G VDM TUTOR FORMAL OVERTURE
 @BOOK{Fitzgerald&09,
   KEY           = "Fitzgerald\&09",
   AUTHOR        = "John Fitzgerald and Peter Gorm Larsen",
@@ -35833,7 +36456,7 @@ techniques",
   ANNOTE        = "",
   COMMENT       = "I have the source PGL"}
 
-%G VDM DESTECS ERROR VDMRT DESTECSPUB
+%G VDM DESTECS ERROR VDMRT DESTECSPUB OVERTURE
 @TECHREPORT{Fitzgerald&10a,
   KEY           = "Fitzgerald\&10a",
   AUTHOR        = {John Fitzgerald and Peter Gorm Larsen and Ken Pierce and Marcel Verhoef and Sune Wolff},
@@ -35844,7 +36467,7 @@ techniques",
   NUMBER        = "{CS-TR-1213}",
   URL           = "http://www.cs.ncl.ac.uk/publications/trs/papers/1213.pdf"}
 
-%G VDM DESTECS ERROR VDMRT DESTECSPUB
+%G VDM DESTECS ERROR VDMRT DESTECSPUB OVERTURE
 @INPROCEEDINGS{Fitzgerald&10b,
   KEY           = "Fitzgerald\&10b",
   AUTHOR        = {John Fitzgerald and Peter Gorm Larsen and Ken Pierce and Marcel Verhoef and Sune Wolff},
@@ -35867,7 +36490,7 @@ techniques",
  DEPARTMENT = "School of Computing Science",
  AUTHOR = "R. Payne and J.S. Fitzgerald" }
 
-%G DESTECS VDM DESTECSPUB
+%G DESTECS VDM DESTECSPUB OVERTURE
 @ARTICLE{Fitzgerald&11a,
   KEY           = "Fitzgerald\&11",
   AUTHOR        = "John Fitzgerald and Peter Gorm Larsen and Ken Pierce and
@@ -35881,7 +36504,7 @@ techniques",
   ANNOTE        = "",
   COMMENT       = "Don't refer tio this one. I have the sources PGL"}
 
-%G DESTECS VDM DESTECSPUB
+%G DESTECS VDM DESTECSPUB OVERTURE
 @TECHREPORT{Fitzgerald&11b,
   KEY           = "Fitzgerald\&11",
   AUTHOR        = "John Fitzgerald and Peter Gorm Larsen and Ken Pierce and
@@ -35895,7 +36518,7 @@ techniques",
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
-%G VDM DESTECS ERROR VDMRT DESTECSPUB
+%G VDM DESTECS ERROR VDMRT DESTECSPUB OVERTURE
 @INPROCEEDINGS{Fitzgerald&12a,
   KEY           = "Fitzgerald\&12a",
   AUTHOR        = {John Fitzgerald and Ken Pierce and Carl Gamble},
@@ -35954,7 +36577,7 @@ PRO-VE 2012, Bournemouth, UK, October 1-3, 2012. Proceedings},
   MONTH         = "July",
   NUMBER        = "CS-TR-1347"}}
 
-%G DESTECS DESTECSPUB
+%G DESTECS DESTECSPUB OVERTURE
 @BOOK{Fitzgerald&13a,
   KEY           = "Fitzgerald\&13",
   EDITOR        = "John Fitzgerald and Peter Gorm Larsen and Marcel Verhoef",
@@ -35965,7 +36588,7 @@ PRO-VE 2012, Bournemouth, UK, October 1-3, 2012. Proceedings},
   ANNOTE        = "",
   COMMENT       = "BIB PGL Outdated by \cite{Fitzgerald&14c}"}
 
-%G DESTECS VDM DESTECSPUB
+%G DESTECS VDM DESTECSPUB OVERTURE
 @ARTICLE{Fitzgerald&13b,
   KEY           = "Fitzgerald\&13",
   AUTHOR        = "John Fitzgerald and Peter Gorm Larsen and Ken Pierce and
@@ -36008,7 +36631,7 @@ PRO-VE 2012, Bournemouth, UK, October 1-3, 2012. Proceedings},
   PAGES         = "1--19"
   }
 
-%G CPS SOS
+%G CPS SOS OVERTURE
 @inproceedings{Fitzgerald&14a,
   title={Collaborative systems of systems need collaborative design},
   author={Fitzgerald, John and Bryans, Jeremy and Larsen, Peter Gorm and Salim, Hansen},
@@ -36017,7 +36640,7 @@ PRO-VE 2012, Bournemouth, UK, October 1-3, 2012. Proceedings},
   year={2014},
   organization={Springer}
 }
-%G DESTECS VDM
+%G DESTECS VDM OVERTURE
 @INBOOK{Fitzgerald&14b,
   KEY           = "Fitzgerald\&14",
   AUTHOR        = "John Fitzgerald and Ken Pierce and Peter Gorm Larsen",
@@ -36033,7 +36656,7 @@ PRO-VE 2012, Bournemouth, UK, October 1-3, 2012. Proceedings},
   ANNOTE        = "",
   COMMENT       = "Not yet available"}
 
-%G DESTECS DESTECSPUB
+%G DESTECS DESTECSPUB OVERTURE
 @BOOK{Fitzgerald&14c,
   KEY           = "Fitzgerald\&14",
   EDITOR        = "John Fitzgerald and Peter Gorm Larsen and Marcel Verhoef",
@@ -36080,7 +36703,7 @@ PRO-VE 2012, Bournemouth, UK, October 1-3, 2012. Proceedings},
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
-%G DESTECS DESTECSPUB
+%G DESTECS DESTECSPUB OVERTURE
 @INCOLLECTION{Fitzgerald&14e,
   KEY           = "Fitzgerald\&14",
   AUTHOR        = "John Fitzgerald and Peter Gorm Larsen and Marcel Verhoef",
@@ -36173,6 +36796,34 @@ PRO-VE 2012, Bournemouth, UK, October 1-3, 2012. Proceedings},
   year          = {2017},
   COMMENT       = ""
 }
+
+%G VDM OVERTURE
+@PROCEEDINGS{Fitzgerald&17b,
+  KEY           = "Fitzgerald\&17b",
+  EDITOR        = "John Fitzgerald and Peter W. V. Tran-J\o{}rgensen and Tomohiro Oda",
+  TITLE         = "Proceedings of the 15th Overture Workshop: New Capabilities and Applications for Model-based Systems Engineering",
+  PUBLISHER     = "Newcastle University",
+  ADDRESS       = "UK",
+  YEAR          = "2017",
+  MONTH         = "October",
+  NOTE          = "CS-TR- 1513-2017",
+  URL           = "http://eprint.ncl.ac.uk/file_store/production/243183/E06A1923-04C3-4BCB-B768-1E0BA5B1AB55.pdf",
+  ANNOTE        = "",
+  COMMENT       = ""
+}
+
+%G INTOCPSPUB
+@INBOOK{Fitzgerald&18,
+  KEY           = "Fitzgerald\&18",
+  AUTHOR        = "John Fitzgerald and Carl Gamble and Martin Mansfield and Julien Ouy and 
+                        Roberto Palacin and Ken Pierce and Peter Gorm Larsen",
+  TITLE         = "{Collaborative modelling and co-simulation for Transportation Cyber-Physical Systems}",
+  CHAPTER       = "3",
+  PAGES         = "51--79",
+  PUBLISHER     = "Elsevier",
+  YEAR          = "2018",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G FME97 SDL
 @INPROCEEDINGS{Fleischhack&97,
@@ -36385,6 +37036,18 @@ language={English}
   PAGES         = "",
   SIZE          = "",
   NOTE          = "",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G INTOCPSPUB CPS 
+@INPROCEEDINGS{Foldager&18,
+  KEY           = "Foldager\&18",
+  AUTHOR        = "Frederik Foldager and Ole Balling and Carl Gamble and Peter Gorm Larsen and Martin Boel and Ole Green",
+  TITLE         = "{Design Space Exploration in the Development of Agricultural Robots}",
+  BOOKTITLE     = "AgEng conference",
+  ADDRESS       = "Wageningen, The Netherlands",
+  YEAR          = "2018",
+  MONTH         = "July",
   ANNOTE        = "",
   COMMENT       = ""}
 
@@ -36871,6 +37534,22 @@ url="http://dx.doi.org/10.1007/978-3-319-46750-4_17"
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
+%G OVERTURE VDM TOOL
+@INPROCEEDINGS{Fraser18,
+  AUTHOR        = "Simon Fraser",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{Integrating VDM-SL into the continuous delivery pipelines of cloud-based
+software}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "123--138",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G WWW
 @ARTICLE{Fraternali99,
   KEY           = "Fraternali99",
@@ -37018,6 +37697,20 @@ month={May},}
   PUBLISHER    = {Springer-Verlag},
   COMMENT      = "I have the proceedings PGL"}
 
+%G OVERTURE VDM APPLI
+@INPROCEEDINGS{Freitas18,
+  AUTHOR        = "Leo Freitas",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{VDM at large: Modelling the EMV 2nd Generation Kernel}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "89--106",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G VDM APPLI
 @TECHREPORT{Frendorf&86,
@@ -37597,7 +38290,7 @@ author = "Hiroaki Fukushima and Tae-Hyoung Kim and Toshiharu Sugie"
  doi = {10.1145/1667062.1667063},
  acmid = {1667063},
  publisher = {ACM},
- address = {New York, NY, USA}}
+ address = {New York, NY, USA}} 
 
 %G IDERSINT
 @MANUAL{FUSEman91,
@@ -37896,6 +38589,24 @@ author = "Hiroaki Fukushima and Tae-Hyoung Kim and Toshiharu Sugie"
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G COSIM
+@inproceedings{Galtier&15,
+ author = {Galtier, Virginie and Vialle, Stephane and Dad, Cherifa and Tavella, Jean-Philippe and Lam-Yee-Mui, Jean-Philippe and Plessis, Gilles},
+ title = {FMI-based Distributed Multi-simulation with DACCOSIM},
+ booktitle = {Proceedings of the Symposium on Theory of Modeling \& Simulation: DEVS Integrative M\& S Symposium},
+ series = {DEVS '15},
+ year = {2015},
+ isbn = {978-1-5108-0105-9},
+ location = {Alexandria, Virginia},
+ pages = {39--46},
+ numpages = {8},
+ url = {http://dl.acm.org/citation.cfm?id=2872965.2872971},
+ acmid = {2872971},
+ publisher = {Society for Computer Simulation International},
+ address = {San Diego, CA, USA},
+ keywords = {FMI 2.0, distributed architecture, error control, framework, multi-simulation},
+}
+
 %G SOS
 @INPROCEEDINGS{Gamble&08,
   KEY           = "Gamble\&08",
@@ -37959,6 +38670,18 @@ author = "Hiroaki Fukushima and Tae-Hyoung Kim and Toshiharu Sugie"
   PAGES         = "116-131",
   NOTE          = "GRACE-TR-2015-06",
   URL           = "http://grace-center.jp/wp-content/uploads/2012/05/13thOverture-Proceedings.pdf",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G INTOCPSPUB
+@ARTICLE{Gamble&18,
+  KEY           = "Gamble\&18",
+  AUTHOR        = "Carl Gamble and Richard Payne and John Fitzgerald and Sadegh
+                              Soudjani and Frederik F. Foldager and Peter Gorm Larsen",
+  TITLE         = "{Automated Exploration of Parameter Spaces as a Method for Tuning a
+                         Predictive Digital Twin}",
+  JOURNAL       = "Submitted for publication",
+  YEAR          = "2018",
   ANNOTE        = "",
   COMMENT       = ""}
 
@@ -38048,7 +38771,7 @@ author = "Hiroaki Fukushima and Tae-Hyoung Kim and Toshiharu Sugie"
   MONTH         = "December",
   SERIES        = "Newness World Class Designs",
   COMMENT       = ""}
-
+ 
 %G DRONE
 @ARTICLE{Gao&95,
   KEY           = "Gao\&95",
@@ -38385,6 +39108,17 @@ author = "Amal Gassara and Ismael Bouassida Rodriguez and Mohamed Jmaiel and Kha
   YEAR          = "2010",
   ANNOTE        = "",
   COMMENT       = ""}
+
+@INPROCEEDINGS{Ge2015,
+author={M. Ge and D. S. Kim},
+booktitle={2015 IEEE 21st International Conference on Parallel and Distributed Systems (ICPADS)},
+title={A Framework for Modeling and Assessing Security of the Internet of Things},
+year={2015},
+volume={},
+number={},
+pages={776-781},
+doi={10.1109/ICPADS.2015.102}
+}
 
 %G SOS
 @INPROCEEDINGS{Geddes&98,
@@ -38990,7 +39724,7 @@ author = "Amal Gassara and Ismael Bouassida Rodriguez and Mohamed Jmaiel and Kha
   COMMENT       = "Tomado de ftp-se.elet.polimi.it. Contiene en realidad un
 		  resumen de su trabajo con TB nets, CABERNET y TRIO"}
 
-
+		
 @INPROCEEDINGS{Ghilardi&10,
   author = {Ghilardi, Silvio and Ranise, Silvio},
   booktitle = {IJCAR},
@@ -39051,6 +39785,22 @@ author = "Amal Gassara and Ismael Bouassida Rodriguez and Mohamed Jmaiel and Kha
   MONTH         = "April",
   ANNOTE        = "",
   COMMENT       = "BIB. Copied. OBL."}
+
+%G CPS
+@INPROCEEDINGS{Gibson&18,
+  AUTHOR        = "J. Paul Gibson and Peter Gorm Larsen and Marc Pantel and John Fitzgerald and Jim Woodcock ",
+  EDITOR        = "Tiziana Margaria · Bernhard Steffen",
+  TITLE         = "{Cyber-Physical Systems Engineering: An Introduction}",
+  BOOKTITLE     = "Leveraging Applications of Formal Methods, Verification and Validation: Part 3",
+  ORGANIZATION  = "ISoLA 2018",
+  PUBLISHER     = "Springer Nature Switzerland AG",
+  ADDRESS       = "Limassol, Cyprus",
+  YEAR          = "2018",
+  MONTH         = "November",
+  PAGES         = "407--410",
+  NOTE          = "https://doi.org/10.1007/978-3-030-03424-5_27",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G CSP
 @inproceedings{Gibson-Robinson&14,
@@ -39886,16 +40636,72 @@ year = {2017}
   KEY           = "Gomes\&17",
   AUTHOR        = "Claudio Gomes and Bart Mayers and Joachim Denil and Casper Thule
                              and Kenneth Lausdahl and Hans Vangheluwe and Paul De Meuliere",
-  TITLE         = "Semantic Adaptation for FMI Co-simulation with Hierarchical Simulators",
-  JOURNAL       = "submitted to the Simulation: Transactions of the Society for Modelling
+  TITLE         = "{Semantic Adaptation for FMI Co-simulation with Hierarchical Simulators}",
+  JOURNAL       = "Is accepted for publication on December 31, 2017 in Simulation: Transactions of the Society for Modelling
                             and Simulation International journal",
-  YEAR          = "2017",
+  YEAR          = 2017,
   MONTH         = "December",
-  VOLUME        = "",
-  NUMBER        = "",
-  PAGES         = "",
-  SIZE          = "",
-  NOTE          = "",
+  NOTE          = ""}
+
+%G COSIM INTOCPSPUB
+@article{Gomes&18,
+  KEY           = "Gomes\&18",
+  AUTHOR        = {Gomes, Cl{\'{a}}udio and Thule, Casper and Broman, David and Larsen, Peter Gorm and Vangheluwe, Hans},
+  TITLE         = "{Co-simulation: a Survey}",
+  JOURNAL       = {ACM Comput. Surv.},
+  PUBLISHER     = {ACM},
+ volume = {51},
+ number = {3},
+ month = may,
+  issn = {0360-0300},
+  acmid = {3179993},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+  YEAR             = "2018",
+  PAGES           = "49:1--49:33",
+  ADDRESS       = {New York, NY, USA}}
+
+%G COSIM INTOCPSPUB
+@article{Gomes&18a,
+author = {Claudio Gomes and Bart Meyers and Joachim Denil and Casper Thule and Kenneth Lausdahl and Hans Vangheluwe and Paul De Meulenaere},
+title ={Semantic adaptation for FMI co-simulation with hierarchical simulators},
+journal = {SIMULATION},
+volume = {0},
+number = {0},
+pages = {0037549718759775},
+year = {2018},
+doi = {10.1177/0037549718759775},
+URL = { https://doi.org/10.1177/0037549718759775},
+eprint = {https://doi.org/10.1177/0037549718759775}}
+
+%G CPS COSIM
+@techreport{Gomes&18b,
+  archivePrefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1809.08463},
+  title = {Co-Simulation of {{Continuous Systems}}: {{A Tutorial}}},
+  shorttitle = {Co-Simulation of {{Continuous Systems}}},
+  number = {arXiv:1809.08463 [cs, math]},
+  urldate = {2018-09-25},
+  url = {http://arxiv.org/abs/1809.08463},
+  author = {Gomes, Cl\'audio and Thule, Casper and Larsen, Peter Gorm and Denil, Joachim and Vangheluwe, Hans},
+  month = sep,
+  year = {2018}}
+
+%G CPS COSIM
+@INPROCEEDINGS{Gomes&18c,
+  AUTHOR        = "Claudio Gomes and Casper Thule and Julien Deantoni and Peter Gorm Larsen
+and Hans Vangheluwe",
+  EDITOR        = "Tiziana Margaria · Bernhard Steffen",
+  TITLE         = "{Co-simulation: The Past, Future, and Open Challenges}",
+  BOOKTITLE     = "Leveraging Applications of Formal Methods, Verification and Validation: Part 3",
+  ORGANIZATION  = "ISoLA 2018",
+  PUBLISHER     = "Springer Nature Switzerland AG",
+  ADDRESS       = "Limassol, Cyprus",
+  YEAR          = "2018",
+  MONTH         = "November",
+  PAGES         = "504--520",
+  NOTE          = "https://doi.org/10.1007/978-3-030-03424-5_34",
   ANNOTE        = "",
   COMMENT       = ""}
 
@@ -39979,6 +40785,23 @@ year = {2017}
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G CPS
+@inproceedings{Gonzalez&18,
+ author = {Gonz\'{a}lez, Carlos A. and Varmazyar, Mojtaba and Nejati, Shiva and Briand, Lionel C. and Isasi, Yago},
+ title = "{Enabling Model Testing of Cyber-Physical Systems}",
+ booktitle = {Proceedings of the 21th ACM/IEEE International Conference on Model Driven Engineering Languages and Systems},
+ series = {MODELS '18},
+ year = {2018},
+ isbn = {978-1-4503-4949-9},
+ location = {Copenhagen, Denmark},
+ pages = {176--186},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/3239372.3239409},
+ doi = {10.1145/3239372.3239409},
+ acmid = {3239409},
+ publisher = {ACM},
+ address = {New York, NY, USA}}
+
 %G VDM88
 @INPROCEEDINGS{Good88,
   KEY           = "Good88",
@@ -40018,6 +40841,17 @@ year = {2017}
   ANNOTE        = "",
   COMMENT       = ""}
 
+  
+  
+@TECHREPORT{Goodfellow&14,
+  KEY           = "Goodfellow\&14",
+  AUTHOR        = "I. Goodfellow and J. Pouget-Abadie and M. Mirza and B. Xu and D. Warde-Farley and S. Ozair and A. Courville and J. Bengio",
+  TITLE         = "Generative Adversarial Networks",
+  YEAR          = "2014",
+  TYPE          = "arXiv:1406.2661",
+  COMMENT       = "BIB AI"
+}
+  
 %G IDERSINT
 @TECHREPORT{GoodStep93,
   KEY           = "GoodStep93",
@@ -40025,7 +40859,7 @@ year = {2017}
   TITLE         = "Description of Software Engineering Applications
                   and Requirements for an Object-Oriented Repository",
   ORGANIZATION  = "ESPRIT project 6115 GoodStep - General
-                  Object-Oriented Datab ases for Software Processes",
+                  Object-Oriented Databases for Software Processes",
   YEAR          = "1993",
   MONTH         = "Mar",
   TYPE          = "Deliverable",
@@ -40407,7 +41241,7 @@ ADDRESS       = "Tokyo"}
   ADDRESS       = "Menlo Park, California",
   NOTE          = "ADN"}
 
-%G VDM COMPASS
+%G VDM COMPASS 
 @MISC{GPLv3,
   KEY           = "GPLv3",
   TITLE         = "{GNU} General Public License, version 3",
@@ -40877,7 +41711,7 @@ language={English}
   TITLE 		= {{Precision Farming Tools: Global Positioning System (GPS)}},
   YEAR 			= {2009}
 }
-
+ 
 %G REFAC
 @PHDTHESIS{Griswold&91,
 	KEY           = "Griswold\&91",
@@ -41147,6 +41981,16 @@ language={English}
                    implementing Meta-IV specifications.",
   COMMENT       = "The book is in IFAD's own library (PGL)."}
 
+%G C++
+@MISC{GSL,
+  KEY           = "GSL",
+  AUTHOR        = "Microsoft",
+  TITLE         = "{Guidelines Support Library}",
+  YEAR          = "2018",
+  HOWPUBLISHED  = "https://github.com/Microsoft/GSL",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G
 @MISC{GTKWave,
   KEY           = "GTKWave",
@@ -41193,16 +42037,16 @@ language={English}
   NOTE          = "Submitted for publication"}
 
 %G SOS
-@INPROCEEDINGS{Guessi&16, 
-author={M. Guessi and F. Oquendo and E. Y. Nakagawa}, 
-booktitle={2016 11th System of Systems Engineering Conference (SoSE)}, 
-title={Checking the architectural feasibility of Systems-of-Systems using formal descriptions}, 
-year={2016}, 
-volume={}, 
-number={}, 
-pages={1-6}, 
-doi={10.1109/SYSOSE.2016.7542939}, 
-ISSN={}, 
+@INPROCEEDINGS{Guessi&16,
+author={M. Guessi and F. Oquendo and E. Y. Nakagawa},
+booktitle={2016 11th System of Systems Engineering Conference (SoSE)},
+title={Checking the architectural feasibility of Systems-of-Systems using formal descriptions},
+year={2016},
+volume={},
+number={},
+pages={1-6},
+doi={10.1109/SYSOSE.2016.7542939},
+ISSN={},
 month={June},}
 
 %G RAIL
@@ -41274,6 +42118,18 @@ title="{Abstract State Machines: An Overview of the Project}",
 publisher={Springer Berlin Heidelberg},
 author={Gurevich, Yuri},
 pages={6-13}}
+
+%G
+@INPROCEEDINGS{Gusman&11,
+  AUTHOR        = "Gusman, M. and Housman, J. and Kiris, C.",
+  TITLE         = "Best Practices for CFD Simulations of Launch Vehicle Ascent with Plumes: OVERFLOW Perspective",
+  BOOKTITLE     = "49th AIAA Aerospace Sciences Meeting",
+  ORGANIZATION  = "AIAA",
+  YEAR          = "2011",
+  MONTH         = "January",
+  NOTE          = "AIAA Paper 2011-1054",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G
 @INPROCEEDINGS{Guting&93,
@@ -41477,13 +42333,13 @@ pages={6-13}}
   COMMENT       = "PGL has got the proceedings. ADN"}
 
 %G CPS
-@INPROCEEDINGS{Guo&14,
-author={Liangpeng Guo and Qi Zhu and Nuzzo, P. and Passerone, R. and Sangiovanni-Vincentelli, A. and Lee, E.A.},
-booktitle={Hardware/Software Codesign and System Synthesis (CODES+ISSS), 2014 International Conference on},
-title={Metronomy: A function-architecture co-simulation framework for timing verification of cyber-physical systems},
-year={2014},
-pages={1-10},
-doi={10.1145/2656075.2656093},
+@INPROCEEDINGS{Guo&14, 
+author={Liangpeng Guo and Qi Zhu and Nuzzo, P. and Passerone, R. and Sangiovanni-Vincentelli, A. and Lee, E.A.}, 
+booktitle={Hardware/Software Codesign and System Synthesis (CODES+ISSS), 2014 International Conference on}, 
+title={Metronomy: A function-architecture co-simulation framework for timing verification of cyber-physical systems}, 
+year={2014}, 
+pages={1-10}, 
+doi={10.1145/2656075.2656093}, 
 month={Oct},
 COMMENT = "BIB"}
 
@@ -41682,6 +42538,21 @@ doi={10.1109/ICUAS.2015.7152391}}
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G COSIM
+@inproceedings{Hafner&17,
+ author = {Hafner, Irene and Popper, Niki},
+ title = {On the Terminology and Structuring of Co-simulation Methods},
+ booktitle = {Proceedings of the 8th International Workshop on Equation-Based Object-Oriented Modeling Languages and Tools},
+ series = {EOOLT '17},
+ year = {2017},
+ isbn = {978-1-4503-6373-0},
+ location = {Wessling, Germany},
+ pages = {67--76},
+ doi = {10.1145/3158191.3158203},
+ acmid = {3158203},
+ publisher = {ACM},
+ address = {New York, NY, USA}}
+
 %G TOOL REQCAP
 @INPROCEEDINGS{Hagemann88,
   KEY           = "Hagemann88",
@@ -41784,6 +42655,21 @@ doi={10.1109/ICUAS.2015.7152391}}
   SIZE          = "10",
   ANNOTE        = "",
   COMMENT       = "BIB. DP"}
+
+@article{HAIDAR200955,
+  key = "Haidar2009",
+  title = "Formal Modelling of PKI Based Authentication",
+  journal = "Electronic Notes in Theoretical Computer Science",
+  volume = "235",
+  pages = "55 - 70",
+  year = "2009",
+  note = "Proceedings of the 4th International Workshop on Automated Specification and Verification of Web Systems (WWV 2008)",
+  issn = "1571-0661",
+  doi = "https://doi.org/10.1016/j.entcs.2009.03.005",
+  url = "http://www.sciencedirect.com/science/article/pii/S157106610900084X",
+  author = "Ali Nasrat Haidar and Ali E. Abdallah",
+  keywords = "Formal Methods, Z, CSP, Security, Authentication, Distributed systems, Correctness"
+}
 
 %G TIME CONCUR ADA
 @ARTICLE{Halang83,
@@ -41938,6 +42824,18 @@ year = {1997}
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
+%G
+@ARTICLE{Hall&00,
+  AUTHOR        = "K.C. Hall and J.P. Thomas and E.H. Dowell",
+  TITLE         = "Proper orthogonal decomposition technique for transonic unsteady aerodynamic flows",
+  JOURNAL       = "AIAA Journal",
+  YEAR          = "2000",
+  VOLUME        = "38",
+  NUMBER        = "10",
+  PAGES         = "1853--1862",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G MPCINT
 @ARTICLE{Hall&01,
   KEY       = "Hall\&01",
@@ -42054,6 +42952,45 @@ year = {1997}
   MONTH         = "June",
   ANNOTE        = "",
   COMMENT       = ""}
+  
+%G 
+@inproceedings{Hallerstede&18a,
+  author    = {Stefan Hallerstede and
+               Miran Hasanagic and
+               Sebastian Krings and
+               Peter Gorm Larsen and
+               Michael Leuschel},
+  title     = {From Software Specifications to Constraint Programming},
+  booktitle = {Software Engineering and Formal Methods - 16th International Conference,
+               {SEFM} 2018, Held as Part of {STAF} 2018, Toulouse, France, June 27-29,
+               2018, Proceedings},
+  pages     = {21--36},
+  year      = {2018},
+  crossref  = {DBLP:conf/sefm/2018},
+  url       = {https://doi.org/10.1007/978-3-319-92970-5\_2},
+  doi       = {10.1007/978-3-319-92970-5\_2},
+  timestamp = {Mon, 18 Jun 2018 13:29:09 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/sefm/HallerstedeHKLL18},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+%G VDM OVERTURE
+@INPROCEEDINGS{Hallerstede&18b,
+  AUTHOR        = "Stefan Hallerstede and
+               Peter Gorm Larsen and
+               John Fitzgerald",
+  EDITOR        = "Tiziana Margaria · Bernhard Steffen",
+  TITLE         = "{A Non-unified View of Modelling, Specification and Programming}",
+  BOOKTITLE     = "Leveraging Applications of Formal Methods, Verification and Validation: Part 1",
+  ORGANIZATION  = "ISoLA 2018",
+  PUBLISHER     = "Springer Nature Switzerland AG",
+  ADDRESS       = "Limassol, Cyprus",
+  YEAR          = "2018",
+  MONTH         = "November",
+  PAGES         = "52--68",
+  NOTE          = "https://doi.org/10.1007/978-3-030-03418-4_4",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G SOS
 @PHDTHESIS{Hall-May07,
@@ -42122,6 +43059,20 @@ year = {1997}
   PAGES         = "151--156",
   ANNOTE        = "",
   COMMENT       = "BIB. Copied. OBL."}
+
+%G COSIM
+@inproceedings{Hallqvist&17,
+author = {Hallqvist, Robert and Braun, Robert and Krus, Petter},
+institution = {Systems Simulation and Concept Design, Saab Aeronautics, Link{\"{o}}ping, Sweden},
+institution = {Department of Fluid and Mechatronic Systems, Link{\"{o}}ping University, Link{\"{o}}ping, Sweden},
+institution = {Department of Fluid and Mechatronic Systems, Link{\"{o}}ping University, Link{\"{o}}ping, Sweden},
+booktitle = {Proceedings of 15:th Scandinavian International Conference on Fluid Power, June 7-9, 2017, Link{\"{o}}ping, Sweden},
+number = {144},
+pages = {262-270},
+publisher = {Link{\"{o}}ping University Electronic Press, Link{\"{o}}pings universitet},
+title = "{Early Insights on FMI-based Co-Simulation of Aircraft Vehicle Systems}",
+year = {2017},
+issn = {1650-3740}}
 
 %G DRONE
 @ARTICLE{Hamel&02,
@@ -42955,7 +43906,7 @@ year = {1997}
 @MASTERSTHESIS{Hansen16,
   KEY           = "Hansen16",
   AUTHOR        = "Casper Thule",
-  TITLE         = "{Investigating Concurrency in the Co-Simulation
+  TITLE         = "{Investigating Concurrency in the Co-Simulation 
                     Orchestration Engine for INTO-CPS}",
   SCHOOL        = "Department of Engineering",
   ADDRESS       = "Aarhus University, Denmark",
@@ -43528,6 +44479,37 @@ year = {1997}
  year =         "2016",
   MONTH         = "November",
   COMMENT       = ""}
+  
+%G VDM CODEGEN
+@Article{Hasanagic&18a,
+  key =          "Hasanagic\&18a",
+  author =       "Miran Hasanagi\'{c} and Peter W. V. Tran-J\o{}rgensen
+                 and Ren\'e  Nilsson and Peter Gorm Larsen",
+  title =        "{Developing Distributed Systems with Models and Code Generation}",
+  year =         "2018. Submitted for journal: Software: Practice and Experience",
+  month =        jan,
+  comment =      "",
+}
+
+%G VDM CODEGEN
+@Article{Hasanagic&18b,
+  key =          "Hasanagic\&18b",
+  author =       "Miran Hasanagi\'{c} and Tommaso Fabbri and Victor Bandur and Peter W. V. Tran-J\o{}rgensen and Peter Gorm Larsen and Julien Ouy",
+  title =        "{Code Generation for Distributed Embedded Systems}",
+  year =         "2018. Submitted for journal: Design Automation for Embedded Systems",
+  month =        jan,
+  comment =      "",
+}
+
+%G VDM CODEGEN
+@Article{Bandur&18c,
+  key =          "Bandur\&18",
+  author =       "Victor Bandur and Peter W. V. Tran-J\o{}rgensen and Miran Hasanagi\'{c} and Kenneth Lausdahl and Peter Gorm Larsen",
+  title =        "{A Well-founded C Code Generator with a Focus on Object Orientation Semantics and Deployment to Resource- constrained Embedded Platforms}",
+  year =         "2018. Submitted for journal: Software Tools for Technology Transfer",
+  month =        jan,
+  comment =      "",
+}
 
 %G VLSI
 @BOOK{Haskard&88,
@@ -45730,14 +46712,14 @@ author = "Constance L. Heitmeyer"
 
 @article{Henkel&15,
 key = "Henkel&15",
-author = "Henkel, Ron and Wolkenhauer, Olaf and Waltemath, Dagmar",
+author = "Henkel, Ron and Wolkenhauer, Olaf and Waltemath, Dagmar", 
 title = "Combining computational models, semantic annotations and simulation experiments in a graph database",
-volume = "2015",
-year = "2015",
-doi = "10.1093/database/bau130",
-URL = "http://database.oxfordjournals.org/content/2015/bau130.abstract",
-journal = {Database}
-}
+volume = "2015", 
+year = "2015", 
+doi = "10.1093/database/bau130", 
+URL = "http://database.oxfordjournals.org/content/2015/bau130.abstract", 
+journal = {Database} 
+}  
 
 %G PGLPHDINT THEORY
 @ARTICLE{Hennessy&80,
@@ -46079,6 +47061,17 @@ journal = {Database}
   PAGES         = "681--682",
   ANNOTE        = "",
   COMMENT       = "I have the entire proceedings. PGL"}
+
+%G
+@TECHREPORT{Hepperle12,
+  KEY           = "Hepperle12",
+  AUTHOR        = "M. Hepperle",
+  TITLE         = "Electric Flight ``Potential and Limitations''",
+  INSTITUTION   = "Institute of Aerodynamics and Flow Technology,",
+  YEAR          = "2012",
+  NUMBER        = "AVT-209",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 @INPROCEEDINGS{HH09,
 	author = {Arnd Hartmanns and Holger Hermanns},
@@ -46538,14 +47531,14 @@ journal = {Database}
 }
 
 %G ROBOT
-@INPROCEEDINGS{Hochgeschwender&13,
-author={Hochgeschwender, N. and Gherardi, L. and Shakhirmardanov, A. and Kraetzschmar, G.K. and Brugali, D. and Bruyninckx, H.},
-booktitle={Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International Conference on},
-title={A model-based approach to software deployment in robotics},
-year={2013},
-pages={3907-3914},
-doi={10.1109/IROS.2013.6696915},
-ISSN={2153-0858},
+@INPROCEEDINGS{Hochgeschwender&13, 
+author={Hochgeschwender, N. and Gherardi, L. and Shakhirmardanov, A. and Kraetzschmar, G.K. and Brugali, D. and Bruyninckx, H.}, 
+booktitle={Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International Conference on}, 
+title={A model-based approach to software deployment in robotics}, 
+year={2013}, 
+pages={3907-3914}, 
+doi={10.1109/IROS.2013.6696915}, 
+ISSN={2153-0858}, 
 month={Nov},}
 
 %G CPS
@@ -46690,7 +47683,7 @@ month={Nov},}
 %G DRONE
 @ARTICLE{Hoffmann&07,
   KEY           = "Hoffmann\&07",
-  AUTHOR        = "Gabriel M. Hoffmann, Haomiao Huang, Steven L. Waslander and Claire J. Tomlin",
+  AUTHOR        = "Gabriel M. Hoffmann and Haomiao Huang and Steven L. Waslander and Claire J. Tomlin",
   TITLE         = "Quadrotor Helicopter Flight Dynamics and Control: Theory and Experiment",
   JOURNAL       = "AIAA Guidance, Navigation and Control Conference and Exhibit",
   YEAR          = "2007",
@@ -46862,6 +47855,16 @@ author = "Gabriel M. Hoffmann and Haomiao Huang and Steven L. Waslander and Clai
   ANNOTE        = "",
   COMMENT       = "NA PGL"}
 
+@INPROCEEDINGS{Hoell18,
+  KEY           = "Hoell&18",
+  TITLE         = "Seamless simulation toolchain for virtual engineering and virtual commissioning of smart factories",
+  AUTHOR        = "H{\"o}ll, Jos and K{\"o}nig, Christian and Ritter, Yvonne and Auris, Felix and B{\"a}r, Thomas and S{\"u}{\ss}, Sebastian and Paul, Manuel",
+  BOOKTITLE     = "18. Internationales Stuttgarter Symposium",
+  PAGES         = "797--811",
+  YEAR          = "2018",
+  ORGANIZATION  = "Springer"
+}
+
 %G SOS
 @BOOK{Holland95,
   KEY           = "Holland95",
@@ -46956,6 +47959,21 @@ author = "Gabriel M. Hoffmann and Haomiao Huang and Steven L. Waslander and Clai
   SCHOOL        = "Aarhus University, Department of Engineering",
   YEAR          = "2016",
   MONTH         = "June"}
+
+%G STANDARD
+@INPROCEEDINGS{Holstein&10,
+  key = "Holstein\&10",
+  author={D. K. Holstein and K. Stouffer},
+  booktitle={2010 43rd Hawaii International Conference on System Sciences},
+  title={Trust but Verify Critical Infrastructure Cyber Security Solutions},
+  year={2010},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={authorisation;computer crime;critical infrastructures;data integrity;standards;ISA standards;ISA-99.01-01;International Society for Automation;critical infrastructure cyber security solutions;cyber security metrics;human behavior;industrial control systems;security policies;Automation;Communication channels;Computer security;Control systems;Data security;Guidelines;Instruction sets;NIST;Protection;Standards development},
+  doi={10.1109/HICSS.2010.410},
+  ISSN={1530-1605},
+  month={Jan},}
 
 %G UNIX
 @INBOOK{Holt,
@@ -47705,6 +48723,17 @@ author = "Gabriel M. Hoffmann and Haomiao Huang and Steven L. Waslander and Clai
   ANNOTE        = "",
   COMMENT       = "I have the proceedings PGL"}
 
+%G
+@ARTICLE{Howard16,
+  KEY           = "Howard16",
+  AUTHOR        = "Courtney Howard",
+  TITLE         = "{Aerospace and defense organizations reap rewards from Internet of Things}",
+  JOURNAL       = "Intelligent Aerospace",
+  YEAR          = "2016",
+  MONTH         = "September",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G UNDEF
 @ARTICLE{HPjounal90,
   KEY           = "HPjounal90",
@@ -48111,6 +49140,19 @@ author = "Gabriel M. Hoffmann and Haomiao Huang and Steven L. Waslander and Clai
 
   COMMENT       = "BIB PGL"}
 
+%G FMI
+@article{Hugues&18,
+  author    = {J{\'{e}}r{\^{o}}me Hugues and
+               Jean{-}Marie Gauthier and
+               Rapha{\"{e}}l Faudou},
+  title     = {Integrating {AADL} and {FMI} to Extend Virtual Integration Capability},
+  journal   = {CoRR},
+  volume    = {abs/1802.05620},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1802.05620},
+  archivePrefix = {arXiv},
+  eprint    = {1802.05620}}
+
 %G VDM CONCUR
 @TECHREPORT{Huijsman&93,
    KEY          = "Huijsman\&93",
@@ -48438,6 +49480,15 @@ IDERS Implementation Animator",
 %%%%%%%%%% I I I I I I I I I I I I I I I I I I I I I I I I I
 %%%%%%%%%%
 
+%G
+@MISC{IATA16,
+  TITLE         = "{IATA forecasts passenger demand to double over 20 years}",
+  YEAR          = "2016",
+  MONTH         = "October",
+  HOWPUBLISHED  = "IATA Press Release No. 59",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G IPTESINT
 @TECHREPORT{I-Logix85,
   KEY           = "I-Logix85",
@@ -48674,7 +49725,7 @@ IDERS Implementation Animator",
 @TECHREPORT{IEEE-Std729-1983,
   KEY           = "IEEE-Std729-1983",
   AUTHOR        = "The Institute of Electrical and Electronics
-                   Engingeers, Inc.",
+                   Engineers, Inc.",
   TITLE         = "IEEE Standard Glossary of Software Engineering Terminology.
                    IEEE Std 729-1983",
   INSTITUTION   = "IEEE, NY, USA",
@@ -49410,6 +50461,20 @@ IDERS Implementation Animator",
   ANNOTE        = "",
   COMMENT       = "JCD"}
 
+@ARTICLE{IEEE754, 
+  KEY           = "IEEE754",
+  author={}, 
+  journal={IEEE Std 754-2008}, 
+  title={IEEE Standard for Floating-Point Arithmetic}, 
+  year={2008}, 
+  volume={}, 
+  number={}, 
+  pages={1-70}, 
+  keywords={IEEE standards;floating point arithmetic;programming;IEEE standard;arithmetic formats;computer programming;decimal floating-point arithmetic;754-2008;NaN;arithmetic;binary;computer;decimal;exponent;floating-point;format;interchange;number;rounding;significand;subnormal}, 
+  doi={10.1109/IEEESTD.2008.4610935}, 
+  ISSN={}, 
+  month={Aug},}
+  
 %G VDM OBJECT
 @ARTICLE{Ierusalimschy93,
   KEY           = "Ierusalimschy93",
@@ -49901,14 +50966,27 @@ pages={825-838}
   NUMBER        = "{INCOSE-TP-2003-002-04}"}}
 
 %G INCOSE
-@TECHREPORT{INCOSEseh15,
+@BOOK{INCOSEseh15,
   KEY           = "INCOSEseh15",
-  AUTHOR        = "{INCOSE}",
+  EDITOR        = "David D Walden and Garry J Roedler and Kevin J Forsberg and R Douglas Hamelin and Thomas M Shortell",
   TITLE         = "{Systems Engineering Handbook. A Guide for System Life Cycle Processes and Activities, Version 4.0.}",
-  INSTITUTION   = "{International Council on Systems Engineering (INCOSE)}",
+  PUBLISHER     = "Wiley",
+  EDITION       = {4},
   YEAR          = "2015",
   MONTH         = "January",
-  NUMBER        = "{INCOSE-TP-2003-002-04}"}}
+  ISBN          = "9781118999400"
+  }
+
+@BOOK{INCOSEseh15,
+  KEY           = "Illingworth\&90",
+  AUTHOR        = "V.\ Illingworth, E.L.\ Glaser, I.C.\ Pyle, (eds.)",
+  TITLE         = "Dictionary of Computing, Third Edition",
+  PUBLISHER     = "Oxford University Press, Oxford OX2 6DP",
+  YEAR          = "1990",
+  SIZE          = "510",
+  NOTE          = "",
+  ANNOTE        = "",
+  COMMENT       = "MPH"}
 
 %G INFORMA
 @MISC{INFORMAweb,
@@ -50412,6 +51490,12 @@ pages={825-838}
   ANNOTE        = "",
   COMMENT       = ""}
 
+@Misc{ISA99,
+  key="ISA99",
+  Author="{International Society of Automation}",
+  Title="{The 62443 Series of Standards}",
+  note="{\url{http://isa99.isa.org/Public/Information/The-62443-Series-Overview.pdf}, accessed on 13/3/18}"
+}
 
 %G MEMBRAIN
 @TECHREPORT{ISEM92a,
@@ -50480,6 +51564,30 @@ pages={825-838}
   PAGES         = "104-115",
   NOTE          = "GRACE-TR-2015-06",
   URL           = "http://grace-center.jp/wp-content/uploads/2012/05/13thOverture-Proceedings.pdf",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G INTOCPSPUB
+@TECHREPORT{Ishikawa&18,
+  AUTHOR        = "Fuyuki Ishikawa and Peter Gorm Larsen and John Fitzgerald",
+  TITLE         = "Model-Based Design for Smart Products and Systems: Advanced Capabilities and
+Challenging Applications",
+  INSTITUTION   = "Shonan Meeting",
+  ADDRESS       = "Japan",
+  YEAR          = "2017",
+  MONTH         = "December",
+  NUMBER        = "No. 2017-18",
+  NOTE          = "ISSN 2186-7437",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+  @TECHREPORT{ISO26262,
+  KEY           = "ISO26262",
+  AUTHOR        = "",
+  TITLE         = "{Road Vehicles - Functional Safety}",
+  INSTITUTION   = "International Organization for Standardization",
+  YEAR          = "2011",
+  NOTE          = "ICS 43.040.10",
   ANNOTE        = "",
   COMMENT       = ""}
 
@@ -50782,6 +51890,44 @@ pages={825-838}
   ANNOTE        = "",
   COMMENT       = ""}
 
+  %G C++
+@techreport{ISO14882:2011,
+    TYPE = {Standard},
+    KEY = {ISO14882:2011},
+    YEAR = {2011},
+    NUMBER = "ISO/IEC 14882:2011",
+    TITLE = {Information technology -- Programming languages -- C++, Withdrawn},
+    AUTHOR = {},
+    PUBLISHED = "ISO/IEC JTC 1/SC 22",
+    INSTITUTION = {International Organization for Standardization},
+    ADDRESS = {https://www.iso.org/standard/50372.html}
+}
+
+%G C++
+@techreport{ISO14882:2014,
+    TYPE = {Standard},
+    KEY = {ISO14882:2014},
+    YEAR = {2014},
+    NUMBER = "ISO/IEC 14882:2014",
+    TITLE = {Information technology -- Programming languages -- C++, Withdrawn},
+    AUTHOR = {},
+    PUBLISHED = "ISO/IEC JTC 1/SC 22",
+    INSTITUTION = {International Organization for Standardization},
+    ADDRESS = {https://www.iso.org/standard/50372.html}
+}
+
+%G C++
+@techreport{ISO14882:2017,
+    TYPE = {Standard},
+    KEY = {ISO14882:2017},
+    YEAR = {2017},
+    NUMBER = "ISO/IEC 14882:2017",
+    TITLE = {Information technology -- Programming languages -- C++},
+    AUTHOR = {},
+    PUBLISHED = "ISO/IEC JTC 1/SC 22",
+    INSTITUTION = {International Organization for Standardization},
+    ADDRESS = {https://www.iso.org/standard/50372.html}
+}
 
 
 %G STD
@@ -51264,7 +52410,7 @@ pages={825-838}
   KEY           = "Jackson\&16",
   AUTHOR        = "Mark Jackson and John Fitzgerald",
   EDITOR        = "Peter Gorm Larsen and Nico Plat and Nick Battle",
-  TITLE         = "{Resilience Profiling in the Model-Based Design of
+  TITLE         = "{Resilience Profiling in the Model-Based Design of 
                     Cyber-Physical Systems}",
   BOOKTITLE     = "The 14th Overture Workshop: Towards Analytical Tool Chains",
   ORGANIZATION  = "Aarhus University, Department of Engineering",
@@ -51455,6 +52601,19 @@ pages={825-838}
   ORGANIZATION  = "IEEE",
   COMMENT       = ""}
 
+%G
+@ARTICLE{Jameson99,
+  AUTHOR        = "A. Jameson",
+  TITLE         = "Re-engineering the Design Process Through Computation",
+  JOURNAL       = "Journal of Aircraft",
+  YEAR          = "1999",
+  MONTH         = "January",
+  VOLUME        = "36",
+  NUMBER        = "1",
+  PAGES         = "36--50",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G MACMSC DRM
 @ARTICLE{Jamkhedkar&09,
   KEY           = "Jamkhedkar\&09",
@@ -51629,6 +52788,19 @@ author = "M. Jamshidi and A.S. Jaimes Betancourt and J. Gomez",
   SIZE          = "10",
   ANNOTE        = "",
   COMMENT       = "I have read it. MV"}
+
+@INPROCEEDINGS{Jazdi2014,
+author={N. Jazdi},
+booktitle={2014 IEEE International Conference on Automation, Quality and Testing, Robotics},
+title={Cyber physical systems in the context of Industry 4.0},
+year={2014},
+volume={},
+number={},
+pages={1-4},
+keywords={Internet of Things;computer network reliability;computer network security;data protection;industrial control;production engineering computing;Industry 4.0;Internet of Things;business models;cyber physical systems;data protection;data reliability;data security;development methods;industrial automation systems;industrial revolution;work processes;Actuators;Automation;Embedded systems;Industries;Intelligent sensors;Internet;CPS;Cloud Technology;Industry 4.0;Internet of Things},
+doi={10.1109/AQTR.2014.6857843},
+ISSN={},
+month={May},}
 
 %G NIAL COMPIL C
 @ARTICLE{Jenkins89,
@@ -53780,8 +54952,8 @@ author = "M. Jamshidi and A.S. Jaimes Betancourt and J. Gomez",
   JOURNAL       = "Journal of Power Sources",
   YEAR          = "2002",
   VOLUME        = "110",
-  PAGES         = "321-329"}
-
+  PAGES         = "321-329"} 
+  
 %G
 @BOOK{Johnson04,
   KEY           = "Johnson04",
@@ -54014,8 +55186,8 @@ author = "M. Jamshidi and A.S. Jaimes Betancourt and J. Gomez",
   PUBLISHER     = "School of Computing Science, Newcastle University, UK, Technical Report CS-TR-1446",
   url_Paper     = {http://www.cs.ncl.ac.uk/publications/trs/papers/1446.pdf}
 }
-
-%G
+ 
+%G 
 @ARTICLE{Jorgensen&16a,
   KEY           = "Jorgensen\&16a",
   AUTHOR        = "Peter W. V. Tran-J\o{}rgensen and Peter Gorm Larsen and Gary T. Leavens",
@@ -54171,6 +55343,21 @@ url="http://dx.doi.org/10.1007/s10009-017-0448-3"
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G OVERTURE VDM TOOL
+@INPROCEEDINGS{Joergensen&18,
+  AUTHOR        = "Peter W. V. Tran-J\o{}rgensen and Ren\'e Nilsson and Kenneth Lausdahl",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{Enhancing Testing of VDM-SL Models}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "7--22",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G VDM REFIN
 @MASTERSTHESIS{Jorring83,
   KEY           = "J{\o}rring 83",
@@ -54182,6 +55369,16 @@ url="http://dx.doi.org/10.1007/s10009-017-0448-3"
   MONTH         = "Aug.",
   ANNOTE        = "",
   COMMENT       = ""}
+
+%C++
+@BOOK{Josuttis&02,
+  KEY			= "Josuttis\&02",
+  TITLE			= "{C++ Templates: The Complete Guide}",
+  author		= {Nicolai M. Josuttis and David Vandevoorde},
+  year			= {2002},
+  publisher		= {Addison-Wesley Professional},
+  ISBN 			= {0-201-73484-2}
+}
 
 %G IDERSINT
 @TECHREPORT{Julienne&92,
@@ -54206,6 +55403,18 @@ COMMENT       = "JCD"}
   YEAR          = "2010",
   MONTH         = "June",
   NUMBER        = "TEC-SWE/09-289/AJ",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G
+@INPROCEEDINGS{Jung&18,
+  AUTHOR        = "Tobias Jung and Payal Shah and Michael Weyrich",
+  TITLE         = "Dynamic Co-Simulation of Internet-of-Things-Components using a Multi- Agent-System",
+  BOOKTITLE     = "51st CIRP Conference on Manufacturing Systems",
+  ORGANIZATION  = "Procedia CIRP Vol. 72",
+  PUBLISHER     = "Elsevier",
+  YEAR          = "2018",
+  PAGES         = "874--879",
   ANNOTE        = "",
   COMMENT       = ""}
 
@@ -56087,6 +57296,19 @@ month={Sept},}
   ANNOTE        = "",
   COMMENT       = "I have the entire proceedings. PGL"}
 
+
+@ARTICLE{Kiranyaz&17,
+  KEY           = "Tran\&18",
+  AUTHOR        = "S. Kiranyaz, T. Ince, A. Iosifidis and M. Gabbouj",
+  TITLE         = "{Progressive Operational Preceptrons}",
+  JOURNAL       = "Neurocomputing",
+  YEAR          = "2017",
+  VOLUME		= "224",
+  PAGES         = "142--154",
+  COMMENT       = "BIB AI"
+}
+
+
 %G LOGFRAME PGLPHDINT
 @INPROCEEDINGS{Kirchner&94,
   KEY           = "Kirchner\&94",
@@ -57742,6 +58964,18 @@ url="http://dx.doi.org/10.1007/978-3-319-05843-6_14"
   PAGES        = {77--124},
   COMMENT      = ""}
 
+%G
+@INPROCEEDINGS{Kraft10,
+  AUTHOR        = "E.M.\ Kraft",
+  TITLE         = "Integrating Computational Science and Engineering with Testing to Re-engineer the Aeronautical Development Process",
+  BOOKTITLE     = "48th AIAA Aerospace Sciences Meeting",
+  ORGANIZATION  = "AIAA",
+  YEAR          = "2010",
+  MONTH         = "January",
+  NOTE          = "AIAA Paper 2011-0139",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 % ABSTRA
 @PROCEEDINGS{Kramer&06,
   title = {Procedings from 1st workshop on The Role of Abstraction in Software
@@ -57807,7 +59041,7 @@ url="http://dx.doi.org/10.1007/978-3-319-05843-6_14"
   TITLE         = "Configuration Programming - A Framework for the
                    Development of Distributable Systems",
   ORGANIZATION  = "Proc. IEEE",
-  JOURNAL       = "Int. Conf. on Computer Systems and Software Engeneering",
+  JOURNAL       = "Int. Conf. on Computer Systems and Software Engineering",
   PUBLISHER     = "CompEuro 90, Israel",
   YEAR          = "1990",
   MONTH         = "May",
@@ -58141,6 +59375,14 @@ url="http://dx.doi.org/10.1007/978-3-319-05843-6_14"
   ANNOTE        = "",
   COMMENT       = "We have a copy. DP"}
 
+%G CPS
+@inproceedings{Krammer&16,
+  title={Interfacing Real-Time Systems for Advanced Co-Simulation - The ACOSAR Approach},
+  author={Martin Krammer and Nadja Marko and Martin Benedikt},
+  booktitle={STAF Doctoral Symposium / Showcase},
+  year={2016}
+}
+
 %G
 @BOOK{Kreyzig83,
   KEY           = "Kreyzig83",
@@ -58224,6 +59466,21 @@ pages = {93-113},
 year = {2000},
   COMMENT = "BIB PGL"}
 
+%G CPS
+@ARTICLE{Kucherenko&11,
+  KEY           = "Kucherenko&11",
+  author        = "Sergei Kucherenko and Balazs Feil and Nilay Shah and Wolfgang Mauntz",
+  title         = "The identification of model effective dimensions using global sensitivity analysis",
+  journal       = "Reliability Engineering \& System Safety",
+  volume        = "96",
+  number        = "4",
+  pages         = "440 - 449",
+  year          = "2011",
+  issn          = "0951-8320",
+  doi           = "https://doi.org/10.1016/j.ress.2010.11.003",
+  url           = "http://www.sciencedirect.com/science/article/pii/S0951832010002437"
+}
+
 %G HARD
 @ARTICLE{Kuchcinski92,
   KEY           = "Kuchcinski92",
@@ -58294,6 +59551,31 @@ year = {2000},
   PAGES         = "154--173",
   ANNOTE        = "",
   COMMENT       = ""}
+
+  %G SECURE
+@inproceedings{Kulik&18,
+  KEY = "Kulik\&18",
+  TITLE = "A Framework for Threat-driven Cyber Security Verification of IoT Systems",
+  NOTE = "{First International Workshop on Verification and Validation of Internet of Things, V\"{a}ster\r{a}s, Sweden}",
+  YEAR = "2018",
+  MONTH = "{april}",
+  DAY = "9",
+  AUTHOR = "{Tomas Kulik and Peter W. V. Tran-J\o{}rgensen and Jalil Boudjadar and Carl Schultz}",
+}
+
+  %G FORMAL
+@Misc{Kulik&18a,
+  key =          "Kulik\&18a",
+  author=        "{Tomas Kulik and Peter Gorm Larsen}",
+  title =        "{Extensions to formal security modeling framework}",
+  year =         "2018",
+  month =        "",
+  howpublished = "\url{https://github.com/kuliktomas/FCSVIoT/commit/189c7962f7f0870fa5315c31a71a6b35e896e47d}",
+  size =         "",
+  note =         "",
+  annote =       "",
+  comment =      "",
+}
 
 @article{Kullmann99,
 	Author = {O. Kullmann},
@@ -58872,6 +60154,15 @@ month = "September"
   ANNOTE        = "",
   COMMENT       = "NA PGL"}
 
+@article{Lakkaraju&17,
+  author    = {Himabindu Lakkaraju and Ece Kamar and Rich Caruana and Jure Leskovec},
+  title     = {Interpretable \& Explorable Approximations of Black Box Models},
+  journal   = {CoRR},
+  volume    = {abs/1707.01154},
+  year      = {2017},
+  url       = {https://arxiv.org/abs/1707. 01154}
+}
+
 %G MACMSC SECURE
 @INPROCEEDINGS{Ishai&06,
   KEY			= {Ishai\&06},
@@ -59313,16 +60604,16 @@ month = "September"
   COMMENT       = "LIB. DP"}
 
 %G SOS
-@INPROCEEDINGS{Lana&16, 
-author={C. A. Lana and N. M. Souza and M. E. Delamaro and E. Y. Nakagawa and F. Oquendo and J. C. Maldonado}, 
-booktitle={2016 XLII Latin American Computing Conference (CLEI)}, 
-title={Systems-of-systems development: Initiatives, trends, and challenges}, 
-year={2016}, 
-volume={}, 
-number={}, 
-pages={1-12}, 
-doi={10.1109/CLEI.2016.7833329}, 
-ISSN={}, 
+@INPROCEEDINGS{Lana&16,
+author={C. A. Lana and N. M. Souza and M. E. Delamaro and E. Y. Nakagawa and F. Oquendo and J. C. Maldonado},
+booktitle={2016 XLII Latin American Computing Conference (CLEI)},
+title={Systems-of-systems development: Initiatives, trends, and challenges},
+year={2016},
+volume={},
+number={},
+pages={1-12},
+doi={10.1109/CLEI.2016.7833329},
+ISSN={},
 month={Oct}}
 
 %G LOGFRAME PGLPHDINT
@@ -60237,7 +61528,7 @@ month={Oct}}
 
 @INPROCEEDINGS{Larsen16,
   KEY           = "Larsen16",
-  AUTHOR        = "Peter Gorm Larsen and John Fitzgerald and Jim Woodcock and Peter Fritzson and Joerg Brauer and Christian Kleijn, and Thierry Lecomte and Markus Pfeil and Ole Green and Sylianos Basagiannis and Andrey Sadovykh",
+  AUTHOR        = "Peter Gorm Larsen and John Fitzgerald and Jim Woodcock and Peter Fritzson and Joerg Brauer and Christian Kleijn and Thierry Lecomte and Markus Pfeil and Ole Green and Sylianos Basagiannis and Andrey Sadovykh",
   TITLE         = "Integrated tool chain for model-based design of Cyber-Physical Systems: The INTO-CPS project",
   BOOKTITLE     = "2016 2nd International Workshop on Modelling, Analysis, and Control of Complex CPS (CPS Data)",
   ORGANIZATION  = "IEEE",
@@ -60292,17 +61583,6 @@ month={Oct}}
   PAGES         = "5420--5425",
   SIZE          = "6",
   COMMENT       = "BIB RN"}
-
-%G CPS
-@BOOK{Lee&11,
-  KEY         = "Lee\&11",
-  AUTHOR      = "E. A. Lee and S. A. Seshia",
-  TITLE       = "{Introduction to Embedded Systems -- A Cyber-Physical Systems Approach}",
-  PUBLISHER   = "LeeSeshia.org",
-  YEAR        = "2011",
-  SIZE        = "519",
-  ANNOTE      = ""}
-
 
 %G COSIM CPS
 @Article{s150304837,
@@ -61107,7 +62387,7 @@ year = {2009}
 	MONTH		="September",
 	YEAR		="2010",
 	NOTE		="Second edition"}
-
+	
 %G VDM OVERTURE
 @inproceedings{Larsen&10i,
 	key			= "Larsen\&10",
@@ -61269,7 +62549,7 @@ year = {2009}
 @INPROCEEDINGS{Larsen&16c,
   KEY           = "Larsen\&16",
   AUTHOR        = "Peter Gorm Larsen and Casper Thule and Kenneth Lausdahl
-                   and Victor Bandur and Carl Gamble and
+                   and Victor Bandur and Carl Gamble and 
                    Etienne Brosse and Andrey Sadovykh and Alessandra
                    Bagnato and Luis Diogo Couto",
   TITLE         = "{Integrated Tool Chain for Model-Based Design
@@ -61288,7 +62568,7 @@ year = {2009}
 %G CPS INTOCPSPUB VDM
 @INBOOK{Larsen&16d,
   KEY           = "Larsen\&16",
-  AUTHOR        = "Peter Gorm Larsen and John Fitzgerald and Jim Woodcock and
+  AUTHOR        = "Peter Gorm Larsen and John Fitzgerald and Jim Woodcock and 
                    Thierry Lecomte",
   EDITOR        = "Alexander Romanovsky and Fuyuki Ishikawa",
   TITLE         = "Trustworthy Cyber-Physical Systems Engineering",
@@ -61306,7 +62586,7 @@ year = {2009}
   key       = "Larsen\&16e",
   author    = "Larsen, Peter Gorm and Fitzgerald, John and Woodcock, Jim and Nilsson, Ren{\'e} and Gamble, Carl and Foster, Simon",
   editor    = "Margaria, Tiziana and Steffen, Bernhard",
-  title     = "Towards Semantically Integrated Models and Tools for Cyber-Physical Systems Design",
+  title     = "{Towards Semantically Integrated Models and Tools for Cyber-Physical Systems Design}",
   bookTitle = "Leveraging Applications of Formal Methods, Verification and Validation, Proc 7th Intl. Symp.",
   year      = "2016",
   series    = "{Lecture Notes in Computer Science}",
@@ -61314,6 +62594,20 @@ year = {2009}
   publisher = "Springer International Publishing",
   pages     = "171--186",
   isbn      = "978-3-319-47169-3"
+}
+
+%G VDM OVERTURE
+@PROCEEDINGS{Larsen&16f,
+  KEY           = "Larsen\&16f",
+  EDITOR        = "Peter Gorm Larsen and Nico Plat and Nick Battle",
+  TITLE         = "Proceedings of the 14th Overture Workshop: Towards Analytical Tool Chains",
+  VOLUME        = 4,
+  YEAR          = "2016",
+  MONTH         = "November",
+  NOTE          = "ECE-TR-28",
+  URL           = "https://tidsskrift.dk/ece/article/view/24731",
+  ANNOTE        = "Online ISSN 2245-2087",
+  COMMENT       = ""
 }
 
 %G INTOCPSPUB OVERTURE VDM CPS
@@ -61345,6 +62639,28 @@ year = {2009}
   PAGES.    = "1--21",
   ANNOTE        = "",
   COMMENT       = "BIB I have the sources PGL"}
+
+%G INTOCPSASSOCIATION
+@TECHREPORT{Larsen&18a,
+  AUTHOR        = "Peter Gorm Larsen and Victor Bandur and Kenneth Lausdahl and Casper Thule and Carl Gamble and Richard Payne and Adrian Pop and Etienne Brosse and J{\"o}rg Brauer and Florian Lapschies and Marcel Groothuis and Tom Bokhove and Christian Kleijn and Luis Diogo Couto and Christian K{\"{o}}nig",
+  TITLE         = "{INTO-CPS Tool Chain User Manual}",
+  INSTITUTION   = "INTO-CPS Association",
+  YEAR          = "2018",
+  MONTH         = "September",
+  URL         = "\url{www.into-cps.org}",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G INTOCPSASSOCIATION
+@TECHREPORT{Larsen&18b,
+  AUTHOR        = "Peter Gorm Larsen and John Fitzgerald andJim Woodcock and Christian K{\"{o}}nig and Stylianos Basagiannis and Etienne Brosse and Claudio Gomes and Jos\'{e} Cabral and Hugo Daniel Macedo and Casper Thule and Andrey Sadovykh and Constantin-Bala Zamfirescu and Mihai Neghina and Ken Pierce and Carl Gamble and Richard Payne",
+  TITLE         = "{The INtegrated TOolchain for Cyber-Physical Systems (INTO-CPS): a Guide}",
+  INSTITUTION   = "INTO-CPS Association",
+  YEAR          = "2018",
+  MONTH         = "October",
+  URL         = "\url{www.into-cps.org}",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G TEST
 @ARTICLE{Laski89,
@@ -62321,6 +63637,16 @@ Rights Management in {VDM}}",
   ANNOTE        = "",
   COMMENT       = "NA PGL"}
 
+ @article{LeCun&15,
+	title = " Deep Learning ",
+	journal = "Nature ",
+	volume = "521",
+	pages = "436 - 444",
+	year = "2015",
+	author = "{Yann LeCun and Yoshua Bengio and Geoffrey Hinton}",
+	COMMENT = "BIB AI"
+}
+
 %G IDERSINT
 @INPROCEEDINGS{Lecluse&89,
   KEY           = "Lecluse\&89",
@@ -63269,7 +64595,7 @@ Rights Management in {VDM}}",
   KEY           = "Lee\&12",
   AUTHOR        = {Insup Lee and Sokolsky, O. and Sanjian Chen and Hatcliff, J. and Eunkyoung Jee and BaekGyu Kim and King, A. and Mullen-Fortino, M. and Soojin Park and Roederer, A. and Venkatasubramanian, K.K.},
   JOURNAL       = {Proceedings of the IEEE},
-  TITLE         = {Challenges and Research Directions in Medical Cyber #x2013;Physical Systems},
+  TITLE         = {Challenges and Research Directions in Medical Cyber-Physical Systems},
   YEAR          = {2012},
   VOLUME        = {100},
   NUMBER        = {1},
@@ -65075,6 +66401,20 @@ PAGES = "10--13",
   DOI           = "10.1109/ICDCS.2011.55",
   ISSN          = "1063-6927",
   COMMENT       = ""}
+
+%G
+@article{Li&13,
+author = {Qiao Li and Efatmaneshnik Mahmoud and Ryan Michael},
+title = {A Combinatorial Approach to Tradespace Exploration of Complex Systems: A CubeSat Case Study},
+journal = {INCOSE International Symposium},
+volume = {27},
+number = {1},
+pages = {763-779},
+year = {2017},
+doi = {10.1002/j.2334-5837.2017.00392.x},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/j.2334-5837.2017.00392.x},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/j.2334-5837.2017.00392.x}
+}
 
 %G CPS
 @article{Li&14,
@@ -66927,6 +68267,17 @@ year = {2013}
   PAGES        = {1 -7},
   COMMENT      = "BIB PGL"}
 
+%G
+@MISC{Lorence12,
+  AUTHOR        = "C. Lorence",
+  TITLE         = "Engine OEM -- GE Aviation Perspective-LEAP",
+  NOTE          = "ASME Turbo Expo, Copenhagen, Denmark",
+  YEAR          = "2012",
+  MONTH         = "June",
+  HOWPUBLISHED  = "Presentation at GT2012-70198",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G MODEL
 @INPROCEEDINGS{Lorenz&06,
   KEY           = "Lorenz\&06",
@@ -67229,6 +68580,18 @@ year = {2013}
    NUMBER        = "3",
    PAGES         = "321--338",
    COMMENT       = "BIB PGL"}
+
+%G
+@ARTICLE{Lucia&04,
+  AUTHOR        = "D.J. Lucia and P.S. Beran and W.A. Silva",
+  TITLE         = "Reduced-order modeling: new approaches for computational physics",
+  JOURNAL       = "Prog. Aerosp. Sci.",
+  YEAR          = "2004",
+  VOLUME        = "40",
+  NUMBER        = "1--2",
+  PAGES         = "51--117",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G SOS
 @INPROCEEDINGS{Lucke&2010,
@@ -67952,6 +69315,31 @@ A system dynamics approach",
   ANNOTE        = "",
   COMMENT       = "LIB. DP"}
 
+%G VDM INTOCPS
+@INPROCEEDINGS{Mace&18,
+  KEY           = "Mace\&18",
+  AUTHOR        = "J. C. Mace and C. Morisset and K. Pierce and C. Gamble and C. Maple and J. S. Fitzgerald ",
+  TITLE         = "{A multi-modelling based approach to assessing the security of smart buildings}",
+  BOOKTITLE     = "Living in the Internet of Things",
+  YEAR          = "2018",
+  PUBLISHER     = "IET",
+  COMMENT       = ""}
+
+  
+%G VDM AGCO
+@ARTICLE{Macedo&18,
+  KEY           = "Macedo&18",
+  AUTHOR        = "Hugo Daniel Macedo and Ren\'{e} Nilsson and Peter Gorm Larsen",
+  TITLE         = "{The Harvest Coach Architecture: Embedding Deviation-Tolerance in a Harvest Logistic Solution}",
+  JOURNAL       = "Applied Sciences",
+  VOLUME        = {},
+  YEAR          = {},
+  NUMBER        = {},
+  ISSN          = {2076-3417},
+  DOI           = {},
+  COMMENT       = "Accepted for publication"
+}
+
 %G VDM TOOL
 @UNPUBLISHED{Macedo07,
   KEY           = "Macedo07",
@@ -68036,6 +69424,18 @@ A system dynamics approach",
 	publisher={MV-Verlag}
 }
 
+%G
+@MISC{McKinney11,
+  AUTHOR        = "R. McKinney",
+  TITLE         = "Large Eddy Simulation of Aircraft Gas Turbine Combustors at Pratt and Whitney --Current Experience and Next Steps",
+  NOTE          = "ASME Turbo Expo, Vancouver, Canada",
+  YEAR          = "2011",
+  MONTH         = "June",
+  HOWPUBLISHED  = "Presentation GT2011- 46913",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G
 @INPROCEEDINGS{McQuay04b,
   KEY           = "McQuay04b",
   AUTHOR        = "McQuay, W.K.",
@@ -69789,6 +71189,17 @@ month={Jan}}
   series    	= {Lecture Notes in Computer Science},
   volume    	= {5977/2010}}
 
+%G
+@TECHREPORT{Malik&12,
+  AUTHOR        = "Malik, M. R. and Bushnell, D. M. (eds.)",
+  TITLE         = "Role of Computational Fluid Dynamics and Wind Tunnels in Aeronautics R\&D",
+  INSTITUTION   = "NASA",
+  YEAR          = "2012",
+  MONTH         = "September",
+  NUMBER        = "TP-2012-217602",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G MACMSC CLOUD SECURE
 @BOOK{Mather&09,
   KEY           = "Mather\&09",
@@ -70044,6 +71455,22 @@ COMMENT="BIB PGL"}
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G OVERTURE VDM TOOL
+@INPROCEEDINGS{Mansfield&18,
+  AUTHOR        = "Martin Mansfield and Charles Morisset and Carl Gamble and John C. Mace
+                             and  Ken Pierce and John Fitzgerald",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{Design Space Exploration for Secure Building Control}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "71--88",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
+  
 %G SOS
 @TECHREPORT{MayerJS2005,
   KEY           = "Mayer05",
@@ -70070,6 +71497,16 @@ COMMENT="BIB PGL"}
   MONTH         = "May",
   ANNOTE        = "",
   COMMENT       = ""}
+
+@article{Mazuroski&18,
+	title = "An artificial intelligence-based method to efficiently bring CFD to building simulation",
+	journal = "Journal of Building Performance Simulation",
+	doi = "10.1080/19401493.2017.1414880",
+	url = "doi.org/10.1080/19401493.2017.1414880",
+	year = "2018",
+	author = "Walter Mazuroski and Julien Berger and Ricardo C.L.F. Oliveria and Nathan Mendes",
+	COMMENT = "BIB AI"
+}
 
 %G
 @INPROCEEDINGS{Mazzara&10,
@@ -70329,16 +71766,16 @@ COMMENT="BIB PGL"}
   COMMENT       = "NA Referenced in IPTES-PDM-27 PGL"}
 
 %G SOS
-@INPROCEEDINGS{McDermott&17, 
-author={T. McDermott and M. Nadolski}, 
-booktitle={2017 12th System of Systems Engineering Conference (SoSE)}, 
-title={Emergence as innovation in systems of systems #x2014; A three systems model}, 
-year={2017}, 
-volume={}, 
-number={}, 
-pages={1-6}, 
-doi={10.1109/SYSOSE.2017.7994975}, 
-ISSN={}, 
+@INPROCEEDINGS{McDermott&17,
+author={T. McDermott and M. Nadolski},
+booktitle={2017 12th System of Systems Engineering Conference (SoSE)},
+title={Emergence as innovation in systems of systems #x2014; A three systems model},
+year={2017},
+volume={},
+number={},
+pages={1-6},
+doi={10.1109/SYSOSE.2017.7994975},
+ISSN={},
 month={June}}
 
 %G REFIN
@@ -72960,7 +74397,7 @@ publisher = "IEEE"
 %G CPS
 @misc{MODELISAR15,
                 author = {{ITEA Office Association}},
-                title = {ITEA 3 ? Project ? 07006 MODELISAR},
+                title = {ITEA 3 Project, 07006 MODELISAR},
                 howpublished = {\url{https://itea3.org/project/modelisar.html}},
                 month = {December},
                 year = {2015}}
@@ -73930,6 +75367,26 @@ and an Associated Architecture Development Process},
   SIZE          = "13",
   ANNOTE        = "",
   COMMENT       = "BIB. DP"}
+
+%G STANDARD
+@inproceedings{Morimoto&07,
+  key="Morimoto\&07",
+  author = {Morimoto, Shoichi and Shigematsu, Shinjiro and Goto, Yuichi and Cheng, Jingde},
+  title = {Formal Verification of Security Specifications with Common Criteria},
+  booktitle = {Proceedings of the 2007 ACM Symposium on Applied Computing},
+  series = {SAC '07},
+  year = {2007},
+  isbn = {1-59593-480-4},
+  location = {Seoul, Korea},
+  pages = {1506--1512},
+  numpages = {7},
+  url = {http://doi.acm.org/10.1145/1244002.1244325},
+  doi = {10.1145/1244002.1244325},
+  acmid = {1244325},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  keywords = {ISO/IEC 15408, Z notation, theorem-proving},
+}
 
 %G RAIL
 @TECHREPORT{Morley91,
@@ -74957,7 +76414,7 @@ pages={1-13}
   BOOKTITLE     = "Proceedings of the Second VDM Workshop",
   YEAR          = "2000",
   MONTH         = "September",
-  NOTE          = "{Available at www.vdmportal.org}",
+  NOTE          = "",
   ANNOTE        = "",
   COMMENT       = "We have the soft copy PGL"}
 
@@ -75408,7 +76865,7 @@ Code Walkthrough/Inspections",
   PAGES         = {62 -70},
   COMMENT       = "BIB PGL"}
 
-%G VDM OVERTURE 
+%G VDM OVERTURE
 @INPROCEEDINGS{Myojin&17,
   KEY           = "Myojin\&17",
   AUTHOR        = "Tomoyuki Myojin and Fuyuki Ishikawa",
@@ -75720,6 +77177,29 @@ Code Walkthrough/Inspections",
   SIZE          = "",
   ANNOTE        = "",
   COMMENT       = "Original SPICE ref"}
+
+%G COSIM INTOCPSINT
+@INPROCEEDINGS{Nagele&17,
+  KEY           = "Nagele\&17",
+  AUTHOR        = "{Thomas N\"{a}gele and Jozef Hooman}",
+  TITLE         = "{Co-simulation of Cyber-Physical Systems using HLA}",
+  BOOKTITLE     = "Proceedings 7th IEEE Annual Computing and Communication Workshop and Conference (CCWC 2017)",
+  PUBLISHER     = "IEEE",
+  YEAR          = "2017",
+  PAGES         = "267--272",
+  ANNOTE        = "",
+  COMMENT       = "PGL"}
+
+ %G COSIM DSE
+@INPROCEEDINGS{Nagele&18,
+author={T. N\"{a}gele and J. Hooman and T. Broenink and J. Broenink},
+booktitle={2018 IEEE Industrial Cyber-Physical Systems (ICPS)},
+title={CoHLA: Design space exploration and co-simulation made easy},
+year={2018},
+pages={225-231},
+doi={10.1109/ICPHYS.2018.8387664},
+ISSN={},
+month={May},}
 
 %G IDERSINT
 @INCOLLECTION{Nagl78,
@@ -76148,6 +77628,22 @@ Code Walkthrough/Inspections",
   PAGES         = "116--129",
   COMMENT       = ""}
 
+%G INTOCPSPUB CPS VDM OVERTURE
+@ARTICLE{Neghina&18,
+  KEY           = "Neghina\&18",
+  AUTHOR        = "Mihai Neghina and Constantin-Bala Zamrescu and Peter Gorm Larsen and
+                             Kenneth Lausdahl and Ken Pierce",
+  TITLE         = "{Multi-Paradigm Discrete-Event Modelling and Co-simulation of Cyber-Physical Systems}",
+  JOURNAL       = "Studies in Informatics and Control",
+  VOLUME        = "27",
+  NUMBER        = "1",
+  PUBLISHER    = "ICI Bucharest",
+  YEAR          = "2018",
+  MONTH         = "March",
+  PAGES         = "33--42",
+  NOTE.         = "ISSN: 1220-1766 eISSN: 1841-429X",
+  COMMENT       = ""}
+
 %G TOOL
 @PROCEEDINGS{Neilson91,
   KEY           = "Neilson91",
@@ -76262,7 +77758,7 @@ Code Walkthrough/Inspections",
  acmid = {3098486},
  publisher = {IEEE Press},
  address = {Piscataway, NJ, USA},
-} 
+}
 
 %G
 @ARTICLE{Nettles91,
@@ -76626,7 +78122,7 @@ Code Walkthrough/Inspections",
  acmid = {1883618},
  publisher = {ACM},
  address = {New York, NY, USA}
-}
+} 
 
 %G INFORMA
 @TECHREPORT{INFORMAIFAD1,
@@ -76687,7 +78183,7 @@ Code Walkthrough/Inspections",
   INSTITUTION   = "{COMPASS} Deliverable, D11.1",
   YEAR          = "2012",
   MONTH         = "February"}
-
+  
 %G FORMAL UML
 @MISC{Neill01,
   KEY           = "Neill01",
@@ -77125,6 +78621,15 @@ Code Walkthrough/Inspections",
   SIZE          = "244",
   COMMENT       = "BIB JAE"}
 
+@BOOK{Niggemann&15,
+  TITLE         = {Machine Learning for Cyber Physical Systems},
+  AUTHOR        = {Oliver Niggemann and J\”{u}rgen Beyerer},
+  YEAR          = {2015},
+  PUBLISHER     = {Springer Vieweg},
+  DOI = {10.1007/978-3-662-48838-6},
+  ISBN = {978-0-12-802121-7},
+}
+
 %G JAVART
 @MISC{Nilsen&96,
   KEY           = "Nilsen\&96",
@@ -77184,6 +78689,22 @@ Code Walkthrough/Inspections",
                    Prolog: in the standard, the continuation, and in other
                    semantics definition styles.",
   COMMENT       = "BIB."}
+
+%G OVERTURE VDM APPLI
+@INPROCEEDINGS{Nilsson&18,
+  AUTHOR        = "Ren\'e Nilsson and Kenneth Lausdahl and Hugo D. Macedo and Peter Gorm
+Larsen",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{Transforming an industrial case study from VDM++ to VDM-SL}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "107--122",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G JAEINT FPGA
 @MISC{NIOSeds,
@@ -77399,7 +78920,7 @@ Code Walkthrough/Inspections",
   KEY           = "NISTIR7657",
   AUTHOR        = "Privilege Management Conference Collaboration Team",
   TITLE         = "A Report on the Privilege (Access) Management Workshop",
-  INSTITUTION   = "National Institute of Standardards and Technology",
+  INSTITUTION   = "National Institute of Standards and Technology",
   YEAR          = "2010",
   MONTH         = "March",
   NUMBER        = "IR 7657",
@@ -77411,7 +78932,7 @@ Code Walkthrough/Inspections",
   KEY           = "NIST13a",
   AUTHOR        = "NIST",
   TITLE         = "Foundations for Innovation in Cyber-Physical Systems; Workshop Report",
-  INSTITUTION   = "National Institute of Standardards and Technology",
+  INSTITUTION   = "National Institute of Standards and Technology",
   YEAR          = "2013",
   MONTH         = "January",
   PAGES         = "60",
@@ -77422,7 +78943,7 @@ Code Walkthrough/Inspections",
   KEY           = "NIST13b",
   AUTHOR        = "NIST",
   TITLE         = "Strategic Vision and Business drivers for 21st Century Cyber-Physical Systems",
-  INSTITUTION   = "National Institute of Standardards and Technology",
+  INSTITUTION   = "National Institute of Standards and Technology",
   YEAR          = "2013",
   MONTH         = "January",
   PAGES         = "23",
@@ -77433,7 +78954,7 @@ Code Walkthrough/Inspections",
   KEY           = "NIST13c",
   AUTHOR        = "NIST",
   TITLE         = "Foundations for Innovation: Strategic R\&D Opportunities for 21st Century Cyber-Physical Systems",
-  INSTITUTION   = "National Institute of Standardards and Technology",
+  INSTITUTION   = "National Institute of Standards and Technology",
   YEAR          = "2013",
   MONTH         = "January",
   PAGES         = "32",
@@ -77444,23 +78965,61 @@ Code Walkthrough/Inspections",
   KEY           = "NIST15a",
   AUTHOR        = "NIST, Cyber Physical Systems Public Working Group",
   TITLE         = "Draft Framework for Cyber-Physical Systems",
-  INSTITUTION   = "National Institute of Standardards and Technology",
+  INSTITUTION   = "National Institute of Standards and Technology",
   YEAR          = "2015",
   MONTH         = "September",
   NUMBER        = "Draft Release 0.8",
   PAGES         = "227",
-  COMMENT       = "In the INTO-CPS Repository"}
+  COMMENT       = "In the INTO-CPS Repository",
+  NOTE          = "Superseded by NIST17a/b"}
 
 %G CPS
 @TECHREPORT{NIST15b,
   KEY           = "NIST15b",
-  AUTHOR        = "NIST, Cyber Physical Systems Public Working Group",
+  AUTHOR        = "{NIST, Cyber Physical Systems Public Working Group}",
   TITLE         = "Draft Timing Framework for Cyber-Physical Systems ",
-  INSTITUTION   = "National Institute of Standardards and Technology",
+  INSTITUTION   = "National Institute of Standards and Technology",
   YEAR          = "2015",
   MONTH         = "September",
   NUMBER        = "Draft Release 0.8",
   PAGES         = "59",
+  COMMENT       = "In the INTO-CPS Repository",
+  NOTE          = "Superseded by NIST17a/b"}
+}
+
+%G CPS
+@TECHREPORT{NIST16,
+  KEY           = "NIST16",
+  AUTHOR        = "{NIST, Cyber Physical Systems Public Working Group}",
+  TITLE         = "Framework for Cyber-Physical Systems: Release 1.0",
+  INSTITUTION   = "National Institute of Standardards and Technology",
+  YEAR          = "2016",
+  MONTH         = "May",
+  PAGES         = "79",
+  COMMENT       = "In the INTO-CPS Repository"}
+
+%G CPS
+@TECHREPORT{NIST17,
+  KEY           = "NIST17a",
+  AUTHOR        = "{NIST, Cyber Physical Systems Public Working Group}",
+  TITLE         = "Framework for Cyber-Physical Systems: Volume 1, Overview",
+  INSTITUTION   = "National Institute of Standardards and Technology",
+  YEAR          = "2017",
+  MONTH         = "June",
+  NUMBER        = "Version 1.0",
+  PAGES         = "79",
+  COMMENT       = "In the INTO-CPS Repository"}
+
+%G CPS
+@TECHREPORT{NIST17,
+  KEY           = "NIST17b",
+  AUTHOR        = "{NIST, Cyber Physical Systems Public Working Group}",
+  TITLE         = "Framework for Cyber-Physical Systems: Volume 2, Working Group Reports",
+  INSTITUTION   = "National Institute of Standardards and Technology",
+  YEAR          = "2017",
+  MONTH         = "June",
+  NUMBER        = "Version 1.0",
+  PAGES         = "163",
   COMMENT       = "In the INTO-CPS Repository"}
 
 %G AGILE
@@ -78277,6 +79836,21 @@ Formal Methods Environments on Pharo 4}",
   URL           = "http://catalog.lib.kyushu-u.ac.jp/en/recordID/1866375"
 }
 
+%G OVERTURE VDM TOOL
+@INPROCEEDINGS{Oda&18,
+  AUTHOR        = "Tomohiro Oda and Keijiro Araki and Peter Gorm Larsen",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{ViennaVM: a Virtual Machine for VDM-SL development}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "39--56",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G PGLPHDINT
 @BOOK{ODonnell77,
   KEY           = "O'Donnell77",
@@ -78722,6 +80296,20 @@ Formal Methods Environments on Pharo 4}",
   MONTH         = "April",
   PAGES         = "271--284",
   COMMENT       = "BIB. Submitted by PHM MARI (PGL)"}
+
+%G
+@article{Olveczky&09,
+title = "Formal modeling, performance estimation, and model checking of wireless sensor network algorithms in Real-Time Maude",
+journal = "Theoretical Computer Science",
+volume = "410",
+number = "2",
+pages = "254 - 280",
+year = "2009",
+note = "Distributed Computing Techniques",
+issn = "0304-3975",
+doi = "https://doi.org/10.1016/j.tcs.2008.09.022",
+url = "http://www.sciencedirect.com/science/article/pii/S0304397508006683",
+author = "Peter Csaba Olveczky and Stian Thorvaldsen"}
 
 %G
 @PHDTHESIS{Oliveira84,
@@ -79535,29 +81123,29 @@ url="http://dx.doi.org/10.1007/s10009-015-0374-1"
   COMMENT       = ""}
 
 %G SOS
-@INPROCEEDINGS{Oquendo16, 
-author={F. Oquendo}, 
-booktitle={2016 21st International Conference on Engineering of Complex Computer Systems (ICECCS)}, 
-title={Formally Describing the Architectural Behavior of Software-Intensive Systems-of-Systems with SosADL}, 
-year={2016}, 
-volume={}, 
-number={}, 
-pages={13-22}, 
-doi={10.1109/ICECCS.2016.012}, 
-ISSN={}, 
+@INPROCEEDINGS{Oquendo16,
+author={F. Oquendo},
+booktitle={2016 21st International Conference on Engineering of Complex Computer Systems (ICECCS)},
+title={Formally Describing the Architectural Behavior of Software-Intensive Systems-of-Systems with SosADL},
+year={2016},
+volume={},
+number={},
+pages={13-22},
+doi={10.1109/ICECCS.2016.012},
+ISSN={},
 month={Nov}}
 
 %G SOS
-@INPROCEEDINGS{Oquendo16a, 
-author={F. Oquendo}, 
-booktitle={2016 IEEE International Conference on Systems, Man, and Cybernetics (SMC)}, 
-title={Case study on formally describing the architecture of a Software-intensive System-of-Systems with SosADL}, 
-year={2016}, 
-volume={}, 
-number={}, 
-pages={002260-002266}, 
-doi={10.1109/SMC.2016.7844575}, 
-ISSN={}, 
+@INPROCEEDINGS{Oquendo16a,
+author={F. Oquendo},
+booktitle={2016 IEEE International Conference on Systems, Man, and Cybernetics (SMC)},
+title={Case study on formally describing the architecture of a Software-intensive System-of-Systems with SosADL},
+year={2016},
+volume={},
+number={},
+pages={002260-002266},
+doi={10.1109/SMC.2016.7844575},
+ISSN={},
 month={Oct}}
 
 %G JAEINT
@@ -79834,6 +81422,17 @@ month={Oct}}
   TITLE         ="PVS Language Reference - Version 2.4",
   INSTITUTION = "SRI International",
   YEAR          ="2001"}
+
+@article{Oza&09,
+	title = "Classiﬁcation of aeronautics system health and safety documents",
+	journal = "IEEE Transactions on Systems, Man, and Cybernetics, Part C ",
+	volume = "39",
+	number = "6",
+	pages = "670 - 680",
+	year = "2009",
+	author = "Nikung Oza and J. Patrick Castle and John Stutz",
+	COMMENT = "BIB AI"
+}
 
 
 %G QA IPTESINT
@@ -81564,7 +83163,7 @@ month={Oct}}
   ANNOTE        = "",
   COMMENT       = ""}
 
-%G INTOCPSPUB CPS
+%G INTOCPSPUB CPS OVERTURE
 @INPROCEEDINGS{Pedersen&17,
   KEY           = "Pedersen\&17",
   AUTHOR        = "Nicolai Pedersen and Kenneth Lausdahl and Enrique Vidal Sanchez and
@@ -83600,6 +85199,19 @@ url = "http://www.sciencedirect.com/science/article/pii/S0167739X15002502",
 author = "Chris Piechotta and Martin Grooss Olsen and Adam Enø Jensen and Joey W. Coleman and Peter Gorm Larsen"
 }
 
+%G CPS COSIM
+@INPROCEEDINGS{Pieper&18,
+author={T. Pieper and R. Obermaisser},
+booktitle={2018 7th Mediterranean Conference on Embedded Computing (MECO)},
+title={Distributed co-simulation for software-in-the-loop testing of networked railway systems},
+year={2018},
+volume={},
+number={},
+pages={1-5},
+doi={10.1109/MECO.2018.8406023},
+ISSN={},
+month={June},}
+
 %G
 @BOOK{Pierce05,
   KEY           = "Pierce05",
@@ -83675,6 +85287,16 @@ author = "Chris Piechotta and Martin Grooss Olsen and Adam Enø Jensen and Joey 
   MONTH         = "August",
   INSTITUTION   = "Science Central Project"}
 
+%G INTOCPSASSOCIATION
+@TECHREPORT{Pierce&18,
+  AUTHOR        = "Ken Pierce and John Fitzgerald and Carl Gamble and Martin Mansfield and Richard Payne and Peter Gorm Larsen",
+  TITLE         = "INTO-CPS Method Guidelines",
+  INSTITUTION   = "INTO-CPS Association",
+  YEAR          = "2018",
+  MONTH         = "September",
+  URL         = "\url{www.into-cps.org}",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G ALGEBRA COMPIL
 @ARTICLE{Pietscheker89,
@@ -83702,6 +85324,18 @@ author = "Chris Piechotta and Martin Grooss Olsen and Adam Enø Jensen and Joey 
   NOTE          = "\\ IPTES Doc.id : IPTES-RNT-1-V1.0",
   ANNOTE        = "",
   COMMENT       = "MPH"}
+
+@article{piller&01,
+  KEY           = "piller\&01",
+  title         = "Methods for state-of-charge determination and their applications",
+  author        = "Piller, Sabine and Perrin, Marion and Jossen, Andreas",
+  journal       = "Journal of Power Sources",
+  volume        = "96",
+  number        = "1",
+  pages	        = "113--120",
+  year          = "2001",
+  publisher     = "Elsevier"}
+
 
 %G DESTECSINT
 @INPROCEEDINGS{Pinto&07,
@@ -83744,6 +85378,18 @@ author = "Chris Piechotta and Martin Grooss Olsen and Adam Enø Jensen and Joey 
   TITLE         = {Battery Operated Devices and Systems. From electronics to Industrial },
   PUBLISHER     = {Elsevier},
   YEAR          = "2009",
+  COMMENT       = ""}
+
+%G
+@MISC{Pisupati&09,
+  KEY           = "Pisupati\&09",
+  AUTHOR        = "Preeti Pisupati and Sandeep Kumar Dewangan and G.V.V. Ravi Kumar",
+  TITLE         = "{Structural Health Monitoring (SHM)}",
+  YEAR          = "2009",
+  MONTH         = "February",
+  HOWPUBLISHED  = "White paper from Infosys",
+  SIZE          = "8",
+  ANNOTE        = "",
   COMMENT       = ""}
 
 %G COMPIL STATSEM IPTESINT
@@ -84069,6 +85715,16 @@ author = "Chris Piechotta and Martin Grooss Olsen and Adam Enø Jensen and Joey 
   YEAR          = {2010},
   ISBN          = {978-3-642-14508-7},
   PAGES         = {I-XXX, 1-426},
+  COMMENT       = "NA PGL"}
+
+%G
+@BOOK{Platzer18,
+  KEY           = "Platzer18",
+  AUTHOR        = {Andr{\'e} Platzer},
+  TITLE         = {Logical Foundations of Cyber-Physical Systems},
+  PUBLISHER     = {Springer},
+  YEAR          = {2018},
+  ISBN          = {978-3-319-63587-3},
   COMMENT       = "NA PGL"}
 
 %G IPTESINT CSA
@@ -86879,9 +88535,9 @@ Technology Laboratory",
 %G INTOCPSPUB CPS
 @ARTICLE{Quadri&15,
   KEY           = "Quadri\&15",
-  AUTHOR        = "Imran Quadri and Alessandra Bagnato and Etienne Brosse
+  AUTHOR        = "Imran Quadri and Alessandra Bagnato and Etienne Brosse 
                    and Andrey Sadovykh",
-  TITLE         = "{Modeling Methodologies for Cyber-Physical Systems:
+  TITLE         = "{Modeling Methodologies for Cyber-Physical Systems: 
                     Research Field Study on Inherent and Future Challenges}",
   JOURNAL       = "Ada User Journal",
   YEAR          = "2015",
@@ -87644,6 +89300,18 @@ year = {2009}
   YEAR          = {2003},
   COMMENT       = "BIB PGL"}
 
+%G
+@BOOK{Rashid17,
+  KEY           = "Rashid17",
+  AUTHOR        = "Imran Rashid",
+  TITLE         = "Sluk -- kunsten at overleve i en digital verden",
+  PUBLISHER     = "Lindhardt and Ringhof",
+  YEAR          = "2017",
+  SIZE          = "249",
+  NOTE          = "ISBN-13:9788711566633",
+  ANNOTE        = "",
+  COMMENT       = "I have the book (PGL)"}
+
 %G METPROJ ADA
 @ARTICLE{Rasmussen87a,
   KEY           = "Rasmussen87",
@@ -87667,6 +89335,15 @@ number      = {March},
 year        = {2010}
 }
 
+%G
+@ARTICLE{Rasmussen&18,
+  KEY           = "Rasmussen\&18",
+  AUTHOR        = "Mikkel Bayard Rasmussen",
+  TITLE         = "Research and development in the migration of INTO-CPS to a web based solution.",
+  JOURNAL       = "RAD-INTO-CPS-WEB",
+  YEAR          = "2018",
+  MONTH         = "August"}
+
 @MISC{RaspberryPi17a,
   KEY           = "{RaspberryPi17a}",
   AUTHOR        = "{Raspberry Pi Foundation}",
@@ -87689,6 +89366,14 @@ year        = {2010}
   ANNOTE        = "",
   COMMENT       = "L\aa{}nt fra S\o{}nderborg Tekniske Bibliotek. OBL."}
 
+@inproceedings{Rath17,
+  Key			= "Rath17",
+  title			= "Are graph query languages applicable for requirements traceability analysis?",
+  author		= "Rath, Michael and Akehurst, David and Borowski, Christoph and M{\"a}der, Patrick",
+  booktitle		= "REFSQ Workshops",
+  year			= "2017"
+} 
+  
 %G UML
 @MANUAL{Rational98,
   KEY           = "Rational98",
@@ -87726,6 +89411,18 @@ year        = {2010}
   PUBLISHER     = {ACM},
   ADDRESS       = {New York, NY, USA},
   COMMENT       = "BIB PGL"}
+
+%G
+@ARTICLE{Raveh01,
+  AUTHOR        = "D.E.\ Raveh",
+  TITLE         = "Reduced-order models for nonlinear unsteady aerodynamics",
+  JOURNAL       = "AIAA Journal",
+  YEAR          = "2001",
+  VOLUME        = "39",
+  NUMBER        = "8",
+  PAGES         = "1417--1429",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G MPCINT
 @misc{Raven11,
@@ -87960,6 +89657,17 @@ year        = {2010}
   PAGES         = "41-55",
   PUBLISHER     = "IEEE Computer Society",
   COMMENT       = "Tomada de The Duration Calculus (slides) S. Pickin"}
+
+%G C++
+@TECHREPORT{Reis&18,
+  KEY           = "Reis\&18",
+  AUTHOR        = "G. Dos Reis and J. D. Garcia and J. Lakos and A. Meredith and N. Myers and B. Stroustrup",
+  TITLE         = "{Support for contract based programming in C++}",
+  ADDRESS       = "https://isocpp.org/blog/category/standardization",
+  NUMBER        = "P0542R4",
+  YEAR          = "2018",
+  INSTITUTION   = "ISO C++ Committee",
+}
 
 %G IPTESINT
 @BOOK{Raynal88,
@@ -88650,6 +90358,44 @@ year        = {2010}
   publisher = {Springer}
 }
 
+@inproceedings{Thakur&12,
+  author    = {Aditya V. Thakur and
+               Thomas W. Reps},
+  title     = {A Method for Symbolic Computation of Abstract Operations},
+  booktitle = {Computer Aided Verification - 24th International Conference, {CAV}
+               2012, Berkeley, CA, USA, July 7-13, 2012 Proceedings},
+  pages     = {174--192},
+  year      = {2012},
+  editor    = {P. Madhusudan and
+               Sanjit A. Seshia},
+  title     = {Computer Aided Verification - 24th International Conference, {CAV}
+               2012, Berkeley, CA, USA, July 7-13, 2012 Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {7358},
+  publisher = {Springer}
+}
+
+@inproceedings{Reps&16,
+  author    = {Thomas W. Reps and
+               Aditya V. Thakur},
+  title     = {Automating Abstract Interpretation},
+  booktitle = {Verification, Model Checking, and Abstract Interpretation - 17th International
+               Conference, {VMCAI} 2016, St. Petersburg, FL, USA, January 17-19,
+               2016. Proceedings},
+  pages     = {3--40},
+  year      = {2016},
+  editor    = {Barbara Jobstmann and
+               K. Rustan M. Leino},
+  title     = {Verification, Model Checking, and Abstract Interpretation - 17th International
+               Conference, {VMCAI} 2016, St. Petersburg, FL, USA, January 17-19,
+               2016. Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {9583},
+  publisher = {Springer}
+}
+
+
+
 %G IPTESINT TEMPORAL
 @BOOK{Rescher&71,
   KEY           = "Rescher\&71",
@@ -88749,6 +90495,15 @@ year        = {2010}
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
 
+@article{Ribeiro&16,
+  author    = {Marco Tulio Ribeiro and Sameer Singh and Carlos Guestrin},
+  title     = "{``Why Should I Trust You?'': Explaining the Predictions of Any Classifier}",
+  journal   = {CoRR},
+  volume    = {abs/1602.04938},
+  year      = {2016},
+  url       = {https://arxiv.org/abs/1602.04938}
+}
+
 %G STD
 @TECHREPORT{rfc768,
   KEY           = "rfc768",
@@ -88799,6 +90554,18 @@ year        = {2010}
   MONTH         = {march},
   PAGES         = {190 -195},
   COMMENT       = "BIB PGL"}
+
+%G
+@TECHREPORT{Rhodes15,
+  AUTHOR        = "D.H. Rhodes",
+  TITLE         = "Interactive Model-Centric Systems Engineering (IMCSE) Phase Two",
+  INSTITUTION   = "MIT",
+  ADDRESS       = "Systems Engineering Research Centre",
+  YEAR          = "2015",
+  MONTH         = "February",
+  NUMBER        = "SERC-2015-TR-048-2",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G VDM PROOF OVERTURE
 @MASTERSTHESIS{Ribeiro08,
@@ -89365,6 +91132,18 @@ ISSN={0190-5848}}
   COMMENT       = "BIB. Copied. OBL." }
 
 %G
+@BOOK{Roques17,
+  KEY           = "Roques17",
+  AUTHOR        = "Pascal Roques",
+  TITLE         = "{Systems Architecture Modeling with the Arcadia Method}",
+  PUBLISHER     = "Elsevier",
+  YEAR          = "2017",
+  MONTH         = "November",
+  EDITION       = "1st",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G
 @ARTICLE{Rosa&09,
   KEY           = "Rosa\&09",
 title = "Electrodeposition of copper on titanium wires: Taguchi experimental design approach",
@@ -89889,6 +91668,16 @@ author = "J.L. Rosa and A. Robin and M.B. Silva and C.A. Baldan and M.P. Peres",
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G
+@ARTICLE{Rubbert94,
+  AUTHOR        = "P.E. Rubbert",
+  TITLE         = "{CFD and the Changing World of Aircraft Development}",
+  JOURNAL       = "International Council of the Aeronautical Sciences",
+  YEAR          = "1994",
+  VOLUME        = "ICAS-94-0.2",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G MPCINT
 @INPROCEEDINGS{Ruckelshausen07,
   title={Autonomous robots in agricultural field trials},
@@ -90326,6 +92115,29 @@ author = "J.L. Rosa and A. Robin and M.B. Silva and C.A. Baldan and M.P. Peres",
   PAGES         = "1-4",
   SIZE          = "4",
   COMMENT       = "RNI"}
+
+%G CPS
+@article{Sadjina&17,
+  author    = {Severin Sadjina and
+               Lars T. Kyllingstad and
+               Martin Rindar{\o}y and
+               Stian Skjong and
+               Vilmar {\AE}s{\o}y and
+               Dariusz Eirik Fathi and
+               Vahid Hassani and
+               Trond Johnsen and
+               J{\o}rgen Bremnes Nielsen and
+               Eilif Pedersen},
+  title     = {Distributed Co-Simulation of Maritime Systems and Operations},
+  journal   = {CoRR},
+  volume    = {abs/1701.00997},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1701.00997},
+  archivePrefix = {arXiv},
+  eprint    = {1701.00997},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/SadjinaKRSAFHJN17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
 
 %G METPROJ VDM APPLI IPTESINT VDM88
 @MISC{Sadler88,
@@ -90987,6 +92799,26 @@ Technology Laboratory",
   NOTE		= "\\ IPTES Doc Id: IPTES-MARI-65-V2.0",
   ANNOTE        = "",
   COMMENT       = "RCL MARI"}
+
+%G REVERSE
+@Article{Samson&12,
+author="Samson, D.
+and Kluge, M.
+and Fuss, T.
+and Schmid, U.
+and Becker, Th.",
+title="Flight Test Results of a Thermoelectric Energy Harvester for Aircraft",
+journal="Journal of Electronic Materials",
+year="2012",
+month="Jun",
+day="01",
+volume="41",
+number="6",
+pages="1134--1137",
+issn="1543-186X",
+doi="10.1007/s11664-012-1928-6",
+url="https://doi.org/10.1007/s11664-012-1928-6"
+}
 
 %G REVERSE
 @ARTICLE{Samuelson90,
@@ -92351,7 +94183,7 @@ Technology Laboratory",
   ANNOTE        = "",
   COMMENT       = "Sidder i kursusmappen fra Learning tree's CASE kursus. OBL."}
 
-%G AGRI
+%G AGRI 
 @article{Scheuren&13,
   KEY           = "Scheuren\&13",
   TITLE         = "{Spatio-temporally constrained planning for cooperative vehicles in a harvesting scenario}",
@@ -93530,6 +95362,15 @@ year = {2015},
   ANNOTE        = "",
   COMMENT       = "BIB. I have read it 16/4-91 (PGL)."}
 
+@INPROCEEDINGS{Sha&08a,
+  AUTHOR        = "Lui Sha and Sathish Gopalakrishnan and Xue Liu and Qixin Wang",
+  TITLE         = "Cyber-Physical Systems: A New Frontier",
+  BOOKTITLE     = "IEEE International Conference on Sensor Networks, Ubiquitous and Trustworthy Computing",
+  YEAR          = "2008",
+  MONTH         = "June",
+  COMMENT       = "BIB AI"
+}
+
 %G SEMANTICS
 @ARTICLE{Siedner&08,
   KEY           = "Siedner\&08",
@@ -93558,6 +95399,19 @@ year = {2015},
   SIZE          = "8",
   ANNOTE        = "",
   COMMENT       = "BIB. DP"}
+
+%G SOS
+@INPROCEEDINGS{Sielemann&17,
+  KEY           = "Sielemann\&17",
+  AUTHOR        = "Michael Sielemann and Anand Pitchaikani and Nithish Selvan and Majed Sammak",
+  TITLE         = "{The Jet Propulsion Library: Modeling and simulation of aircraft engines}",
+  BOOKTITLE     = "Proceedings of the 12th International Modelica Conference",
+  ADDRESS       = "Prague, Czech Republic",
+  YEAR          = "2017",
+  MONTH         = "May",
+  PAGES         = "909--920",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G SOS
 @TECHREPORT{Selberg&08,
@@ -93853,7 +95707,7 @@ month={Sept}}
   school = {Link{\"{o}}ping University}
 }
 
-
+  
 %G IDERS
 @ARTICLE{SHA90a,
   KEY           = "Sha\&90a",
@@ -94977,6 +96831,16 @@ pages={337-354}
   COMMENT       = "RE. Referenced in IPTES-UPM-3"}
 
 %G FME97
+@PHDTHESIS{Silva97,
+  AUTHOR        = "W.A.\ Silva",
+  TITLE         = "Discrete-Time Linear and Nonlinear Aerodynamic Impulse Responses for Efficient CFD Analyses",
+  SCHOOL        = "College of William and Mary",
+  ADDRESS       = "Williamsburg, VA",
+  YEAR          = "1997",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G FME97
 @INPROCEEDINGS{Silva&97,
   KEY           = "Silva\&97",
   AUTHOR        = {Leila Silva and Augusto Sampaio and Edna Barros},
@@ -95544,6 +97408,17 @@ pages={337-354}
   PAGES         = "89-97",
   COMMENT       = "BIB ATM"}
 
+%G
+@TECHREPORT{Slotnick&14,
+  AUTHOR        = "Slotnick, J. and Khodadoust, A. and Alonso, J. and Darmofal, D. and Gropp, W. and Laurie, D.",
+  TITLE         = "{CFD Vision 2030 Study: A path to Revolutionary Computational Aerosciences}",
+  INSTITUTION   = "NASA",
+  YEAR          = "2014",
+  MONTH         = "January",
+  NUMBER        = "NASA/CR-2014-218178.",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G IDERSINT
 @TECHREPORT{SMARTVIS,
   KEY		= "SMARTVIS",
@@ -95652,6 +97527,21 @@ pages={337-354}
   NOTE          = "Available at www.vdmportal.org",
   ANNOTE        = "",
   COMMENT       = "PGL"}
+
+%G IPTESINT
+@ARTICLE{Smith&05,
+  KEY               = "Smith05",
+  AUTHOR       = "J. E. Smith and Ravi Nair",
+  JOURNAL     = "Computer",
+  TITLE            = "The architecture of virtual machines",
+  YEAR            = "2005",
+  MONTH         = "May",
+  VOLUME       = "38",
+  NUMBER       = "5",
+  PAGES          = "32-38",
+  DOI                = "10.1109/MC.2005.173"
+}
+
 
 %G IPTESINT
 @BOOK{Smullian68,
@@ -96231,6 +98121,18 @@ pages={337-354}
   INSTITUTION   = "CEFRIEL",
   YEAR          = "1994",
   ADDRESS       = "Via Emanueli, 15 20126 Milano"}
+
+%G IDERSINT
+@ARTICLE{Spalart&16,
+  AUTHOR        = "Spalart, P.R. and Venkatakrishnan, V.",
+  TITLE         = "{On the role and challenges of CFD in the aerospace industry}",
+  JOURNAL       = "The Aeronautical Journal",
+  YEAR          = "2016",
+  VOLUME        = "120",
+  NUMBER        = "1223",
+  PAGES         = "209--232",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G IDERSINT
 @TECHREPORT{SPARCworksDebugger,
@@ -97329,6 +99231,18 @@ ISSN={2327-4662},
   ANNOTE        = "",
   COMMENT       = "NA PGL"}
 
+%G C++
+@TECHREPORT{Stroustrup&18,
+  KEY           = "Stroustrup\&18",
+  AUTHOR        = "Bjarne Stroustrup and Herb Sutter",
+  TITLE         = "C++ Core Guidelines",
+  YEAR          = "2018",
+  MONTH          = "April",
+  DAY          = "16",
+  ADDRESS       = "https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md",
+}
+
+  
 %G EDU
 @INPROCEEDINGS{Skevoulis&02,
   KEY           = "Skevoulis\&02",
@@ -97616,6 +99530,29 @@ month={July}}
   ANNOTE        = "",
   COMMENT       = "HV. HV, PGL and TF have copies of this book."}
 
+%G C++
+@BOOK{Stroustrup00,
+  KEY           = "Stroustrup00",
+  AUTHOR        = "B. Stroustrup",
+  TITLE         = "The C++ Programming Language, 3nd edition",
+  PUBLISHER     = "Addison Wesley Publishing Company",
+  YEAR          = "2000",
+  ISBN          = "978-0-201-70073-2",
+  NOTE          = "",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G C++
+@TECHREPORT{Stroustrup16,
+  KEY           = "Stroustrup16",
+  AUTHOR        = "B. Stroustrup",
+  TITLE         = "C++11 - the new ISO C++ standard",
+  YEAR          = "2016",
+  MONTH          = "August",
+  URL          = "http://www.stroustrup.com/C++11FAQ.html",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G VDM91 VDM CONCUR
 @INPROCEEDINGS{Stolen91,
   KEY           = "St\o{}len91",
@@ -97719,6 +99656,16 @@ month={July}}
   EDITION       = "Second edition",
   SIZE          = "241",
   COMMENT       = "BIB JAE"}
+
+@BOOK{Sugiyama&15,
+  TITLE         = {Introduction to Statistical Machine Learning},
+  AUTHOR        = {Masashi Sugiyama},
+  YEAR          = {2015},
+  PUBLISHER     = {Morgan Kaufmann},
+  ADDRESS       = {Boston},
+  ISBN = {978-0-12-802121-7},
+  EDITION       = {1st}
+}
 
 %G AGILE
 @ARTICLE{Suhaib&05,
@@ -98502,7 +100449,7 @@ url="http://dx.doi.org/10.1007/978-3-642-54848-2_16"
 %G PGLPHDINT
 @TECHREPORT{Sondergaard&88,
   KEY           = "S\o{}ndergaard\&88",
-  AUTHOR        = "Harald S\o{}ndergaard and Peter Setoft",
+  AUTHOR        = "Harald S\o{}ndergaard and Peter Sestoft",
   TITLE         = "{Referential Transparancy and Allied Notions}",
   INSTITUTION   = "DIKU",
   ADDRESS       = "Datalogisk Institut, K\o{}benhavns Universitet,
@@ -98787,11 +100734,31 @@ General Unit A3-DG CONNECT",
                    book.}}
 
 
+@inproceedings{Sztipanovits15,
+ KEY           = "Sztipanovits15",
+ AUTHOR        = "Sztipanovits, Janos and Bapty, Ted and Neema, Sandeep and Koutsoukos, Xenofon and Jackson, Ethan",
+ TITLE         = "Design Tool Chain for Cyber-physical Systems: Lessons Learned",
+ BOOKTITLE     = "Proceedings of the 52Nd Annual Design Automation Conference",
+ SERIES        = "DAC '15",
+ YEAR          = "2015",
+ isbn          = "978-1-4503-3520-1",
+ location      = "San Francisco, California",
+ pages         = "81:1--81:6",
+ articleno     = "81",
+ numpages      = "6",
+ url           = "http://doi.acm.org/10.1145/2744769.2747922",
+ doi           = "10.1145/2744769.2747922",
+ acmid         = "2747922",
+ publisher     = "ACM",
+ address       = "New York, NY, USA",
+ keywords = {component-based design, cyber-physical systems, model-based design},
+}
+
 %%%%%%%%%%
 %%%%%%%%%% T T T T T T T T T T T T T T T T T T T T T T T T T
 %%%%%%%%%%
 
-%G VDM OVERTURE 
+%G VDM OVERTURE
 @INPROCEEDINGS{Tachiyama&17,
   KEY           = "Tachiyama\&17",
   AUTHOR        = "Hiroki Tachiyama and Tetsuro Katayama, and Tomohiro Oda",
@@ -98986,6 +100953,15 @@ pages={273-290}
   SIZE          = "686",
   COMMENT       = "BIB JAE"}
 
+@PHDTHESIS{Tang16,
+  KEY           = "Tang16",
+  AUTHOR        = {Bo Tang},
+  TITLE         = {Toward Intelligent Cyber-Physical Systems: Algorithms, Architectures, and Applications},
+  SCHOOL        = {The University of Rhode Island},
+  YEAR          = {2016},
+  PDF           = {http://digitalcommons.uri.edu/oa_diss/481},
+  COMMENT       = "NA AI"}
+
 %G IDERSINT
 @ARTICLE{Tanir&94,
   KEY           = "Tanir\&94",
@@ -99079,6 +101055,16 @@ pages={273-290}
   DAY 			= "6",
   MONTH 		= "5",
    NOTE         = ""}
+
+ %G CPS
+@misc{Tavella&16,
+  TITLE = {{Toward an Hybrid Co-simulation with the FMI-CS Standard}},
+  AUTHOR = {Tavella, Jean-Philippe and Caujolle, Mathieu and Tan, Charles and Plessis, Gilles and Schumann, Mathieu and Vialle, St{\'e}phane and Dad, Cherifa and Cuccuru, Arnaud and Revol, S{\'e}bastien},
+  URL = {https://hal-centralesupelec.archives-ouvertes.fr/hal-01301183},
+  NOTE = {Research Report},
+  YEAR = {2016},
+  MONTH = Apr,
+  HAL_ID = {hal-01301183}}
 
 %G MICRO
 @ARTICLE{Tavora80,
@@ -99483,6 +101469,18 @@ pages={273-290}
 		   into the C++ interface}",
   COMMENT       = "NA PGL"}
 
+@article{TEIXEIRA2017,
+  key = "Teixeira2017",
+  title = "SIoT: Securing Internet of Things through distributed systems analysis",
+  journal = "Future Generation Computer Systems",
+  year = "2017",
+  issn = "0167-739X",
+  doi = "https://doi.org/10.1016/j.future.2017.08.010",
+  url = "http://www.sciencedirect.com/science/article/pii/S0167739X17304235",
+  author = "Fernando A. Teixeira and Fernando M.Q. Pereira and Hao-Chi Wong and José M.S. Nogueira and Leonardo B. Oliveira",
+  keywords = "Internet of things, Cybersecurity, Code analysis"
+}
+
 %G UNDEF
 @MANUAL{TexUser89,
   KEY           = "TexUser89",
@@ -99521,7 +101519,7 @@ pages={273-290}
  doi = {10.1145/3093742.3093909},
  acmid = {3093909},
  publisher = {ACM},
- address = {New York, NY, USA}} 
+ address = {New York, NY, USA}}
 
 %G IDERSINT
 @BOOK{Thayer:tutorial,
@@ -100040,7 +102038,7 @@ year = {2001}
 @INPROCEEDINGS{Thule&16,
   KEY           = "Thule\&16",
   AUTHOR        = {Casper Thule and Peter Gorm Larsen},
-  TITLE         = {Investigating Concurrency in the Co-Simulation Orchestration Engine for INTO-CPS},
+  TITLE         = "{Investigating Concurrency in the Co-Simulation Orchestration Engine for INTO-CPS}",
   BOOKTITLE     = {Preliminary Proceedings of the 10th Anniversary Spring/Summer Young Researchers' Colloquium on Software Engineering (SYRCoSE 2016), Krasnovidovo, Russia, May 30-June 1, 2016)},
   EDITOR        = {Alexander S. Kamkin, Alexander K. Petrenko and Andrey N. Terekhov},
   PUBLISHER     = {ISP RAS},
@@ -100107,13 +102105,36 @@ year = {2001}
 }
 
 %G Co-Simulation INTOCPSPUB
-@INPROCEEDINGS{Thule&17,
+@ARTICLE{Thule&17,
   KEY           = "Thule&17",
-  AUTHOR        = {Casper Thule and Kenneth Lausdahl and Peter Gorm Larsen},
-  TITLE         = {Maestro: The INTO-CPS Co-Simulation Orchestration Engine},
+  AUTHOR        = {Casper Thule and Kenneth Lausdahl and Peter Gorm Larsen and Gerd Meisl},
+  TITLE         = "{Maestro: The INTO-CPS Co-Simulation Orchestration Engine}",
   YEAR          = {2018},
-  NOTE          = {To be submitted to Simulation Modelling Practice and Theory},
+  NOTE          = {Submitted to Simulation Modelling Practice and Theory},
 }
+
+%G OVERTURE VDM TOOL CPS INTOCPSPUB
+@INPROCEEDINGS{Thule&18,
+  AUTHOR        = "Casper Thule and Kenneth Lausdahl and Peter Gorm Larsen",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{Overture FMU: Export VDM-RT Models as Tool-Wrapper FMUs}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "23--38",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G
+@INPROCEEDINGS{Thule&18a,
+  KEY           = "Thule\&18a",
+  AUTHOR        = "Casper Thule and Cl{\'{a}}udio Gomes and Julien Deantoni and Peter Gorm Larsen and J{\"o}rg Brauer and Hans Vangheluwe",
+  TITLE         = "{Towards the Verification of Hybrid Co-simulation Algorithms}",
+  YEAR          = "2018",
+  NOTE          = "{Accepted for publication at the CoSim-CPS-18 Workshop}"}
 
 %G UNDEF
 @MANUAL{TI82,
@@ -100291,6 +102312,39 @@ year = {2001}
   PAGES={30--35},
   YEAR={2008},
   COMMENT = "BIB PGL"}
+
+@article{Tiwari08a,
+    author    = {Ashish Tiwari},
+    title     = {Abstractions for hybrid systems},
+    journal   = {Formal Methods in System Design},
+    volume    = {32},
+    number    = {1},
+    pages     = {57--83},
+    year      = {2008},
+    url       = {https://doi.org/10.1007/s10703-007-0044-3},
+    doi       = {10.1007/s10703-007-0044-3},
+    timestamp = {Sat, 27 May 2017 14:24:05 +0200},
+    biburl    = {https://dblp.org/rec/bib/journals/fmsd/Tiwari08},
+    bibsource = {dblp computer science bibliography, https://dblp.org}
+  }
+
+
+
+  @inproceedings{Tiwari15,
+    author    = {Ashish Tiwari},
+    title     = {Time-Aware Abstractions in HybridSal},
+    booktitle = {Computer Aided Verification - 27th International Conference, {CAV}
+                 2015, San Francisco, CA, USA, July 18-24, 2015, Proceedings, Part
+                 {I}},
+    pages     = {504--510},
+    series    = {Lecture Notes in Computer Science},
+    volume    = {9206},
+    publisher = {Springer},
+    year      = {2015}
+  }
+
+
+
 
 %G PETRI VDM VDM++
 @PHDTHESIS{Tjell09,
@@ -100589,7 +102643,7 @@ COMMENT       = "JCD"}
  acmid = {2832928},
  publisher = {ACM},
  address = {New York, NY, USA}
-}
+} 
 
 %G FORMAL
 @ARTICLE{Torres&06,
@@ -100685,6 +102739,18 @@ COMMENT       = "JCD"}
   ANNOTE        = "",
   COMMENT       = "LIB. DP"}
 
+%G VDM COMBI
+@ARTICLE{Tran&18,
+  KEY           = "Tran\&18",
+  AUTHOR        = "D.T. Tran, A. Iosifidis",
+  TITLE         = "{Heterogeneous Multilayer Generalized Operational Perceptron}",
+  JOURNAL       = "arXiv:1804.05093",
+  YEAR          = "2018",
+  PAGES         = "1--12",
+  COMMENT       = "BIB AI"
+}
+  
+  
 %G VDM COMBI
 @TECHREPORT{Traore&98,
   KEY           = "Traore\&98",
@@ -100920,6 +102986,17 @@ year = {2015}
   NUMBER        = "2",
   ANNOTE        = "",
   COMMENT       = "BIB. Copied. OBL." }
+
+%G UNDEF
+@INPROCEEDINGS{Tuegel&17,
+  AUTHOR        = "Eric J. Tuegel and Pamela Kobryn and Jeffrey V. Zweber and Raymond M. Kolonay",
+  TITLE         = "Digital Thread and Twin for Systems Engineering: Design to Retirement",
+  BOOKTITLE     = "55th AIAA Aerospace Sciences Meeting",
+  ORGANIZATION  = "AIAA SciTech Forum",
+  ADDRESS       = "Grapevine, Texas",
+  YEAR          = "2017",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G UNDEF
 @TECHREPORT{TUGboat90a,
@@ -101868,13 +103945,13 @@ Comparison of Candidate Approaches",
   COMMENT       = "BIB PGL"}
 
 %G CPS
-@INPROCEEDINGS{Vangheluwe08,
-author={Vangheluwe, H.},
-booktitle={Circuits and Systems and TAISA Conference, 2008. NEWCAS-TAISA 2008. 2008 Joint 6th International IEEE Northeast Workshop on},
-title={Multi-paradigm modelling for design of complex heterogeneous systems},
-year={2008},
-pages={285-288},
-doi={10.1109/NEWCAS.2008.4606377},
+@INPROCEEDINGS{Vangheluwe08, 
+author={Vangheluwe, H.}, 
+booktitle={Circuits and Systems and TAISA Conference, 2008. NEWCAS-TAISA 2008. 2008 Joint 6th International IEEE Northeast Workshop on}, 
+title={Multi-paradigm modelling for design of complex heterogeneous systems}, 
+year={2008}, 
+pages={285-288}, 
+doi={10.1109/NEWCAS.2008.4606377}, 
 month={June}}
 
 %G
@@ -102165,6 +104242,16 @@ archivePrefix = "arXiv",
   year      = {1997}
 }
 
+@article{Varhney&17,
+	title = {On the Safety of Machine Learning: Cyber-Physical Systems, 	Decision Sciences, and Data Products},
+	journal = {Big Data },
+	volume = {5},
+	number = {3},
+	pages = {246 - 255},
+	year = {2017},
+	author = {Kush R. Varshney and Homa Alemzadeh},
+}
+
 %G VDM MISC VDM87
 @BOOK{VDM87,
   KEY           = "VDM87",
@@ -102256,6 +104343,16 @@ archivePrefix = "arXiv",
   ANNOTE        = "",
   COMMENT       = ""}
 
+%G C++
+@ARTICLE{Veldhuizen95,
+  KEY           = "Veldhuizen95",
+  AUTHOR        = "Todd Veldhuizen",
+  TITLE         = "Using C++ template metaprograms",
+  JOURNAL       = "C++ Report Vol. 7 No. 4",
+  YEAR          = "1995",
+  PAGES         = "pp. 36-43",
+  ANNOTE        = "",
+  COMMENT       = ""}
 %G
 @MISC{Velfac09,
   KEY           = "Velfac09",
@@ -102518,6 +104615,16 @@ archivePrefix = "arXiv",
   COMMENT       = "I have a copy PGL"}
 
 %G VDM VDM++ PROOF OVERTURE
+@BOOK{Vermesan&14,
+  KEY           = "Vermesan\&14",
+  EDITOR        = "Ovidio Vermesan and Peter Friess",
+  TITLE         = "{Internet of Things -- From Research and Innovation to Marlket Deployment}",
+  PUBLISHER     = "River Publishers",
+  YEAR          = "2014",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G VDM VDM++ PROOF OVERTURE
 @MASTERSTHESIS{Vermolen07,
   KEY           = "Vermolen07",
   AUTHOR        = "Sander Vermolen",
@@ -102543,6 +104650,17 @@ archivePrefix = "arXiv",
   MONTH         = "March",
   ANNOTE        = "",
   COMMENT       = "I have the sources (PGL)"}
+
+%G AFRODITE VDM++
+@BOOK{Versteeg&07,
+  KEY           = "Versteeg\&07",
+  AUTHOR        = "H.K.\ Versteeg and W.\ Malalasekera",
+  TITLE         = "An introduction to computational fluid dynamics: The finite volume method",
+  PUBLISHER     = "Pearson Education Ltd",
+  YEAR          = "2007",
+  NOTE          = "(first published in 1995)",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G AFRODITE VDM++
 @MANUAL{veri-lov,
@@ -103365,6 +105483,14 @@ month={April},}
   PUBLISHER     = {Trans Tech Publ}
 }
 
+@INPROCEEDINGS{Wang&14a,
+  KEY           = "Wang\&14",
+  AUTHOR        = "Wei Wang, Yan Huang, Yizhou Wang, Liang Wang",
+  TITLE         = "Generalized Autoencoder: A Neural Network Framework for Dimensionality Reduction",
+  BOOKTITLE     = "IEEE Conference on Computer Vision and Pattern Recognition Workshops",
+  YEAR          = "2014",
+  COMMENT       = "BIB AI"}
+
 
 %G FME93 CONCUR
 @INPROCEEDINGS{Wang&93,
@@ -103703,6 +105829,20 @@ month={April},}
   PAGES         = "356--366",
   ANNOTE        = "",
   COMMENT       = "BIB. Copied. OBL."}
+
+@article{Wardell2016,
+  title = "A Method for Revealing and Addressing Security Vulnerabilities in Cyber-physical Systems by Modeling Malicious Agent Interactions with Formal Verification",
+  journal = "Procedia Computer Science",
+  volume = "95",
+  number = "Supplement C",
+  pages = "24 - 31",
+  year = "2016",
+  note = "Complex Adaptive Systems Los Angeles, CA November 2-4, 2016",
+  issn = "1877-0509",
+  doi = "https://doi.org/10.1016/j.procs.2016.09.289",
+  url = "http://www.sciencedirect.com/science/article/pii/S1877050916324619",
+  author = "Dean C. Wardell and Robert F. Mills and Gilbert L. Peterson and Mark E. Oxley"
+}
 
 %G METPROJ
 @BOOK{Warnier74,
@@ -104225,7 +106365,7 @@ language={English}
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {metaobject protocol, smalltalk, structural reflection, traits},
-}
+} 
 
 %G MPCINT
 @TECHREPORT{Welch&06,
@@ -104537,9 +106677,9 @@ year = {2006}
   YEAR          = "2003",
   ANNOTE        = "",
   COMMENT       = "I have a copy PGL"}
-
-
-
+  
+  
+  
 @inproceedings{Wiesner&14,
   author = {Wiesner, Stefan and Gorldt, Christian and Soeken, Mathias and Thoben, Klaus-Dieter and Drechsler, Rolf},
   pages = {281-288},
@@ -104568,7 +106708,7 @@ year = {2006}
   COMMENT       = "BIB. I have read this article several times and I have
                    both a copy of it and the original proceedings (PGL)."}
 
-%G MPCINT
+%G MPCINT				
 @MISC{Wiens15,
 	KEY			= "Wiens15",
 	AUTHOR		= "Kyle Wiens",
@@ -104578,7 +106718,7 @@ year = {2006}
 	YEAR 		= "2015",
 	URL 		= "\url{http://www.wired.com/2015/02/new-high-tech-farm-equipment-nightmare-farmers/}",
 	NOTE 		= "[Online; posted 5-February-2015]",
-}
+}	
 
 %G FORMAL
 @PROCEEDINGS{WIFT95,
@@ -104622,6 +106762,17 @@ year = {2006}
   YEAR          = "1988",
   ANNOTE        = "",
   COMMENT       = "NA PGL"}
+
+@article{Williams13,
+	title = "Using random forests to diagnose aviation turbulence",
+	journal = "Machine Learning",
+	volume = "95",
+	number = "1",
+	pages = "51 - 70",
+	year = "2013",
+	author = "John K. Williams",
+	COMMENT = "BIB AI"
+}
 
 %G METPROJ
 @ARTICLE{Williams87,
@@ -104959,7 +107110,7 @@ year = {2006}
   year			= {2010},
   publisher		= {Springer-Verlag New York, Inc.}
 }
-  
+
 %G UNDEF
 @TECHREPORT{Winskel89a,
   KEY           = "Winskel89",
@@ -105066,6 +107217,29 @@ year = {2006}
   PAGES         = "101-107",
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
+
+%G VDM TOOL
+@ARTICLE{Winter&16,
+  AUTHOR        = "Winter, M. and Breitsamter, C",
+  TITLE         = "Neurofuzzy-model-based unsteady aerodynamic computations across varying freestream conditions",
+  JOURNAL       = "AIAA Journal",
+  YEAR          = "2016",
+  VOLUME        = "54",
+  NUMBER        = "9",
+  PAGES         = "2705--2720",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
+%G
+@ARTICLE{Winter&17,
+  AUTHOR        = "Winter, M. and Heckmeier, F.M. and Breitsamter, C",
+  TITLE         = "CFD-based aeroelastic reduced-order modeling robust to structural parameter variations",
+  JOURNAL       = "Aerospace Science and Technology",
+  YEAR          = "2017",
+  VOLUME        = "67",
+  PAGES         = "13--30",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G VDM TOOL
 @MASTERSTHESIS{Winzer92,
@@ -105980,6 +108154,18 @@ url="http://dx.doi.org/10.1007/978-3-319-47166-2_26"
   ANNOTE        = "",
   COMMENT       = "BIB. DP"}
 
+%G
+@INPROCEEDINGS{Wright&10,
+  AUTHOR        = "Wright, M. and Edquist, K. and Tang, C. Y. and Hollis, B. and Krasa, P. and Campbell, C.",
+  TITLE         = "A Review of Aerothermal Modeling for Mars Entry Missions",
+  BOOKTITLE     = "48th AIAA Aerospace Sciences Meeting",
+  ORGANIZATION  = "AIAA",
+  YEAR          = "2010",
+  MONTH         = "January",
+  NOTE          = "AIAA Paper 2010-443",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G SWOPHD
 @INPROCEEDINGS{Wu&95,
   KEY           = "Wu\&95",
@@ -106454,6 +108640,17 @@ pages={101-105}
   YEAR          = "2009",
   ORGANIZATION  = "IEEE",
   COMMENT       = ""}
+
+%G FORMAL
+@inproceedings{Yilmaz&14,
+author={Yilmaz, Faruk and Durak, Umut and Taylan, Koray and O{\u{g}}uzt{\"u}z{\"u}n, Halit},
+booktitle = {Proceedings of the 10th International Modelica Conference; March 10-12; 2014; Lund; Sweden},
+number = {96},
+pages = {247-257},
+publisher = {Linkping University Electronic Press; Linkpings universitet},
+title = {Adapting Functional Mockup Units for HLA-compliant Distributed Simulation},
+year = {2014},
+issn = {1650-3740}}
 
 %G FORMAL
 @ARTICLE{Yoo&09,
@@ -107351,6 +109548,21 @@ month={March}}
   KEYWORDS      = "DIGITAL RIGHTS MANAGEMENT; DIGITAL INFORMATION MANAGEMENT; WATERMARKING; ENCRYPTION; IDENTITY AND ACCESS; INFORMATION SECURITY TECHNOLOGIES;",
   COMMENT       = ""}
 
+%G OVERTURE VDM TOOL
+@INPROCEEDINGS{Zervakis&18,
+  AUTHOR        = "Georgios Zervakis and Ken Pierce and Carl Gamble",
+  EDITOR        = "Ken Pierce and Marcel Verhoef",
+  TITLE         = "{Multi-modelling of Cooperative Swarms}",
+  BOOKTITLE     = "The 16th Overture Workshop",
+  ORGANIZATION  = "Newcastle University, School of Computing",
+  ADDRESS       = "Oxford",
+  YEAR          = "2018",
+  MONTH         = "July",
+  PAGES         = "57--70",
+  NOTE          = "{TR-1524}",
+  ANNOTE        = "",
+  COMMENT       = ""}
+
 %G COMPASSINT
 @INPROCEEDINGS{Zeyda&09,
   KEY           = "Zeyda\&09",
@@ -107785,6 +109997,17 @@ COMMENT = "BIB PGL"}
   MONTH         = "May",
   ANNOTE        = "",
   COMMENT       = "BIB PGL"}
+
+%G
+@INPROCEEDINGS{Zweber&17,
+  AUTHOR        = "Zweber, J. V. and Kolonay, R. M. and Kobryn, P. and Tuegel, E. J",
+  TITLE         = "Digital Thread and Twin for Systems Engineering: Requirements to Design",
+  BOOKTITLE     = "55th AIAA Aerospace Sciences Meeting",
+  ORGANIZATION  = "AIAA SciTech Forum",
+  ADDRESS       = "Grapevine, Texas",
+  YEAR          = "2017",
+  ANNOTE        = "",
+  COMMENT       = ""}
 
 %G VDM APPLI
 @INPROCEEDINGS{Zwolfer&99,
@@ -108458,3 +110681,10 @@ industry},
   NOTE          = "ICS 43.040.10",
   ANNOTE        = "",
   COMMENT       = ""}
+
+@Misc{ISA99,
+  key="ISA99",
+  Author="{International Society of Automation}",
+  Title="{The 62443 Series of Standards}",
+  note="{\url{http://isa99.isa.org/Public/Information/The-62443-Series-Overview.pdf}, accessed on 13/3/18}"
+}
