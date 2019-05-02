@@ -1,8 +1,8 @@
 private leftSensor: IRSensor;
 private rightSensor: IRSensor;
 
-private leftSensorFiltered: FilteredIRSensor;
-private rightSensorFiltered: FilteredIRSensor;
+private leftFilter: FilteredIRSensor;
+private rightFilter: FilteredIRSensor;
 
 private leftServo: Servo;
 private rightServo: Servo;

@@ -5,7 +5,7 @@
 \usepackage{lstlinebgrd}
 \usepackage{ifthen}
 
-\title{Tutorial 8 --- Building Controllers in VDM}
+\title{Tutorial 9 --- Building Controllers in VDM}
 \date{June 2017}
 \author{Ken Pierce}
 
@@ -38,9 +38,9 @@ Tools can be downloaded through the Application (\emph{Window \menusep Show Down
 We will begin by creating a project in Overture and importing a model description file as in Tutorial 4.
 
 \begin{instructions}
-\item Create a project in Overture called \emph{LFRControllerModal}. If you are unsure, follow Steps 1--6 of Tutorial 4. You can accept the default location (your Overture workspace) in Step 4, or make a folder in your \emph{tutorial\_8\pathsep{}Models} directory and place the project there.
+\item Create a project in Overture called \emph{LFRControllerModal}. If you are unsure, follow Steps 1--6 of Tutorial 4. You can accept the default location (your Overture workspace) in Step 4, or make a folder in your \emph{tutorial\_9\pathsep{}Models} directory and place the project there.
 
-\item Import \emph{tutorial\_8\pathsep{}Models\pathsep{}Controller.modeldescription.xml} using the \emph{Overture FMU \menusep Import Model Description} context menu, as in Steps 7--9 of Tutorial 4.
+\item Import \emph{tutorial\_9\pathsep{}Models\pathsep{}Controller.modeldescription.xml} using the \emph{Overture FMU \menusep Import Model Description} context menu, as in Steps 7--9 of Tutorial 4.
 
     You should see the following structure:
 
@@ -58,7 +58,7 @@ We will begin by creating a project in Overture and importing a model descriptio
 To make a functional controller, we will we will add a \emph{Controller} class to contain the control logic. To provide structure to help with more complicated logic later, we will add classes to represent the \emph{sensors} and \emph{actuators} that manage the interface to the COE (and the physical simulation made in 20-sim). The \emph{Controller} class will use objects of these classes to read the environment and control the robot.
 
 \begin{instructions}
-\item Right-click on the \emph{LFRControllerModal} project and select \emph{New \menusep{} Empty VDM-RT File}. Call is \emph{Controller} and click \emph{Finish}.
+\item Right-click on the \emph{LFRControllerModal} project and select \emph{New \menusep{} Empty VDM-RT File}. Call it \emph{Controller} and click \emph{Finish}.
 
     \begin{annotation}[width=0.99\linewidth,trim=0 300 0 0,clip]{figures/OvertureNewEmptyFile}
         \upoint{0.075}{Right-click...}{0.1,0.572}
@@ -150,7 +150,7 @@ To make a functional controller, we will we will add a \emph{Controller} class t
           }{\color{black!10}}{}}]
     {World.vdmrt}
 
-\item You can now test the project in INTO-CPS by exporting an FMU and pasting it into the \emph{tutorial\_8\pathsep{}FMUs} (follow Steps 16--19 of Tutorial 4). Then you can then open \emph{tutorial\_8} in the \emph{INTO-CPS Application} and co-simulate with the \emph{lfr-3d} or \emph{lfr-non3d} multi-models. You should see the output from the VDM controller in the COE output:
+\item You can now test the project in INTO-CPS by exporting an FMU and pasting it into the \emph{tutorial\_9\pathsep{}FMUs} (follow Steps 16--19 of Tutorial 4). Then you can then open \emph{tutorial\_9} in the \emph{INTO-CPS Application} and co-simulate with the \emph{lfr-3d} or \emph{lfr-non3d} multi-models. You should see the output from the VDM controller in the COE output:
 
     \begin{annotation}[width=0.99\linewidth,trim=0 70 0 0,clip]{figures/INTOSensorReadings}
         \usquare{14cm}{0.1cm}{0.5}{\emph{Lines printed via \texttt{IO} appear here}}{0.5,0.63}
@@ -252,7 +252,7 @@ The second realistic behaviour is ambient light. The infrared sensor works by sh
 \item  Edit the \emph{Initial values of parameters} for \emph{\{sensorFMU\}.sensor1} and \emph{\{sensorFMU\}.sensor2} and set the \emph{ambient\_light} to \emph{25} (W), where the range is (0,~40).
 
     \begin{annotation}[width=0.85\linewidth,trim=0 100 0 400,clip]{figures/INTOAmbientLightParameter}
-        \usquare{8.1cm}{0.1cm}{0.2}{\emph{Set noise\_level}}{0.62,0.355}
+        \usquare{8.1cm}{0.1cm}{0.2}{\emph{Set ambient\_light}}{0.62,0.72}
     \end{annotation}
 
 \item Run the co-simulation and observe the increased black level.
