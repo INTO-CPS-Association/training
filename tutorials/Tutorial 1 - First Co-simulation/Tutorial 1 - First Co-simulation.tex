@@ -56,6 +56,7 @@ You may have been provided with tools on a USB drive at your training session. O
 %\end{annotation}
 
 \item Once the project is opened, you will see that project browser on the left of the INTO-CPS Application window is now populated. The entries in the project browser correspond to folders and files in the \emph{Tutorials\pathsep{}tutorials\_1} folder.
+You can read the project description in the \emph{README.md} file.
 
     The elements in the \emph{tutorial\_1} project are:
 
@@ -69,6 +70,7 @@ You may have been provided with tools on a USB drive at your training session. O
     \begin{annotation}[height=0.64\linewidth,trim=0 0 250 0,clip]{figures/openedProject}
         \lpoint{0.815}{Compiled FMUs}{0.05,0.815}
         \lpoint{0.815}{}{0.05,0.77}
+        \lpoint{0.7}{README.md content}{0.48,0.7}
         \lpoint{0.55}{20-sim model}{0.05,0.55}
         \lpoint{0.51}{VDM model}{0.05,0.51}
         \lpoint{0.42}{Multi-model configurations}{0.05,0.42}
@@ -244,7 +246,7 @@ The 20-sim tool is able to create 3D visualisations of simulations, which are li
         \dpoint{0.6}{\emph{controller.wt3\_valve}}{0.645,0.145}
     \end{annotation}
 
-    \textbf{\emph{Warning:}} The \emph{3DAnimationFMU} will crash the COE if the \emph{AnimationFrame} does not have focus when the simulation ends. If this happens, simply relaunch the COE as covered in Step~\ref{step:launch}.
+    \textbf{\emph{Warning:}} The \emph{3DAnimationFMU} will crash the COE if the \emph{AnimationFrame} does not have focus when the simulation ends. If this happens, simply relaunch the COE as covered in \ref{step:launch}
 
 %    \begin{annotation}[width=\linewidth]{figures/COECrash}
 %        \usquare{1.1cm}{0.2cm}{0.35}{2. Launch}{0.441,0.579}
@@ -252,5 +254,13 @@ The 20-sim tool is able to create 3D visualisations of simulations, which are li
 %    \end{annotation}
 
 \end{instructions}
+
+\section{Additional Exercises}
+
+When this tutorial is complete, either move onto Tutorial 2, or try the following additional exercises:
+
+\begin{enumerate}
+	\item What will happen on the long term? Will tanks 1 and 2 overflow? (Hint: experiment with different co-simulation parameters to find out; and configure the "Graph sampling interval" to 0.1 in order to observe the complete simulation plot).
+\end{enumerate}
 
 \end{document}
