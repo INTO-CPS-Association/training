@@ -1,4 +1,5 @@
 \documentclass[11pt,a4paper]{../tutorial}
+\usepackage{fancyvrb}
 \usepackage[hidelinks]{hyperref}
 
 \title{Tutorial 5 --- FMU Export (20-sim)}
@@ -6,6 +7,9 @@
 \author{Hugo D. Macedo}
 
 \def\intocpsVer{3.4.9}
+
+\newcommand{\tsimurl}{http://www.20sim.com/downloads/files/20sim.exe}
+
 \begin{document}
 
 \section*{Overview}
@@ -29,7 +33,7 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 
 \begin{itemize}[noitemsep]
 \item INTO-CPS Application
-\item COE (Co-simulation Orchestration Engine) accessible to the Application
+\item COE (Co-simulation Orchestration Engine) -- accessible through the INTO-CPS App Download Manager
 \item 20-sim - Modeling and simulation tool 
 \end{itemize}
 
@@ -93,7 +97,7 @@ us.
 					\item winetricks wininet
 					\item winetricks gdiplus 
 				\end{itemize}
-			\item Now download 20-sim from \url{http://www.20sim.com/downloads/files/20-sim-4.6.5.8490-intocps-win32.exe} and install it using: \verb'wine 20sim.exe'
+			\item Now download 20-sim from \url{\tsimurl} and install it using: \verb'wine 20sim.exe'
 		\end{enumerate}
 
 This should result in a working 20-sim version on Linux. Tested here with various Debian and Ubuntu versions and Wine version 1.5 up to Wine version 3.0.
@@ -156,6 +160,8 @@ This should result in a working 20-sim version on Linux. Tested here with variou
     \begin{annotation}[width=0.8\linewidth]{figures/20-simWheel1}
        % \upoint{0.37}{1. Locate and select \emph{Body\_Block.fmu}}{0.33,0.7}
        % \dsquare{1.9cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.74,0.055}
+       \dsquare{0.8cm}{0.8cm}{0.55}{rotation\_to\_translation}{0.652,0.58}
+%       \helpergrid
     \end{annotation}
 
 \item After double clicking the transformer you should find its contents to be empty.
@@ -177,14 +183,16 @@ This should result in a working 20-sim version on Linux. Tested here with variou
 
 \end{instructions}
 
-Congratulations! You edited your first 20-sim physical simulator.
+\bigskip
+\bigskip
+{\large\bfseries Congratulations!}
 
-In the next
-sections one need either a Windows system or an emulated Windows platform to be
+You edited your first 20-sim physical simulator.
+
+In the following sections, you'll need either a Windows system or an emulated Windows platform, to be
 able to export an FMU for the physical model of the Line Following Robot. The
 simulator FMU can be provided to you and you can continue in Section
-\ref{sec:cosim}. Nevertheless, it is interesting if you can follow the next
-steps by joining one of your colleagues. 
+\ref{sec:cosim}. If you cannot follow along in your computer, join one of your colleagues.
 
 \newpage
 
@@ -274,6 +282,15 @@ steps by joining one of your colleagues.
    \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenScriptOK}
    \end{annotation}
 
+	Common issues at this step:
+	\begin{itemize}
+		\item 20-sim is unable to collect resources -- This might be caused by python not having been installed when you ran the 20-sim setup. Try reinstalling 20-sim with that support enabled.
+		\item 20-sim cannot determine the location of the VS Common Tools folder -- There are multiple possible causes for this error:
+		\begin{enumerate}
+			\item You don't have Microsoft Build Tools installed, and/or
+			\item The script \emph{vsvars32.bat} expects to find a registry entry that contains the path to the Common tools folder (e.g., \emph{C:\textbackslash Program Files (x86)\textbackslash Microsoft Visual Studio 14.0\textbackslash Common7 \textbackslash Tools}). This issue is described in \footnote{\url{https://stackoverflow.com/questions/3461275/vs2010-command-prompt-gives-error-cannot-determine-the-location-of-the-vs-commo}}. The easiest solution is to uninstall Microsoft Build Tools 2015 and install the latest version of Visual Studio Community Edition, with the Desktop C++ development features.
+		\end{enumerate}
+	\end{itemize}
 \item Navigate to the chosen folder and copy the \emph{Body\_Block.fmu}.
 
    \begin{annotation}[width=0.8\linewidth]{figures/GetGenFMU}

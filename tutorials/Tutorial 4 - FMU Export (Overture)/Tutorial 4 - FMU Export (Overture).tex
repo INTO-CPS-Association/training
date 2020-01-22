@@ -56,9 +56,9 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 
 \begin{itemize}[noitemsep]
 \item INTO-CPS Application
-\item COE (Co-simulation Orchestration Engine) accessible to the Application
-\item Overture tool 
-\item Overture FMU Import/Exporter (No need for the CLI version)
+\item COE (Co-simulation Orchestration Engine) -- accessible through the INTO-CPS App Download Manager
+\item Overture tool -- accessible through the INTO-CPS App Download Manager
+\item Overture FMU Import/Exporter (No need for the CLI version)  -- accessible through the INTO-CPS App Download Manager
 \end{itemize}
 
 If you are following the tutorials for the first time at this point you need to install the Overture and the FMU through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
@@ -188,13 +188,15 @@ Overture can import model description files to create a skeleton project with th
         \dsquare{1.5cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.788,0.082}
     \end{annotation}
 
-\item Overture will parse the file and populated the project. You can see status messages from the import in the \emph{Console}. Expand the \emph{LFRController} project to see what was imported.
+\item Overture will parse the file and populate the project. You can see status messages from the import in the \emph{Console}. Expand the \emph{LFRController} project to see what was imported.
 
     \begin{annotation}[width=0.99\linewidth]{figures/OvertureImportStatus}
         \ucircle{0.15cm}{0.13}{Expand \emph{LFRController}}{0.018,0.797}
         \dsquare{5cm}{1.6cm}{0.3}{Import status}{0.17,0.15}
     \end{annotation}
-
+		
+	If you don't see the "Import comepleted" message, remove all imported files and retry the current step.
+		
     You should see the following structure:
 
     \begin{annotation}[width=0.25\linewidth,trim=0 300 535 0,clip]{figures/OvertureImportedClasses}
@@ -203,7 +205,7 @@ Overture can import model description files to create a skeleton project with th
         \rpoint{0.295}{Architecture of controller model}{0.7,0.315}
         \rpoint{0.215}{Entry point for execution}{0.7,0.255}
     \end{annotation}
-
+	
 \end{instructions}
 
 \newpage
@@ -426,5 +428,13 @@ Now that the controller model is complete, we can export an FMU and place it in 
     You can go back to \emph{Overture} and look at the logic in \texttt{Controller.vdmrt}, and try to make some changes. Just repeat \ref{step:exp1} to \ref{step:exp2} to regenerate and copy the FMU, then press \emph{Simulate}.
 
 \end{instructions}
+
+\section{Additional Exercises}
+
+When this tutorial is complete, either move onto Tutorial 5, or try to answer the following questions:
+
+\begin{enumerate}
+	\item Run multiple co-simulations, each with a different step size (e.g., 0.01, 0.05, 0.1, 0.5, ...), and the same controller. Can you explain the differences in the results? Imagine that this controller gets deployed onto a real robot. What does the step size mean there?
+\end{enumerate}
 
 \end{document}
