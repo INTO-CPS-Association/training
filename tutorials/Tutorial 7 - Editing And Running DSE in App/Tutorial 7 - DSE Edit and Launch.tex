@@ -24,8 +24,8 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 
 \begin{itemize}[noitemsep]
 \item INTO-CPS app 3.10 or above
-\item Python 2.7 with numpy and matplotlib
-\item DSE scripts 0.2.0 or above
+\item Python 2.7 with numpy and matplotlib -- you have to install it yourself
+\item DSE scripts 0.2.0 or above -- accessible through the INTO-CPS App Download Manager
 \end{itemize}
 
 You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
@@ -39,7 +39,7 @@ This tutorial requires the contents of Tutorial7.zip to be unzipped and placed i
 
 \section{Opening a DSE Configuration}
 
-After opening the app, you will need to move to the tutorial\_7 workspace that you unzipped in the previous step.  In the app select \emph{File \menusep Switch Workspace} and navigate to the your \emph{tutorial\_7} workspace.  With the workspace open you should be presented with the app welcome screen as below.
+After opening the app, you will need to move to the tutorial\_7 workspace that you unzipped in the previous step.  In the app select \emph{File \menusep Open Project} and navigate to the your \emph{tutorial\_7} folder.  With the folder open you should be presented with the app welcome screen as below.
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_00_openTheApp}
     %\rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_2\pathsep{}SysML}}{0.45,0.48}
@@ -47,7 +47,8 @@ After opening the app, you will need to move to the tutorial\_7 workspace that y
     %\helpergrid
 \end{annotation}\end{center}
 
-The configuration we will used in the tutorial is called dse-DSE\_Example-43, which was the name given to it when the app imports the DSE configuration that was exported from Modelio in Tutorial 6.  To open the configuration, double click on its name in the DSEs section.  Please note that the dse name 'dse-DSE\_Example-43' is the one that will be found in the work space distributed with this tutorial, if you have exported a DSE configuration from the app yourself  then the folder name will likely be different.
+The name of the DSE configuration we will use in the tutorial starts with dse-DSE\_Example, which was the name given to it when the app imports the DSE configuration that was exported from Modelio in Tutorial 6.  
+To open the configuration, double click on its name in the DSEs section.
 
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_01_dblClickOnDSE}
@@ -133,10 +134,11 @@ Scrolling down a little further we arrive at the \emph{Parameters} section, and 
 
 To add the constraints, click on the 'add constraint' button, this will add a text box and enter a single constraint.  Repeat this for each new constraint you wish to add.  For the purpose of the example you will need to add the following two constraints, the first ensures the y coordinates of the two sensors are the same and the second mirrors the x coordinate.
 
-$\{sensor1FMU\}.sensor1.lf\_position_y == \{sensor2FMU\}.sensor2.lf\_position_y$
+{\small 
+\verb|{sensor1FMU}.sensor1.lf_position_y == {sensor2FMU}.sensor2.lf_position_y|
 
-$\{sensor1FMU\}.sensor1.lf\_position_x == - \{sensor2FMU\}.sensor2.lf\_position_x$
-
+\verb|{sensor1FMU}.sensor1.lf_position_x == - {sensor2FMU}.sensor2.lf_position_x|
+}
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_09_typeParameterConstraints}
    % \rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_2\pathsep{}SysML}}{0.45,0.48}
@@ -185,7 +187,7 @@ Next is the Ranking section.  Recall from the previous tutorial (Tutorial 6), th
     \end{annotation}\end{center}
 
  \newpage
-In the final part of the configuration, we need to edit the Scenario name. Scenarios are a way of letting the objective scripts know what test environment the CPS was faced with, which in the case of the line follower robot, is the name of the map it is using. This details of what the objective scripts do with this name are discussed in Tutorial 7 on objective scripts.  For now we simply need to enter the name of the map which is ‘$studentMap$’ in the scenarios text box.
+In the final part of the configuration, we need to edit the Scenario name. Scenarios are a way of letting the objective scripts know what test environment the CPS was faced with, which in the case of the line follower robot, is the name of the map it is using. This details of what the objective scripts do with this name are discussed in Tutorial 7 on objective scripts.  For now we simply need to enter the name of the map which is \verb=studentMap= in the scenarios text box.
 
 
 
@@ -232,6 +234,11 @@ When the COE status panel is green, you may click on the \emph{Simulate} button 
 \newpage
 This DSE will run 9 simulations and takes a little under 9 minutes on a 3Ghz laptop; It may take more or less time on different hardware. If you are on Windows you will see terminal windows appearing as the app launches the DSE scripts. This confirms that the DSE is running, but there may be less obvious signs of activity on other operating systems.  Currently, the main indicator that a DSE is complete may be found in the app itself.  In the DSEs section, expanding the structure under the name of the DSE configuration reveals a folder named for the date and time that the DSE commenced.  Expanding this directory reveals subdirectories containing results from each individual simulation.  When the DSE is complete there will be another file in this directory named `$Results$’, as below.
 
+\textbf{Common Issues:}
+\begin{itemize}
+	\item If nothing happens after you click the simulate button, check that your python installation is the correct one, and make sure the right python version is accessible in the \emph{PATH} variable.
+	\item If the correct python version is in the \emph{PATH}, then double check that the constraints correctly refer to the FMU instances.
+\end{itemize}
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_17_dseComplete}
  %   \rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_2\pathsep{}SysML}}{0.45,0.48}

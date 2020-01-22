@@ -20,17 +20,24 @@ This tutorial will show you how to:
 
 \section*{Requirements}
 
-This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
-
 \begin{itemize}[noitemsep]
-\item Modelio v3.7.1
+	\item INTO-CPS Application
+	\item COE (Co-simulation Orchestration Engine) -- accessible through the INTO-CPS App Download Manager
+	\item Modelio -- accessible through the INTO-CPS App Download Manager
+	\begin{small}
+		\begin{itemize}
+			\item If you use linux please make sure your installation meets the dependencies listed in:\\ \url{https://www.modelio.org/downloads-links/requirements.html}
+			\item For debian based distributions the following command may be usefull:\\
+			dpkg-query -l  libatk1.0-0 libc6 libcairo2 libgtk-3-0 libglib2.0-0 libwebkitgtk-1.0-0 libxtst6 libstdc++6
+		\end{itemize}
+	\end{small}
 \end{itemize}
 
 You may have been provided with tools on a USB drive at your training session. Otherwise the INTO-CPS Application can be downloaded from \url{https://into-cps.github.io/download/} and tools can be downloaded from there through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
 
-\vspace{4mm}
+%\vspace{4mm}
 
-You may need to update the INTO-CPS extension for Modelio to utilise DSE components. The extension can be downloaded from \mbox{\url{http://forge.modelio.org/projects/modelio-3-7-x/files}}. Version 1.4.02 or later is required for DSE modelling.
+%You may need to update the INTO-CPS extension for Modelio to utilise DSE components. The extension can be downloaded from \mbox{\url{http://forge.modelio.org/projects/modelio-3-7-x/files}}. Version 1.4.02 or later is required for DSE modelling.
 
 \newpage
 
@@ -95,7 +102,7 @@ This section will describe the definition of objectives for use by DSE.  Objecti
 When defining the objectives we first describe them in terms of their name, the script file that will be used to compute them and the ports that will provide the data they require.  Instances of these definitions are then created and the ports either filled with a static value or connected to data exchanged in the multi-model.
 
 \begin{instructions}
-\item Right click `$linefollowrobot\_mm$' in model outline. Select `INTO-CPS \menusep Objective Definition Diagram'.
+\item Right click \verb=linefollowrobot_mm= in model outline. Select `INTO-CPS \menusep Objective Definition Diagram'.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_create_diagram}
@@ -124,7 +131,7 @@ When defining the objectives we first describe them in terms of their name, the 
     \end{annotation}
 \end{center}
 
-\item On the top of the editor window, select the ``Properties'' tab to show a window similar to the one below, and change \{\}file to `$meanspeed.py$', and close the editor window.
+\item On the top of the editor window, select the ``Properties'' tab to show a window similar to the one below, and change \{\}file to `$meanspeed.py$', and close the editor window. Note: you must use the ``Properties'' tab to make this change. The ``INTO-CPS'' tab only allows you to view the file property.
 
 \begin{center}
 	\begin{annotation}[width=0.7\linewidth]{figures/modelio_script_file}
@@ -250,7 +257,7 @@ The model should now look like this:
 
 \newpage
 
-\item To link Objectives to the multi-model, find the `$robot2Sensor$' instance in the model overview and drag it onto the diagram to include it in the DSE. \\ \textit{NB drag the block onto empty space, not onto the $DSE\_Example$ block}.
+\item To link Objectives to the multi-model, find the `$robot2Sensor$' instance in the model overview (under Architecture) and drag it onto the diagram to include it in the DSE. \\ \textit{Note: drag the block onto empty space, not onto the $DSE\_Example$ block}.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_include_r2s}
@@ -263,7 +270,7 @@ The model should now look like this:
 \item Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$body$' onto the `$robot2sensor$' instance just created.
 
 \begin{center}
-\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_body}
+\begin{annotation}[width=0.8\linewidth]{figures/modelio_include_body}
     \usquare{1.5cm}{0.1cm}{0.25}{body instance}{0.13,0.79}
     \dpoint{0.45}{Include body instance within robot instance}{0.63,0.5}
     %\helpergrid
@@ -272,15 +279,15 @@ The model should now look like this:
 
 \newpage
 
-\item Expand the instance of `$body$' (nested under `$robot2sensor$') in the model overview and drag the `$robot\_x$' port onto the body instance just created. Repeat this for the `$robot\_y$' port.
-
-\begin{center}
-\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_xy}
-    \usquare{1.5cm}{0.1cm}{0.25}{robot\_x interface}{0.15,0.68}
-    \dpoint{0.5}{Include interface instance within robot body instance}{0.63,0.43}
-    %\helpergrid
-    \end{annotation}
-\end{center}
+%\item Expand the instance of `$body$' (nested under `$robot2sensor$') in the model overview and drag the `$robot\_x$' port onto the body instance just created. Repeat this for the `$robot\_y$' port.
+%
+%\begin{center}
+%\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_xy}
+%    \usquare{1.5cm}{0.1cm}{0.25}{robot\_x interface}{0.15,0.68}
+%    \dpoint{0.5}{Include interface instance within robot body instance}{0.63,0.43}
+%    %\helpergrid
+%    \end{annotation}
+%\end{center}
 
 \item \label{obj_link} Finally, select the \emph{Reference} tool from the \emph{Toolbox} and link port `$2$' from `$ms$' to port `$robot\_x$' from `$body$'.
 
@@ -307,7 +314,7 @@ The model should now look like this:
 The model should now look like this:
 
 \begin{center}
-\begin{annotation}[width=0.7\linewidth]{figures/modelio_ocd_ref_complete}
+\begin{annotation}[width=0.9\linewidth]{figures/modelio_ocd_ref_complete}
     %\usquare{3.9cm}{0.1cm}{0.25}{Create Objective Definition Diagram}{0.66,0.58}
     %\helpergrid
     \end{annotation}
@@ -401,7 +408,7 @@ The model should now look like this:
 
 \newpage
 
-\item Repeat \ref{add_par} for `$S1Y$', `$S2X$', and `$S2Y$', using the instance labels `$s1y$', `$s2x$', and `$s2y$' respectively.
+\item Repeat \ref{add_par} for `$S1Y$', `$S2X$', and `$S2Y$', using the instance names `$s1y$', `$s2x$', and `$s2y$' respectively.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_include_param_complete}
@@ -411,7 +418,7 @@ The model should now look like this:
 \end{center}
 
 
-\item To link Parameters to the multi-model, find the `$robot2Sensor$' instance in the model overview and drag it onto the diagram to include it in the DSE. \\ \textit{(NB drag the block onto empty space, not onto the DSE\_Example block)}.
+\item To link Parameters to the multi-model, find the `$robot2Sensor$' instance in the model overview and drag it onto the diagram to include it in the DSE. \\ \textit{(Note drag the block onto empty space, not onto the DSE\_Example block)}.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_pcd_include_r2s}
@@ -510,7 +517,7 @@ In DSE all the designs are essentially competing to be considered the best and i
 
 \newpage
 
-\item Select the Note tool from the toolbox and click on the `$lt$' block just created. Click on a clear space in the diagram to create the description block.
+\item Select the Note tool from the toolbox and click on the `$lt$' block just created. Then click on a clear space in the diagram to create the description block.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_add_note}
@@ -521,7 +528,7 @@ In DSE all the designs are essentially competing to be considered the best and i
 
 \newpage
 
-\item \label{end_add_rank} Double click the description block to edit the note text. Uncheck the `HTML' option and paste the text \mbox{`$weight = -1.0$'}. Close the description window to update the diagram.
+\item \label{end_add_rank} Double click the description block to edit the note text. Uncheck the `HTML' option and paste the text \mbox{`$weight = -0.1$'}. Close the description window to update the diagram.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_note_text}
@@ -562,7 +569,7 @@ This section will outline the steps necessary to generate a DSE configuration in
 \end{center}
 
 
-In the INTO-CPS app, this configuration file can be found in `SysML \menusep LineFollowerRobot \menusep config'. Right click the configuration file and select `Create DSE Configuration'.
+\item In the INTO-CPS app, open the project in Tutorial 6. Then the configuration file generated in the previous step can be found in `SysML \menusep LineFollowerRobot \menusep config'. Right click the configuration file and select `Create DSE Configuration'.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/app_moveDSEConfig}
