@@ -135,9 +135,9 @@ Scrolling down a little further we arrive at the \emph{Parameters} section, and 
 To add the constraints, click on the 'add constraint' button, this will add a text box and enter a single constraint.  Repeat this for each new constraint you wish to add.  For the purpose of the example you will need to add the following two constraints, the first ensures the y coordinates of the two sensors are the same and the second mirrors the x coordinate.
 
 {\small 
-\verb|{sensor1FMU}.sensor1.lf_position_y == {sensor2FMU}.sensor2.lf_position_y|
+\verb|{sensor1}.sensor1.lf_position_y == {sensor2FMU}.sensor2.lf_position_y|
 
-\verb|{sensor1FMU}.sensor1.lf_position_x == - {sensor2FMU}.sensor2.lf_position_x|
+\verb|{sensor1}.sensor1.lf_position_x == - {sensor2FMU}.sensor2.lf_position_x|
 }
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_09_typeParameterConstraints}
