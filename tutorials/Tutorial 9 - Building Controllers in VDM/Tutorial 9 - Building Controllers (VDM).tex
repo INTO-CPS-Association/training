@@ -40,7 +40,7 @@ This tutorial will help you to:
 
 \begin{enumerate}[noitemsep]
 \item Generate a more complete controller in VDM using Overture
-\item Add behaviours to deal with realistic behaviours (noise and ambient light)
+\item Add behaviours to deal with realistic scenarios (noise and ambient light)
 \item Add modes for degraded behaviours after sensor failure
 \end{enumerate}
 
@@ -49,9 +49,10 @@ This tutorial will help you to:
 This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
 
 \begin{itemize}[noitemsep]
-\item INTO-CPS Application
-\item COE (Co-simulation Orchestration Engine) accessible to the Application
-\item Overture including FMU plug-in
+	\item INTO-CPS Application
+	\item COE (Co-simulation Orchestration Engine) -- accessible through the INTO-CPS App Download Manager
+	\item Overture tool -- accessible through the INTO-CPS App Download Manager
+	\item Overture FMU Import/Exporter (No need for the CLI version)  -- accessible through the INTO-CPS App Download Manager
 \end{itemize}
 
 Tools can be downloaded through the Application (\emph{Window \menusep Show Download Manager}) or may have been provided on the USB drive at your training session. Please ask if you are unsure.
@@ -173,7 +174,8 @@ To make a functional controller, we will we will add a \emph{Controller} class t
           }{\color{black!10}}{}}]
     {World.vdmrt}
 
-\item You can now test the project in INTO-CPS by exporting an FMU and pasting it into the \emph{tutorial\_9\pathsep{}FMUs} (follow Steps 16--19 of Tutorial 4). Then you can then open \emph{tutorial\_9} in the \emph{INTO-CPS Application} and co-simulate with the \emph{lfr-3d} or \emph{lfr-non3d} multi-models. You should see the output from the VDM controller in the COE output:
+\item You can now test the project in INTO-CPS by exporting an FMU and pasting it into the \emph{tutorial\_9\pathsep{}FMUs} (follow Steps 16--19 of Tutorial 4). Then you can open \emph{tutorial\_9} in the \emph{INTO-CPS Application} and co-simulate with the \emph{lfr-3d} or \emph{lfr-non3d} multi-models. 
+You should see the output from the VDM controller in the COE output:
 
     \begin{annotation}[width=0.99\linewidth,trim=0 70 0 0,clip]{figures/INTOSensorReadings}
         \usquare{14cm}{0.1cm}{0.5}{\emph{Lines printed via \texttt{IO} appear here}}{0.5,0.63}
@@ -181,9 +183,13 @@ To make a functional controller, we will we will add a \emph{Controller} class t
 
     As you can see from the live graph (and 3D visualisation), the left sensor is over black (low) and the right sensor is over white (high). The range is (0,255).
 
+\textbf{Common Issues:}
+\begin{itemize}
+	\item No output from the VDM controller is shown -- Make sure that the co-simulation configuration has "Logging on" and "Enable All log categories per instance" set to true.
+\end{itemize}
+
 \end{instructions}
 
-\newpage
 \section{A Basic Controller}
 
 We will now add some basic line following logic. A so-called ``bang-bang'' controller turns left if the line is to the left, and right if the line is to the right. This creates a characteristic zig-zag motion.

@@ -1,8 +1,6 @@
 \documentclass[11pt,a4paper]{../tutorial}
 \usepackage[hidelinks]{hyperref}
 
-
-\usepackage{lstlinebgrd}
 \usepackage{listings}
 \usepackage{ifthen}
 
@@ -20,8 +18,8 @@ This tutorial will help you to:
 \item Install PVSio-web
 \item Generate a  controller using PVSio-Web
 \item Generate an FMU from a PVSio-Web project
-\item Prepare an ARDUINO Sketch with the FMU code 
-\item Compile and upload the Sketch into the robot 
+\item Prepare an ARDUINO Sketch with the FMU code
+\item Compile and upload the Sketch into the robot
 \end{enumerate}
 
 \section*{Requirements}
@@ -32,9 +30,9 @@ This tutorial requires the following tools:
 \item Linux OS (or a VM with Linux as OS)
 \item INTO-CPS Application
 \item COE (Co-simulation Orchestration Engine) accessible to the Application
-\item ARDUINO IDE (1.8.5) 
+\item ARDUINO IDE (1.8.5)
 \item avr-gcc (GCC) $\geq$ 6.3.0
-\item avr-g++ (GCC) $\geq$ 6.3.0   
+\item avr-g++ (GCC) $\geq$ 6.3.0
 
 \end{itemize}
 
@@ -64,7 +62,7 @@ This tutorial requires the following tools:
 \item Launch the script start.sh (type "./start.sh")
 \item Then open a web browser and go to the page "http://localhost:8082/"
 \item On the web page, click on New Project in the topbar and name it \emph{LFRController}.
-\item On the topbar of the project click "Save Project" 
+\item On the topbar of the project click "Save Project"
 
 \end{instructions}
 \section{Adding variables to an Emuchart diagram}
@@ -142,12 +140,12 @@ This transition drives the robot forward when both sensors see the painted line 
 	\url{https://www.arduino.cc/en/Main/Software}.  Choose the zip file
 	version and extract the folder into your
 	\texttt{into-cps-projects/install} folder. (Choose the respective files in the case of Linux or macOS installations)
-	
+
 \item The current C/C++ compiler version shipped in the ARDUINO IDE is prior to the required 6.3. So one needs to install an updated version. You can find one from:\\
-	\url{http://blog.zakkemble.co.uk/avr-gcc-builds/}. 
-	
+	\url{http://blog.zakkemble.co.uk/avr-gcc-builds/}.
+
 	Download and unzip it into your  \texttt{into-cps-projects/install} folder. (Choose the respective files in the case of Linux or macOS installations)
-	
+
 \section{Create the FMU and upload to Arduino (Linux/macOS Only)}
 
 
@@ -161,16 +159,16 @@ This transition drives the robot forward when both sensors see the painted line 
 
 
 
-	
-	
+
+
 
 \item In a terminal change to the \emph{tutorial\_10/Deploy/linux} folder. In it you should find the files: \emph{main.cpp}, \emph{modeldescription.h} and the \emph{deploy.sh} script.
 
 \item Set the following variables used in the \emph{deploy.sh} script adapting the path to your own choices:
 	\begin{itemize}
-		\item port - to the previous result 
-		\item gcc\_path - to into\_cps\_project/install/avr-gcc-8.3.0-x64-linux/bin 
-		\item avr - to into\_cps\_project/install/arduino-1.8.5/hardware/arduino/avr/ 
+		\item port - to the previous result
+		\item gcc\_path - to into\_cps\_project/install/avr-gcc-8.3.0-x64-linux/bin
+		\item avr - to into\_cps\_project/install/arduino-1.8.5/hardware/arduino/avr/
 		\item avrdudeconfig - to into\_cps\_project/install/arduino-1.8.5/hardware/tools/avr/etc/avrdude.conf
 	\end{itemize}
 \item Make the following changes to main.cpp
@@ -180,7 +178,7 @@ This transition drives the robot forward when both sensors see the painted line 
 		\item comment line 121 (LSR\_ THRESHOLD)
 	\end{itemize}
 \item Move the newly created FMU in this folder.
-\item Run the \emph{deploy.sh} script with  line\_ follower\_ robot.fmu as a parameter. 
+\item Run the \emph{deploy.sh} script with  line\_ follower\_ robot.fmu as a parameter.
 \end{instructions}
 
 
