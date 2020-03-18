@@ -394,4 +394,21 @@ When this tutorial is complete, either move onto Tutorial 4, or try to answer th
   \item What are the advantages on using SysML and its accompanying tool Modelio?
 \end{enumerate}
 
+
+\section{Troubleshooting and Common Problems}
+
+\subsection{Download manager shows no content}
+
+Symptom: After opening the download manager, the download manager window shows up but there is no content.
+
+Cause: There can be many factors causing this. One such cause is that some files are corrupted in the into-cps app settings directory. 
+
+Solution: 
+\begin{enumerate}
+	\item Close the into-cps app (make sure it is really closed by opening your task manager and making sure the Electron process is not running).
+	\item Go to the into-cps settings directory. On windows, this is in your \verb=%APPDATA%\INTO-CPS APP= directory. For example: \verb=C:\Users\au602135\AppData\Roaming\INTO-CPS APP=.
+	\item Delete the above folder.
+	\item Start the app.
+\end{enumerate}
+
 \end{document}
