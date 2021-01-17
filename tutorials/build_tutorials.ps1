@@ -5,6 +5,6 @@ foreach ($file in $tutorial_files) {
         echo "Building $file"
         $filename = $file.Basename
         & latexmk -C
-        & latexmk.exe -pdf -silent "$file"
+        & latexmk.exe -pdf -silent -synctex=1 "$file"
     Pop-Location
 }

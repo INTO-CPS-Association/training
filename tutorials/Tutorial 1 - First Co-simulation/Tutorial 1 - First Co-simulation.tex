@@ -70,7 +70,7 @@ You can read the project description in the \emph{README.md} file.
     \begin{description}[noitemsep]
         \item[FMUs] Compiled FMUs (with file extension .fmu) that are used in co-simulation.
         \item[Models] Source models used to generate the FMUs. The icon of each entry shows which tool created the model. In this case Overture and 20-sim.
-        \item[Multi-models] Used to configure co-simulations, including which FMUs are used and other co-simulation settings.
+        \item[Multi-models] Used to configure co-simulations, including which FMUs are used, how their inputs and outputs are connected, and parameter values for the FMUs.
         \item[SysML] Architectural models that are used to create model and multi-model descriptions.
     \end{description}
 
@@ -107,6 +107,8 @@ To run a co-simulation we must use one of the multi-model configurations. We'll 
     \end{annotation}
 
 \item \label{step:launch} Once the \emph{Experiment1} co-simulation configuration is open, you will see the following screen. The COE (Co-simulation Orchestration Engine) is a separate tool from the INTO-CPS Application. This screen gives the status, which is offline. To launch it, press \emph{Launch}.
+
+\paragraph{Remark.} The first time you launch the COE on windows, you might see a firewall asking to authorize the java application. You have to allow the COE to open a connection on your network, because the INTO-CPS Application and the COE communicate via the socket interface.
 
     \begin{annotation}[width=0.85\linewidth,trim=0 0 0 0,clip]{figures/threetankScreen}
         \usquare{1.35cm}{0.25cm}{0.2}{Launch}{0.36,0.58}
@@ -158,6 +160,10 @@ To run a co-simulation we must use one of the multi-model configurations. We'll 
 
 \newpage
 \section{Changing Co-simulation Parameters}
+
+\emph{Experiment1} under the multi-model Non-3D is a Co-simulation Configuration.
+A co-simulation configuration contains the configuration that is specific to the co-simulation algorithm.
+For instance, it controls how long the co-simulation should run for, whether it should be run in tandem with the real time (e.g., the wall-clock time), which variables should be plotted, etc.
 
 \begin{instructions}
 \item We can change the length of the co-simulation, the parameters of the master algorithm, and the variables that are plotted using the \emph{Configuration} pane of the co-simulation configuration. Expand the pane by pressing the triangle.
@@ -227,7 +233,7 @@ The 20-sim tool is able to create 3D visualisations of simulations, which are li
     \end{annotation}
 
 \newpage
-\item Click \emph{Simulate}. See Step~\ref{step:launch} if the \emph{Simulate} button is disabled or the COE is offline.
+\item Click \emph{Simulate}. See \ref{step:launch} if the \emph{Simulate} button is disabled or the COE is offline.
 
     \begin{annotation}[width=0.85\linewidth,trim=0 140 0 110,clip]{figures/threetankGreen3D}
         \usquare{1.7cm}{0.25cm}{0.5}{Simulate!}{0.348,0.498}
