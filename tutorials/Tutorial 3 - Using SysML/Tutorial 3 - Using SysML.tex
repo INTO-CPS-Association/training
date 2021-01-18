@@ -29,7 +29,7 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 	\begin{small}
 	\begin{itemize}
 		\item If you use linux please make sure your installation meets the dependencies listed in:\\ \url{https://www.modelio.org/downloads-links/requirements.html}
-		\item For debian based distributions the following command may be usefull:\\
+		\item For debian based distributions the following command may be useful:\\
 		dpkg-query -l  libatk1.0-0 libc6 libcairo2 libgtk-3-0 libglib2.0-0 libwebkitgtk-1.0-0 libxtst6 libstdc++6
 	\end{itemize}
 	\end{small}
@@ -95,7 +95,7 @@ You may have been provided with tools and tutorials on a USB drive at your train
 
 \begin{instructions}
 
-\item In case \emph{Modelio} does not install automatically after download you need to navigate to the \\	\texttt{into-cps-projects/install\_downloads} directory, and run the modelio executable.
+\item In case \emph{Modelio} does not install automatically after download you need to navigate to the \\	\texttt{into-cps-projects/install\_downloads} directory, and run the modelio installation.
 
 \item Launch \emph{Modelio}. On first loading, you may have to close the \emph{Welcome} screen (you can bring it back with \emph{Help \menusep Welcome} if you need)
 
@@ -111,7 +111,7 @@ You may have been provided with tools and tutorials on a USB drive at your train
     \end{annotation}
 \newpage
 
-\item Set the \emph{Workspace} to the location of \emph{Tutorials\pathsep{}tutorials\_3\pathsep{}SysML} and click \emph{Ok}.
+\item Set the \emph{Workspace} to the location of \emph{Tutorials\pathsep{}Tutorial\_3\pathsep{}SysML} and click \emph{Ok}.
 
 \begin{annotation}[width=0.5\linewidth,trim=0 0 0 0,clip]{figures/modelio_workspace_choice}
     \rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_3\pathsep{}SysML}}{0.45,0.48}
@@ -128,7 +128,9 @@ You may have been provided with tools and tutorials on a USB drive at your train
     \end{annotation}
 
 \newpage
-\item In the \emph{Diagrams} pane, expand the \emph{Diagrams} folder and double click the \emph{Architecture Diagram}. The diagram below will open. Notice there are two instances of the Sensor model.
+\item In the \emph{Diagrams} pane, expand the \emph{Diagrams} folder and double click the \emph{Architecture Diagram}. The diagram below will open. 
+The \emph{Architecture Diagram} contains the components that make up the line following robot system. 
+Notice there are two instances of the Sensor model.
 
 \begin{annotation}[width=\linewidth,trim=0 0 0 0,clip]{figures/ModelioDiagramsPaneNew}
     \dpoint{0.7}{Diagrams pane}{0.43,0.23}
@@ -137,13 +139,15 @@ You may have been provided with tools and tutorials on a USB drive at your train
     \ucircle{0.18cm}{0.4}{Two instances}{0.59,0.59}
     \end{annotation}
 
-\item Double click the \emph{Connections Diagram}
+\newpage
+
+\item Double click the \emph{Connections Diagram}. The \emph{Connections Diagram} describes how the components declared in the \emph{Architecture Diagram} are connected. Observe carefully the \emph{Connections Diagram} and note how one components is missing. The upcoming steps of this tutorial will correct this.
 
     \begin{annotation}[width=\linewidth,trim=0 0 0 350,clip]{figures/ModelioDiagramsPaneNew2}
     \dpoint{0.15}{Connections diagram}{0.22,0.29}
     \end{annotation}
 
-\newpage
+
 \item To add a new Sensor, select \emph{Block Instance} from the palette menu and add the new instance to the 3DRobot -- simply click inside the 3DRobot, as indicated below.
 
 \begin{annotation}[width=0.7\linewidth,trim=0 500 0 0,clip]{figures/modelio_add_instance}
@@ -160,6 +164,8 @@ You may have been provided with tools and tutorials on a USB drive at your train
 %     \helpergrid
 \end{annotation}
 
+\newpage
+
 \item The next step is to add ports to the sensor instance. Select \emph{Port} from the palette menu and add the new port to the sensor2.
 
 \begin{annotation}[width=0.7\linewidth,trim=0 500 0 0,clip]{figures/modelio_add_port}
@@ -167,7 +173,7 @@ You may have been provided with tools and tutorials on a USB drive at your train
     \rpoint{0.3}{Place new port here}{0.7,0.24}
 %    \helpergrid
     \end{annotation}
-\newpage
+
 
 
 \item Select the new port and in the \emph{INTO-CPS} panel change the name to `robot\_x' and type to be `Sensor::robot\_x'.
@@ -177,6 +183,8 @@ You may have been provided with tools and tutorials on a USB drive at your train
     \dpoint{0.7}{Set the type to \emph{Sensor::robot\_x}}{0.44,0.3}
 %    \helpergrid
     \end{annotation}
+
+\newpage
 
 \item Repeat steps 14 and 15 to add four more ports:
 \begin{itemize}
@@ -191,7 +199,7 @@ The connections diagram should look like that below:
     \rsquare{2.8cm}{0.9cm}{0.34}{All ports added}{0.805,0.34}
 %    \helpergrid
     \end{annotation}
-\newpage
+
 
 \item The next step is to add connections between the different models of the robot. Select \emph{Connector} from the palette menu and connect the \emph{robot\_x} port of the \emph{body} component to the \emph{robot\_x} port of the new \emph{sensor2} component
 
@@ -202,6 +210,7 @@ The connections diagram should look like that below:
 %    \helpergrid
     \end{annotation}
 
+\newpage
 
 \item Repeat step 17 to add five more connectors:
 \begin{itemize}
@@ -217,7 +226,7 @@ The connections diagram should look like that below:
     \rsquare{6.2cm}{6cm}{0.5}{All connectors added}{0.7,0.425}
 %    \helpergrid
     \end{annotation}
-\newpage
+
 
 \item To export this new configuration, right click on the 3DRobot instance and select \emph{INTO-CPS \menusep Generate Configuration}. \emph{If nothing happens, closing and re-opening Modelio often helps.}
 
@@ -225,7 +234,9 @@ The connections diagram should look like that below:
     \rsquare{4cm}{0.25cm}{0.8}{\emph{Generate Configuration}}{0.648,0.8}
     \end{annotation}
 
-\item Click \emph{Generate}. If this seems to be unresponsive, then click \emph{Cancel}, save the model, close and reopen \emph{Modelio} and try again.
+\newpage
+
+\item Click \emph{Generate}. If this seems to be unresponsive, then click \emph{Cancel}, save the model, close and reopen \emph{Modelio} and try again. The generated configuration will allow us to create a multi-model configuration.
 
     \begin{annotation}[width=0.3\linewidth,trim=0 0 0 0,clip]{figures/modelio_generate}
     \rsquare{1.9cm}{0.8cm}{0.15}{Click \emph{Generate}}{0.214,0.155}
@@ -296,8 +307,9 @@ The connections diagram should look like that below:
 \item A file browser window will open and show five FMUs (if the file browser does not show the FMUs, navigate to \emph{tutorials\_3\pathsep{}FMUs}). Select \emph{LFRController.fmu} and click \emph{Open}.
 
     \begin{annotation}[width=0.8\linewidth]{figures/FMUFindFile}
-        \upoint{0.37}{1. Locate and select \emph{LFRController.fmu}}{0.3,0.52}
-        \dsquare{1.5cm}{0.12cm}{0.63}{2. Click \emph{Open}}{0.788,0.0758}
+        \upoint{0.8}{1. Double check path}{0.5,0.9}
+        \upoint{0.37}{2. Locate and select \emph{LFRController.fmu}}{0.3,0.52}
+        \dsquare{1.5cm}{0.12cm}{0.63}{3. Click \emph{Open}}{0.788,0.0758}
     \end{annotation}
 
 \item The LFRController has been added. Repeat this for the remaining elements:
