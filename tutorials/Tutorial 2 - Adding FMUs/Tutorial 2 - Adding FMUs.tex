@@ -241,7 +241,7 @@ The green box and arrows in Figure~\ref{fig:initialconfig} are what you need to 
 
 \item Finally, repeat to connect \emph{\{sensor2\}.sensor2 / lf\_1\_\_sensor\_reading} to \emph{\{controller\}.controllerInstance / lfRightVal}.
 
-\item Next we must set the parameters of the controller, which determines how it responds to sensor input. Scroll down to \emph{Initial values of parameters} and select \emph{\{controller\}.controllerInstance}. Then click \emph{+ Add} for \emph{backwardRotate}.
+\item Next we must set the parameters of the controller, which determine how the controller code, running inside the \emph{LFRController} FMU, responds to sensor input. Scroll down to \emph{Initial values of parameters} and select \emph{\{controller\}.controllerInstance}. Then click \emph{+ Add} for \emph{backwardRotate}.
 
     \begin{annotation}[width=0.8\linewidth]{figures/into_configure_mm11}
         \usquare{7.8cm}{0.3cm}{0.62}{\{controller\}.controllerInstance}{0.62,0.544}
@@ -315,7 +315,7 @@ The green box and arrows in Figure~\ref{fig:initialconfig} are what you need to 
 %    \end{annotation}
 
 \newpage
-\item Under \emph{Basic Configuration} set the the \emph{Step size} to 0.01. Don't forget to press \emph{Edit}.
+\item Under \emph{Basic Configuration} set the \emph{Step size} to 0.01. Don't forget to press \emph{Edit}.
 
     \begin{annotation}[width=0.85\linewidth,trim=0 70 0 0,clip]{figures/into_configure_cc2}
         \usquare{1.25cm}{0.12cm}{0.3}{\emph{Edit}}{0.335,0.66}
