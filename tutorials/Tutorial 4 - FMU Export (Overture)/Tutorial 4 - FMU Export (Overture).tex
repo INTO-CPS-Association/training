@@ -27,7 +27,7 @@
 \usepackage{lstlinebgrd}
 \usepackage{ifthen}
 
-\title{Tutorial 4 --- FMU Export (Overture)}
+\title{Tutorial 4 --- Controller FMU Export (Overture)}
 \date{October 2016}
 \author{Ken Pierce and Richard Payne}
 
@@ -61,12 +61,16 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 \item Overture FMU Import/Exporter (No need for the CLI version)  -- accessible through the INTO-CPS App Download Manager
 \end{itemize}
 
-If you are following the tutorials for the first time at this point you need to install the Overture and the FMU through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory. Please ask if you are unsure.
+If you are following the tutorials for the first time at this point you need to install the Overture and the FMU through \emph{Window \menusep Show Download Manager} to your \emph{into-cps-projects} install downloads directory (see the INTO-CPS Application \emph{Window \menusep Show Settings} menu). Please ask if you are unsure.
 
 
 \section{Creating a Project in Overture}
 
-The example in this tutorial is a small line-following robot with two infrared sensors. We will generate a controller FMU that reads these sensors and controls the wheels to follow the line. First we will create a project.
+The example in this tutorial is a small line-following robot with two infrared sensors. We will generate a controller FMU that reads these sensors and controls the wheels to follow the line. 
+In the previous tutorials, this controller was already given as an FMU.
+First we will create a project.
+
+\clearpage
 
 \begin{instructions}
 \item Open \emph{Overture}. It will prompt you to select a location for its workspace. You may accept the default location by pressing \emph{OK}, or press \emph{Browse...} to select a different location. If you do not want to be prompted in future, check \emph{Use this as the default and do not ask again}.
@@ -84,6 +88,13 @@ The example in this tutorial is a small line-following robot with two infrared s
         \dsquare{14.65cm}{2.8cm}{0.48}{Console and information}{0.5,0.127}
     \end{annotation}
 
+\paragraph{Remark.} The INTO-CPS Application Download Manager will download Overture into the \emph{Downloads Location} directory, and then will try to extract it to the \emph{Downloads Installation Location}. Both these settings are in the INTO-CPS App \emph{Window \menusep Show Settings} menu.
+Sometimes, the operating system does not allow the INTO-CPS App to extract the downloaded archive, so you have to perform this action manually.
+If you encounter errors opening Overture, they could be caused by a partial extraction.
+In that case, remove Overture's installation folder and extract the files manually.
+
+\newpage
+
 \item First create a project that will hold the controller model. Select \emph{File \menusep New \menusep Project...}.
 
     \begin{annotation}[width=\linewidth,trim=0 250 0 0,clip]{figures/OvertureNewProject}
@@ -92,13 +103,16 @@ The example in this tutorial is a small line-following robot with two infrared s
         \upoint{0.24}{\emph{Project...}}{0.38,0.85}
     \end{annotation}
 
-\newpage
+
+
 \item In the \emph{New Project} window, select \emph{VDM-RT Project} and click \emph{Next \menusep} to go to the next step.
 
     \begin{annotation}[width=0.6\linewidth]{figures/OvertureProjectWizard1}
         \dsquare{1.7cm}{0.12cm}{0.48}{Continue to next step}{0.5,0.054}
         \rpoint{0.63}{\emph{VDM-RT} project type}{0.3,0.63}
     \end{annotation}
+
+\newpage
 
 \item The next screen asks for a name for the project. Call it \emph{LFRController}. We will place the project in the \emph{tutorial\_4\pathsep{}Models} folder, so uncheck \emph{Use default location} and click \emph{Browse...}
 
@@ -108,13 +122,15 @@ The example in this tutorial is a small line-following robot with two infrared s
         \rsquare{1.7cm}{0.12cm}{0.63}{3. Click \emph{Browse...}}{0.878,0.63}
     \end{annotation}
 
-\newpage
+
 \item Locate and select the folder \emph{tutorial\_4\pathsep{}Models\pathsep{}LFRController} and click \emph{OK}.
 
     \begin{annotation}[width=0.55\linewidth]{figures/OvertureBrowseLFR}
         \rpoint{0.47}{1. Locate and select \emph{LFRController}}{0.52,0.47}
         \dsquare{1.3cm}{0.12cm}{0.63}{2. Click \emph{OK}}{0.718,0.065}
     \end{annotation}
+
+\newpage
 
 \item Finally click \emph{Finish} to create the project.
 
@@ -130,6 +146,7 @@ The example in this tutorial is a small line-following robot with two infrared s
 
 \end{instructions}
 
+\newpage
 
 \section{Installing the Overture FMU plug-in}
 
@@ -195,8 +212,8 @@ Overture can import model description files to create a skeleton project with th
         \dsquare{5cm}{1.6cm}{0.3}{Import status}{0.17,0.15}
     \end{annotation}
 		
-	If you don't see the "Import comepleted" message, remove all imported files and retry the current step.
-		
+    \paragraph{Remark.} Sometimes this step fails. If you don't see the "Import comepleted" message, remove all imported files and retry the current step.
+
     You should see the following structure:
 
     \begin{annotation}[width=0.25\linewidth,trim=0 300 535 0,clip]{figures/OvertureImportedClasses}
@@ -336,6 +353,8 @@ Now that the controller model is complete, we can export an FMU and place it in 
         \dcircle{0.15cm}{0.8}{Expand \emph{Configuration}}{0.938,0.148}
     \end{annotation}
 
+  \paragraph{Remark.} If you are not on Windows, delete the \emph{3D} FMU from the multimodel.
+
 \item Scroll down and click \emph{Edit}.
 
     \begin{annotation}[width=0.85\linewidth,trim=0 0 0 260,clip]{figures/INTOEditConfig}
@@ -414,7 +433,7 @@ Now that the controller model is complete, we can export an FMU and place it in 
         \usquare{1.25cm}{0.12cm}{0.8}{\emph{Launch} COE}{0.865,0.42}
     \end{annotation}
 
-\item When the COE is running, click the \emph{Simulate} button. The \emph{Animation Frame} should appear. You can click the \emph{3D} button to see the 3D visualisation of the robot.
+\item When the COE is running, click the \emph{Simulate} button. If you are on Windows, the \emph{Animation Frame} should appear. You can click the \emph{3D} button to see the 3D visualisation of the robot.
 
     \begin{annotation}[width=0.55\linewidth,trim=0 0 0 0,clip]{figures/into_coe_3d_toggle}
         \rcircle{0.32cm}{0.8}{3D Button}{0.52,0.88}
@@ -430,8 +449,6 @@ Now that the controller model is complete, we can export an FMU and place it in 
 \end{instructions}
 
 \section{Additional Exercises}
-
-When this tutorial is complete, either move onto Tutorial 5, or try to answer the following questions:
 
 \begin{enumerate}
 	\item Run multiple co-simulations, each with a different step size (e.g., 0.01, 0.05, 0.1, 0.5, ...), and the same controller. Can you explain the differences in the results? Imagine that this controller gets deployed onto a real robot. What does the step size mean there?
