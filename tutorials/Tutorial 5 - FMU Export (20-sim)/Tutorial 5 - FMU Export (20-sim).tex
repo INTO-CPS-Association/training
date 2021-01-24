@@ -52,12 +52,13 @@ This tutorial requires the following tools from the INTO-CPS tool chain to be in
 
 \newpage
 
-\item Follow the installation wizard until the following license activation screen appears and click \emph{Activation}.
+\item Follow the installation wizard and make sure to enable Python support.
+
+\item Launch 20-sim, and click \emph{Activation} when the activation screen appears.
 
 \begin{annotation}[width=0.5\linewidth]{figures/Activation1}
         \rsquare{1.3cm}{0.1cm}{0.1}{Click \emph{Activation\ldots}}{0.87,0.125}	
 \end{annotation}
- 
 
 \item The following options will appear, click \emph{Next} to continue. 
 
@@ -137,12 +138,15 @@ This should result in a working 20-sim version on Linux. Tested here with variou
 
 \newpage
 
-\item You should see the block diagram for the model. The diagram is composed of two blocks: The \emph{Environment} and the \emph{Body\_Block}. Click on the Body\_Block to visualize its contents.  
+\item You should see the block diagram for the model. The diagram is composed of two blocks: The \emph{Environment} and the \emph{Body\_Block}. 
+The Body\_Block corresponds to the \emph{Body\_Block} FMU, and the Environment provides default inputs to enable the simulation of the Body\_Block. Once the Body\_Block FMU is exported, the inputs to the Body\_Block will be provided by the co-simulation.
+Click on the Body\_Block to visualize its contents.  
 
     \begin{annotation}[width=0.8\linewidth]{figures/20-simModelTop}
        \rsquare{1.05cm}{0.6cm}{0.2}{Click \emph{Body\_Block}}{0.73,0.57}
     \end{annotation}
 
+\newpage
 
 \item At this step you can explore the model further by clicking on blocks or
 	by clicking on the Model view. To continue our tutorial open the
@@ -153,6 +157,8 @@ This should result in a working 20-sim version on Linux. Tested here with variou
        \dsquare{0.16cm}{0.8cm}{0.5}{Click the wheel\_right}{0.642,0.546}
        \dpoint{0.5}{}{0.1,0.575}
     \end{annotation}
+
+\newpage
 
 \item The \emph{wheel\_right} models the physical behaviour of the line
 	following robot wheel. You can explore the model but we will focus on
@@ -200,40 +206,27 @@ simulator FMU can be provided to you and you can continue in Section
 
 \newpage
 
-\section{Installing Microsoft Build Tools (Windows Only)} The 20-sim is able to export new FMUs however \emph{this feature depends on Microsoft Build Tools available for Windows platform only}.
+\section{Installing Microsoft Build Tools (Windows Only)} 
 
+20-sim is able to export new FMUs however \emph{this feature depends on Microsoft Build Tools being available}, because 20-sim exports the source code of the FMU and then builds it using Microsoft Build Tools.
+If you suspect you already have Microsoft Build Tools installed, try to follow the instructions in Section~\ref{sec:export_fmu}.
+If 20-sim fails to build the FMU, then refer to the following step as one possible way to install Microsoft Build Tools on your system.
 
 \begin{instructions}
 
-\item \emph{The Microsoft Build Tools 2015} can be downloaded from: \\ \url{https://www.visualstudio.com/vs/older-downloads}\\ Scroll down to find the Microsoft Build Tools, and click download. 
+\item Install (or modify the existing installation of) Visual Studio Community 2019, and include \emph{Desktop Development with C++}.
 
-    \begin{annotation}[width=0.8\linewidth,trim=0 15cm 0 0,clip ]{figures/BuildTools2015Web}
-        \usquare{2.1cm}{0.1cm}{0.2}{1. Find \emph{Microsoft Build Tools}}{0.14,0.58}	    	    
-        \dsquare{1.5cm}{0.2cm}{0.63}{2. Click \emph{Download}}{0.88,0.55}	    
+    \begin{annotation}[width=0.8\linewidth,trim=0 0cm 0 0,clip ]{figures/msbuild_cpp_install}
+        \dsquare{4.0cm}{0.2cm}{0.63}{Check}{0.51,0.45}	    
     \end{annotation}
 
 
-\item You may need to login or create an account with Microsoft first. After executing the installer the following screen appears. Select the custom install and click next to continue.
-
-   \begin{annotation}[width=0.3\linewidth]{figures/BuildTools2015Install}
-        \lpoint{0.6}{1. Click \emph{Custom}}{0.089,0.61}	    
-        \rsquare{0.85cm}{0.01cm}{0.1}{2. Click \emph{Next}}{0.84,0.06}	     
-    \end{annotation}
-\newpage
-
-\item Confirm the Windows 8.1 SDK is selected and proceed with the installation by clicking Next. 
-
-   \begin{annotation}[width=0.3\linewidth]{figures/BuildTools2015InstallSDK}
-        \upoint{0.01}{1. Check selection}{0.14,0.76}
-        \rsquare{0.85cm}{0.05cm}{0.1}{2. Click \emph{Next}}{0.84,0.06}	    	
-   \end{annotation}
-
-   After finishing the install your Windows system is ready to generate an FMU from within the 20-sim tool. 
 \end{instructions}
 
 \newpage
 
 \section{Exporting an FMU and Adding it to a Multi-model}
+\label{sec:export_fmu}
 
 \begin{instructions}
 
@@ -276,7 +269,7 @@ simulator FMU can be provided to you and you can continue in Section
 
 \newpage
 
-\item The following shell should pop up and the script to be run may take a while to complete\ldots
+\item The following shell should pop up and the script to be run may take a while to complete.
 
    \begin{annotation}[width=0.8\linewidth]{figures/20-simCCodeGenScript}
    \end{annotation}
