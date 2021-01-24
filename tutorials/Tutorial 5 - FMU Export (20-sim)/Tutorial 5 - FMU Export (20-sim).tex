@@ -207,6 +207,7 @@ simulator FMU can be provided to you and you can continue in Section
 \newpage
 
 \section{Installing Microsoft Build Tools (Windows Only)} 
+\label{sec:install_msbuild}
 
 20-sim is able to export new FMUs however \emph{this feature depends on Microsoft Build Tools being available}, because 20-sim exports the source code of the FMU and then builds it using Microsoft Build Tools.
 If you suspect you already have Microsoft Build Tools installed, try to follow the instructions in Section~\ref{sec:export_fmu}.
@@ -285,9 +286,12 @@ If 20-sim fails to build the FMU, then refer to the following step as one possib
 		\item 20-sim cannot determine the location of the VS Common Tools folder -- There are multiple possible causes for this error:
 		\begin{enumerate}
 			\item You don't have Microsoft Build Tools installed, and/or
-			\item The script \emph{vsvars32.bat} expects to find a registry entry that contains the path to the Common tools folder (e.g., \emph{C:\textbackslash Program Files (x86)\textbackslash Microsoft Visual Studio 14.0\textbackslash Common7 \textbackslash Tools}). This issue is described in \footnote{\url{https://stackoverflow.com/questions/3461275/vs2010-command-prompt-gives-error-cannot-determine-the-location-of-the-vs-commo}}. The easiest solution is to uninstall Microsoft Build Tools 2015 and install the latest version of Visual Studio Community Edition, with the Desktop C++ development features.
+			\item The script \emph{vsvars32.bat} expects to find a registry entry that contains the path to the Common tools folder (e.g., \emph{C:\textbackslash Program Files (x86)\textbackslash Microsoft Visual Studio 14.0\textbackslash Common7 \textbackslash Tools}). This issue is described in \footnote{\url{https://stackoverflow.com/questions/3461275/vs2010-command-prompt-gives-error-cannot-determine-the-location-of-the-vs-commo}}. The easiest solution is to uninstall Microsoft Build Tools 2015 follow the instructions in Section~\ref{sec:install_msbuild}.
 		\end{enumerate}
 	\end{itemize}
+
+\clearpage
+
 \item Navigate to the chosen folder and copy the \emph{Body\_Block.fmu}.
 
    \begin{annotation}[width=0.8\linewidth]{figures/GetGenFMU}
