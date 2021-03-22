@@ -23,9 +23,9 @@ This tutorial will show you how to:
 This tutorial requires the following tools from the INTO-CPS tool chain to be installed:
 
 \begin{itemize}[noitemsep]
-\item INTO-CPS app 3.10 or above
-\item Python 2.7 with numpy and matplotlib -- you have to install it yourself
-\item DSE scripts 0.2.0 or above -- accessible through the INTO-CPS App Download Manager
+\item INTO-CPS app 4.0.2 or above
+\item Python 3.9.2 or above, with numpy and matplotlib -- you have to install it yourself
+\item DSE scripts 0.4.1 or above -- accessible through the INTO-CPS App Download Manager
 \end{itemize}
 
 You may have been provided with tools and tutorials on a USB drive at your training session. Otherwise: 
@@ -36,14 +36,17 @@ You may have been provided with tools and tutorials on a USB drive at your train
 
 
 \section{Preparing the Workspace}
-This tutorial requires the contents of Tutorial7.zip to be unzipped and placed in your desired location.  Please note that the DSE scripts currently do not handle path names including spaces, so please ensure that the path to where Tutorial7.zip extract does not include spaces.
+This tutorial requires the contents of Tutorial7.zip to be unzipped and placed in your desired location.  Please note that the DSE scripts currently do not handle path names including spaces, so please ensure that the path to where Tutorial7.zip is extracted does not include spaces.
 
 
 \newpage
 
+
 \section{Opening a DSE Configuration}
 
-After opening the app, you will need to move to the tutorial\_7 workspace that you unzipped in the previous step.  In the app select \emph{File \menusep Open Project} and navigate to the your \emph{tutorial\_7} folder.  With the folder open you should be presented with the app welcome screen as below.
+\begin{instructions}
+
+\item After opening the app, you will need to move to the tutorial\_7 workspace that you unzipped in the previous step.  In the app select \emph{File \menusep Open Project} and navigate to the your \emph{tutorial\_7} folder.  With the folder open you should be presented with the app welcome screen as below.
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_00_openTheApp}
     %\rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_2\pathsep{}SysML}}{0.45,0.48}
@@ -51,7 +54,7 @@ After opening the app, you will need to move to the tutorial\_7 workspace that y
     %\helpergrid
 \end{annotation}\end{center}
 
-The name of the DSE configuration we will use in the tutorial starts with dse-DSE\_Example, which was the name given to it when the app imports the DSE configuration that was exported from Modelio in Tutorial 6.  
+\item The name of the DSE configuration we will use in the tutorial starts with dse-DSE\_Example, which was the name given to it when the app imports the DSE configuration that was exported from Modelio in Tutorial 6.  
 To open the configuration, double click on its name in the DSEs section.
 
 
@@ -61,7 +64,7 @@ To open the configuration, double click on its name in the DSEs section.
     %\helpergrid
 \end{annotation}\end{center}
 
-A DSE configuration can only work in concert with an existing multi-model since it only describes the changes that should be made to the model, it does not describe the connections or FMUs.  So the first thing we need to do is select the multi-model the DSE scripts will use.  As below, click on ‘Set multimodal’ and then scroll down to select \emph{Experiment\pathsep{}lfr-non3d}.  Then click on \emph{Save multi-model choice}.
+\item A DSE configuration can only work in concert with an existing multi-model since it only describes the changes that should be made to the model, it does not describe the connections or FMUs.  So the first thing we need to do is select the multi-model the DSE scripts will use.  As below, click on ‘Set multimodal’ and then scroll down to select \emph{Experiment\pathsep{}lfr-non3d}.  Then click on \emph{Save}.
 
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_02_selectMultiModel}
@@ -71,7 +74,7 @@ A DSE configuration can only work in concert with an existing multi-model since 
 \end{annotation}\end{center}
 
 
-With the multi-model set, the app will now load and parse the DSE configuration and you should be able to see the top of the new panel below, with the algorithm choice \emph{Exhaustive} showing.
+\item With the multi-model set, the app will now load and parse the DSE configuration and you should be able to see the top of the new panel below, with the algorithm choice \emph{Exhaustive} showing.
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_03_dseConfigParsed}
     %\rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_2\pathsep{}SysML}}{0.45,0.48}
@@ -115,7 +118,6 @@ The view changes to give editable options. Starting with the algorithm section, 
 \newpage
 
 If you click on \emph{Genetic}, this will reveal the options available for a genetic search.  The initial population parameter accepts an integer value $>1$, which defines the number of designs that will be simulated at the start of the algorithm.  The population distribution option currently only has one option random, meaning the initial population will be randomly distributed throughout the design space. Other options are currently in development and will be added in the future. The mutation probability accepts integer values ($0 < value < 100$) which describes the probability that a parameter will spontaneously adopt another valid value when new designs are generated by breeding two parents.  The parent selection strategy affects how parents are selected during the breeding phase of the genetic algorithm.  Currently the only option is random, meaning that the only factor affecting parent selection is their rank, where the designs on rank 1 (best) have a higher probability of being selected than those on rank 2, and designs on rank 2 have a higher chance than those on rank 3 and so on. Other options will be added here in the future.  A more detailed description of how the genetic algorithm works and its parameters may be found in the INTO-CPS deliverable D5.2D `DSE in the INTO-CPS Platform’, which may be found on the INTO-CPS website.
-{
 We will not be using the genetic algorithm in this tutorial, so select the \emph{Exhaustive} algorithm in the \emph{Search algorithm} dropdown.  This will remove the genetic options and put the configuration back the way we need it for the tutorial.
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_07_algorithmGeneticOptions}
@@ -134,17 +136,17 @@ Scrolling down a little further we arrive at the \emph{Parameters} section, and 
  %      \helpergrid
     \end{annotation}\end{center}
 
-\newpage
-
-To add the constraints, click on the 'add constraint' button, this will add a text box and enter a single constraint.  Repeat this for each new constraint you wish to add.  For the purpose of the example you will need to add the following two constraints, the first ensures the y coordinates of the two sensors are the same and the second mirrors the x coordinate.
+These constraints have already been added for you, and are as follows:
 
 {\small 
-\verb|{sensor1}.sensor1.lf_position_y == {sensor2FMU}.sensor2.lf_position_y|
+\verb|{Sensor1}.sensor1.lf_position_y == {Sensor2}.sensor2.lf_position_y|
 
-\verb|{sensor1}.sensor1.lf_position_x == - {sensor2FMU}.sensor2.lf_position_x|
+\verb|{Sensor1}.sensor1.lf_position_x == - {Sensor2}.sensor2.lf_position_x|
 }
 
-\begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_09_typeParameterConstraints}
+The first ensures the y coordinates of the two sensors are the same and the second mirrors the x coordinate.
+
+\begin{center}\begin{annotation}[width=0.6\linewidth,trim=0 0 0 0,clip]{figures/step_09_typeParameterConstraints}
    % \rpoint{0.5}{Path to \emph{Tutorials\pathsep{}tutorials\_2\pathsep{}SysML}}{0.45,0.48}
    % \rsquare{1.5cm}{0.15cm}{0.05}{Ok}{0.68,0.07}
    %    \helpergrid
@@ -190,8 +192,10 @@ Next is the Ranking section.  Recall from the previous tutorial (Tutorial 6), th
 %       \helpergrid
     \end{annotation}\end{center}
 
- \newpage
-In the final part of the configuration, we need to edit the Scenario name. Scenarios are a way of letting the objective scripts know what test environment the CPS was faced with, which in the case of the line follower robot, is the name of the map it is using. This details of what the objective scripts do with this name are discussed in Tutorial 7 on objective scripts.  For now we simply need to enter the name of the map which is \verb=studentMap= in the scenarios text box.
+\newpage
+
+In the final part of the configuration, you can see the scenario name. 
+Scenarios are a way of letting the objective scripts know what test environment the CPS was faced with, which in the case of the line follower robot, is the name of the map it is using (\verb=studentMap=). This details of what the objective scripts do with this name are discussed in Tutorial 7 on objective scripts.
 
 
 
@@ -215,7 +219,7 @@ In the final part of the configuration, we need to edit the Scenario name. Scena
 
 \newpage
 
-With the scenario name entered, you may now save the configuration and launch the COE ready to run the DSE.  So click on the \emph{Save} button and then on the \emph{Launch} button for the COE.
+\item You may now save the configuration and launch the COE ready to run the DSE.  So click on the \emph{Save} button and then on the \emph{Launch} button for the COE.
 
 
 \begin{center}\begin{annotation}[width=0.7\linewidth,trim=0 0 0 0,clip]{figures/step_15_saveConfigLaunchCOE}
@@ -236,7 +240,7 @@ When the COE status panel is green, you may click on the \emph{Simulate} button 
     \end{annotation}\end{center}
 
 \newpage
-This DSE will run 9 simulations and takes a little under 9 minutes on a 3Ghz laptop; It may take more or less time on different hardware. If you are on Windows you will see terminal windows appearing as the app launches the DSE scripts. This confirms that the DSE is running, but there may be less obvious signs of activity on other operating systems.  Currently, the main indicator that a DSE is complete may be found in the app itself.  In the DSEs section, expanding the structure under the name of the DSE configuration reveals a folder named for the date and time that the DSE commenced.  Expanding this directory reveals subdirectories containing results from each individual simulation.  When the DSE is complete there will be another file in this directory named `$Results$’, as below.
+This DSE will run 9 simulations and takes a little under 9 minutes on a 3Ghz laptop. If you are on Windows you will see terminal windows appearing as the app launches the DSE scripts. This confirms that the DSE is running, but there may be less obvious signs of activity on other operating systems.  Currently, the main indicator that a DSE is complete may be found in the app itself.  In the DSEs section, expanding the structure under the name of the DSE configuration reveals a folder named for the date and time that the DSE commenced.  Expanding this directory reveals subdirectories containing results from each individual simulation.  When the DSE is complete there will be another file in this directory named `$Results$’, as below.
 
 \textbf{Common Issues:}
 \begin{itemize}
@@ -284,6 +288,9 @@ The \emph{config.mm.json} file contains the complete multi-model configuration s
 %    \rsquare{1.5cm}{0.15cm}{0.05}{Ok}{0.68,0.07}
 %       \helpergrid
     \end{annotation}\end{center}
+
+\end{instructions}
+
 
 \section{Additional Exercises}
 
