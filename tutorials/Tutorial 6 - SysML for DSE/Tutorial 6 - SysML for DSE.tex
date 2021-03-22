@@ -231,7 +231,7 @@ The model should now look like this:
     \end{annotation}
 \end{center}
 
-\item Find the `$DSE\_Example$' block in the model outline and drag it onto the empty diagram to add the DSE block created in Part \ref{sec:obj_def}.
+\item Find the `$DSE\_Example$' block in the model outline and drag it onto the empty diagram to add the DSE block created in Section~\ref{sec:obj_def}.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_include_analysis}
@@ -435,7 +435,7 @@ The model should now look like this:
 
 \newpage
 
-\item \label{add_sensor} Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$sensor1$' onto the `$robot2sensor$' instance just created. This block should include the attributes `$lf\_position\_x$' and `$lf\_position\_y$'. \\ \textit{(NB depending on the model version, $sensor1$  may be labelled $sensor1FMU$)}.
+\item \label{add_sensor} Expand `$robot2Sensor$' in the model overview and drag the nested instance `$sensor1: sensor1$' onto the `$robot2sensor$' instance just created. This block should include the attributes `$lf\_position\_x$' and `$lf\_position\_y$'.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_include_sensor}
@@ -446,7 +446,7 @@ The model should now look like this:
     \end{annotation}
 \end{center}
 
-\item Repeat \ref{add_sensor} to include `$sensor2$' in the `$robot2sensor$' block.
+\item Repeat \ref{add_sensor} to include `$sensor2: sensor2$' in the `$robot2sensor$' block.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_include_sensors}
@@ -574,7 +574,7 @@ This section will outline the steps necessary to generate a DSE configuration in
 \end{center}
 
 
-\item In the INTO-CPS app, open the project in Tutorial 6. Then the configuration file generated in the previous step can be found in `SysML \menusep LineFollowerRobot \menusep config'. Right click the configuration file and select `Create DSE Configuration'.
+\item In the INTO-CPS app, open the project in Tutorial 6. Then the configuration file generated in the previous step can be found in `SysML \menusep LineFollowerRobot \menusep configs'. Right click the configuration file and select `Create DSE Configuration'.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/app_moveDSEConfig}
