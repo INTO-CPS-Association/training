@@ -262,7 +262,7 @@ The model should now look like this:
 
 \newpage
 
-\item To link Objectives to the multi-model, find the `$robot2Sensor$' instance in the model overview (under Architecture) and drag it onto the diagram to include it in the DSE. \\ \textit{Note: drag the block onto empty space, not onto the $DSE\_Example$ block}.
+\item To link Objectives to the multi-model, find the `$robot2Sensor$' instance in the model overview (under Architecture) and drag it onto the diagram to include it in the DSE. \\ \textit{Note: drag the block onto empty space, not onto the $\mathit{DSE\_Example}$ block}.
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_include_r2s}
@@ -272,7 +272,7 @@ The model should now look like this:
     \end{annotation}
 \end{center}
 
-\item Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$body$' onto the `$robot2sensor$' instance just created. Name the new body instance `$body$'.
+\item Expand `$robot2Sensor$' in the model overview and drag the nested instance of `$body$' onto the `$robot2sensor$' instance just created. Name the new body instance `$body$'. 
 
 \begin{center}
 \begin{annotation}[width=0.8\linewidth]{figures/modelio_include_body}
@@ -284,17 +284,17 @@ The model should now look like this:
 
 \newpage
 
-%\item Expand the instance of `$body$' (nested under `$robot2sensor$') in the model overview and drag the `$robot\_x$' port onto the body instance just created. Repeat this for the `$robot\_y$' port.
-%
-%\begin{center}
-%\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_xy}
-%    \usquare{1.5cm}{0.1cm}{0.25}{robot\_x interface}{0.15,0.68}
-%    \dpoint{0.5}{Include interface instance within robot body instance}{0.63,0.43}
-%    %\helpergrid
-%    \end{annotation}
-%\end{center}
+\item If the ports from $body$ are not shown automatically, then expand the instance of `$body$' (nested under `$robot2sensor$') in the model overview and drag the `$robot\_x$' port onto the body instance just created. Repeat this for the `$robot\_y$' port.
 
-\item \label{obj_link} Finally, select the \emph{Reference} tool from the \emph{Toolbox} and link port `$2$' from `$ms$' to port `$robot\_x$' from `$body$'.
+\begin{center}
+\begin{annotation}[width=0.7\linewidth]{figures/modelio_include_xy}
+    \usquare{1.5cm}{0.1cm}{0.25}{robot\_x interface}{0.15,0.68}
+    \dpoint{0.5}{Include interface instance within robot body instance}{0.63,0.43}
+    %\helpergrid
+    \end{annotation}
+\end{center}
+
+\item \label{obj_link} Finally, select the \emph{Reference} tool from the \emph{Toolbox} and link port `$2$' from `$ms$' to port `$robot\_x$' from `$body$'. 
 
 \begin{center}
 \begin{annotation}[width=0.7\linewidth]{figures/modelio_ocd_ref}
